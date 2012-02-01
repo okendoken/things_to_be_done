@@ -8,14 +8,32 @@
 </head>
 <body>
 <header>
-  Things to be done
+  <div class="header-container">
+    <h2>
+      <a href="/" class="logo">Things to be done</a>
+    </h2>
+    <ul class="nav">
+      <% if user_signed_in? %>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => "btn-success" %></li>
+      <% else %>
+          <li><%= link_to 'Sign In', new_user_session_path, :class => "btn-success" %></li>
+      <% end %>
+    </ul>
+  </div>
 </header>
 <div class="container">
   <%= yield %>
 </div>
 
 <footer>
-
+  <div class="footer-container">
+    <ul class="footer-links">
+      <li><a href="/">О нас</a></li>
+      <li><a href="/">О них</a></li>
+      <li><a href="http://okendoken.com/">Крутой блог</a></li>
+      <li>Copyright Okake ©2012. All rights really reserved.</li>
+    </ul>
+  </div>
 </footer>
 </body>
 </html>
