@@ -35,14 +35,19 @@ footer{
     background-image: -o-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
     background-image: linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
     background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9edf7', endColorstr='#ffffff', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d9edf7', GradientType=0);
     left: 0;
     right: 0;
     bottom: 0;
 }
 
-a{
+a {
     color: #08c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a:focus {
@@ -116,6 +121,16 @@ a:hover, a:active {
     text-decoration: none;
 }
 
+.btn-success:hover {
+    text-decoration: none;
+    background-color: #51a351;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -ms-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+
 .container{
     width: 950px;
     margin-left: auto;
@@ -156,6 +171,10 @@ a:hover, a:active {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.join-btn:hover{
+    text-decoration: none;
+}
+
 .footer-container{
     margin-top: 40px;
     width: 950px;
@@ -185,4 +204,62 @@ a:hover, a:active {
 .footer-links > li:last-child{
     float: right;
     font-size: 10px;
+}
+
+#login-dialog{
+    display: none;
+    position: relative;
+    z-index: 1000;
+    float: right;
+    left:  100px;
+    top: 70px;
+    width: 300px;
+
+    background-color: white;
+
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -o-border-radius: 0 0 6px 6px;
+    -ms-border-radius: 0 0 6px 6px;
+    -khtml-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+
+    border: 1px solid #666;
+    border-top: none;
+
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(70%, #ffffff), to(#d9edf7));
+    background-image: -webkit-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
+    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 70%, #d9edf7);
+    background-image: -ms-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
+    background-image: -o-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
+    background-image: linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d9edf7', GradientType=0);
+}
+
+#login-dialog-content{
+    margin: 20px auto;
+    width: 260px;
+}
+
+.controls{
+    margin-top: 15px;
+}
+
+.controls > #cancel-btn{
+    margin-left: 10px;
+}
+
+.controls > #submit-btn{
+    float:right;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.span2-2{
+    width: 160px;
 }
