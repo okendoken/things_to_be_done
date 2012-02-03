@@ -6,6 +6,9 @@
     <% if user_signed_in? %>
         <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-success" %></li>
     <% else %>
+        <li><%= link_to 'facebook',
+                        user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
+                        :id => "fb_login", :"data-width" => 600, :"data-height" => 400 %></li>
         <li><%= link_to t(:sign_in), '', :class => "btn-success", :id => "sign-in-link" %></li>
     <% end %>
   </ul>
@@ -49,6 +52,10 @@
         $("#cancel-btn").click(function(){
             $("#login-dialog").slideUp(230);
             return false;
-        })
+        });
+        $("#fb_login").click(function(e) {
+            popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
+            e.stopPropagation(); return false;
+        });
     });
 </script>

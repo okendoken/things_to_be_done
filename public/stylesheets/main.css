@@ -100,6 +100,7 @@ a:hover, a:active {
 
 .nav > li{
     float: left;
+    margin-left: 10px;
 }
 
 .btn-success{
@@ -211,7 +212,7 @@ a:hover, a:active {
     position: relative;
     z-index: 1000;
     float: right;
-    left:  100px;
+    left:  218px;
     top: 70px;
     width: 300px;
 
@@ -262,4 +263,23 @@ a:hover, a:active {
 
 .span2-2{
     width: 160px;
+}
+
+.fb-login-button{
+    background: #29447E url("/images/fb-btn.png") 0 -162px no-repeat;
+    line-height: 26px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 4px 0 1px;
+    text-decoration: none;
+    outline: none;
+    width: 93px;
+    text-align: right;
+    color: white;
+}
+
+.fb-login-button:hover{
+    background: #29447E url("/images/fb-btn.png") 0 -162px no-repeat ;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
+    color: #ffffff;
 }
