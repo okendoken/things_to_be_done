@@ -1,7 +1,11 @@
 GreatWork::Application.routes.draw do
   root :to => "home#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :user
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+    match 'users/auth/twitter/twitter_email' => 'users/omniauth_callbacks#twitter_email'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

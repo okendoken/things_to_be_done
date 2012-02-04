@@ -1,7 +1,7 @@
-<div id="index-title"><%= t :project_title %></div>
-<div id="index-explanation"><%= t :project_description %></div>
+<div class="big-cool-text"><%= t :project_title %></div>
+<div class="big-cool-text-2"><%= t :project_description %></div>
 
 
 <div id="join-us">
-  <%= link_to 'Присоединится!', new_user_registration_path, :class => 'join-btn btn-warning' %>
+  <%= link_to t(:join), new_user_registration_path, :class => 'join-btn btn-warning' %>
 </div>

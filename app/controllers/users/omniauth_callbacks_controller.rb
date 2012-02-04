@@ -1,11 +1,36 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    # You need to implement the method below in your model
-    @user = User.find_or_create_for_facebook_oauth(request.env["omniauth.auth"], current_user)
+    @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
     #flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
     sign_in @user
-    flash[:notice] = "authorized FB"
-    @location = '/'
+  end
+
+  def twitter
+    access_token = request.env["omniauth.auth"]
+    if @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)
+      sign_in @user
+      render 'twitter_close'
+    else
+      session['twitter_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
+                                  :secret => access_token['credentials']['secret'], :name => access_token.info.name,
+                                  :provider => 'twitter', :link => access_token.info.urls['Twitter'] }
+    end
+  end
+
+  def twitter_email
+    email = request[:email]
+    unless session['twitter_data'].nil?
+      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20])
+      auth = @user.authorizations.build(session['twitter_data'])
+      @user.authorizations << auth
+      sign_in @user
+      render 'twitter_close'
+    end
+  end
+
+  def failure
+    #I've found it!!!!
+    #see view
   end
 end

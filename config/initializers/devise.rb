@@ -211,4 +211,7 @@ Devise.setup do |config|
                   :client_options => {:ssl => {:ca_file => 'D:\\cacert.pem'}},
                   :display => 'popup',
                   :scope => 'email'
+
+  require "omniauth-twitter"
+  config.omniauth :twitter, "aWv2mJf9n05D84ieLq4H8g", "xBGrauPr3IspBCrlFR4tC4DY3oVTD2HPnqHrmP0POSQ"
 end

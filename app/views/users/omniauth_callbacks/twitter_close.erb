@@ -1,0 +1,21 @@
+<% content_for :login_links do%>
+    <!-- -->
+<% end %>
+<style type="text/css">
+    .container{
+        width: 400px;
+    }
+    .footer-container{
+        width: 100%;
+    }
+</style>
+
+<div class="big-cool-text"><%= t :thank_you %></div>
+
+
+<script type="text/javascript">
+    if(window.opener) {
+        window.opener.location = <%= user_signed_in? ? "'#{user_path(current_user)}'" : "'/'" %>;
+        window.close();
+    }
+</script>

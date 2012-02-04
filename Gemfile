@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise', '1.5.3'
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'rails3-jquery-autocomplete'
 
