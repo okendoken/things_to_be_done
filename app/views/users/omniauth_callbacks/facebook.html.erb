@@ -1,6 +1,6 @@
 <script type="text/javascript">
     if(window.opener) {
-        window.opener.location = <%= user_signed_in? ? "'#{user_path(current_user)}'" : "'/'" %>;
+        window.opener.location = <%= user_signed_in? ? "'#{user_home_path}'" : "'/'" %>;
         window.close();
     }
 </script>

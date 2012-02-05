@@ -1,0 +1,7 @@
+<% name = @user.authorizations.empty? ? @user.email : @user.authorizations.first.name %>
+
+<% if is_current_user_page? @user %>
+    Hallo <%= name %>. This is <span style="color: blue;">Your</span> page.
+<% else %>
+    This is <%= name %>'s page
+<% end %>

@@ -224,7 +224,7 @@ a:hover, a:active {
     position: relative;
     z-index: 1000;
     float: right;
-    left:  218px;
+    left:  318px;
     top: 70px;
     width: 300px;
 
@@ -302,8 +302,8 @@ a:hover, a:active {
 }
 
 .tw-login-button{
-    background: #deebf3 url("/images/bird_32_blue.png") 1px -2px no-repeat;
-    line-height: 26px;
+    background: #deebf3 url("/images/bird_32_blue.png") 1px -4px no-repeat;
+    line-height: 24px;
     cursor: pointer;
     display: inline-block;
     border: 1px solid rgba(50,50,50,0.3);
@@ -312,12 +312,16 @@ a:hover, a:active {
     outline: none;
     width: 84px;
     text-align: right;
+    color: #4D4D4D;
 }
 
 .tw-login-button:hover{
-    background: #ecf2f6 url("/images/bird_32_blue.png") 1px -2px no-repeat ;
+    background: #ecf2f6 url("/images/bird_32_blue.png") 1px -4px no-repeat ;
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
-    color: #ffffff;
+    color: #4D4D4D;
 }
 
-
+#index-content{
+    clear:both;
+    margin-top: 100px;
+}
