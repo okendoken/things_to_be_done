@@ -207,7 +207,7 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
   require "omniauth-facebook"
-  config.omniauth :facebook, "220560994701806", "95db6e9d602add56744309c697ac19e7",
+  config.omniauth :facebook, "217231798336344", "cba6cb0f514276638d283270acf4e84b",
                   :client_options => {:ssl => {:ca_file => 'D:\\cacert.pem'}},
                   :display => 'popup',
                   :scope => 'email'
