@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207213857) do
+ActiveRecord::Schema.define(:version => 20120208181506) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20120207213857) do
   end
 
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
+
+  create_table "participations", :force => true do |t|
+    t.integer  "task_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "participations", ["task_id"], :name => "index_participations_on_task_id"
+  add_index "participations", ["user_id"], :name => "index_participations_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -68,5 +78,16 @@ ActiveRecord::Schema.define(:version => 20120207213857) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "positive"
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "votes", ["project_id"], :name => "index_votes_on_project_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end

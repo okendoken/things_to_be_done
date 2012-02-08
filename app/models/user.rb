@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   #actually for now it's has_one, but I decided to leave has_many
   has_many :authorizations
+  has_many :votes
+  has_many :projects, :through => :votes
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
