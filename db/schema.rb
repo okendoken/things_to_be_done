@@ -81,13 +81,15 @@ ActiveRecord::Schema.define(:version => 20120208181506) do
 
   create_table "votes", :force => true do |t|
     t.boolean  "positive"
-    t.integer  "project_id"
+    t.integer  "target_id"
+    t.string   "target_type"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "votes", ["project_id"], :name => "index_votes_on_project_id"
+  add_index "votes", ["target_id"], :name => "index_votes_on_target_id"
+  add_index "votes", ["target_type"], :name => "index_votes_on_target_type"
   add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end
