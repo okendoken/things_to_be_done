@@ -1,0 +1,24 @@
+<p>
+  <b>Title:</b>
+  <%= @project.title%>
+</p>
+
+<p>
+  <b>Problem:</b>
+  <%= @project.problem %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+
+<div>
+  <% @project.tasks.each do |task| %>
+  <div class="row">
+    <span class="span3"><%= task.title %></span>
+    <span class="span3"><%= link_to task %></span>
+  </div>
+  <% end %>
+</div>
