@@ -56,4 +56,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def display_name
+    self.authorizations.empty? ? self.email : self.authorizations.first.name
+  end
+
 end

@@ -3,7 +3,9 @@ GreatWork::Application.routes.draw do
 
   resources :user
 
-  resources :projects
+  resources :projects do
+    resources :tasks
+  end
 
 
   match 'home' => 'user#show', :as => :user_home

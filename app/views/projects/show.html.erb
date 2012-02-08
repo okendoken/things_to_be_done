@@ -14,11 +14,25 @@
 </p>
 
 
-<div>
+<div class="group-header">
+  Tasks
+</div>
+<div class="project-task">
   <% @project.tasks.each do |task| %>
   <div class="row">
-    <span class="span3"><%= task.title %></span>
-    <span class="span3"><%= link_to task %></span>
+    <span class="span3"><%= link_to task.title, project_task_path(task) %></span>
+    <span class="span3"><%= task.desc_short %></span>
+  </div>
+  <% end %>
+</div>
+
+<div class="group-header">
+  People who like this project
+</div>
+<div class="project-task">
+  <% @project.users.each do |user| %>
+  <div class="row">
+    <span class="span3"><%= link_to user.display_name, user %></span>
   </div>
   <% end %>
 </div>
