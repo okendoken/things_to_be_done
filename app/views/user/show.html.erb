@@ -15,7 +15,7 @@
       <div class="row">
         <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
         <span class="span3"><%= link_to task.project.title, task.project %></span>
-        <span class="span3"><%= task.desc_short + '...'%></span>
+        <span class="span3"><%= task.desc_short%></span>
       </div>
   <% end %>
 </div>
@@ -27,7 +27,7 @@
   <% @user.voted_projects.each do |project| %>
       <div class="row">
         <span class="span3"><%= link_to project.title, project %></span>
-        <span class="span3"><%= project.desc_short + '...'%></span>
+        <span class="span3"><%= project.desc_short%></span>
       </div>
   <% end %>
 </div>
@@ -40,7 +40,7 @@
       <div class="row">
         <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
         <span class="span3"><%= link_to task.project.title, task.project %></span>
-        <span class="span3"><%= task.desc_short + '...'%></span>
+        <span class="span3"><%= task.desc_short%></span>
       </div>
   <% end %>
 </div>

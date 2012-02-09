@@ -5,7 +5,7 @@ module VoteTarget
   end
 
   def desc_short
-    self.description.length > 20 ? self.description.slice(0,20) : self.description
+    self.description.length > 50 ? self.description.slice(0,50) + '...' : self.description
   end
 
 end
