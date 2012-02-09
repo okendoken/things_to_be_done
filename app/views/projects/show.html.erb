@@ -1,38 +1,36 @@
-<p>
-  <b>Title:</b>
-  <%= @project.title%>
-</p>
+<% content_for(:title) do%>
+    <%= @project.title%>
+<% end %>
 
-<p>
-  <b>Problem:</b>
-  <%= @project.problem.title %>
-</p>
+<div>
+  <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+  <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+  <div id="voter">like or not like</div>
+</div>
 
-<p>
-  <b>Description:</b>
+<div class="base-panel gray-background descr-panel">
   <%= @project.description %>
-</p>
-
+</div>
 
 <div class="group-header">
-  Tasks
+  <%= t :tasks%>
 </div>
-<div class="project-task">
+<div class="base-panel">
   <% @project.tasks.each do |task| %>
-  <div class="row">
-    <span class="span3"><%= link_to task.title, project_task_path(task) %></span>
-    <span class="span3"><%= task.desc_short %></span>
-  </div>
+      <div class="row">
+        <span class="span3"><%= link_to task.title, project_task_path(task) %></span>
+        <span class="span3"><%= task.desc_short %></span>
+      </div>
   <% end %>
 </div>
 
 <div class="group-header">
-  People who like this project
+  <%= t(:people_who_like) + ' ' + @project.title %>
 </div>
-<div class="project-task">
+<div class="base-panel">
   <% @project.users.each do |user| %>
-  <div class="row">
-    <span class="span3"><%= link_to user.display_name, user %></span>
-  </div>
+      <div class="row">
+        <span class="span3"><%= link_to user.display_name, user %></span>
+      </div>
   <% end %>
 </div>

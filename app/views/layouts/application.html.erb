@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>things to be done. what to fix</title>
+  <title><%= content_for?(:title) ? yield(:title) : 'things to be done. what to fix' %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>

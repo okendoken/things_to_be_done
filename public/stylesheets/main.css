@@ -60,13 +60,12 @@ a:hover, a:active {
 
 .logo{
     text-decoration: none;
-    padding-top: 2px;
     display: inline-block;
+    color: #ffffff;
     /*text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);*/
 }
 
 .logo:hover{
-    padding-top: 2px;
     /*text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);*/
     text-decoration: none;
     background-color: rgba(21,77,255,0.07);
@@ -160,6 +159,13 @@ a:hover, a:active {
 .big-cool-text-3{
     text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
     font-size: 18px;
+    font-weight: normal;
+    color: #333;
+}
+
+.big-cool-text-4{
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
+    font-size: 14px;
     font-weight: normal;
     color: #333;
 }
@@ -338,4 +344,34 @@ a:hover, a:active {
 
 .group-header{
     margin-top: 40px;
+    margin-bottom: 7px;
+}
+
+.right-a-bit-align{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.descr-panel{
+    margin-top: 30px;
+}
+
+.base-panel{
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    min-height: 50px
+}
+
+.gray-background{
+    background: #FAFAFA;
+}
+
+#voter{
+    float: right;
+    margin-top: -20px;
+    margin-right: 350px;
 }
