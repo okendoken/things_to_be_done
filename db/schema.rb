@@ -37,15 +37,26 @@ ActiveRecord::Schema.define(:version => 20120208181506) do
   add_index "participations", ["task_id"], :name => "index_participations_on_task_id"
   add_index "participations", ["user_id"], :name => "index_participations_on_user_id"
 
-  create_table "projects", :force => true do |t|
+  create_table "problems", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "problem"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "problems", ["user_id"], :name => "index_problems_on_user_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "problem_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "projects", ["problem_id"], :name => "index_projects_on_problem_id"
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "tasks", :force => true do |t|
