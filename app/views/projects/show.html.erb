@@ -18,7 +18,7 @@
 <div class="base-panel">
   <% @project.tasks.each do |task| %>
       <div class="row">
-        <span class="span3"><%= link_to task.title, project_task_path(task) %></span>
+        <span class="span3"><%= link_to task.title, project_task_path(@project, task) %></span>
         <span class="span3"><%= task.desc_short %></span>
       </div>
   <% end %>
