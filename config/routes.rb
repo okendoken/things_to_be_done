@@ -14,6 +14,10 @@ GreatWork::Application.routes.draw do
     match 'users/auth/twitter/twitter_email' => 'users/omniauth_callbacks#twitter_email'
   end
 
+  #todo replace after daniel finishes slug
+  match 'support/projects/:id(/tasks/:task_id)' => 'vote#support'
+  match 'notsupport/projects/:id(/tasks/:task_id)' => 'vote#not_support'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

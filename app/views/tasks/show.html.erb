@@ -5,7 +5,7 @@
 <div>
   <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task)%></div>
   <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
-  <div id="voter">like or not like</div>
+  <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
 </div>
 
 <div class="base-panel gray-background descr-panel">
@@ -24,7 +24,7 @@
 </div>
 
 <div class="group-header">
-  <%= t(:people_who_like) + ' ' + @task.title %>
+  <%= t(:people_who_support) + ' ' + @task.title %>
 </div>
 <div class="base-panel">
   <% @task.users.each do |user| %>
