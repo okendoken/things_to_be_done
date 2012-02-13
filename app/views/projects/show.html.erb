@@ -3,9 +3,9 @@
 <% end %>
 
 <div>
-  <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+  <div class="big-cool-text"><%= link_to @project.title, @project, :confirm => 'Are you sure?'%></div>
   <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
-  <div id="voter">like or not like</div>
+  <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
 </div>
 
 <div class="base-panel gray-background descr-panel">
@@ -25,7 +25,7 @@
 </div>
 
 <div class="group-header">
-  <%= t(:people_who_like) + ' ' + @project.title %>
+  <%= t(:people_who_support) + ' ' + @project.title %>
 </div>
 <div class="base-panel">
   <% @project.users.each do |user| %>

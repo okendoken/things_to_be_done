@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
 
   has_many :participations
   has_many :votes, :as => :target
-  has_many :users, :through => :votes
+  has_many :users, :through => :votes, :conditions => {'votes.positive'.to_sym => true}
 
   has_many :participants, :through => :participations, :source => :user
 

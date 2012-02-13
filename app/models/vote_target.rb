@@ -1,7 +1,7 @@
 module VoteTarget
 
-  def vote_for_this(user)
-    Vote.create!(:positive => true, :user => user, :target => self)
+  def vote_for_this(user, positive = true)
+    Vote.create!(:positive => positive, :user => user, :target => self)
   end
 
   def desc_short

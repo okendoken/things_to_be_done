@@ -10,6 +10,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3', :require => 'uglifier'
 end
 
+gem 'jquery-rails'
 gem 'sqlite3'
 gem 'devise', '>= 2.0'
 
