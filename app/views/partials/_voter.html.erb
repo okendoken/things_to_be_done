@@ -1,4 +1,11 @@
-<div id="voter">
-  <%= link_to "Support", support_path(target), :remote => true %>
-  <%= link_to "Don't support", not_support_path(target), :remote => true %>
+<div id="voter" class="span4">
+  <%= link_to "Support", support_path(target), :remote => true,
+              :class => 'btn btn-success', :id => 'supp-link' %>
+  <%= link_to "Don't support", not_support_path(target), :remote => true,
+              :class => 'btn btn-danger', :id => 'dont-supp-link' %>
+  <% if vote = target.user_vote(current_user) %>
+    <script type="text/javascript">
+      changeLikerState(<%= vote.positive?%>)
+    </script>
+  <% end %>
 </div>

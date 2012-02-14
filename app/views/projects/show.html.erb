@@ -2,9 +2,11 @@
     <%= @project.title%>
 <% end %>
 
-<div>
-  <div class="big-cool-text"><%= link_to @project.title, @project, :confirm => 'Are you sure?'%></div>
-  <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+<div class="row">
+  <div class="span8">
+    <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+    <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+  </div>
   <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
 </div>
 

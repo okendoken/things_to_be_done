@@ -2,9 +2,11 @@
     <%= @task.project.title%> - <%= @task.title%>
 <% end %>
 
-<div>
-  <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task)%></div>
-  <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
+<div class="row">
+  <div class="span8">
+    <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task)%></div>
+    <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
+  </div>
   <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
 </div>
 
