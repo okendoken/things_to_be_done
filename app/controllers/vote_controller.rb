@@ -31,6 +31,8 @@ class VoteController < ApplicationController
     else
       project.vote_for_this(current_user, positive)
     end
+    #todo someday we can rerender only current user instead of fetching all
+    @supporters = project.users
   end
 
   def vote_for_task(task, positive = true)
@@ -42,5 +44,6 @@ class VoteController < ApplicationController
     else
       task.vote_for_this(current_user, positive)
     end
+    @supporters = task.users
   end
 end

@@ -1,1 +1,1 @@
-alert('golosonul!');
+$("#supporters").html("<%= escape_javascript(render(:partial => 'partials/user_row', :collection => @supporters, :as => :user))%>");

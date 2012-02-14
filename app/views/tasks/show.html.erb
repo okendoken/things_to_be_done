@@ -16,20 +16,12 @@
   <%= t(:people_who_participates_in) + ' ' + @task.title %>
 </div>
 <div class="base-panel">
-  <% @task.participants.each do |user| %>
-      <div class="row">
-        <span class="span3"><%= link_to user.display_name, user %></span>
-      </div>
-  <% end %>
+  <%= render :partial => 'partials/user_row', :collection => @task.participants, :as => :user %>
 </div>
 
 <div class="group-header">
   <%= t(:people_who_support) + ' ' + @task.title %>
 </div>
-<div class="base-panel">
-  <% @task.users.each do |user| %>
-      <div class="row">
-        <span class="span3"><%= link_to user.display_name, user %></span>
-      </div>
-  <% end %>
+<div id="supporters" class="base-panel">
+  <%= render :partial => 'partials/user_row', :collection => @task.users, :as => :user %>
 </div>
