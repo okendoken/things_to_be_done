@@ -7,40 +7,42 @@
 <% end %>
 
 
-<div class="group-header">
-  Tasks you participate in
-</div>
-<div class="project-task">
-  <% @user.tasks.each do |task| %>
-      <div class="row">
-        <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
-        <span class="span3"><%= link_to task.project.title, task.project %></span>
-        <span class="span3"><%= task.desc_short%></span>
-      </div>
-  <% end %>
-</div>
+<div class="related-content">
+  <div class="group-header">
+    Tasks you participate in
+  </div>
+  <div class="project-task">
+    <% @user.tasks.each do |task| %>
+        <div class="row">
+          <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
+          <span class="span3"><%= link_to task.project.title, task.project %></span>
+          <span class="span3"><%= task.desc_short%></span>
+        </div>
+    <% end %>
+  </div>
 
-<div class="group-header">
-  Projects you like
-</div>
-<div class="project-task">
-  <% @user.voted_projects.each do |project| %>
-      <div class="row">
-        <span class="span3"><%= link_to project.title, project %></span>
-        <span class="span3"><%= project.desc_short%></span>
-      </div>
-  <% end %>
-</div>
+  <div class="group-header">
+    Projects you like
+  </div>
+  <div class="project-task">
+    <% @user.voted_projects.each do |project| %>
+        <div class="row">
+          <span class="span3"><%= link_to project.title, project %></span>
+          <span class="span3"><%= project.desc_short%></span>
+        </div>
+    <% end %>
+  </div>
 
-<div class="group-header">
-  Tasks you like
-</div>
-<div class="project-task">
-  <% @user.voted_tasks.each do |task| %>
-      <div class="row">
-        <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
-        <span class="span3"><%= link_to task.project.title, task.project %></span>
-        <span class="span3"><%= task.desc_short%></span>
-      </div>
-  <% end %>
+  <div class="group-header">
+    Tasks you like
+  </div>
+  <div class="project-task">
+    <% @user.voted_tasks.each do |task| %>
+        <div class="row">
+          <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
+          <span class="span3"><%= link_to task.project.title, task.project %></span>
+          <span class="span3"><%= task.desc_short%></span>
+        </div>
+    <% end %>
+  </div>
 </div>
