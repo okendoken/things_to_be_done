@@ -19,6 +19,8 @@ gem 'omniauth-twitter'
 
 gem 'rails3-jquery-autocomplete'
 
+gem "friendly_id", "~> 4.0.0"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
