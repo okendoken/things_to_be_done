@@ -8,4 +8,8 @@ module VoteTarget
     self.description.length > 50 ? self.description.slice(0,50) + '...' : self.description
   end
 
+  def user_vote(user)
+    self.votes.where(:user_id => user.id)[0]
+  end
+
 end

@@ -2,9 +2,11 @@
     <%= @project.title%>
 <% end %>
 
-<div>
-  <div class="big-cool-text"><%= link_to @project.title, @project, :confirm => 'Are you sure?'%></div>
-  <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+<div class="row">
+  <div class="span8">
+    <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+    <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+  </div>
   <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
 </div>
 
@@ -16,21 +18,12 @@
   <%= t :tasks%>
 </div>
 <div class="base-panel">
-  <% @project.tasks.each do |task| %>
-      <div class="row">
-        <span class="span3"><%= link_to task.title, project_task_path(@project, task) %></span>
-        <span class="span3"><%= task.desc_short %></span>
-      </div>
-  <% end %>
+  <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
 </div>
 
 <div class="group-header">
   <%= t(:people_who_support) + ' ' + @project.title %>
 </div>
-<div class="base-panel">
-  <% @project.users.each do |user| %>
-      <div class="row">
-        <span class="span3"><%= link_to user.display_name, user %></span>
-      </div>
-  <% end %>
+<div id="supporters" class="base-panel">
+  <%= render :partial => 'partials/user_row', :collection => @project.users, :as => :user %>
 </div>
