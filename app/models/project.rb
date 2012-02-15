@@ -1,4 +1,7 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+
   belongs_to :user
   belongs_to :problem
 
@@ -7,4 +10,9 @@ class Project < ActiveRecord::Base
   has_many :tasks
 
   include VoteTarget
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
+
 end
