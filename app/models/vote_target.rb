@@ -9,7 +9,7 @@ module VoteTarget
   end
 
   def user_vote(user)
-    self.votes.where(:user_id => user.id)[0]
+    self.votes.where(:user_id => user.id)[0] unless user.nil?
   end
 
 end
