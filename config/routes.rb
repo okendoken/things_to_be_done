@@ -3,26 +3,15 @@ GreatWork::Application.routes.draw do
 
   resources :user
 
-
-
-
   match 'home' => 'user#show', :as => :user_home
-
-
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     match 'users/auth/twitter/twitter_email' => 'users/omniauth_callbacks#twitter_email'
   end
 
-  #match ':project_slug(:task_slug)' => 'projects#show'
+  match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
+  match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
 
-  #todo replace after daniel finishes slug
-  match 'support/projects/:id(/tasks/:task_id)' => 'vote#support'
-  match 'notsupport/projects/:id(/tasks/:task_id)' => 'vote#not_support'
-
-  #resources :projects, :path => "p" do
-  #  resources :tasks, :path => "t"
-  #end
   resources :projects, :path => "", :except => [:index, :create ] do
     resources :tasks, :path => "", :except => [:index, :create ]
   end
