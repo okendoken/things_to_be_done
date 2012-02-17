@@ -1,4 +1,15 @@
 <div class="row">
-  <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
-  <span class="span3"><%= task.desc_short %></span>
+  <span class="span1"><img style="max-height: 60px; max-width: 60px;" src="/images/rails.png" alt="Image"/></span>
+  <div class="span6">
+    <h4><%= link_to task.title, project_task_path(task.project, task) %></h4>
+    <p>
+      <span><%= task.desc_short %></span>
+      <span class="pull-right span2 align-center small-project-link">
+        <em><%= link_to task.project.title, task.project %></em>
+      </span>
+    </p>
+    <span class="span1"><%= link_to t(:details), project_task_path(task.project, task) %></span>
+    <span class="span1 pull-right"><%= link_to 'Participate' %></span>
+  </div>
+  <%= render :partial => 'partials/small_voter', :locals => {:target => task} %>
 </div>

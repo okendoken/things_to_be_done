@@ -15,9 +15,11 @@ class VoteController < ApplicationController
       if params[:task_id].present?
         task = Task.find(params[:task_id])
         vote_for_task(task, positive)
-      elsif params[:id].present?
-        project = Project.find(params[:id])
+        @target = task
+      elsif params[:project_id].present?
+        project = Project.find(params[:project_id])
         vote_for_project(project, positive)
+        @target = project
       end
       render 'vote/support'
     else
