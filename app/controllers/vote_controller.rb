@@ -21,7 +21,10 @@ class VoteController < ApplicationController
         vote_for_project(project, positive)
         @target = project
       end
-      render 'vote/support'
+      respond_to do |format|
+        format.js {render 'vote/support'}
+        format.json{render :json => {:target_id => @target.id, :vote_positive => @supports}}
+      end
     else
       render 'vote/sign_in'
     end
