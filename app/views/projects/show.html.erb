@@ -3,17 +3,20 @@
 <% end %>
 
 <div class="row">
-  <div class="span8">
+  <div class="span3">
+    <img src="/images/avatar.jpg" class="avatar" alt="image">
+  </div>
+  <div class="span7">
     <div class="big-cool-text"><%= link_to @project.title, @project%></div>
     <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
   </div>
   <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
+  <div class="base-panel gray-background span8">
+    <%= @project.description %>
+  </div>
 </div>
 
 <div class="related-content">
-  <div class="base-panel gray-background descr-panel">
-    <%= @project.description %>
-  </div>
 
   <div class="group-header">
     <%= t :tasks%>

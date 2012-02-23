@@ -359,6 +359,10 @@ a:hover, a:active {
     border-radius: 3px;
 }
 
+.group-header:first-child{
+    margin-top: 0;
+}
+
 .group-header{
     margin-top: 40px;
     margin-bottom: 7px;
@@ -443,7 +447,7 @@ a:hover, a:active {
 }
 
 .btn-support.disabled.yes{
-    background: url("/images/up-down-30.png") no-repeat -69px 0;
+    background: gray;/*url("/images/up-down-30.png") no-repeat -69px 0;*/
 }
 
 .btn-support.disabled.yes:hover{
@@ -451,7 +455,7 @@ a:hover, a:active {
 }
 
 .btn-support.yes{
-    background: url("/images/up-down-30.png") no-repeat 4px 0;
+    background: blue;/*url("/images/up-down-30.png") no-repeat 4px 0;*/
 }
 
 .btn-support.yes:hover{
@@ -459,7 +463,7 @@ a:hover, a:active {
 }
 
 .btn-support.no{
-    background: url("/images/up-down-30.png") no-repeat -32px 0;
+    background: red/*url("/images/up-down-30.png") no-repeat -32px 0;*/
 }
 
 .btn-support.no:hover{
@@ -471,7 +475,7 @@ a:hover, a:active {
 }
 
 .btn-support.disabled.no{
-    background: url("/images/up-down-30.png") no-repeat -105px 0;
+    background: gray;/*url("/images/up-down-30.png") no-repeat -105px 0;*/
 }
 
 .btn-support.disabled.no:hover{
@@ -480,9 +484,9 @@ a:hover, a:active {
 
 .small-project-link{
     background: #f0f0f0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
 }
 
 .rating{
@@ -490,4 +494,14 @@ a:hover, a:active {
     display: block;
     width:80px;
 
+}
+
+.avatar{
+    max-width: 220px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.8);
 }
