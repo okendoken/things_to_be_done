@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def is_current_user_id?(id)
-    id == current_user.id
+    user_signed_in? and id == current_user.id
   end
 end
