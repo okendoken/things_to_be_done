@@ -13,10 +13,8 @@ module VoteTarget
   end
 
   def rating
-    positive = Hash[*Vote.select('count(id) count, positive').group('positive')
-    .where('target_id = ? and target_type = ?', self.id, self.class.name).collect{ |vote|
-      [vote.positive.to_s, vote.count]
-    }.flatten]
+    positive = Hash[*Vote.select('count(id) count, positive').group('positive').where('target_id = ? and target_type = ?', self.id, self.class.name).collect{ |vote|
+          [vote.positive.to_s, vote.count]}.flatten]
     nvl(positive["true"]) - nvl(positive["false"])
   end
 
