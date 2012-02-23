@@ -10,20 +10,23 @@
   <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
 </div>
 
-<div class="base-panel gray-background descr-panel">
-  <%= @project.description %>
-</div>
+<div class="related-content">
+  <div class="base-panel gray-background descr-panel">
+    <%= @project.description %>
+  </div>
 
-<div class="group-header">
-  <%= t :tasks%>
-</div>
-<div class="base-panel">
-  <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
-</div>
+  <div class="group-header">
+    <%= t :tasks%>
+  </div>
+  <div class="base-panel">
+    <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
+  </div>
 
-<div class="group-header">
-  <%= t(:people_who_support) + ' ' + @project.title %>
-</div>
-<div id="supporters" class="base-panel">
-  <%= render :partial => 'partials/user_row', :collection => @project.users, :as => :user %>
+  <div class="group-header">
+    <%= t(:people_who_support) + ' ' + @project.title %>
+  </div>
+  <div id="supporters" class="base-panel">
+    <%= render :partial => 'partials/user_row', :collection => @project.users, :as => :user %>
+  </div>
+
 </div>

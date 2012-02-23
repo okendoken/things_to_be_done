@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, :use => :slugged
+
   belongs_to :user
   belongs_to :project
 
@@ -13,4 +16,9 @@ class Task < ActiveRecord::Base
   def participate_in_this(user)
     Participation.create!(:user => user, :task => self)
   end
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
+
 end

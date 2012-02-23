@@ -14,9 +14,24 @@ function changeLikerState(supports){
     }
 }
 
+function changeSmallLikerState(supports, dataId){
+    if (supports){
+        $("[data-toggle='small-supp-link-" + dataId + "']").addClass("disabled");
+        $("[data-toggle='small-dont-supp-link-" + dataId + "']").removeClass("disabled");
+    } else {
+        $("[data-toggle='small-supp-link-" + dataId + "']").removeClass("disabled") ;
+        $("[data-toggle='small-dont-supp-link-" + dataId + "']").addClass("disabled");
+    }
+}
+
 $(function(){
     //if disabled class present then we don't need to let this btn or link being executed
     $("body").delegate("[class*='disabled']", "click", function(event){
-    	return false;
+        return false;
     });
+    $("[data-toggle*='small-supp-link-'], [data-toggle*='small-dont-supp-link-']")
+        .bind("ajax:success", function(evt, data, status, xhr){
+            var response = $.parseJSON(xhr.responseText);
+            changeSmallLikerState(response.vote_positive, response.target_id);
+        });
 });

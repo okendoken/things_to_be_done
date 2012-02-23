@@ -1,0 +1,16 @@
+<div class="span1 small-voter">
+  <p>
+    <%= link_to "up", support_path(target), :remote => true,
+                :'data-type' => 'json',
+                :class => 'btn support-small', :'data-toggle' => "small-supp-link-#{target.id}" %>
+  </p>
+  <p><%= link_to "down", not_support_path(target), :remote => true,
+                 :'data-type' => 'json',
+                 :class => 'btn support-small', :'data-toggle' => "small-dont-supp-link-#{target.id}" %>
+  </p>
+  <% if vote = target.user_vote(current_user) %>
+      <script type="text/javascript">
+          changeSmallLikerState(<%= vote.positive? %>, <%= target.id%>);
+      </script>
+  <% end %>
+</div>
