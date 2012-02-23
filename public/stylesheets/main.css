@@ -428,11 +428,54 @@ a:hover, a:active {
     text-align: center;
 }
 
-.support-small{
+.btn-support-small{
     height: 7px;
     width: 21px;
     font-size: 10px;
     line-height: 12px;
+}
+
+.btn-support{
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    border: none;
+}
+
+.btn-support.disabled.yes{
+    background: url("/images/up-down-30.png") no-repeat -69px 0;
+}
+
+.btn-support.disabled.yes:hover{
+    background-position: -69px 0;
+}
+
+.btn-support.yes{
+    background: url("/images/up-down-30.png") no-repeat 4px 0;
+}
+
+.btn-support.yes:hover{
+    background-position: 4px -1px;
+}
+
+.btn-support.no{
+    background: url("/images/up-down-30.png") no-repeat -32px 0;
+}
+
+.btn-support.no:hover{
+    background-position: -32px 1px;
+}
+
+.btn-support:hover{
+    padding: 0;
+}
+
+.btn-support.disabled.no{
+    background: url("/images/up-down-30.png") no-repeat -105px 0;
+}
+
+.btn-support.disabled.no:hover{
+    background-position: -105px 0;
 }
 
 .small-project-link{
