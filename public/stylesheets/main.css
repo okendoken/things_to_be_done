@@ -447,7 +447,7 @@ a:hover, a:active {
 }
 
 .btn-support.disabled.yes{
-    background: gray;/*url("/images/up-down-30.png") no-repeat -69px 0;*/
+    background: url("/images/up-down-30.png") no-repeat -69px 0;
 }
 
 .btn-support.disabled.yes:hover{
@@ -455,7 +455,7 @@ a:hover, a:active {
 }
 
 .btn-support.yes{
-    background: blue;/*url("/images/up-down-30.png") no-repeat 4px 0;*/
+    background: url("/images/up-down-30.png") no-repeat 4px 0;
 }
 
 .btn-support.yes:hover{
@@ -463,7 +463,7 @@ a:hover, a:active {
 }
 
 .btn-support.no{
-    background: red/*url("/images/up-down-30.png") no-repeat -32px 0;*/
+    background: url("/images/up-down-30.png") no-repeat -32px 0;
 }
 
 .btn-support.no:hover{
@@ -475,7 +475,7 @@ a:hover, a:active {
 }
 
 .btn-support.disabled.no{
-    background: gray;/*url("/images/up-down-30.png") no-repeat -105px 0;*/
+    background: url("/images/up-down-30.png") no-repeat -105px 0;
 }
 
 .btn-support.disabled.no:hover{
