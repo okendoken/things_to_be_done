@@ -17,6 +17,14 @@ class Task < ActiveRecord::Base
     Participation.create!(:user => user, :task => self)
   end
 
+  def participates_in_this?(user)
+    not user.nil? and Participation.where(:user_id => user.id, :task_id => self.id).exists?
+  end
+
+  def leave_this(user)
+    Participation.create!(:user => user, :task => self)
+  end
+
   def should_generate_new_friendly_id?
     new_record?
   end

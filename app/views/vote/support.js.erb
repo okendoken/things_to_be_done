@@ -1,4 +1,4 @@
-$("#supporters").html("<%= escape_javascript(render(:partial => 'partials/user_row', :collection => @target.users, :as => :user))%>");
+$("#supporters").replaceWith("<%= escape_javascript(render :partial => 'partials/supporters', :locals => {:target => @target})%>");
 $("#rating").html("<%= escape_javascript(@target.rating.to_s)%>");
 $("#vote-count").html("<%= escape_javascript(@target.votes_count.to_s)%>");
 changeLikerState(<%=@supports%>);

@@ -26,7 +26,7 @@ class VoteController < ApplicationController
         format.json{render :json => {:target_id => @target.id, :vote_positive => @supports}}
       end
     else
-      render 'vote/sign_in'
+      render 'js/sign_in'
     end
   end
 

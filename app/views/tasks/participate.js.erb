@@ -1,0 +1,4 @@
+$(".messages").prepend("<%= escape_javascript(render(:partial => 'partials/alert_info', :locals => {:message => t(:participated, :task => @task.title)}))%>");
+$("#task-status").html("<%= escape_javascript(render 'partials/you_participate')%>");
+$("#participate-button").html("");
+$("#participants").replaceWith("<%= escape_javascript(render :partial => 'partials/participants', :locals => {:task => @task})%>")

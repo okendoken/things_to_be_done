@@ -1,0 +1,3 @@
+$("#participate-button").html("<%= escape_javascript(render 'partials/participate_button')%>");
+$("#task-status").html("");
+$("#participants").replaceWith("<%= escape_javascript(render :partial => 'partials/participants', :locals => {:task => @task})%>")

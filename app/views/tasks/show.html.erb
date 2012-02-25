@@ -1,34 +1,42 @@
 <% content_for(:title) do%>
     <%= @task.project.title%> - <%= @task.title%>
 <% end %>
+<% content_for(:custom_js) do %>
+    <%= javascript_include_tag 'task-project' %>
+<% end %>
 
 <div class="row">
   <div class="span3">
     <img src="/images/avatar.jpg" class="avatar" alt="image">
   </div>
-  <div class="span7">
-    <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task.project, @task)%></div>
-    <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
-  </div>
-  <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
-  <div class="base-panel gray-background span8">
-    <%= @task.description %>
+  <div class="span9 right-content">
+    <div class="span7">
+      <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task.project, @task)%></div>
+      <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
+    </div>
+    <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
+    <% participates_in_this = @task.participates_in_this?(current_user) %>
+    <div id="task-status">
+      <% if participates_in_this %>
+          <%= render 'partials/you_participate'%>
+      <% end %>
+    </div>
+    <div class="base-panel gray-background span8">
+      <%= @task.description %>
+    </div>
+    <div id="participate-button">
+      <% unless participates_in_this %>
+          <%= render 'partials/participate_button'%>
+      <% end %>
+    </div>
   </div>
 </div>
 
+<div class="messages"></div>
+
 <div class="related-content">
 
-  <div class="group-header">
-    <%= t(:people_who_participates_in) + ' ' + @task.title %>
-  </div>
-  <div class="base-panel">
-    <%= render :partial => 'partials/user_row', :collection => @task.participants, :as => :user %>
-  </div>
+  <%= render :partial => 'partials/participants', :locals => {:task => @task} %>
 
-  <div class="group-header">
-    <%= t(:people_who_support) + ' ' + @task.title %>
-  </div>
-  <div id="supporters" class="base-panel">
-    <%= render :partial => 'partials/user_row', :collection => @task.users, :as => :user %>
-  </div>
+  <%= render :partial => 'partials/supporters', :locals => {:target => @task} %>
 </div>

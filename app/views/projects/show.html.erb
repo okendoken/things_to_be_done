@@ -6,20 +6,19 @@
   <div class="span3">
     <img src="/images/avatar.jpg" class="avatar" alt="image">
   </div>
-  <div class="span7">
-    <div class="big-cool-text"><%= link_to @project.title, @project%></div>
-    <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
-  </div>
-  <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
-  <div class="base-panel gray-background span8">
-    <%= @project.description %>
-  </div>
-  <div class="span8">
-    <div class="offset5">
-      <%= button_to t(:participate),"",:class => 'btn-large btn btn-warning' %>
+  <div class="span9 right-content">
+    <div class="span7">
+      <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+      <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+    </div>
+    <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
+    <div class="base-panel gray-background span8">
+      <%= @project.description %>
     </div>
   </div>
 </div>
+
+<div class="messages"></div>
 
 <div class="related-content">
 
@@ -30,11 +29,7 @@
     <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
   </div>
 
-  <div class="group-header">
-    <%= t(:people_who_support) + ' ' + @project.title %>
-  </div>
-  <div id="supporters" class="base-panel">
-    <%= render :partial => 'partials/user_row', :collection => @project.users, :as => :user %>
-  </div>
+
+  <%= render :partial => 'partials/supporters', :locals => {:target => @project} %>
 
 </div>

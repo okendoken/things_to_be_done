@@ -12,6 +12,9 @@ GreatWork::Application.routes.draw do
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
   match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
 
+  match ':project_id/:id/participate' => 'tasks#participate'
+  match ':project_id/:id/leave' => 'tasks#leave'
+
   resources :projects, :path => "", :except => [:index, :create ] do
     resources :tasks, :path => "", :except => [:index, :create ]
   end

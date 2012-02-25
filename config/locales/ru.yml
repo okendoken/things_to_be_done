@@ -270,3 +270,7 @@ ru:
   rating: Рейтинг
   total_votes: "Всего голосов"
   participate: "Участвовать"
+  fine: "Отлично!"
+  participated: "Теперь вы участвуете в %{task}"
+  you_participate: "Вы участвуете"
+  leave_participation: "Покинуть"

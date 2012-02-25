@@ -1,0 +1,8 @@
+<div id="supporters">
+  <div class="group-header">
+    <%= t(:people_who_support) + ' ' + target.title %>
+  </div>
+  <div class="base-panel">
+    <%= render :partial => 'partials/user_row', :collection => target.users, :as => :user %>
+  </div>
+</div>
