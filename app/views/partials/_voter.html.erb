@@ -4,10 +4,12 @@
   <%= link_to "", support_path(target), :remote => true,
               :class => 'btn btn-support yes', :id => 'supp-link' %>
   <% if vote = target.user_vote(current_user) %>
-    <script type="text/javascript">
-      changeLikerState(<%= vote.positive?%>)
-    </script>
+      <script type="text/javascript">
+          changeLikerState(<%= vote.positive?%>)
+      </script>
   <% end %>
-  <span id="rating" class="rating" title="<%= t :rating %>"><%= target.rating %></span>
-  <span id="vote-count" class="rating" title="<%= t :total_votes %>"><%= target.votes_count %></span>
+  <div>
+    <span id="rating" class="rating" title="<%= t :rating %>"><%= target.rating %></span>
+    <span id="vote-count" class="rating" title="<%= t :total_votes %>"><%= target.votes_count %></span>
+  </div>
 </div>
