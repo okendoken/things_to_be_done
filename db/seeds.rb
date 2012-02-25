@@ -16,6 +16,34 @@ t2 = Task.create!(:project => p, :user => u, :title => 'Promote TTBD',
                   :description => "Seems that TTBD will become popular by its own,
 but we have to put efforts to make it happen")
 
+t3 = Task.create!(:project => p, :user => u, :title => 'Big description',
+                  :description => "test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test test test test test test
+test test")
+
 t1.vote_for_this(u)
 t2.vote_for_this(u)
 p.vote_for_this(u)

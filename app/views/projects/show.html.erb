@@ -13,8 +13,17 @@
     </div>
     <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
     <div class="base-panel gray-background span8">
-      <%= @project.description %>
-    </div>
+          <% if @project.desc_more_than_1000? %>
+              <div class="desc-sliced">
+                <%= @project.desc_sliced_1000 %>
+                <span class="desc-extension hide"><%= @project.desc_from_1000 %></span>
+                <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
+                <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
+              </div>
+          <% else %>
+              <%= @project.description %>
+          <% end %>
+        </div>
   </div>
 </div>
 

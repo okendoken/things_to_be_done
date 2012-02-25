@@ -22,7 +22,16 @@
       <% end %>
     </div>
     <div class="base-panel gray-background span8">
-      <%= @task.description %>
+      <% if @task.desc_more_than_1000? %>
+          <div class="desc-sliced">
+            <%= @task.desc_sliced_1000 %>
+            <span class="desc-extension hide"><%= @task.desc_from_1000 %></span>
+            <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
+            <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
+          </div>
+      <% else %>
+          <%= @task.description %>
+      <% end %>
     </div>
     <div id="participate-button">
       <% unless participates_in_this %>

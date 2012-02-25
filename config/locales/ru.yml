@@ -274,3 +274,5 @@ ru:
   participated: "Теперь вы участвуете в %{task}"
   you_participate: "Вы участвуете"
   leave_participation: "Покинуть"
+  more: "Ещё"
+  close: "Свернуть"

@@ -571,3 +571,19 @@ a:hover, a:active {
 .right-content > [class*="span"]{
     margin-left: 10px;
 }
+
+.desc-extension-link{
+    margin-left: 20px;
+}
+
+.desc-sliced{
+    -moz-transition: height .5s; /* Firefox 4 */
+    -webkit-transition: height .5s; /* Safari and Chrome */
+    -o-transition: height .5s; /* Opera */
+    height: 180px;
+    overflow: hidden;
+}
+
+.desc-sliced.extended{
+    height: 100%;
+}
