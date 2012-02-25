@@ -1,12 +1,12 @@
 <div class="span1 small-voter">
   <p>
-    <%= link_to "up", support_path(target), :remote => true,
+    <%= link_to "", support_path(target), :remote => true,
                 :'data-type' => 'json',
-                :class => 'btn btn-support-small', :'data-toggle' => "small-supp-link-#{target.id}" %>
+                :class => 'btn btn-support-small yes', :'data-toggle' => "small-supp-link-#{target.id}" %>
   </p>
-  <p><%= link_to "down", not_support_path(target), :remote => true,
+  <p><%= link_to "", not_support_path(target), :remote => true,
                  :'data-type' => 'json',
-                 :class => 'btn btn-support-small', :'data-toggle' => "small-dont-supp-link-#{target.id}" %>
+                 :class => 'btn btn-support-small no', :'data-toggle' => "small-dont-supp-link-#{target.id}" %>
   </p>
   <% if vote = target.user_vote(current_user) %>
       <script type="text/javascript">
