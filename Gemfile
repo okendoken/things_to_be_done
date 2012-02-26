@@ -14,8 +14,12 @@ gem 'jquery-rails'
 gem 'sqlite3'
 gem 'devise', '>= 2.0'
 
+gem 'cancan'
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
+gem 'paperclip'
 
 gem 'rails3-jquery-autocomplete'
 

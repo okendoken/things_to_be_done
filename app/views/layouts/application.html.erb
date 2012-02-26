@@ -12,6 +12,11 @@
   <%= render 'layouts/header' %>
 </header>
 <div class="container">
+  <% if flash[:access_denied_error] %>
+    <div id="flash_error">
+      <%= flash[:access_denied_error] %>
+    </div>
+  <% end %>
   <%= yield %>
 </div>
 

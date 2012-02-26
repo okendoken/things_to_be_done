@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:access_denied_error] = "Access Denied"
+    redirect_to :controller => :user, :action => :show
+  end
+
   def set_locale
     I18n.locale = extract_locale_from_subdomain || I18n.default_locale
   end

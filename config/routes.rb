@@ -1,6 +1,8 @@
 GreatWork::Application.routes.draw do
   root :to => "home#index"
 
+  resources :user_info
+
   resources :user
 
   match 'home' => 'user#show', :as => :user_home

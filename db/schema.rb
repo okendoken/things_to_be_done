@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215220818) do
+ActiveRecord::Schema.define(:version => 20120219155357) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -73,6 +74,23 @@ ActiveRecord::Schema.define(:version => 20120215220818) do
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
   add_index "tasks", ["slug"], :name => "index_tasks_on_slug", :unique => true
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
+
+  create_table "user_infos", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "nick_name"
+    t.string   "gender"
+    t.string   "occupation"
+    t.string   "birth_date"
+    t.text     "about_myself"
+    t.integer  "user_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  # user information
+  has_one :user_info
+
   #actually for now it's has_one, but I decided to leave has_many
   #twitter, FB, VK accounts...
   has_many :authorizations
@@ -60,4 +63,7 @@ class User < ActiveRecord::Base
     self.authorizations.empty? ? self.email : self.authorizations.first.name
   end
 
+  def role?(role)
+    false
+  end
 end
