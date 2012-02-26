@@ -18,6 +18,8 @@ gem 'cancan'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'sinatra'
+gem 'omniauth-vkontakte'
 
 gem 'paperclip'
 

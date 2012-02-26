@@ -9,6 +9,7 @@ GreatWork::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     match 'users/auth/twitter/twitter_email' => 'users/omniauth_callbacks#twitter_email'
+    match 'users/auth/vkontakte/vkontakte_email' => 'users/omniauth_callbacks#vkontakte_email'
   end
 
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route

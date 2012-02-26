@@ -59,6 +59,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.find_for_vkontakte_oauth(access_token, signed_in_resource=nil)
+    data = access_token.extra.raw_info
+    if auth = Authorization.find_by_uid(access_token['uid'])
+      auth.user
+    else
+      nil
+    end
+  end
+
   def display_name
     self.authorizations.empty? ? self.email : self.authorizations.first.name
   end
