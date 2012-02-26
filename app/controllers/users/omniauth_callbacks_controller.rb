@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     access_token = request.env["omniauth.auth"]
     if @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)
       sign_in @user
-      render 'twitter_close'
+      render 'close'
     else
       session['twitter_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
                                   :secret => access_token['credentials']['secret'], :name => access_token.info.name,
@@ -25,24 +25,35 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       auth = @user.authorizations.build(session['twitter_data'])
       @user.authorizations << auth
       sign_in @user
-      render 'twitter_close'
+      render 'close'
     end
   end
-
-  #def vkontakte
-  #  access_token = request.env["omniauth.auth"]
-  #  if @user = User.find_for_vkontakte_oauth(access_token, current_user)
-  #    sign_in @user
-  #    render 'close'
-  #  else
-  #    session['vkontakte_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
-  #                                  :secret => nil, :name => access_token.info.name,
-  #                                  :provider => 'vkontakte', :link => access_token.info.urls['Vkontakte'] }
-  #  end
-  #end
 
   def failure
     #I've found it!!!!
     #see view
+  end
+
+  def vkontakte
+    access_token = request.env["omniauth.auth"]
+    if @user = User.find_for_vkontakte_oauth(access_token, current_user)
+      sign_in @user
+      render 'close'
+    else
+      session['vkontakte_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
+                                    :secret => nil, :name => access_token.info.name,
+                                    :provider => 'vkontakte', :link => access_token.info.urls['Vkontakte'] }
+    end
+  end
+
+  def vkontakte_email
+    email = request[:email]
+    unless session['vkontakte_data'].nil?
+      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20])
+      auth = @user.authorizations.build(session['vkontakte_data'])
+      @user.authorizations << auth
+      sign_in @user
+      render 'close'
+    end
   end
 end

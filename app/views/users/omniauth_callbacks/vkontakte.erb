@@ -1,0 +1,27 @@
+<% content_for :login_links do%>
+    <!-- -->
+<% end %>
+<style type="text/css">
+    .container{
+        width: 400px;
+    }
+    [class*="span"] {
+        float: left;
+        margin-left: 0px;
+    }
+    .footer-container{
+        width: 100%;
+    }
+</style>
+
+
+<div class="big-cool-text"><%= t :everything_is_ok %></div>
+<div class="big-cool-text-3 span6"><%= t :accessed_via_vkontakte %></div>
+
+<div id="vk-email">
+  <%= form_tag 'vkontakte_email', :class => 'form-inline' do %>
+      <%= label_tag :email, 'E-mail' %>
+      <%= email_field_tag :email, '', :size => 20, :class => 'span2-2' %>
+      <%= submit_tag t(:continue), :class => 'btn-primary' %>
+  <% end %>
+</div>

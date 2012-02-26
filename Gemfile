@@ -16,6 +16,8 @@ gem 'devise', '>= 2.0'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'sinatra'
+gem 'omniauth-vkontakte'
 
 gem 'rails3-jquery-autocomplete'
 

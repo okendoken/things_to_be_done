@@ -9,6 +9,9 @@
                       user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
                       :id => "fb_login", :"data-width" => 600, :"data-height" => 400 %></li>
       <li><%= link_to t(:sign_in), '', :class => "btn-success", :id => "sign-in-link" %></li>
+      <li><%= link_to 'vkontakte',
+                      user_omniauth_authorize_path(:vkontakte),
+                      :id => "vk_login", :"data-width" => 600, :"data-height" => 400 %></li>
   <% end %>
 </ul>
 
@@ -54,6 +57,10 @@
             e.stopPropagation(); return false;
         });
         $("#tw_login").click(function(e) {
+            popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
+            e.stopPropagation(); return false;
+        });
+        $("#vk_login").click(function(e) {
             popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
             e.stopPropagation(); return false;
         });

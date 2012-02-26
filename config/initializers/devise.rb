@@ -214,4 +214,8 @@ Devise.setup do |config|
 
   require "omniauth-twitter"
   config.omniauth :twitter, "aWv2mJf9n05D84ieLq4H8g", "xBGrauPr3IspBCrlFR4tC4DY3oVTD2HPnqHrmP0POSQ"
+
+  require "omniauth-vkontakte"
+  config.omniauth :vkontakte, "2815979", "mwSflDmeXANnCDwjKlv0",
+                  :client_options => {:ssl => {:ca_file => 'D:\\cacert.pem'}}
 end
