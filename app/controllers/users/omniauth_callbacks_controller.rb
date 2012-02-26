@@ -29,6 +29,18 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  #def vkontakte
+  #  access_token = request.env["omniauth.auth"]
+  #  if @user = User.find_for_vkontakte_oauth(access_token, current_user)
+  #    sign_in @user
+  #    render 'close'
+  #  else
+  #    session['vkontakte_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
+  #                                  :secret => nil, :name => access_token.info.name,
+  #                                  :provider => 'vkontakte', :link => access_token.info.urls['Vkontakte'] }
+  #  end
+  #end
+
   def failure
     #I've found it!!!!
     #see view
