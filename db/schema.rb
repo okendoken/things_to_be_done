@@ -79,9 +79,6 @@ ActiveRecord::Schema.define(:version => 20120219155357) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "nick_name"
-    t.string   "gender"
-    t.string   "occupation"
-    t.string   "birth_date"
     t.text     "about_myself"
     t.integer  "user_id"
     t.datetime "created_at",          :null => false
