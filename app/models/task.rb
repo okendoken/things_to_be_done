@@ -29,4 +29,8 @@ class Task < ActiveRecord::Base
     new_record?
   end
 
+  def users_count
+    participations.count
+  end
+
 end

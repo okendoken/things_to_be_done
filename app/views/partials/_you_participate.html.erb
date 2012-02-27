@@ -1,6 +1,13 @@
-<div class="span2 you-participate alert-success">
+<% people_count = task.users_count %>
+<% more_than_one = people_count > 1 %>
+
+<div class="<%= more_than_one ? 'span3' : 'span2' %> participators-count you-participate alert-success">
   <div>
-    <%= t :you_participate%>
+    <% if more_than_one %>
+        <%= t :you_and_many_participate, :people_count => people_count - 1%>
+    <% else %>
+        <%= t :you_participate%>
+    <% end %>
   </div>
   <div class="pull-right">
     <%= link_to t(:leave_participation), {:action => 'leave'}, :remote => true %>

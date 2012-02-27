@@ -22,7 +22,9 @@
     <% participates_in_this = @task.participates_in_this?(current_user) %>
     <div id="task-status">
       <% if participates_in_this %>
-          <%= render 'partials/you_participate'%>
+          <%= render :partial => 'partials/you_participate', :locals => {:task => @task}%>
+      <% else %>
+          <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
       <% end %>
     </div>
     <div class="base-panel gray-background span8">

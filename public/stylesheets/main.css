@@ -528,15 +528,18 @@ a:hover, a:active {
     margin: 0;
 }
 
-.you-participate{
+.participators-count{
     padding: 5px;
     margin-bottom: 5px;
-    background-color: #b8f0a3;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     text-align: center;
+}
+
+.participators-count.you-participate{
+    background-color: #b8f0a3;
     transition: height 1s;
     -moz-transition: height .5s; /* Firefox 4 */
     -webkit-transition: height .5s; /* Safari and Chrome */
@@ -545,16 +548,16 @@ a:hover, a:active {
     overflow:hidden
 }
 
-.you-participate:hover{
+.participators-count.you-participate:hover{
     height: 40px;
 }
 
-.you-participate > div:last-child{
+.participators-count.you-participate > div:last-child{
     padding: 0;
     margin-top: 3px;
 }
 
-.you-participate > div:last-child > a{
+.participators-count.you-participate > div:last-child > a{
     color: #fcfcfc;
     font-size: 12px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
