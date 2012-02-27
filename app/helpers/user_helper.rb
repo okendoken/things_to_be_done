@@ -11,6 +11,6 @@ module UserHelper
     if user_info.first_name.present? and user_info.last_name.present?
       return user_info.first_name + ' ' + user_info.last_name
     end
-    return ""
+    user.display_name
   end
 end
