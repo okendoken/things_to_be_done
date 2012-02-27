@@ -279,3 +279,6 @@ ru:
   close: "Свернуть"
   by_author: "Автор -"
   participates: "Участвует %{people_count} человек"
+  you_participate_project: "Вы участвуете в одном из %{tasks_count} заданий"
+  you_and_many_participate_project: "Вы и ещё %{people_count} человек участвуете в одном из %{tasks_count} заданий"
+  participates_project: "%{people_count} человек участвует в одном из %{tasks_count} заданий"

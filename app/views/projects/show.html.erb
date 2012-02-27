@@ -16,6 +16,14 @@
       </div>
     </div>
     <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
+    <% participates_in_this = @project.participates_in_this?(current_user) %>
+    <div id="project-status">
+      <% if participates_in_this %>
+          <%= render :partial => 'partials/you_participate_in_project', :locals => {:project => @project}%>
+      <% else %>
+          <%= render :partial => 'partials/project_participators_count', :locals => {:project => @project}%>
+      <% end %>
+    </div>
     <div class="base-panel gray-background span8">
       <% if @project.desc_more_than_1000? %>
           <div class="desc-sliced">

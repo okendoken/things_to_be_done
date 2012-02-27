@@ -1,0 +1,13 @@
+<% people_count = project.users_count %>
+<% tasks_count = project.tasks_count %>
+<% more_than_one = people_count > 1 %>
+
+<div class="<%= more_than_one ? 'span5' : 'span4' %> participators-count you-participate project alert-success">
+  <div>
+    <% if more_than_one %>
+        <%= t :you_and_many_participate_project, :tasks_count => tasks_count, :people_count => people_count - 1%>
+    <% else %>
+        <%= t :you_participate_project, :tasks_count => tasks_count%>
+    <% end %>
+  </div>
+</div>

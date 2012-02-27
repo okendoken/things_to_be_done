@@ -15,4 +15,16 @@ class Project < ActiveRecord::Base
     new_record?
   end
 
+  def participates_in_this?(user)
+    not tasks.joins(:participations).where(:'participations.user_id' => user.id).empty?
+  end
+
+  def tasks_count
+    tasks.count
+  end
+
+  def users_count
+    tasks.joins(:participations).uniq.pluck(:'participations.user_id').count
+  end
+
 end

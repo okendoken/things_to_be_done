@@ -536,6 +536,7 @@ a:hover, a:active {
     border-radius: 5px;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     text-align: center;
+    vertical-align: middle;
 }
 
 .participators-count.you-participate{
@@ -606,4 +607,8 @@ a:hover, a:active {
 .by-author > a:hover{
     text-decoration: none;
     color: #00A7FA;
+}
+
+.participators-count.you-participate.project:hover{
+    height: 20px;
 }
