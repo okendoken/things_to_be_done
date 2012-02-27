@@ -6,7 +6,6 @@ class CreateUserInfos < ActiveRecord::Migration
       t.string :nick_name
       t.text :about_myself
       t.references :user
-      t.string :avatar_url
 
       t.timestamps
     end
