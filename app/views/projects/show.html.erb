@@ -9,21 +9,25 @@
   <div class="span9 right-content">
     <div class="span7">
       <div class="big-cool-text"><%= link_to @project.title, @project%></div>
-      <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %></div>
+      <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %>
+        <span class="by-author pull-right">
+          <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
+        </span>
+      </div>
     </div>
     <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
     <div class="base-panel gray-background span8">
-          <% if @project.desc_more_than_1000? %>
-              <div class="desc-sliced">
-                <%= @project.desc_sliced_1000 %>
-                <span class="desc-extension hide"><%= @project.desc_from_1000 %></span>
-                <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
-                <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
-              </div>
-          <% else %>
-              <%= @project.description %>
-          <% end %>
-        </div>
+      <% if @project.desc_more_than_1000? %>
+          <div class="desc-sliced">
+            <%= @project.desc_sliced_1000 %>
+            <span class="desc-extension hide"><%= @project.desc_from_1000 %></span>
+            <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
+            <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
+          </div>
+      <% else %>
+          <%= @project.description %>
+      <% end %>
+    </div>
   </div>
 </div>
 

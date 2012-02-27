@@ -1,5 +1,5 @@
 <% content_for(:title) do%>
-    <%= @task.project.title%> - <%= @task.title%>
+    <%= @task.title%> - <%= @task.project.title%>
 <% end %>
 <% content_for(:custom_js) do %>
     <%= javascript_include_tag 'task-project' %>
@@ -12,7 +12,11 @@
   <div class="span9 right-content">
     <div class="span7">
       <div class="big-cool-text"><%= link_to @task.title, project_task_path(@task.project, @task)%></div>
-      <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%></div>
+      <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%>
+        <span class="by-author pull-right">
+          <%= t(:by_author) %> <%= link_to @task.user.display_name, @task.user%>
+        </span>
+      </div>
     </div>
     <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
     <% participates_in_this = @task.participates_in_this?(current_user) %>
