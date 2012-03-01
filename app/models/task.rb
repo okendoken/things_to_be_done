@@ -7,11 +7,14 @@ class Task < ActiveRecord::Base
 
   has_many :participations
   has_many :votes, :as => :target
+  has_many :votes, :as => :stuff_to_process
   has_many :users, :through => :votes, :conditions => {'votes.positive'.to_sym => true}
 
   has_many :participants, :through => :participations, :source => :user
 
   include VoteTarget
+
+  include NotificationTarget
 
   def participate_in_this(user)
     Participation.create!(:user => user, :task => self)
