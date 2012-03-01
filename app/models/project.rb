@@ -16,7 +16,7 @@ class Project < ActiveRecord::Base
   end
 
   def participates_in_this?(user)
-    not tasks.joins(:participations).where(:'participations.user_id' => user.id).empty?
+    not user.nil? and not tasks.joins(:participations).where(:'participations.user_id' => user.id).empty?
   end
 
   def tasks_count
