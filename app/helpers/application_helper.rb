@@ -8,4 +8,8 @@ module ApplicationHelper
     target.is_a?(Task) ? not_support_route_path([target.project, target]) : not_support_route_path(target)
   end
 
+  def display_vk_login?
+    I18n.locale == :ru
+  end
+
 end
