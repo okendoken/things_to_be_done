@@ -1,39 +1,30 @@
-<% name = UserHelper.nick(@user) %>
+<% name = @user.nickname %>
 
 <% if is_current_user_page? @user %>
-    Hallo <%= name %>. This is <span style="color: blue;">Your</span> page.
+    Hallo <%= name %>. This is <span style="color: #e66a28;">Your</span> page.
 <% else %>
     This is <%= name %>'s page
 <% end %>
 
 <% if can? :update, @user_info %>
     <p>
-        <%= link_to 'Edit Info', :controller => :user_info, :action => :edit, :id => @user_info.id %>
+      <%= link_to 'Edit Info', :controller => :user_info, :action => :edit, :id => @user_info.id %>
     </p>
 <% end %>
 
 <p>
   <% if @user_info.avatar.present? %>
-    <%= image_tag @user_info.avatar.url(:medium) %>
+      <%= image_tag @user_info.avatar.url(:medium) %>
   <% else %>
-    <%= image_tag("default_man.png", :alt => 'wtf') %>
+      <%= image_tag("default_man.png", :alt => 'wtf') %>
   <% end %>
 </p>
-
-<p>
-  <b>First Name:</b>
-  <%= @user_info.first_name %>
-</p>
-
-<p>
-  <b>Last Name:</b>
-  <%= @user_info.last_name %>
-</p>
-
-<p>
-  <b>About Myself:</b>
-  <%= @user_info.about_myself %>
-</p>
+<% unless @user_info.about_myself.nil? %>
+    <p>
+      <b>About <%= name %>:</b>
+      <%= @user_info.about_myself %>
+    </p>
+<% end %>
 
 <div class="related-content">
   <div class="group-header">

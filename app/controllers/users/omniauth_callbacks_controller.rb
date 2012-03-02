@@ -21,7 +21,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter_email
     email = request[:email]
     unless session['twitter_data'].nil?
-      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20])
+      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20],
+                           :nickname => session['twitter_data'].name)
       auth = @user.authorizations.build(session['twitter_data'])
       @user.authorizations << auth
       sign_in @user
@@ -49,7 +50,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte_email
     email = request[:email]
     unless session['vkontakte_data'].nil?
-      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20])
+      @user = User.create!(:email => email, :password => Devise.friendly_token[0,20],
+                           :nickname => session['vkontakte_data'].name)
       auth = @user.authorizations.build(session['vkontakte_data'])
       @user.authorizations << auth
       sign_in @user

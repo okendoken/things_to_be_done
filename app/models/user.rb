@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
       user
     else
       # Create a user with a stub password.
-      user = User.create!(:email => data.email, :password => Devise.friendly_token[0,20])
+      user = User.create!(:email => data.email, :password => Devise.friendly_token[0,20], :nickname => data.name)
       auth = user.authorizations.build(:uid => access_token['uid'], :token => access_token['credentials']['token'],
                                        :secret => nil, :name => data.name, :link => data.link, :provider => 'facebook')
       user.authorizations << auth
