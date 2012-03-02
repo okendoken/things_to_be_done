@@ -1,4 +1,4 @@
-u = User.create!(:email => 'test@example.com', :password => 'test123')
+u = User.create!(:email => 'test@example.com', :password => 'test123', :nickname => 'First User')
 problem = Problem.create!(:user => u, :title => 'There are many problems in the World',
                           :description => "If we won't make world better it'll be getting worse")
 p = Project.create!(:user => u, :title => 'Make world better',

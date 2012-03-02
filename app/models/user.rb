@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :nickname
 
   # user information
   has_one :user_info
@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
   end
 
   def display_name
-    self.authorizations.empty? ? self.email : self.authorizations.first.name
+    self.nickname
   end
 
   def role?(role)
