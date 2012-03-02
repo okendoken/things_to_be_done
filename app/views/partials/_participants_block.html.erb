@@ -1,0 +1,8 @@
+<div id="participants">
+  <div class="block-header">
+    <%= t(:participators)%> - <%= link_to t(:people, :people_count => task.participants.count), ''%>
+  </div>
+  <div class="base-block">
+    <%= render :partial => 'partials/user_row', :collection => task.participants, :as => :user %>
+  </div>
+</div>

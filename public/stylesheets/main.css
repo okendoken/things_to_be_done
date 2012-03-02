@@ -657,3 +657,23 @@ a:hover, a:active {
 .provider-links > span:first-child{
     margin-left: 0;
 }
+
+.block-header{
+    font-size: 12px;
+    color: #808080;
+    font-weight: 600;
+    text-shadow: none;
+    font-family: "Lato", "Helvetica", "Helvetica", "Arial", sans-serif;
+}
+
+.block-header > a{
+    font-weight: 500;
+}
+
+.base-block{
+    font-size: 12px;
+    color: #333;
+    padding: 6px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+}

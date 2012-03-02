@@ -283,3 +283,5 @@ ru:
   you_and_many_participate_project: "Вы и ещё %{people_count} человек участвуете в одном из %{tasks_count} заданий"
   participates_project: "%{people_count} человек участвует в одном из %{tasks_count} заданий"
   sign_up: "Создать аккаунт"
+  participators: "Участники"
+  people: "%{people_count} человека"
