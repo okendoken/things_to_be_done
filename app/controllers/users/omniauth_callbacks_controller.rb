@@ -13,7 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       render 'close'
     else
       session['twitter_data'] = { :uid => access_token['uid'], :token => access_token['credentials']['token'],
-                                  :secret => access_token['credentials']['secret'], :name => access_token.info.name,
+                                  :secret => access_token['credentials']['secret'], :name => access_token.info.nickname,
                                   :provider => 'twitter', :link => access_token.info.urls['Twitter'] }
     end
   end
@@ -22,7 +22,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     email = request[:email]
     unless session['twitter_data'].nil?
       @user = User.create!(:email => email, :password => Devise.friendly_token[0,20],
-                           :nickname => session['twitter_data'].name)
+                           :nickname => session['twitter_data'][:name])
       auth = @user.authorizations.build(session['twitter_data'])
       @user.authorizations << auth
       sign_in @user
@@ -51,7 +51,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     email = request[:email]
     unless session['vkontakte_data'].nil?
       @user = User.create!(:email => email, :password => Devise.friendly_token[0,20],
-                           :nickname => session['vkontakte_data'].name)
+                           :nickname => session['vkontakte_data'][:name])
       auth = @user.authorizations.build(session['vkontakte_data'])
       @user.authorizations << auth
       sign_in @user
