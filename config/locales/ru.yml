@@ -285,3 +285,4 @@ ru:
   sign_up: "Создать аккаунт"
   participators: "Участники"
   people: "%{people_count} человека"
+  people_page_title: "Люди"

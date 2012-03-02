@@ -676,4 +676,13 @@ a:hover, a:active {
     padding: 6px;
     border: 1px solid #DDD;
     border-radius: 3px;
+    height: 70px;
+}
+
+.user-face{
+    float: left;
+    height: 30px;
+    font-size: 11px;
+    text-align: center;
+    width: 68px;
 }

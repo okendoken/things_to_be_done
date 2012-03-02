@@ -12,6 +12,8 @@ GreatWork::Application.routes.draw do
     match 'users/auth/vkontakte/vkontakte_email' => 'users/omniauth_callbacks#vkontakte_email'
   end
 
+  match 'people' => 'user#people', :as => :people
+
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
   match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
 
