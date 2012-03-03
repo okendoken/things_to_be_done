@@ -1,0 +1,6 @@
+<% content_for(:title) do%>
+    <%= t :people_page_title%>
+<% end %>
+<div class="base-panel">
+  <%= render :partial => 'partials/user_row', :collection => @people, :as => :user %>
+</div>
