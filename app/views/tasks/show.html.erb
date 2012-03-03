@@ -33,7 +33,7 @@
           <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
       <% end %>
     </div>
-    <div class="base-panel gray-background span">
+    <div class="base-panel gray-background span8">
       <% if @task.desc_more_than_1000? %>
           <div class="desc-sliced">
             <%= @task.desc_sliced_1000 %>
@@ -52,7 +52,7 @@
     </div>
     <div class="messages"></div>
     <div class="related-content">
-
+      activity
     </div>
   </div>
 </div>

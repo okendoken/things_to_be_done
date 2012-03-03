@@ -5,6 +5,9 @@
 <div class="row">
   <div class="span3">
     <img src="/images/avatar.jpg" class="avatar" alt="image">
+    <%= render :partial => 'partials/users_block',
+               :locals => {:target => @project, :block_id => 'supporters',
+                           :users => @project.users, :title => t(:supporters)} %>
   </div>
   <div class="span9 right-content">
     <div class="span7">
@@ -36,21 +39,15 @@
           <%= @project.description %>
       <% end %>
     </div>
+    <div class="messages"></div>
+
+    <div class="related-content">
+      <div class="group-header">
+        <%= t :tasks%>
+      </div>
+      <div class="base-panel">
+        <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="messages"></div>
-
-<div class="related-content">
-
-  <div class="group-header">
-    <%= t :tasks%>
-  </div>
-  <div class="base-panel">
-    <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
-  </div>
-
-
-  <%= render :partial => 'partials/supporters', :locals => {:target => @project} %>
-
 </div>
