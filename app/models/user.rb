@@ -31,9 +31,9 @@ class User < ActiveRecord::Base
 
   #many-to-many indirect polymorphic associations
   #projects, user has voted for
-  has_many :voted_projects, :through => :votes, :source => :target, :source_type => 'Project'
+  has_many :voted_projects, :through => :votes, :source => :target, :source_type => 'Project', :conditions => {:'votes.positive' => true}
   #tasks user has voted for
-  has_many :voted_tasks, :through => :votes, :source => :target, :source_type => 'Task'
+  has_many :voted_tasks, :through => :votes, :source => :target, :source_type => 'Task', :conditions => {:'votes.positive' => true}
 
   #oauth stuff
 

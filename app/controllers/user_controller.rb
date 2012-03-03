@@ -14,9 +14,17 @@ class UserController < ApplicationController
     end
   end
 
-  def people
+  def participators
     if params[:task_id].present?
-      @people = User.joins(:tasks).where(:'participations.task_id' => params[:task_id])
+      @people = User.joins(:tasks).where(:'tasks.slug' => params[:task_id])
     end
+    render 'people'
+  end
+
+  def supporters
+    if params[:task_id].present?
+      @people = User.joins(:voted_tasks).where(:'tasks.slug' => params[:task_id])
+    end
+    render 'people'
   end
 end

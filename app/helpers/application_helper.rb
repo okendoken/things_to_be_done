@@ -12,4 +12,12 @@ module ApplicationHelper
     I18n.locale == :ru
   end
 
+  def target_users_path(target, block_id)
+    if target.is_a?(Task)
+      block_id == 'supporters' ? supporters_path([target.project, target]) : participators_path([target.project, target])
+    else
+      block_id == 'supporters' ? supporters_path(target) : participators_path(target)
+    end
+  end
+
 end

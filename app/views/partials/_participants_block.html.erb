@@ -1,9 +1,0 @@
-<div id="participants">
-  <div class="block-header">
-    <%= t(:participators)%> - <%= link_to t(:people, :people_count => task.participants.count),
-                                          people_path(:task_id => task.id)%>
-  </div>
-  <div class="base-block">
-    <%= render :partial => 'partials/user_face', :collection => task.participants.limit(6), :as => :user %>
-  </div>
-</div>

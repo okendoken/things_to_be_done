@@ -8,7 +8,12 @@
 <div class="row">
   <div class="span3">
     <img src="/images/avatar.jpg" class="avatar" alt="image">
-    <%= render :partial => 'partials/participants_block', :locals => {:task => @task} %>
+    <%= render :partial => 'partials/users_block',
+               :locals => {:target => @task, :block_id => 'participants',
+                           :users => @task.participants, :title => t(:participators)} %>
+    <%= render :partial => 'partials/users_block',
+                   :locals => {:target => @task, :block_id => 'supporters',
+                               :users => @task.users, :title => t(:supporters)} %>
   </div>
   <div class="span9 right-content">
     <div class="span7">
@@ -28,7 +33,7 @@
           <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
       <% end %>
     </div>
-    <div class="base-panel gray-background span8">
+    <div class="base-panel gray-background span">
       <% if @task.desc_more_than_1000? %>
           <div class="desc-sliced">
             <%= @task.desc_sliced_1000 %>
@@ -45,11 +50,9 @@
           <%= render 'partials/participate_button'%>
       <% end %>
     </div>
+    <div class="messages"></div>
+    <div class="related-content">
+
+    </div>
   </div>
-</div>
-
-<div class="messages"></div>
-
-<div class="related-content">
-  <%= render :partial => 'partials/supporters', :locals => {:target => @task} %>
 </div>

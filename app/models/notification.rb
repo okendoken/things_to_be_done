@@ -3,8 +3,10 @@ class Notification < ActiveRecord::Base
   belongs_to :user
   belongs_to :sender, :class_name => "User"
 
+  attr_accessible :type, :user, :read, :sender, :stuff_to_process
+
   def self.create_notification(type, sender, stuff_to_process)
-    Notification.Create(:user => stuff_to_process.user,
+    Notification.create!(:user => stuff_to_process.user,
                         :read => false,
                         :sender => sender,
                         :type => type,

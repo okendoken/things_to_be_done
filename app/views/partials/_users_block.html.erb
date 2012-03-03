@@ -1,0 +1,11 @@
+<div id="<%= block_id %>">
+  <% if users.count > 0 %>
+      <div class="block-header">
+        <%= title %> - <%= link_to t(:people, :people_count => users.count),
+                                   target_users_path(target, block_id)%>
+      </div>
+      <div class="base-block">
+        <%= render :partial => 'partials/user_face', :collection => users.limit(6), :as => :user %>
+      </div>
+  <% end %>
+</div>

@@ -1,4 +1,6 @@
 $(".messages").prepend("<%= escape_javascript(render(:partial => 'partials/alert_info', :locals => {:message => t(:participated, :task => @task.title)}))%>");
 $("#task-status").html("<%= escape_javascript(render :partial => 'partials/you_participate', :locals => {:task => @task})%>");
 $("#participate-button").html("");
-$("#participants").replaceWith("<%= escape_javascript(render :partial => 'partials/participants_block', :locals => {:task => @task})%>")
+$("#participants").replaceWith("<%= escape_javascript(render :partial => 'partials/users_block',
+                                    :locals => {:target => @task, :block_id => 'participants',
+                                    :users => @task.participants, :title => t(:participators)})%>")
