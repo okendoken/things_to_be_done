@@ -5,14 +5,14 @@
       <% if display_vk_login? %>
           <li><%= link_to 'контакте',
                           user_omniauth_authorize_path(:vkontakte), :class => "vk-login-button",
-                          :id => "vk_login", :"data-width" => 600, :"data-height" => 400 %></li>
+                          :"data-width" => 600, :"data-height" => 400 %></li>
       <% else %>
           <li><%= link_to 'twitter',
                           user_omniauth_authorize_path(:twitter), :class => "tw-login-button btn-success",
-                          :id => "tw_login", :"data-width" => 600, :"data-height" => 400 %></li>
+                          :"data-width" => 600, :"data-height" => 400 %></li>
           <li><%= link_to 'facebook',
                           user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
-                          :id => "fb_login", :"data-width" => 600, :"data-height" => 400 %></li>
+                          :"data-width" => 600, :"data-height" => 400 %></li>
       <% end %>
       <li><%= link_to t(:sign_in), '', :class => "btn-success", :id => "sign-in-link" %></li>
   <% end %>
@@ -47,11 +47,11 @@
             <span>
             <%= link_to 'facebook',
                         user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
-                        :id => "fb_login", :"data-width" => 600, :"data-height" => 400 %>
+                        :"data-width" => 600, :"data-height" => 400 %>
             </span>
             <span>
             <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button btn-success",
-                        :id => "tw_login", :"data-width" => 600, :"data-height" => 400 %>
+                        :"data-width" => 600, :"data-height" => 400 %>
             </span>
           <% end %>
         </div>
@@ -68,17 +68,17 @@
             $("#login-dialog").slideUp(230);
             return false;
         });
-        $("#fb_login").click(function (e) {
+        $(".fb-login-button").click(function (e) {
             popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
             e.stopPropagation();
             return false;
         });
-        $("#tw_login").click(function (e) {
+        $(".tw-login-button").click(function (e) {
             popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
             e.stopPropagation();
             return false;
         });
-        $("#vk_login").click(function (e) {
+        $(".vk-login-button").click(function (e) {
             popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
             e.stopPropagation();
             return false;
