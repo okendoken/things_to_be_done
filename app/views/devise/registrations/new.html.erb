@@ -1,0 +1,47 @@
+<div class="center reg-form">
+  <div class="big-cool-text"><%= t :registration %></div>
+
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+      <fieldset>
+
+        <% email_error = !resource.errors[:email].empty? %>
+        <div class="control-group <%= email_error ? 'error' : ''%>">
+          <%= f.label :email, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.email_field :email %>
+            <% if email_error %>
+                <span class="help-inline"><%= resource.errors[:email][0] %></span>
+            <% end %>
+          </div>
+        </div>
+
+        <% nickname_error = !resource.errors[:nickname].empty? %>
+        <div class="control-group <%= nickname_error ? 'warning' : ''%>">
+          <%= f.label :nickname, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.text_field :nickname %>
+            <% if nickname_error %>
+                <span class="help-inline"><%= resource.errors[:nickname][0] %></span>
+            <% end %>
+          </div>
+        </div>
+
+        <% password_error = !resource.errors[:password].empty? %>
+        <div class="control-group <%= password_error ? 'error' : ''%>">
+          <%= f.label :password, :class => 'control-label' %>
+          <div class="controls">
+            <%= f.password_field :password %>
+            <% if password_error %>
+                <span class="help-inline"><%= resource.errors[:password][0] %></span>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <%= f.submit t(:sign_up) , :class => 'btn'%>
+        </div>
+      </fieldset>
+  <% end %>
+
+  <%= render "links" %>
+</div>

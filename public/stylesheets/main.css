@@ -282,15 +282,15 @@ a:hover, a:active {
     width: 260px;
 }
 
-.controls{
+.immediate-login-controls{
     margin-top: 15px;
 }
 
-.controls > #cancel-btn{
+.immediate-login-controls > #cancel-btn{
     margin-left: 10px;
 }
 
-.controls > #submit-btn{
+.immediate-login-controls > #submit-btn{
     float:right;
     height: 28px;
 }
@@ -697,4 +697,21 @@ a:hover, a:active {
     content: "";
     clear: both;
     display: block;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reg-form{
+    width: 700px;
+}
+
+.reg-form > form{
+    margin-top: 20px;
 }
