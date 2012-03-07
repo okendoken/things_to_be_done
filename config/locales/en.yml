@@ -52,3 +52,6 @@ en:
   people: "%{people_count} people"
   people_page_title: "People"
   no_comments_yet: "Nobody commented yet"
+  all: "All"
+  comments: "Comments"
+  activities: "Activities"

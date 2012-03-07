@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+  include ProjectTaskCommon
+
   def show
     @task = Task.find(params[:id])
   end

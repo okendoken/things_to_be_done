@@ -52,14 +52,8 @@
     </div>
     <div class="messages"></div>
     <div class="related-content">
-      <div class="activity-navigation">
-        <a data-activity-nav="all" href="#all"><span class="label">All</span></a>
-        <a data-activity-nav="comments" href="#comments"><span class="label label-info">Comments</span></a>
-        <a data-activity-nav="activities" href="#activities"><span class="label label-info">Activities</span></a>
-      </div>
-      <div class="comments">
-        <%= render :partial => 'partials/comments', :locals => {:comments => @task.comments} %>
-      </div>
+      <%= render :partial => 'partials/activity', :locals => {:target => @task} %>
     </div>
+
   </div>
 </div>

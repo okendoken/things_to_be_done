@@ -20,13 +20,20 @@ module ApplicationHelper
     end
   end
 
-
   def format_date(date)
     if date > 1.day.ago
       date.strftime("%H:%M")
     else
       date.strftime("%b %d, %y")
     end
+  end
+
+  def comments_path(object)
+    object.is_a?(Task) ? comments_project_task_path(object.project, object) : comments_project_path(object)
+  end
+
+  def activities_path(object)
+    object.is_a?(Task) ? activities_project_task_path(object.project, object) : activities_project_path(object)
   end
 
 end

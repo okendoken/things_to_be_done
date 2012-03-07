@@ -1,0 +1,1 @@
+$(".activity-content").html("<%= escape_javascript(render :partial => 'partials/comments', :locals => {:comments => @target.comments})%>");

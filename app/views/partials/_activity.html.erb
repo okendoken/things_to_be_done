@@ -1,0 +1,16 @@
+<div class="activity">
+  <div class="activity-navigation">
+    <%= link_to comments_path(target), :remote => true, :title => t(:all), :'data-activity-nav' => "all" do %>
+        <span class="label"><%= t(:all) %></span>
+    <% end %>
+    <%= link_to comments_path(target), :remote => true, :title => t(:comments), :'data-activity-nav' => "comments" do %>
+        <span class="label label-info"><%= t(:comments) %></span>
+    <% end %>
+    <%= link_to activities_path(target), :remote => true, :title => t(:activities), :'data-activity-nav' => "activities" do %>
+        <span class="label label-info"><%= t(:activities) %></span>
+    <% end %>
+  </div>
+  <div class="activity-content">
+    <%= render :partial => 'partials/comments', :locals => {:comments => target.comments} %>
+  </div>
+</div>

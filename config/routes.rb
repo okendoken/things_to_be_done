@@ -22,7 +22,16 @@ GreatWork::Application.routes.draw do
   match ':project_id/:id/leave' => 'tasks#leave'
 
   resources :projects, :path => "", :except => [:index, :create ] do
-    resources :tasks, :path => "", :except => [:index, :create ]
+    member do
+      get 'comments'
+      get 'activities'
+    end
+    resources :tasks, :path => "", :except => [:index, :create ] do
+      member do
+        get 'comments'
+        get 'activities'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

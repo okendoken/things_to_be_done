@@ -1,6 +1,9 @@
 <% content_for(:title) do%>
     <%= @project.title%>
 <% end %>
+<% content_for(:custom_js) do %>
+    <%= javascript_include_tag 'task-project' %>
+<% end %>
 
 <div class="row">
   <div class="span3">
@@ -48,14 +51,7 @@
       <div class="base-panel">
         <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
       </div>
-      <div class="activity-navigation">
-        <a href="#all"><span class="label">All</span></a>
-        <a href="#comments"><span class="label label-info">Comments</span></a>
-        <a href="#activities"><span class="label label-info">Activities</span></a>
-      </div>
-      <div class="comments">
-        <%= render :partial => 'partials/comments', :locals => {:comments => @project.comments} %>
-      </div>
+      <%= render :partial => 'partials/activity', :locals => {:target => @project} %>
     </div>
   </div>
 </div>
