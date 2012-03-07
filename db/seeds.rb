@@ -53,3 +53,4 @@ t2.participate_in_this(u)
 
 Comment.create!(:target => t1, :user => u2, :text => "Really cool project! Guys it's gonna be great!")
 Comment.create!(:target => t1, :user => u, :text => "Thanks! we do it for you. We will drive it till the end. Till it becomes great. We should do it, right?")
+Comment.create!(:target => p, :user => u, :text => "Nice project. I always liked some kind of stuff you do guys. Will support you")

@@ -755,3 +755,11 @@ a:hover, a:active {
 .comment > hr{
     margin: 0.5em auto;
 }
+
+.comments-add-new{
+    width: 280px;
+}
+
+.comments-add-new input[type="submit"]{
+    float: right;
+}

@@ -29,11 +29,14 @@ module ApplicationHelper
   end
 
   def comments_path(object)
-    object.is_a?(Task) ? comments_project_task_path(object.project, object) : comments_project_path(object)
+    object.is_a?(Task) ? project_task_comments_path(object.project, object) : project_comments_path(object)
   end
 
   def activities_path(object)
     object.is_a?(Task) ? activities_project_task_path(object.project, object) : activities_project_path(object)
   end
 
+  def prepare_for_path(object)
+    object.is_a?(Task) ? [object.project, object] : [object]
+  end
 end
