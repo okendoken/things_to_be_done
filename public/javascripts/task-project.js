@@ -5,4 +5,8 @@ $(function(){
         $(".desc-extension-link").toggleClass("hide");
         return false;
     });
+    $("[data-activity-nav]").click(function(){
+        $('[data-activity-nav] > span').addClass('label-info');
+        $(this).children('span').removeClass('label-info');
+    });
 });
