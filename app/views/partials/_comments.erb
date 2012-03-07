@@ -1,15 +1,17 @@
 <% comments = target.comments %>
 <div class="comments">
-  <div class="comments-add-new">
-    <%= form_for(prepare_for_path(target) + [ target.comments.build], :remote => true) do |f| %>
-        <div>
-          <%= f.text_area :text, :class => 'input-xlarge', :rows => '1', :placeholder => t(:add_comment) %>
-        </div>
-        <div>
-          <%= f.submit t(:add),:class => 'btn hide' %>
-        </div>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+      <div class="comments-add-new">
+        <%= form_for(prepare_for_path(target) + [ target.comments.build], :remote => true) do |f| %>
+            <div>
+              <%= f.text_area :text, :class => 'input-xlarge', :rows => '1', :placeholder => t(:add_comment) %>
+            </div>
+            <div>
+              <%= f.submit t(:add),:class => 'btn hide' %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
   <div class="comments-content">
     <% if comments.count > 0%>
         <% comments.order('created_at desc').each do |comment| %>

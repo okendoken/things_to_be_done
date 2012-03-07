@@ -17,6 +17,6 @@ class CommentsController < ApplicationController
     else
       @target = Project.find params[:project_id]
     end
-    @target.comments.create(:user => current_user, :text => params[:comment][:text])
+    @target.comments.create!(:user => current_user, :text => params[:comment][:text]) if user_signed_in?
   end
 end
