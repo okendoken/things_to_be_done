@@ -1,0 +1,21 @@
+<% if comments.count > 0%>
+    <% comments.order('created_at desc').each do |comment| %>
+        <div class="comment">
+          <div class="comment-face">
+            <a href="<%= user_path(comment.user) %>">
+              <%= image_tag("user-icon-test.png") %>
+            </a>
+          </div>
+          <div class="comment-body">
+            <%= link_to comment.user.display_name, comment.user %> -
+            <%= comment.text %>
+          </div>
+          <div class="comment-date simple-gray">
+            <%= format_date comment.created_at %>
+          </div>
+          <hr/>
+        </div>
+    <% end %>
+<% else %>
+    <%= t :no_comments_yet %>
+<% end %>

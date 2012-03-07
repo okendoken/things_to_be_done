@@ -12,8 +12,8 @@
                :locals => {:target => @task, :block_id => 'participants',
                            :users => @task.participants, :title => t(:participators)} %>
     <%= render :partial => 'partials/users_block',
-                   :locals => {:target => @task, :block_id => 'supporters',
-                               :users => @task.users, :title => t(:supporters)} %>
+               :locals => {:target => @task, :block_id => 'supporters',
+                           :users => @task.users, :title => t(:supporters)} %>
   </div>
   <div class="span9 right-content">
     <div class="span7">
@@ -52,8 +52,14 @@
     </div>
     <div class="messages"></div>
     <div class="related-content">
-      task activity. what is happening with this task.
-      comments will be here, notifications of participation, etc
+      <div class="activity-navigation">
+        <a href="#all"><span class="label">All</span></a>
+        <a href="#comments"><span class="label label-info">Comments</span></a>
+        <a href="#activities"><span class="label label-info">Activities</span></a>
+      </div>
+      <div class="comments">
+        <%= render :partial => 'partials/comments', :locals => {:comments => @task.comments} %>
+      </div>
     </div>
   </div>
 </div>

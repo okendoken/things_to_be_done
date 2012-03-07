@@ -718,3 +718,40 @@ a:hover, a:active {
 .margin-vertical{
     margin: 10px 0;
 }
+
+.activity-navigation > a:hover{
+    text-decoration: none;
+}
+
+.comments{
+    margin-top: 20px;
+}
+
+.comment-face{
+    float: left;
+}
+
+.comment{
+    width: 400px;
+}
+
+.comment-body{
+    width: 370px;
+    margin-left: 40px;
+}
+.comment-date{
+    width: 370px;
+    margin-left: 40px;
+    margin-top: 3px;
+}
+
+.simple-gray{
+    color: #808080;
+    font-weight: 500;
+    text-shadow: none;
+    font-family: "Lato", "Helvetica", "Helvetica", "Arial", sans-serif;
+}
+
+.comment > hr{
+    margin: 0.5em auto;
+}

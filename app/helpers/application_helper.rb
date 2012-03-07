@@ -20,4 +20,13 @@ module ApplicationHelper
     end
   end
 
+
+  def format_date(date)
+    if date > 1.day.ago
+      date.strftime("%H:%M")
+    else
+      date.strftime("%b %d, %y")
+    end
+  end
+
 end

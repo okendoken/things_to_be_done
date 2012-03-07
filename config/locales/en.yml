@@ -51,3 +51,4 @@ en:
   participates_project: "%{people_count} people participate in one of %{tasks_count} tasks"
   people: "%{people_count} people"
   people_page_title: "People"
+  no_comments_yet: "Nobody commented yet"

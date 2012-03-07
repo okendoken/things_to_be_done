@@ -48,6 +48,14 @@
       <div class="base-panel">
         <%= render :partial => 'partials/task_row', :collection => @project.tasks, :as => :task %>
       </div>
+      <div class="activity-navigation">
+        <a href="#all"><span class="label">All</span></a>
+        <a href="#comments"><span class="label label-info">Comments</span></a>
+        <a href="#activities"><span class="label label-info">Activities</span></a>
+      </div>
+      <div class="comments">
+        <%= render :partial => 'partials/comments', :locals => {:comments => @project.comments} %>
+      </div>
     </div>
   </div>
 </div>
