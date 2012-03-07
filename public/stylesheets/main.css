@@ -760,6 +760,20 @@ a:hover, a:active {
     width: 280px;
 }
 
+.comments-add-new{
+    margin-bottom: 10px;
+}
+
 .comments-add-new input[type="submit"]{
     float: right;
+}
+
+.comments-add-new:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.comments-add-new > form{
+    margin: 0;
 }

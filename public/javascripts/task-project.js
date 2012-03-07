@@ -9,7 +9,7 @@ $(function(){
         $('[data-activity-nav] > span').addClass('label-info');
         $(this).children('span').removeClass('label-info');
     });
-    $("#comment_text").click(function(){
+    $("body").delegate("#comment_text", "click", function(){
         $("#new_comment input[type='submit']").removeClass("hide");
         $(this).attr("rows", 2);
     });
