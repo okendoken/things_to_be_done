@@ -1,6 +1,6 @@
 <% name = @user.nickname %>
 
-<% if is_current_user_page? @user %>
+<% if is_current_user_content? @user %>
     Hallo <%= name %>. This is <span style="color: #e66a28;">Your</span> page.
 <% else %>
     This is <%= name %>'s page
