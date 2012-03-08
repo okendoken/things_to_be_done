@@ -34,4 +34,10 @@ $(function(){
             var response = $.parseJSON(xhr.responseText);
             changeSmallLikerState(response.vote_positive, response.target_id);
         });
+    $(document).click(function(e) {
+        //maybe better solution exists?
+        if ($(e.target).closest('#login-dialog').length === 0) {
+            $("#login-dialog").slideUp(230);
+        }
+    });
 });

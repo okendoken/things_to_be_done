@@ -312,7 +312,7 @@ a:hover, a:active {
     color: white;
 }
 
-.fb-login-button:hover{
+.nav > li > .fb-login-button:hover, .fb-login-button:hover{
     background: #29447E url("/images/fb-btn.png") 0 -162px no-repeat ;
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #ffffff;
@@ -337,7 +337,7 @@ a:hover, a:active {
     color: #4D4D4D;
 }
 
-.tw-login-button:hover{
+.nav > li > .tw-login-button:hover, .tw-login-button:hover{
     background: #ecf2f6 url("/images/bird_32_blue.png") 1px -4px no-repeat ;
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #4D4D4D;
@@ -612,7 +612,7 @@ a:hover, a:active {
     height: 20px;
 }
 
-.vk-login-button:hover{
+.nav > li > .vk-login-button:hover, .vk-login-button:hover{
     border-color: #92ACC7 #7293B7 #7293B7;
     background-color: #84A1BF;
     color: #ffffff;

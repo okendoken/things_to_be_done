@@ -6,19 +6,6 @@
     This is <%= name %>'s page
 <% end %>
 
-<% if can? :update, @user_info %>
-    <p>
-      <%= link_to 'Edit Info', :controller => :user_info, :action => :edit, :id => @user_info.id %>
-    </p>
-<% end %>
-
-<p>
-  <% if @user_info.avatar.present? %>
-      <%= image_tag @user_info.avatar.url(:medium) %>
-  <% else %>
-      <%= image_tag("default_man.png", :alt => 'wtf') %>
-  <% end %>
-</p>
 <% unless @user_info.about_myself.nil? %>
     <p>
       <b>About <%= name %>:</b>
