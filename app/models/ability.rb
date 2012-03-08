@@ -8,6 +8,7 @@ class Ability
       user_info.try(:user) == user
     end
     can :destroy, Comment do |comment|
+      #todo user creator of project/task can delete comments? think about it
       comment.user == user or comment.target.user == user
     end
   end
