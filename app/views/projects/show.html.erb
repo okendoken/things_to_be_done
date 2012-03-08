@@ -31,6 +31,12 @@
             <%= render :partial => 'partials/project_participators_count', :locals => {:project => @project}%>
         <% end %>
       </div>
+      <% if can? :manage, @project %>
+          <a class="pull-right btn btn-small btn-manage" data-display="manage" href="#">
+            <i class="icon-cog"></i>
+            Manage
+          </a>
+      <% end %>
       <div class="base-panel gray-background span description">
         <% if @project.desc_more_than_1000? %>
             <div class="desc-sliced">
@@ -44,6 +50,7 @@
         <% end %>
       </div>
       <div class="messages"></div>
+      <div class="manage-dialog">test</div>
     </div>
     <div class="related-content">
       <div class="group-header">

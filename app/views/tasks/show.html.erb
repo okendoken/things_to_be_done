@@ -34,10 +34,12 @@
             <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
         <% end %>
       </div>
-      <a class="btn btn-small pull-right" href="#">
-        <i class="icon-cog"></i>
-        Admin
-      </a>
+      <% if can? :manage, @task %>
+          <a class="btn btn-small pull-right btn-manage" data-display="manage" href="#">
+            <i class="icon-cog"></i>
+            Manage
+          </a>
+      <% end %>
       <div class="base-panel gray-background span">
         <% if @task.desc_more_than_1000? %>
             <div class="desc-sliced">
@@ -56,6 +58,7 @@
         <% end %>
       </div>
       <div class="messages"></div>
+
     </div>
     <div class="related-content">
       <%= render :partial => 'partials/activity', :locals => {:target => @task} %>
