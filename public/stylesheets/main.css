@@ -777,3 +777,7 @@ a:hover, a:active {
 .comments-add-new > form{
     margin: 0;
 }
+
+[class*='-login-button']{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
