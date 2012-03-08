@@ -10,6 +10,6 @@
     <% end %>
   </div>
   <div class="pull-right">
-    <%= link_to t(:leave_participation), {:action => 'leave'}, :remote => true %>
+    <%= link_to t(:leave_participation), {:action => 'leave'}, :remote => true, :confirm => t(:are_you_sure) %>
   </div>
 </div>

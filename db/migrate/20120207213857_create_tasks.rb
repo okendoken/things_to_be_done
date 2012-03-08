@@ -3,6 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :title
       t.text :description
+      t.integer :status, :null => false, :default => TASK_STATUS[:in_progress]
       t.references :user
       t.references :project
 

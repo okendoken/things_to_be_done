@@ -785,3 +785,21 @@ a:hover, a:active {
 .comments-add-new textarea{
     overflow: hidden;
 }
+
+.main-content > [class*='span']{
+    margin-left: 10px;
+}
+
+.status:before{
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.description{
+    width: 668px;
+}
+
+.btn-admin{
+
+}

@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
   create_table "tasks", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "status",      :default => 1, :null => false
     t.integer  "user_id"
     t.integer  "project_id"
     t.datetime "created_at",  :null => false
