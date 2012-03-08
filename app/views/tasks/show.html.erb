@@ -25,8 +25,6 @@
         </span>
         </div>
       </div>
-      <a class="btn btn-small btn-admin" href="#">
-      </a>
       <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
       <% participates_in_this = @task.participates_in_this?(current_user) %>
       <div id="task-status" class="status">
@@ -36,6 +34,10 @@
             <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
         <% end %>
       </div>
+      <a class="btn btn-small pull-right" href="#">
+        <i class="icon-cog"></i>
+        Admin
+      </a>
       <div class="base-panel gray-background span">
         <% if @task.desc_more_than_1000? %>
             <div class="desc-sliced">

@@ -528,7 +528,7 @@ a:hover, a:active {
 }
 
 .participators-count{
-    padding: 5px;
+    padding: 2px;
     margin-bottom: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -536,6 +536,9 @@ a:hover, a:active {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     text-align: center;
     vertical-align: middle;
+    border-color: #cccccc;
+    color: #808080;
+    background: #FAFAFA;
 }
 
 .participators-count.you-participate{
@@ -545,7 +548,8 @@ a:hover, a:active {
     -webkit-transition: height .5s; /* Safari and Chrome */
     -o-transition: height .5s; /* Opera */
     height: 20px;
-    overflow:hidden
+    overflow:hidden;
+    color: #468847;
 }
 
 .participators-count.you-participate:hover{
@@ -555,6 +559,7 @@ a:hover, a:active {
 .participators-count.you-participate > div:last-child{
     padding: 0;
     margin-top: 3px;
+    margin-right: 3px;
 }
 
 .participators-count.you-participate > div:last-child > a{
@@ -610,6 +615,10 @@ a:hover, a:active {
 
 .participators-count.you-participate.project:hover{
     height: 20px;
+}
+
+.participators-count.you-participate.project > div:last-child{
+    margin: 0;
 }
 
 .nav > li > .vk-login-button:hover, .vk-login-button:hover{
@@ -786,7 +795,7 @@ a:hover, a:active {
     overflow: hidden;
 }
 
-.main-content > [class*='span']{
+.main-content [class*='span']{
     margin-left: 10px;
 }
 
