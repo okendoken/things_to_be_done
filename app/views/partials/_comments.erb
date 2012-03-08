@@ -16,8 +16,9 @@
     <% if comments.count > 0%>
         <% comments.order('created_at desc').each do |comment| %>
             <div class="comment">
-              <% if is_current_user_content? comment.user %>
-                  <a class="close">&times;</a>
+              <% if can? :destroy, comment %>
+                  <%= link_to '×', prepare_for_path(target) + [comment], :remote => true,
+                              :method => :delete, :class => 'close' %>
               <% end %>
               <div class="comment-face">
                 <a href="<%= user_path(comment.user) %>">

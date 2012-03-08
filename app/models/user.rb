@@ -74,8 +74,4 @@ class User < ActiveRecord::Base
   def display_name
     self.nickname
   end
-
-  def role?(role)
-    false
-  end
 end

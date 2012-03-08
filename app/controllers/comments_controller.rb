@@ -19,4 +19,16 @@ class CommentsController < ApplicationController
     end
     @target.comments.create!(:user => current_user, :text => params[:comment][:text]) if user_signed_in?
   end
+
+  def destroy
+    comment = Comment.find params[:id]
+    if can? :destroy, comment
+      comment.destroy
+    end
+    @target = comment.target
+    respond_to do |format|
+      format.js {render 'common/comments'}
+      format.html {render 'common/comments'}
+    end
+  end
 end

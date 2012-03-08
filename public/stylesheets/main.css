@@ -781,3 +781,7 @@ a:hover, a:active {
 [class*='-login-button']{
     font-family: Verdana, Helvetica, Arial, sans-serif;
 }
+
+.comments-add-new textarea{
+    overflow: hidden;
+}
