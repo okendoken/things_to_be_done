@@ -36,6 +36,16 @@
             <i class="icon-cog"></i>
             Manage
           </a>
+          <div class="manage-dialog hide">
+            <div class="popover bottom">
+              <div class="arrow"></div>
+              <div class="popover-inner">
+                <div class="popover-content">
+                  <p>content</p>
+                </div>
+              </div>
+            </div>
+          </div>
       <% end %>
       <div class="base-panel gray-background span description">
         <% if @project.desc_more_than_1000? %>
@@ -50,7 +60,6 @@
         <% end %>
       </div>
       <div class="messages"></div>
-      <div class="manage-dialog">test</div>
     </div>
     <div class="related-content">
       <div class="group-header">
