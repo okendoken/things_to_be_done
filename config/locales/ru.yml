@@ -296,3 +296,7 @@ ru:
   add_comment: "Написать что-нибудь"
   add: "Добавить"
   are_you_sure: "Уверены?"
+  manage: "Управление"
+  complete: "Завершить"
+  complete_explanation: "Пометить задание как успешно завершенное"
+  to_cancel: "Отменить"

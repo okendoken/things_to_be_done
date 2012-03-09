@@ -32,10 +32,7 @@
         <% end %>
       </div>
       <% if can? :manage, @project %>
-          <a class="pull-right btn btn-small btn-manage" data-display="manage" href="#">
-            <i class="icon-cog"></i>
-            Manage
-          </a>
+          <%= render :partial => 'partials/manage', :locals => {:target => @project} %>
       <% end %>
       <div class="base-panel gray-background span description">
         <% if @project.desc_more_than_1000? %>
