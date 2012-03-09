@@ -7,13 +7,14 @@
     <div class="arrow"></div>
     <div class="popover-inner">
       <div class="popover-content">
-        <p>
-          <%= link_to t(:complete), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn-success' %>
-        </p>
-        <p>
-          <%= link_to t(:to_cancel), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn-danger btn-mini' %>
-          <%= link_to t(:to_cancel), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn btn-warning' %>
-        </p>
+        <%= link_to t(:complete), :remote => true, :title => t(:complete_explanation), :class => 'btn' do %>
+            <i class="icon-ok"></i>
+
+        <% end %>
+        <%= link_to t(:complete), :remote => true, :title => t(:complete_explanation), :class => 'btn btn-inverse' do %>
+            <i class="icon-remove icon-white"></i>
+
+        <% end %>
       </div>
     </div>
   </div>
