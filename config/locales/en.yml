@@ -58,3 +58,6 @@ en:
   add_comment: "Write something"
   add: "Add"
   are_you_sure: "Really sure?"
+  manage: "Manage"
+  complete_explanation: "Mark task as successfully completed"
+  to_cancel: "Cancel"

@@ -35,10 +35,7 @@
         <% end %>
       </div>
       <% if can? :manage, @task %>
-          <a class="btn btn-small pull-right btn-manage" data-display="manage" href="#">
-            <i class="icon-cog"></i>
-            Manage
-          </a>
+          <%= render :partial => 'partials/manage', :locals => {:target => @task} %>
       <% end %>
       <div class="base-panel gray-background span">
         <% if @task.desc_more_than_1000? %>

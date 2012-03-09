@@ -1,0 +1,20 @@
+<a class="pull-right btn btn-small btn-manage" data-display="manage" href="#">
+  <i class="icon-cog"></i>
+  <%= t :manage %>
+</a>
+<div class="manage-dialog hide">
+  <div class="popover bottom">
+    <div class="arrow"></div>
+    <div class="popover-inner">
+      <div class="popover-content">
+        <p>
+          <%= link_to t(:complete), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn-success' %>
+        </p>
+        <p>
+          <%= link_to t(:to_cancel), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn-danger btn-mini' %>
+          <%= link_to t(:to_cancel), '#', :remote => true, :title => t(:complete_explanation), :class => 'btn btn-warning' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
