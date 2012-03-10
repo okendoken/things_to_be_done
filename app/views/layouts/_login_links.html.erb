@@ -1,5 +1,6 @@
 <ul class="nav">
   <% if user_signed_in? %>
+      <li><%= link_to :Notifications, notifications_path, :class => "btn" %></li>
       <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-success" %></li>
   <% else %>
       <% if display_vk_login? %>

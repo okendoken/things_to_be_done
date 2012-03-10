@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
     t.integer  "status",      :default => 1, :null => false
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "slug"
   end
 
