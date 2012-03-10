@@ -1,7 +1,11 @@
 class RelatedEvent < ActiveRecord::Base
+  include EventEnvironment
+
   belongs_to :readable, :polymorphic => true
   belongs_to :reader, :polymorphic => true
   belongs_to :user
+
+  validates :type, :presence => true
 
   attr_accessible :type, :read, :readable, :reader, :user
 

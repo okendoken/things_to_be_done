@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
   extend FriendlyId
+  include VoteTarget
+  include EventEnvironment
   friendly_id :title, :use => :slugged
 
   belongs_to :user
@@ -10,27 +12,29 @@ class Task < ActiveRecord::Base
   has_many :comments, :as => :target
   has_many :users, :through => :votes, :conditions => {:'votes.positive' => true}
 
-  has_many :participants, :through => :participations, :source => :user
+  has_many :participants, :through => :participations, :source => :user,
+           :conditions => {:'participations.status' => PARTICIPATION_STATUS[:in_progress]}
 
   has_many :related_events, :as => :reader
 
-  include VoteTarget
-
   def participate_in_this(user)
     raise 'Not logged in' if user.nil?
-    unless self.participates_in_this?(user)
-      participation = Participation.create!(:user => user, :task => self)
-      RelatedEvent.notify_all(participation, :added, user)
-    end
+    participation = Participation.where(:user_id => user.id, :task_id => self.id)[0] || Participation.new(:user => user, :task => self)
+    participation.status = PARTICIPATION_STATUS[:in_progress]
+    participation.save
+    RelatedEvent.notify_all(participation, :added, user)
   end
 
   def participates_in_this?(user)
-    not user.nil? and Participation.where(:user_id => user.id, :task_id => self.id).exists?
+    not user.nil? and Participation.where(:user_id => user.id, :task_id => self.id,
+                                          :status => PARTICIPATION_STATUS[:in_progress]).exists?
   end
 
   def leave_this(user)
     if part = Participation.where(:user_id => user.id, :task_id => self.id)[0]
-      part.destroy
+      part.status = PARTICIPATION_STATUS[:canceled]
+      part.save
+      RelatedEvent.notify_all(part, :canceled, user)
     end
   end
 
@@ -39,7 +43,7 @@ class Task < ActiveRecord::Base
   end
 
   def users_count
-    participations.count
+    participants.count
   end
 
 end
