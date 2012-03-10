@@ -1,6 +1,6 @@
 <div class="activity">
   <div class="activity-navigation">
-    <%= link_to comments_path(target), :remote => true, :title => t(:all), :'data-activity-nav' => "all" do %>
+    <%= link_to all_news_path(target), :remote => true, :title => t(:all), :'data-activity-nav' => "all" do %>
         <span class="label"><%= t(:all) %></span>
     <% end %>
     <%= link_to comments_path(target), :remote => true, :title => t(:comments), :'data-activity-nav' => "comments" do %>
@@ -11,6 +11,6 @@
     <% end %>
   </div>
   <div class="activity-content">
-    <%= render :partial => 'partials/comments', :locals => {:target => target} %>
+    <%= render :partial => 'partials/all_news', :locals => {:target => target} %>
   </div>
 </div>

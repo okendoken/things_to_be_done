@@ -25,11 +25,13 @@ GreatWork::Application.routes.draw do
     resources :comments, :only => [:index, :create, :destroy]
     member do
       get 'activities'
+      get 'news'
     end
     resources :tasks, :path => "", :except => [:index, :create ] do
       resources :comments, :only => [:index, :create, :destroy]
       member do
         get 'activities'
+        get 'news'
       end
     end
   end

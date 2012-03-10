@@ -17,4 +17,8 @@ class RelatedEvent < ActiveRecord::Base
     end
   end
 
+  def news_template
+    clazz = self.readable.class.name.downcase.to_sym
+    NEWS_TEMPLATES[clazz][DB_EVENT_TYPES[clazz].key(self.e_type)]
+  end
 end
