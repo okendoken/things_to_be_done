@@ -16,6 +16,11 @@ module EventEnvironment
           :added => Proc.new{|participation| [participation.task, participation.task.user]},
           :completed => Proc.new{|participation| [participation.task, participation.task.user]},
           :canceled => Proc.new{|participation| [participation.task, participation.task.user]}
+      },
+      :vote => {
+          #notify only creator
+          true => Proc.new{|vote| [vote.target.user]},
+          false => Proc.new{|vote| [vote.target.user]}
       }
   }
 
@@ -24,7 +29,12 @@ module EventEnvironment
           :completed => 0, :canceled => 1
       },
       :participation => {
-              :added => 10, :completed => 11, :canceled => 12
+          :added => 10, :completed => 11, :canceled => 12
+      },
+      :vote => {
+          #notify only creator
+          true => 20,
+          false => 21
       }
   }
 

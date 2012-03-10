@@ -1,7 +1,16 @@
 module VoteTarget
 
   def vote_for_this(user, positive = true)
-    Vote.create!(:positive => positive, :user => user, :target => self)
+    if vote = self.user_vote(user)
+      if positive ^ vote.positive?
+        vote.positive = positive
+        vote.save
+      end
+    else
+      vote = Vote.create!(:positive => positive, :user => user, :target => self)
+    end
+    RelatedEvent.notify_all(vote, positive, user)
+    vote
   end
 
   def desc_short

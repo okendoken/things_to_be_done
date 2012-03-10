@@ -14,11 +14,13 @@ class VoteController < ApplicationController
     if user_signed_in?
       if params[:task_id].present?
         task = Task.find(params[:task_id])
-        vote_for_task(task, positive)
+        vote = task.vote_for_this(current_user, positive)
+        @supports = vote.positive?
         @target = task
       elsif params[:project_id].present?
         project = Project.find(params[:project_id])
-        vote_for_project(project, positive)
+        vote = project.vote_for_this(current_user, positive)
+        @supports = vote.positive?
         @target = project
       end
       respond_to do |format|
@@ -28,29 +30,5 @@ class VoteController < ApplicationController
     else
       render 'js/sign_in'
     end
-  end
-
-  def vote_for_project(project, positive = true)
-    if vote = project.user_vote(current_user)
-      if positive ^ vote.positive?
-        vote.positive = positive
-        vote.save
-      end
-    else
-      vote = project.vote_for_this(current_user, positive)
-    end
-    @supports = vote.positive?
-  end
-
-  def vote_for_task(task, positive = true)
-    if vote = task.user_vote(current_user)
-      if positive ^ vote.positive?
-        vote.positive = positive
-        vote.save
-      end
-    else
-      vote = task.vote_for_this(current_user, positive)
-    end
-    @supports = vote.positive?
   end
 end
