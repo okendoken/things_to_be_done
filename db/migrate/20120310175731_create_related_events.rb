@@ -1,7 +1,7 @@
 class CreateRelatedEvents < ActiveRecord::Migration
   def change
     create_table :related_events do |t|
-      t.integer :type
+      t.integer :e_type
       t.boolean :read
       t.references :readable, :polymorphic => true
       t.references :reader, :polymorphic => true

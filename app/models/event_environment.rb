@@ -1,8 +1,6 @@
 module EventEnvironment
-  TASK_STATUS = {:in_progress => 1, :completed => 2, :canceled => 3}
-  PARTICIPATION_STATUS = {:in_progress => 1, :completed => 2, :canceled => 3}
-
   #what guys should be notified when something happened
+  # format stuff_to_process/event_type
   EVENT_READERS = {
       #task-related events
       :task => {
@@ -38,6 +36,10 @@ module EventEnvironment
       }
   }
 
-  NEWS_TEMPLATES = {:project => {:join => 'test.html', :another => 'adc.html'}}
+  NEWS_TEMPLATES = {
+        :participation => {
+            :added => 'partials/news/participation'
+        }
+    }
   NOTIFICATIONS_TEMPLATES = {:project => {:join => 'notigication_test.html', :another => 'adc.html'}}
 end

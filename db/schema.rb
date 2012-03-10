@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20120310201305) do
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "related_events", :force => true do |t|
-    t.integer  "type"
+    t.integer  "e_type"
     t.boolean  "read"
     t.integer  "readable_id"
     t.string   "readable_type"
