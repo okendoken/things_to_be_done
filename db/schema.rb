@@ -40,22 +40,6 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
   add_index "comments", ["target_type"], :name => "index_comments_on_target_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
-  create_table "notifications", :force => true do |t|
-    t.string   "type"
-    t.boolean  "read"
-    t.integer  "stuff_to_process_id"
-    t.string   "stuff_to_process_type"
-    t.integer  "user_id"
-    t.integer  "sender_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-  end
-
-  add_index "notifications", ["sender_id"], :name => "index_notifications_on_sender_id"
-  add_index "notifications", ["stuff_to_process_id"], :name => "index_notifications_on_stuff_to_process_id"
-  add_index "notifications", ["stuff_to_process_type"], :name => "index_notifications_on_stuff_to_process_type"
-  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
-
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
     t.integer  "user_id"
@@ -96,8 +80,8 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
     t.integer  "status",      :default => 1, :null => false
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "slug"
   end
 

@@ -23,8 +23,6 @@ class User < ActiveRecord::Base
   has_many :created_tasks, :class_name => 'Task'
   #user votes
   has_many :votes
-  #user notifications
-  has_many :notifications
   #user participations. for now it's pseudo model to provide many-to-many association.
   #Daniel said "We are going to control everything!!!"
   has_many :participations
