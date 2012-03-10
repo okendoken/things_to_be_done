@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304125913) do
+ActiveRecord::Schema.define(:version => 20120310175731) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -73,6 +73,24 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
   add_index "projects", ["problem_id"], :name => "index_projects_on_problem_id"
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "related_events", :force => true do |t|
+    t.integer  "type"
+    t.boolean  "read"
+    t.integer  "readable_id"
+    t.string   "readable_type"
+    t.integer  "reader_id"
+    t.string   "reader_type"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "related_events", ["readable_id"], :name => "index_related_events_on_readable_id"
+  add_index "related_events", ["readable_type"], :name => "index_related_events_on_readable_type"
+  add_index "related_events", ["reader_id"], :name => "index_related_events_on_reader_id"
+  add_index "related_events", ["reader_type"], :name => "index_related_events_on_reader_type"
+  add_index "related_events", ["user_id"], :name => "index_related_events_on_user_id"
 
   create_table "tasks", :force => true do |t|
     t.string   "title"

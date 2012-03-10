@@ -8,14 +8,20 @@ class Task < ActiveRecord::Base
   has_many :participations
   has_many :votes, :as => :target
   has_many :comments, :as => :target
-  has_many :users, :through => :votes, :conditions => {'votes.positive'.to_sym => true}
+  has_many :users, :through => :votes, :conditions => {:'votes.positive' => true}
 
   has_many :participants, :through => :participations, :source => :user
+
+  has_many :related_events, :as => :reader
 
   include VoteTarget
 
   def participate_in_this(user)
-    Participation.create!(:user => user, :task => self)
+    raise 'Not logged in' if user.nil?
+    unless self.participates_in_this?(user)
+      participation = Participation.create!(:user => user, :task => self)
+      RelatedEvent.notify_all(participation, :added, user)
+    end
   end
 
   def participates_in_this?(user)
@@ -23,7 +29,9 @@ class Task < ActiveRecord::Base
   end
 
   def leave_this(user)
-    Participation.create!(:user => user, :task => self)
+    if part = Participation.where(:user_id => user.id, :task_id => self.id)[0]
+      part.destroy
+    end
   end
 
   def should_generate_new_friendly_id?

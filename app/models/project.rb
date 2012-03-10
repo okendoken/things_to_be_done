@@ -10,6 +10,8 @@ class Project < ActiveRecord::Base
   has_many :users, :through => :votes, :conditions => {:'votes.positive' => true}
   has_many :tasks
 
+  has_many :related_events, :as => :reader
+
   include VoteTarget
 
   def should_generate_new_friendly_id?

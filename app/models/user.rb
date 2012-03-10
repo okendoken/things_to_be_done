@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
   #tasks user has voted for
   has_many :voted_tasks, :through => :votes, :source => :target, :source_type => 'Task', :conditions => {:'votes.positive' => true}
 
+  #events user need to handle
+  has_many :related_events, :as => :reader
+  #events user created
+  has_many :created_related_events, :class_name => 'RelatedEvent'
+
   #oauth stuff
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
