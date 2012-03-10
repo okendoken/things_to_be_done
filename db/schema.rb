@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310175731) do
+ActiveRecord::Schema.define(:version => 20120310201305) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(:version => 20120310175731) do
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "status",     :default => 1, :null => false
   end
 
   add_index "participations", ["task_id"], :name => "index_participations_on_task_id"
