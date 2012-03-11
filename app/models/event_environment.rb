@@ -11,9 +11,9 @@ module EventEnvironment
       },
       :participation => {
           #somebody participated. notify parent-task, task-author
-          :added => Proc.new{|participation| [participation.task, participation.task.user]},
-          :completed => Proc.new{|participation| [participation.task, participation.task.user]},
-          :canceled => Proc.new{|participation| [participation.task, participation.task.user]}
+          :added => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]},
+          :completed => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]},
+          :canceled => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]}
       },
       :vote => {
           #notify only creator
