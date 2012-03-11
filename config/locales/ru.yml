@@ -300,3 +300,4 @@ ru:
   complete: "Завершить"
   complete_explanation: "Пометить задание как успешно завершенное"
   to_cancel: "Отменить"
+  no_activity_yet: "Пока нет активности"

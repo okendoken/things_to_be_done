@@ -62,3 +62,4 @@ en:
   complete_explanation: "Mark task as successfully completed"
   to_cancel: "Cancel"
   complete: "Complete"
+  no_activity_yet: "No activity yet"

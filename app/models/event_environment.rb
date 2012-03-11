@@ -1,6 +1,6 @@
 module EventEnvironment
   #what guys should be notified when something happened
-  # format stuff_to_process/event_type
+  # format: stuff_to_process/event_type
   EVENT_READERS = {
       #task-related events
       :task => {

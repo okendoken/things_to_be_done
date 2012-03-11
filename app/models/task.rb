@@ -2,6 +2,7 @@ class Task < ActiveRecord::Base
   extend FriendlyId
   include VoteTarget
   include EventEnvironment
+  include Readable
   friendly_id :title, :use => :slugged
 
   belongs_to :user
@@ -16,6 +17,8 @@ class Task < ActiveRecord::Base
            :conditions => {:'participations.status' => PARTICIPATION_STATUS[:in_progress]}
 
   has_many :related_events, :as => :reader
+
+  before_destroy :destroy_events
 
   def participate_in_this(user)
     raise 'Not logged in' if user.nil?
