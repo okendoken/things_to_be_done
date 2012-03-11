@@ -4,16 +4,21 @@
                   :method => :delete, :class => 'close' %>
   <% end %>
   <div class="comment-face">
-    <a href="<%= user_path(comment.user) %>">
-      <%= image_tag("user-icon-test.png") %>
-    </a>
+    <div>
+      <a href="<%= user_path(comment.user) %>">
+        <%= image_tag("user-icon-test.png") %>
+      </a>
+    </div>
   </div>
   <div class="comment-body">
     <%= link_to comment.user.display_name, comment.user %> -
     <%= comment.text %>
   </div>
-  <div class="comment-date simple-gray">
+  <div class="comment-info simple-gray">
+    <i class="icon-comment icon-dark-gray"></i>
     <%= format_date comment.created_at %>
+    <div class="news-single-actions">
+    </div>
   </div>
   <hr/>
 </div>

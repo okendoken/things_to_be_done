@@ -1,1 +1,21 @@
-user participated
+<div class="news-single">
+  <div class="news-single-face">
+    <div>
+      <a href="<%= user_path(event.user) %>">
+        <%= image_tag("user-icon-test.png") %>
+      </a>
+    </div>
+  </div>
+  <div class="news-single-body">
+    <%= link_to event.readable.user.display_name, event.readable.user %>
+    <%= t symbol_event_type(event) == :added ? :joined : :left %>
+    <%= link_to event.readable.task.title, [event.readable.task.project, event.readable.task] %>
+  </div>
+  <div class="news-single-info simple-gray">
+    <i class="<%= symbol_event_type(event) == :added ? 'icon-plus' : 'icon-minus' %> icon-dark-gray"></i>
+    <%= format_date event.created_at %>
+    <div class="news-single-actions">
+    </div>
+  </div>
+  <hr/>
+</div>

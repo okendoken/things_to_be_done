@@ -63,3 +63,6 @@ en:
   to_cancel: "Cancel"
   complete: "Complete"
   no_activity_yet: "No activity yet"
+  new_user_in: "New user joined"
+  joined: "has joined"
+  left: "has left"

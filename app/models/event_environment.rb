@@ -44,7 +44,8 @@ module EventEnvironment
 
   NEWS_TEMPLATES = {
       :participation => {
-          :added => 'partials/news/participation'
+          :added => 'partials/news/participation',
+          :canceled => 'partials/news/participation'
       },
       :vote => {
           #notify only creator
