@@ -19,6 +19,9 @@ module EventEnvironment
           #notify only creator
           true => Proc.new{|vote| [vote.target.user]},
           false => Proc.new{|vote| [vote.target.user]}
+      },
+      :comment => {
+          :added => Proc.new{|comment| [comment.target, comment.target.user]}
       }
   }
 
@@ -33,6 +36,9 @@ module EventEnvironment
           #notify only creator
           true => 20,
           false => 21
+      },
+      :comment => {
+          :added => 30
       }
   }
 
@@ -44,6 +50,9 @@ module EventEnvironment
           #notify only creator
           true => 'partials/news/vote',
           false => 'partials/news/vote'
+      },
+      :comment => {
+          :added => 'partials/news/comment'
       }
   }
   NOTIFICATIONS_TEMPLATES = {:project => {:join => 'notigication_test.html', :another => 'adc.html'}}
