@@ -48,6 +48,6 @@ module ApplicationHelper
 
   def symbol_event_type(event)
     clazz = event.readable.class.name.downcase.to_sym
-    DB_EVENT_TYPES[clazz].key(event.e_type)
+    DB_EVENT_TYPES[clazz].index(event.e_type)
   end
 end
