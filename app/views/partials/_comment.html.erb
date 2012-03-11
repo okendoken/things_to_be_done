@@ -1,7 +1,8 @@
+<% state ||= nil %>
 <div class="comment">
   <% if can? :destroy, comment %>
-      <%= link_to '×', prepare_for_path(comment.target) + [comment], :remote => true,
-                  :method => :delete, :class => 'close' %>
+      <%= link_to '×', url_for(prepare_for_path(comment.target) + [comment]), :remote => true,
+                  :method => :delete, :class => 'close', :'data-params' => "state=#{state}" %>
   <% end %>
   <div class="comment-face">
     <div>

@@ -9,6 +9,7 @@
             <div>
               <%= f.submit t(:add),:class => 'btn btn-mini hide' %>
             </div>
+            <%= hidden_field_tag :state, 'comments' %>
         <% end %>
       </div>
   <% end %>

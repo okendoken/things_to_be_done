@@ -18,6 +18,9 @@ class CommentsController < ApplicationController
       @target = Project.find params[:project_id]
     end
     @target.comment_this(params[:comment][:text], current_user) if user_signed_in?
+    if params[:state] == 'news'
+      render 'common/news'
+    end
   end
 
   def destroy
@@ -26,9 +29,10 @@ class CommentsController < ApplicationController
       comment.destroy
     end
     @target = comment.target
-    respond_to do |format|
-      format.js {render 'common/comments'}
-      format.html {render 'common/comments'}
+    if params[:state] == 'news'
+      render 'common/news'
+    else
+      render 'comments/create'
     end
   end
 end

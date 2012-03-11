@@ -302,5 +302,7 @@ ru:
   to_cancel: "Отменить"
   no_activity_yet: "Пока нет активности"
   new_user_in: "Новый пользователь присоединился к"
-  joined: "присоединился к"
-  left: "покинул"
+  participation:
+    added: "присоединился к"
+    canceled: "покинул"
+    completed: "успешно завершил"

@@ -64,5 +64,7 @@ en:
   complete: "Complete"
   no_activity_yet: "No activity yet"
   new_user_in: "New user joined"
-  joined: "has joined"
-  left: "has left"
+  participation:
+      added: "has joined"
+      canceled: "has left"
+      completed: "has successfully completed"
