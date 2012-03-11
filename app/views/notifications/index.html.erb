@@ -1,1 +1,18 @@
-<h1><%= @events[:test]%></h1>
+<%=  @events.count%>
+<div class="comments-content">
+  <% if @events.count > 0%>
+      <% @events.order('created_at desc').limit(20).each do |event| %>
+          <div class="comment">
+            <div class="comment-body">
+              <%= render :partial => event.news_template, :locals => {:event => event} %>
+            </div>
+            <div class="comment-date simple-gray">
+              <%= format_date event.created_at %>
+            </div>
+            <hr/>
+          </div>
+      <% end %>
+  <% else %>
+      <%= t :no_comments_yet %>
+  <% end %>
+</div>
