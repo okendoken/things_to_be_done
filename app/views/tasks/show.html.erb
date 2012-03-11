@@ -37,7 +37,7 @@
       <% if can? :manage, @task %>
           <%= render :partial => 'partials/manage', :locals => {:target => @task} %>
       <% end %>
-      <div class="base-panel gray-background span">
+      <div class="base-panel gray-background span description">
         <% if @task.desc_more_than_1000? %>
             <div class="desc-sliced">
               <%= @task.desc_sliced_1000 %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304125913) do
+ActiveRecord::Schema.define(:version => 20120310201305) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -40,27 +40,12 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
   add_index "comments", ["target_type"], :name => "index_comments_on_target_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
-  create_table "notifications", :force => true do |t|
-    t.string   "type"
-    t.boolean  "read"
-    t.integer  "stuff_to_process_id"
-    t.string   "stuff_to_process_type"
-    t.integer  "user_id"
-    t.integer  "sender_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-  end
-
-  add_index "notifications", ["sender_id"], :name => "index_notifications_on_sender_id"
-  add_index "notifications", ["stuff_to_process_id"], :name => "index_notifications_on_stuff_to_process_id"
-  add_index "notifications", ["stuff_to_process_type"], :name => "index_notifications_on_stuff_to_process_type"
-  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
-
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "status",     :default => 1, :null => false
   end
 
   add_index "participations", ["task_id"], :name => "index_participations_on_task_id"
@@ -89,6 +74,24 @@ ActiveRecord::Schema.define(:version => 20120304125913) do
   add_index "projects", ["problem_id"], :name => "index_projects_on_problem_id"
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "related_events", :force => true do |t|
+    t.integer  "e_type"
+    t.boolean  "read"
+    t.integer  "readable_id"
+    t.string   "readable_type"
+    t.integer  "reader_id"
+    t.string   "reader_type"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "related_events", ["readable_id"], :name => "index_related_events_on_readable_id"
+  add_index "related_events", ["readable_type"], :name => "index_related_events_on_readable_type"
+  add_index "related_events", ["reader_id"], :name => "index_related_events_on_reader_id"
+  add_index "related_events", ["reader_type"], :name => "index_related_events_on_reader_type"
+  add_index "related_events", ["user_id"], :name => "index_related_events_on_user_id"
 
   create_table "tasks", :force => true do |t|
     t.string   "title"

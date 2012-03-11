@@ -36,6 +36,10 @@ module ApplicationHelper
     object.is_a?(Task) ? activities_project_task_path(object.project, object) : activities_project_path(object)
   end
 
+  def all_news_path(object)
+    object.is_a?(Task) ? news_project_task_path(object.project, object) : news_project_path(object)
+  end
+
   def prepare_for_path(object)
     object.is_a?(Task) ? [object.project, object] : [object]
   end

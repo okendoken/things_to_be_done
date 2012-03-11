@@ -5,3 +5,4 @@ require File.expand_path('../application', __FILE__)
 GreatWork::Application.initialize!
 
 TASK_STATUS = {:in_progress => 1, :completed => 2, :canceled => 3}
+PARTICIPATION_STATUS = {:in_progress => 1, :completed => 2, :canceled => 3}

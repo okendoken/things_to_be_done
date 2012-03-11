@@ -1,0 +1,33 @@
+<% comments = target.comments %>
+<% events = target.related_events %>
+<div class="comments">
+  <% if user_signed_in? %>
+      <div class="comments-add-new">
+        <%= form_for(prepare_for_path(target) + [ target.comments.build], :remote => true) do |f| %>
+            <div>
+              <%= f.text_area :text, :class => 'input-xlarge', :rows => '1', :placeholder => t(:add_comment) %>
+            </div>
+            <div>
+              <%= f.submit t(:add),:class => 'btn btn-mini hide' %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="comments-content">
+    <% if events.count > 0%>
+        <% events.order('created_at desc').limit(20).each do |event| %>
+            <div class="comment">
+              <div class="comment-body">
+                <%= render :partial => event.news_template, :locals => {:event => event} %>
+              </div>
+              <div class="comment-date simple-gray">
+                <%= format_date event.created_at %>
+              </div>
+              <hr/>
+            </div>
+        <% end %>
+    <% else %>
+        <%= t :no_comments_yet %>
+    <% end %>
+  </div>
+</div>

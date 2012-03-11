@@ -6,13 +6,13 @@ class Project < ActiveRecord::Base
   belongs_to :problem
 
   has_many :votes, :as => :target
-  has_many :notifications, :as => :stuff_to_process
   has_many :comments, :as => :target
   has_many :users, :through => :votes, :conditions => {:'votes.positive' => true}
   has_many :tasks
 
+  has_many :related_events, :as => :reader
+
   include VoteTarget
-  include NotificationTarget
 
   def should_generate_new_friendly_id?
     new_record?

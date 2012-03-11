@@ -23,8 +23,6 @@ class User < ActiveRecord::Base
   has_many :created_tasks, :class_name => 'Task'
   #user votes
   has_many :votes
-  #user notifications
-  has_many :notifications
   #user participations. for now it's pseudo model to provide many-to-many association.
   #Daniel said "We are going to control everything!!!"
   has_many :participations
@@ -36,6 +34,11 @@ class User < ActiveRecord::Base
   has_many :voted_projects, :through => :votes, :source => :target, :source_type => 'Project', :conditions => {:'votes.positive' => true}
   #tasks user has voted for
   has_many :voted_tasks, :through => :votes, :source => :target, :source_type => 'Task', :conditions => {:'votes.positive' => true}
+
+  #events user need to handle
+  has_many :related_events, :as => :reader
+  #events user created
+  has_many :created_related_events, :class_name => 'RelatedEvent'
 
   #oauth stuff
 
