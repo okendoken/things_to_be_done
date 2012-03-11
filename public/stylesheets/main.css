@@ -732,23 +732,23 @@ a:hover, a:active {
     text-decoration: none;
 }
 
-.comments{
+.news, .comments{
     margin-top: 20px;
 }
 
-.comment-face{
+.news-single-face, .comment-face{
     float: left;
 }
 
-.comment{
+.news-single, .comment{
     width: 400px;
 }
 
-.comment-body{
+.news-single-body, .comment-body{
     width: 370px;
     margin-left: 40px;
 }
-.comment-date{
+.news-single-date, .comment-date{
     width: 370px;
     margin-left: 40px;
     margin-top: 3px;
@@ -761,29 +761,30 @@ a:hover, a:active {
     font-family: "Lato", "Helvetica", "Helvetica", "Arial", sans-serif;
 }
 
-.comment > hr{
+.news-content, .comments-content{
+
+}
+
+.news-single > hr, .comment > hr{
     margin: 0.5em auto;
 }
 
-.comments-add-new{
+.news-add-new, .comments-add-new{
     width: 280px;
-}
-
-.comments-add-new{
     margin-bottom: 10px;
 }
 
-.comments-add-new input[type="submit"]{
+.news-add-new input[type="submit"], .comments-add-new input[type="submit"]{
     float: right;
 }
 
-.comments-add-new:after{
+.news-add-new:after, .comments-add-new:after{
     content: "";
     clear: both;
     display: block;
 }
 
-.comments-add-new > form{
+.news-add-new > form, .comments-add-new > form{
     margin: 0;
 }
 
@@ -791,7 +792,7 @@ a:hover, a:active {
     font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
-.comments-add-new textarea{
+.news-add-new textarea, .comments-add-new textarea{
     overflow: hidden;
 }
 

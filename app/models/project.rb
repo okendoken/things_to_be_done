@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  include Readable
+  include VoteTarget
   extend FriendlyId
   friendly_id :title, :use => :slugged
 
@@ -12,7 +14,7 @@ class Project < ActiveRecord::Base
 
   has_many :related_events, :as => :reader
 
-  include VoteTarget
+  before_destroy :destroy_events
 
   def should_generate_new_friendly_id?
     new_record?

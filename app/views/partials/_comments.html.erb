@@ -1,5 +1,4 @@
 <% comments = target.comments %>
-<% events = target.related_events %>
 <div class="comments">
   <% if user_signed_in? %>
       <div class="comments-add-new">
@@ -13,13 +12,13 @@
         <% end %>
       </div>
   <% end %>
-  <div class="news-content">
-    <% if events.count > 0%>
-        <% events.order('created_at desc').limit(20).each do |event| %>
-            <%= render :partial => event.news_template, :locals => {:event => event} %>
+  <div class="comments-content">
+    <% if comments.count > 0%>
+        <% comments.order('created_at desc').each do |comment| %>
+            <%= render :partial => 'partials/comment', :locals => {:comment => comment} %>
         <% end %>
     <% else %>
-        <%= t :no_activity_yet %>
+        <%= t :no_comments_yet %>
     <% end %>
   </div>
 </div>
