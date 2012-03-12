@@ -55,5 +55,18 @@ module EventEnvironment
           :added => 'partials/news/comment'
       }
   }
-  NOTIFICATIONS_TEMPLATES = {:project => {:join => 'notigication_test.html', :another => 'adc.html'}}
+  NOTIFICATIONS_TEMPLATES = {
+      :participation => {
+          :added => 'partials/notifications/participation'
+      },
+      :vote => {
+          #notify only creator
+          true => 'partials/notifications/vote',
+          false => 'partials/notifications/vote'
+      },
+      :comment => {
+          :added => 'partials/notifications/comment'
+      }
+
+  }
 end

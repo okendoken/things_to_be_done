@@ -4,5 +4,17 @@ class NotificationsController < ApplicationController
       @events = current_user.related_events
     end
   end
+
+  def destroy
+    event = RelatedEvent.find params[:id]
+    if can? :destroy, event
+      event.destroy
+    end
+    @target = comment.target
+    respond_to do |format|
+      format.js {render 'common/comments'}
+      format.html {render 'common/comments'}
+    end
+  end
 end
 

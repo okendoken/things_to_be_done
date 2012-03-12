@@ -1,0 +1,12 @@
+<% if events.count > 0%>
+    <% events.order('created_at desc').limit(20).each do |event| %>
+        <div class="comment">
+          <div class="comment-body">
+            <%= render :partial => event.notifications_template, :locals => {:event => event} %>
+          </div>
+          <hr/>
+        </div>
+    <% end %>
+<% else %>
+    <%= t :no_comments_yet %>
+<% end %>

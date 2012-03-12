@@ -1,0 +1,22 @@
+
+<% user =  User.find(event.user)
+   created_at = event.readable.created_at
+   task = event.readable.task
+%>
+
+<div class="comment">
+
+  <div class="comment-face">
+    <a href="<%= user_path(user) %>">
+      <%= image_tag("user-icon-test.png") %>
+    </a>
+  </div>
+  <div class="comment-body">
+    <%= link_to user.display_name, user %> -
+    participated in <%= link_to task.title, project_task_path(task.project, task) %>  of <%= link_to task.project.title, task.project %>
+  </div>
+  <div class="comment-date simple-gray">
+    <%= format_date created_at %>
+  </div>
+  <hr/>
+</div>
