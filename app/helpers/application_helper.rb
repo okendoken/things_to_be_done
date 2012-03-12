@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include EventEnvironment
+
   def support_path(target)
     target.is_a?(Task) ? support_route_path([target.project, target]) : support_route_path(target)
   end
@@ -42,5 +44,10 @@ module ApplicationHelper
 
   def prepare_for_path(object)
     object.is_a?(Task) ? [object.project, object] : [object]
+  end
+
+  def symbol_event_type(event)
+    clazz = event.readable.class.name.downcase.to_sym
+    DB_EVENT_TYPES[clazz].index(event.e_type)
   end
 end

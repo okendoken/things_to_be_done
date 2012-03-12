@@ -301,3 +301,8 @@ ru:
   complete_explanation: "Пометить задание как успешно завершенное"
   to_cancel: "Отменить"
   no_activity_yet: "Пока нет активности"
+  new_user_in: "Новый пользователь присоединился к"
+  participation:
+    added: "присоединился к"
+    canceled: "покинул"
+    completed: "успешно завершил"

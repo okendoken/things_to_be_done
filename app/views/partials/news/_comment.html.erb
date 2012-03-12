@@ -1,1 +1,1 @@
-<%= render partial: 'partials/comment', locals: {comment: event.readable} %>
+<%= render :partial => 'partials/comment', :locals => {:comment => event.readable, :state => 'news'} %>

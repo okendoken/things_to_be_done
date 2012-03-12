@@ -1,1 +1,23 @@
-user participated
+<% clazz = event.readable.class.name.downcase %>
+<% event_type = symbol_event_type(event) %>
+<div class="news-single">
+  <div class="news-single-face">
+    <div>
+      <a href="<%= user_path(event.user) %>">
+        <%= image_tag("user-icon-test.png") %>
+      </a>
+    </div>
+  </div>
+  <div class="news-single-body">
+    <%= link_to event.readable.user.display_name, event.readable.user %>
+    <%= t :"#{clazz}.#{event_type}" %>
+    <%= link_to event.readable.task.title, [event.readable.task.project, event.readable.task] %>
+  </div>
+  <div class="news-single-info simple-gray">
+    <i class="<%= {:added => 'icon-plus',:completed => 'icon-ok',:canceled => 'icon-minus'}[symbol_event_type(event)]%> icon-dark-gray"></i>
+    <%= format_date event.created_at %>
+    <div class="news-single-actions">
+    </div>
+  </div>
+  <hr/>
+</div>

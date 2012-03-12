@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310201305) do
+ActiveRecord::Schema.define(:version => 20120311204233) do
+
+  create_table "activities", :force => true do |t|
+    t.integer  "participation_id"
+    t.text     "text",             :default => "", :null => false
+    t.integer  "status",           :default => 1,  :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "activities", ["participation_id"], :name => "index_activities_on_participation_id"
+  add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"

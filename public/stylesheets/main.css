@@ -748,10 +748,15 @@ a:hover, a:active {
     width: 370px;
     margin-left: 40px;
 }
-.news-single-date, .comment-date{
+.news-single-info, .comment-info{
     width: 370px;
     margin-left: 40px;
     margin-top: 3px;
+}
+
+.news-single-actions{
+    float: right;
+    margin-right: 10px;
 }
 
 .simple-gray{
@@ -766,7 +771,7 @@ a:hover, a:active {
 }
 
 .news-single > hr, .comment > hr{
-    margin: 0.5em auto;
+    margin: 5px 0 7px 30px;
 }
 
 .news-add-new, .comments-add-new{
@@ -832,4 +837,16 @@ a:hover, a:active {
 .manage-dialog .popover.bottom .arrow{
     left: 90%;
     margin-top: 5px;
+}
+
+.light-green{
+
+}
+
+.icon-gray{
+  background-image: url("../img/glyphicons-halflings-gray.png");
+}
+
+.icon-dark-gray{
+  background-image: url("../img/glyphicons-halflings-dark-gray.png");
 }

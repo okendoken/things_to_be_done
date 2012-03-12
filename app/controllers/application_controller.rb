@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_locale
+  before_filter :check_ddos
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:access_denied_error] = "Access Denied"
@@ -19,6 +20,13 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def check_ddos
+    if time = session[:'last-access-time']
+      #vovich protection
+      redirect_to '/home' if time > 0.5.seconds.ago
+    end
+    session[:'last-access-time'] = Time.now
+  end
 
   def after_sign_in_path_for(resource_or_scope)
     user_home_path
