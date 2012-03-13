@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   include Readable
+  include VoteTarget
   belongs_to :target, :polymorphic => true
   belongs_to :user
 
