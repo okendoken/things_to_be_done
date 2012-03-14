@@ -16,11 +16,11 @@ function changeLikerState(supports){
 
 function changeSmallLikerState(supports, dataId){
     if (supports){
-        $("[data-toggle='small-supp-link-" + dataId + "']").addClass("disabled");
-        $("[data-toggle='small-dont-supp-link-" + dataId + "']").removeClass("disabled");
+        $("[data-toggle='small-supp-link-" + dataId + "']").children(".icon-arrow-up").addClass("disabled");
+        $("[data-toggle='small-dont-supp-link-" + dataId + "']").children(".icon-arrow-down").removeClass("disabled");
     } else {
-        $("[data-toggle='small-supp-link-" + dataId + "']").removeClass("disabled") ;
-        $("[data-toggle='small-dont-supp-link-" + dataId + "']").addClass("disabled");
+        $("[data-toggle='small-supp-link-" + dataId + "']").children(".icon-arrow-up").removeClass("disabled") ;
+        $("[data-toggle='small-dont-supp-link-" + dataId + "']").children(".icon-arrow-down").addClass("disabled");
     }
 }
 

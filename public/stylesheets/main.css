@@ -854,3 +854,11 @@ a:hover, a:active {
 .icon-gray:hover{
     background-image: url("../img/glyphicons-halflings-dark-gray.png");
 }
+
+.small-voter-new > a{
+    text-decoration: none;
+}
+
+[class*='icon'].disabled{
+    background-image: url("../img/glyphicons-halflings-light-gray.png");
+}

@@ -19,8 +19,7 @@
     <i class="icon-comment icon-gray"></i>
     <%= format_date comment.created_at %>
     <div class="news-single-actions">
-      <a href="#"><i class="icon-arrow-down icon-gray"></i></a>
-      <a href="#"><i class="icon-arrow-up icon-gray"></i></a>
+      <%= render :partial => 'partials/small_voter_new', :locals => {:target => comment} %>
     </div>
   </div>
   <hr/>

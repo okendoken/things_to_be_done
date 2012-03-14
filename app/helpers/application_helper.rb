@@ -3,11 +3,23 @@ module ApplicationHelper
   include EventEnvironment
 
   def support_path(target)
-    target.is_a?(Task) ? support_route_path([target.project, target]) : support_route_path(target)
+    if target.is_a? Task
+      support_route_path([target.project, target])
+    elsif target.is_a? Project
+      support_route_path(target)
+    elsif target.is_a? Comment
+      target.target.is_a?(Task) ? support_project_task_comment_path(target.target.project, target.target, target) : support_project_comment_path(target.target, target)
+    end
   end
 
   def not_support_path(target)
-    target.is_a?(Task) ? not_support_route_path([target.project, target]) : not_support_route_path(target)
+    if target.is_a? Task
+      not_support_route_path([target.project, target])
+    elsif target.is_a? Project
+      not_support_route_path(target)
+    elsif target.is_a? Comment
+      target.target.is_a?(Task) ? notsupport_project_task_comment_path(target.target.project, target.target, target) : notsupport_project_comment_path(target.target, target)
+    end
   end
 
   def display_vk_login?

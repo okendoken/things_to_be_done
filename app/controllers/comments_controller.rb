@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include Voter
+
   def index
     if params[:task_id].present?
       @target = Task.find params[:task_id]
@@ -34,5 +36,9 @@ class CommentsController < ApplicationController
     else
       render 'comments/create'
     end
+  end
+
+  def notsupport
+    not_support
   end
 end
