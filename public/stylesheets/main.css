@@ -844,9 +844,13 @@ a:hover, a:active {
 }
 
 .icon-gray{
-  background-image: url("../img/glyphicons-halflings-gray.png");
+    background-image: url("../img/glyphicons-halflings-gray.png");
 }
 
 .icon-dark-gray{
-  background-image: url("../img/glyphicons-halflings-dark-gray.png");
+    background-image: url("../img/glyphicons-halflings-dark-gray.png");
+}
+
+.icon-gray:hover{
+    background-image: url("../img/glyphicons-halflings-dark-gray.png");
 }

@@ -14,7 +14,7 @@
     <%= link_to event.readable.task.title, [event.readable.task.project, event.readable.task] %>
   </div>
   <div class="news-single-info simple-gray">
-    <i class="<%= {:added => 'icon-plus',:completed => 'icon-ok',:canceled => 'icon-minus'}[symbol_event_type(event)]%> icon-dark-gray"></i>
+    <i class="<%= {:added => 'icon-plus',:completed => 'icon-ok',:canceled => 'icon-minus'}[symbol_event_type(event)]%> icon-gray"></i>
     <%= format_date event.created_at %>
     <div class="news-single-actions">
     </div>
