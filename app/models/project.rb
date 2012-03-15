@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
   include Readable
-  include VoteTarget
+  include Votable
+  include Commentable
   extend FriendlyId
   friendly_id :title, :use => :slugged
 

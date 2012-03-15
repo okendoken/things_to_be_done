@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   extend FriendlyId
-  include VoteTarget
+  include Votable
+  include Commentable
   include EventEnvironment
   include Readable
   friendly_id :title, :use => :slugged
