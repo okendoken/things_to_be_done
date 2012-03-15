@@ -1,5 +1,10 @@
 module ProjectTaskCommon
   def activities
+    if params[:project_id].present?
+      @target = Task.find params[:id]
+    else
+      @target = Project.find params[:id]
+    end
     respond_to do |format|
       format.js {render 'common/activities'}
       format.html {render 'common/activities'}

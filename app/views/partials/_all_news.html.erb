@@ -1,6 +1,6 @@
 <% comments = target.comments %>
 <% events = target.related_events %>
-<div class="comments">
+<div class="news">
   <% if user_signed_in? %>
       <div class="comments-add-new">
         <%= form_for(prepare_for_path(target) + [target.comments.build], :remote => true) do |f| %>

@@ -1,3 +1,26 @@
-<div class="activities">
-  <span>Stub. No activities yet</span>
+<% comments = target.comments %>
+<% activities = target.activities %>
+<div class="news">
+  <% if user_signed_in? %>
+      <div class="comments-add-new">
+        <%= form_for(prepare_for_path(target) + [target.comments.build], :remote => true) do |f| %>
+            <div>
+              <%= f.text_area :text, :class => 'input-xlarge', :rows => '1', :placeholder => t(:add_comment) %>
+            </div>
+            <div>
+              <%= f.submit t(:add),:class => 'btn btn-mini hide' %>
+            </div>
+            <%= hidden_field_tag :state, 'news' %>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="news-content">
+    <% if activities.count > 0%>
+        <% activities.order('created_at desc').limit(20).each do |event| %>
+            <%= render :partial => event.news_template, :locals => {:event => event} %>
+        <% end %>
+    <% else %>
+        <%= t :no_activity_yet %>
+    <% end %>
+  </div>
 </div>

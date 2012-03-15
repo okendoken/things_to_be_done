@@ -17,6 +17,8 @@ class Task < ActiveRecord::Base
   has_many :participants, :through => :participations, :source => :user,
            :conditions => {:'participations.status' => PARTICIPATION_STATUS[:in_progress]}
 
+  has_many :activities, :through => :participations
+
   has_many :related_events, :as => :reader
 
   before_destroy :destroy_events
