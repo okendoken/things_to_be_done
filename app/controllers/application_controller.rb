@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def check_ddos
     if time = session[:'last-access-time']
       #vovich protection
-      redirect_to '/home' if time > 0.3.seconds.ago
+      redirect_to '/home' if time > 0.1.seconds.ago
     end
     session[:'last-access-time'] = Time.now
   end
