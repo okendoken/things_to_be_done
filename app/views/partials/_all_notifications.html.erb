@@ -1,0 +1,15 @@
+<%#TODO when click of view_more pass to controller ides readed events%>
+<%readed_events = events.where("read != 1").order('created_at desc').limit(3)%>
+<% if events.where("read != 1").count > 0 %>
+    <li class="header">
+      <p class="notifications-dialog-title"><%= t :new_notifications %></p>
+      <p class="view-more"><%=link_to t(:view_more), notifications_path, :remote => true, :readed_events => readed_events%></p>
+    </li>
+    <% readed_events.each do |event| %>
+        <li>
+            <%= render :partial => event.notifications_template, :locals => {:event => event} %>
+        </li>
+    <% end %>
+<% else %>
+    <li class="header"><%= t :no_new_notifications %></li>
+<% end %>

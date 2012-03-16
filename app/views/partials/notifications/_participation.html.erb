@@ -1,0 +1,20 @@
+
+<% user =  User.find(event.user)
+   created_at = event.readable.created_at
+   task = event.readable.task
+%>
+
+  <% if can? :destroy, event %>
+      <%#TODO: css class for btn submit%>
+      <%= button_to 'x', notification_path(event), :remote => true,
+                  :method => :delete %>
+  <% end %>
+
+    <a href="<%= user_path(user) %>">
+      <%= image_tag("user-icon-test.png") %>
+    </a>
+
+    <%= link_to user.display_name, user %> -
+    participated in <%= link_to task.title, project_task_path(task.project, task) %>  of <%= link_to task.project.title, task.project %>
+    <%= format_date created_at %>
+

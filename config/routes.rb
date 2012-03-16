@@ -5,7 +5,10 @@ GreatWork::Application.routes.draw do
 
   resources :user
 
+  resources :notifications
+
   match 'home' => 'user#show', :as => :user_home
+
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     match 'users/auth/twitter/twitter_email' => 'users/omniauth_callbacks#twitter_email'

@@ -1,5 +1,6 @@
 <ul class="nav">
   <% if user_signed_in? %>
+      <%= render :partial => 'partials/notifications_link' %>
       <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-success" %></li>
   <% else %>
       <% if display_vk_login? %>
@@ -58,10 +59,18 @@
     <% end %>
   </div>
 </div>
+
+<% if user_signed_in? %>
+    <%= render :partial => 'partials/notifications_dialog' %>
+<% end %>
 <script>
     $(function () {
         $("#sign-in-link").click(function () {
             $("#login-dialog").slideDown(230);
+            return false;
+        });
+        $("#notifications-link").click(function () {
+            $("#notifications-dialog").slideDown(230);
             return false;
         });
         $("#cancel-btn").click(function () {

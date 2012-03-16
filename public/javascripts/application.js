@@ -38,5 +38,8 @@ $(function(){
         if ($(e.target).closest('#login-dialog').length === 0) {
             $("#login-dialog").slideUp(230);
         }
+        if ($(e.target).closest('#notifications-dialog').length === 0) {
+            $("#notifications-dialog").slideUp(230);
+        }
     });
 });

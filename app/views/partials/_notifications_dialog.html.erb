@@ -1,0 +1,15 @@
+<div id="notifications-dialog">
+  <div class="notifications-content">
+    <ul class="notifications-list">
+        <%= render :partial => 'partials/all_notifications', :locals => {:events => current_user.related_events} %>
+    </ul>
+  </div>
+</div>
+<script>
+    $(function () {
+        $("#notifications-link").click(function () {
+            $("#notifications-dialog").slideDown(230);
+            return false;
+        });
+    });
+</script>
