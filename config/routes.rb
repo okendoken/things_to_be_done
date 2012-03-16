@@ -32,7 +32,6 @@ GreatWork::Application.routes.draw do
       end
     end
     member do
-      get 'activities'
       get 'news'
     end
     resources :activities, :only => [:index, :create, :destroy] do
@@ -49,7 +48,6 @@ GreatWork::Application.routes.draw do
         end
       end
       member do
-        get 'activities'
         get 'news'
       end
       resources :activities, :only => [:index, :create, :destroy] do

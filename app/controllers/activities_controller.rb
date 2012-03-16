@@ -24,15 +24,15 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find params[:id]
-    if can? :destroy, comment
-      comment.destroy
+    activity = Activity.find params[:id]
+    if can? :destroy, activity
+      activity.destroy
     end
-    @target = comment.target
+    @target = activity.target
     if params[:state] == 'news'
       render 'common/news'
-    else
-      render 'comments/create'
+    elsif params[:state] == 'activities'
+      render 'common/activities'
     end
   end
 

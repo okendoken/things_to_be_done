@@ -1,5 +1,9 @@
 <% state ||= nil %>
 <div class="news-single">
+  <% if can? :destroy, activity %>
+        <%= link_to '×', url_for(prepare_for_path(activity.participation.task) + [activity]), :remote => true,
+                    :method => :delete, :class => 'close', :'data-params' => "state=#{state}" %>
+    <% end %>
   <div class="news-single-face">
     <div>
       <a href="<%= user_path(activity.user) %>">

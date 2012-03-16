@@ -24,7 +24,7 @@ module EventEnvironment
           :added => Proc.new{|comment| [comment.target, comment.target.user]}
       },
       :activity => {
-          :added => Proc.new{|activity| [activity.participation.task, activity.participation.task.user]}
+          :added => Proc.new{|activity| [activity.participation.task, activity.participation.task.project, activity.participation.task.user]}
       }
   }
 
