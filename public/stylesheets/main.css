@@ -973,9 +973,21 @@ div.new-notifications-count{
 }
 
 .icon-gray{
-  background-image: url("../img/glyphicons-halflings-gray.png");
+    background-image: url("../img/glyphicons-halflings-gray.png");
 }
 
 .icon-dark-gray{
-  background-image: url("../img/glyphicons-halflings-dark-gray.png");
+    background-image: url("../img/glyphicons-halflings-dark-gray.png");
+}
+
+.icon-gray:hover{
+    background-image: url("../img/glyphicons-halflings-dark-gray.png");
+}
+
+.small-voter-new > a{
+    text-decoration: none;
+}
+
+[class*='icon'].disabled{
+    background-image: url("../img/glyphicons-halflings-light-gray.png");
 }
