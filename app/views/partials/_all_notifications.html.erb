@@ -1,12 +1,15 @@
-<% if events.count > 0%>
-    <% events.order('created_at desc').limit(20).each do |event| %>
-        <div class="comment">
-          <div class="comment-body">
+<%#TODO when click of view_more pass to controller ides readed events%>
+<%readed_events = events.where("read != 1").order('created_at desc').limit(3)%>
+<% if events.where("read != 1").count > 0 %>
+    <li class="header">
+      <p class="notifications-dialog-title"><%= t :new_notifications %></p>
+      <p class="view-more"><%=link_to t(:view_more), notifications_path, :remote => true, :readed_events => readed_events%></p>
+    </li>
+    <% readed_events.each do |event| %>
+        <li>
             <%= render :partial => event.notifications_template, :locals => {:event => event} %>
-          </div>
-          <hr/>
-        </div>
+        </li>
     <% end %>
 <% else %>
-    <%= t :no_comments_yet %>
+    <li class="header"><%= t :no_new_notifications %></li>
 <% end %>

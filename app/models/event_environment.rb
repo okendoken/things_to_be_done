@@ -56,9 +56,11 @@ module EventEnvironment
           :added => 'partials/news/comment'
       }
   }
+
   NOTIFICATIONS_TEMPLATES = {
       :participation => {
-          :added => 'partials/notifications/participation'
+          :added => 'partials/notifications/participation',
+          :canceled => 'partials/news/participation'
       },
       :vote => {
           #notify only creator
