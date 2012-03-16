@@ -62,7 +62,7 @@ module EventEnvironment
           :added => 'partials/news/comment'
       },
       :activity => {
-          :added => 'partials/stub'
+          :added => 'partials/news/activity'
       }
   }
 
