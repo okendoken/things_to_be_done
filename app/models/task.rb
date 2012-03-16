@@ -52,4 +52,12 @@ class Task < ActiveRecord::Base
     participants.count
   end
 
+  #create new activity
+  def commit_this(text, user)
+    participation = Participation.where(:user_id => user.id, :task_id => self.id)[0]
+    activity = participation.activities.create!(:user => user, :text => text)
+    RelatedEvent.notify_all(activity, :added, user)
+    activity
+  end
+
 end

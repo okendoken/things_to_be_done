@@ -22,6 +22,9 @@ module EventEnvironment
       },
       :comment => {
           :added => Proc.new{|comment| [comment.target, comment.target.user]}
+      },
+      :activity => {
+          :added => Proc.new{|activity| [activity.participation.task, activity.participation.task.user]}
       }
   }
 
@@ -39,6 +42,9 @@ module EventEnvironment
       },
       :comment => {
           :added => 30
+      },
+      :activity => {
+          :added => 40
       }
   }
 
@@ -54,6 +60,9 @@ module EventEnvironment
       },
       :comment => {
           :added => 'partials/news/comment'
+      },
+      :activity => {
+          :added => 'partials/stub'
       }
   }
 
@@ -69,7 +78,9 @@ module EventEnvironment
       },
       :comment => {
           :added => 'partials/notifications/comment'
+      },
+      :activity => {
+          :added => 'partials/stub'
       }
-
   }
 end

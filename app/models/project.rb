@@ -33,4 +33,8 @@ class Project < ActiveRecord::Base
     tasks.joins(:participations).uniq.pluck(:'participations.user_id').count
   end
 
+  def activities
+    Activity.joins(:participation => :task).where(:'tasks.project_id' => self.id)
+  end
+
 end

@@ -35,6 +35,12 @@ GreatWork::Application.routes.draw do
       get 'activities'
       get 'news'
     end
+    resources :activities, :only => [:index, :create, :destroy] do
+      member do
+        post 'support'
+        post 'notsupport'
+      end
+    end
     resources :tasks, :path => "", :except => [:index, :create ] do
       resources :comments, :only => [:index, :create, :destroy] do
         member do
@@ -45,6 +51,12 @@ GreatWork::Application.routes.draw do
       member do
         get 'activities'
         get 'news'
+      end
+      resources :activities, :only => [:index, :create, :destroy] do
+        member do
+          post 'support'
+          post 'notsupport'
+        end
       end
     end
   end

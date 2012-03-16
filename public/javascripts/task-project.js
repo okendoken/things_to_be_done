@@ -9,15 +9,15 @@ $(function(){
         $('[data-activity-nav] > span').addClass('label-info');
         $(this).children('span').removeClass('label-info');
     });
-    $("body").delegate("#comment_text", "click", function(){
-        $("#new_comment input[type='submit']").removeClass("hide");
+    $("body").delegate(".form-new-news textarea", "click", function(){
+        $(".form-new-news input[type='submit']").removeClass("hide");
         $(this).attr("rows", 2);
     });
     $(document).click(function(e) {
         //maybe better solution exists?
-        if ($(e.target).closest('#comment_text').length === 0 && $(e.target).closest("#new_comment input[type='submit']").length === 0 ) {
-            $("#new_comment input[type='submit']").addClass("hide");
-            $("#comment_text").attr("rows", 1);
+        if ($(e.target).closest('.form-new-news textarea').length === 0 && $(e.target).closest(".form-new-news input[type='submit']").length === 0 ) {
+            $(".form-new-news input[type='submit']").addClass("hide");
+            $(".form-new-news textarea").attr("rows", 1);
         }
         if ($(e.target).closest('.manage-dialog').length === 0 ) {
             $(".manage-dialog").addClass("hide");
