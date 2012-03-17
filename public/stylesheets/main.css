@@ -1019,3 +1019,7 @@ a[class*='-login-button']{
 [class*='icon'].disabled{
     background-image: url("../img/glyphicons-halflings-light-gray.png");
 }
+
+.form-new-news input[type='submit']{
+    margin-left: 10px;
+}

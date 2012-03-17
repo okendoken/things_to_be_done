@@ -15,7 +15,8 @@ class ActivitiesController < ApplicationController
 
   def create
     @target = Task.find params[:task_id]
-    @target.commit_this(params[:activity][:text], current_user) if user_signed_in?
+    status = params[:complete].present? ? ACTIVITY_STATUS[:completed] : ACTIVITY_STATUS[:in_progress]
+    @target.commit_this(params[:activity][:text], current_user, status) if user_signed_in?
     if params[:state] == 'news'
       render 'common/news'
     elsif params[:state] == 'activities'
