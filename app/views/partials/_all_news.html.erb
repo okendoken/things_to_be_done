@@ -3,7 +3,7 @@
 <div class="news">
   <% if user_signed_in? %>
       <div class="comments-add-new">
-        <% if target.participates_in_this?(current_user) %>
+        <% if not target.is_a? Project and target.participates_in_this?(current_user) %>
             <%= render :partial => 'partials/add_activity', :locals => {:target => target, :state => 'news'} %>
         <% else %>
             <%= render :partial => 'partials/add_comment', :locals => {:target => target, :state => 'news'} %>
