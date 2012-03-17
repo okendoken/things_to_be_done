@@ -11,7 +11,7 @@
   <div class="news-content">
     <% if activities.count > 0%>
         <% activities.order('created_at desc').limit(20).each do |activity| %>
-            <%= render :partial => 'partials/activity_row', :locals => {:activity => activity} %>
+            <%= render :partial => 'partials/activity_row', :locals => {:activity => activity, :state => 'activities'} %>
         <% end %>
     <% else %>
         <%= t :no_activity_yet %>

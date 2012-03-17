@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
     if can? :destroy, activity
       activity.destroy
     end
-    @target = activity.target
+    @target = activity.participation.task
     if params[:state] == 'news'
       render 'common/news'
     elsif params[:state] == 'activities'
