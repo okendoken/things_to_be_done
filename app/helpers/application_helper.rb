@@ -9,6 +9,9 @@ module ApplicationHelper
       support_route_path(target)
     elsif target.is_a? Comment
       target.target.is_a?(Task) ? support_project_task_comment_path(target.target.project, target.target, target) : support_project_comment_path(target.target, target)
+    elsif target.is_a? Activity
+      task = target.participation.task
+      support_project_task_activity_path(task.project, task, target)
     end
   end
 
@@ -19,6 +22,9 @@ module ApplicationHelper
       not_support_route_path(target)
     elsif target.is_a? Comment
       target.target.is_a?(Task) ? notsupport_project_task_comment_path(target.target.project, target.target, target) : notsupport_project_comment_path(target.target, target)
+    elsif target.is_a? Activity
+      task = target.participation.task
+      notsupport_project_task_activity_path(task.project, task, target)
     end
   end
 
