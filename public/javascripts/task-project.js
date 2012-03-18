@@ -19,7 +19,7 @@ $(function(){
             $(".form-new-news input[type='submit']").addClass("hide");
             $(".form-new-news textarea").attr("rows", 1);
         }
-        if ($(e.target).closest('.manage-dialog').length === 0 ) {
+        if ($(e.target).closest('.manage-dialog .popover.bottom').length === 0 ) {
             $(".manage-dialog").addClass("hide");
         }
     });

@@ -370,8 +370,7 @@ a:hover, a:active {
 }
 
 .notifications-icon {
-    background-image: url("../img/notify-icons.png");
-    background-position: -32px 0;
+
     width: 16px;
     height: 16px;
     display: inline-block;
@@ -980,7 +979,6 @@ a[class*='-login-button']{
     position: absolute;
     z-index: 1000;
     float: right;
-    width: 300px;
     height: 100px;
     top: 0;
     left: 0;
@@ -1022,4 +1020,12 @@ a[class*='-login-button']{
 
 .form-new-news input[type='submit']{
     margin-left: 10px;
+}
+
+.manage-dialog a{
+    margin-left: 10px;
+}
+
+.manage-dialog .popover-inner{
+    width: 100%;
 }

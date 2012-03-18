@@ -64,7 +64,7 @@ en:
   manage: "Manage"
   complete_explanation: "Mark task as successfully completed"
   to_cancel: "Cancel"
-  complete: "Complete"
+  done: "Done"
   no_activity_yet: "No activity yet"
   new_user_in: "New user joined"
   participation:
@@ -76,3 +76,5 @@ en:
   add_and_complete_title: "Complete task and write about it"
   add_something: "Write something"
   add_comment_title: "Write what you think about %{target}"
+  delete: "Delete"
+  delete_title: "Delete %{target} and all related activity"
