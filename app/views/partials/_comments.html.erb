@@ -2,9 +2,7 @@
 <div class="comments">
   <% if user_signed_in? %>
       <div class="comments-add-new">
-        <% if target.is_a? Project or not target.participates_in_this?(current_user) %>
-            <%= render :partial => 'partials/add_comment', :locals => {:target => target, :state => 'comments'} %>
-        <% end %>
+        <%= render :partial => 'partials/add_comment', :locals => {:target => target, :state => 'comments'} %>
       </div>
   <% end %>
   <div class="comments-content">
