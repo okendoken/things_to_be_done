@@ -39,16 +39,22 @@ GreatWork::Application.routes.draw do
   match ':project_id/:id/leave' => 'tasks#leave'
 
   resources :projects, :path => "", :except => [:index, :create ] do
-    resources :comments, :only => [:index, :create]
     member do
       get 'news'
+      scope 'manage' do
+        post 'complete'
+      end
     end
+    resources :comments, :only => [:index, :create]
     resources :activities, :only => [:index, :create]
     resources :tasks, :path => "", :except => [:index, :create ] do
-      resources :comments, :only => [:index, :create]
       member do
         get 'news'
+        scope 'manage' do
+          post 'complete'
+        end
       end
+      resources :comments, :only => [:index, :create]
       resources :activities, :only => [:index, :create]
     end
   end

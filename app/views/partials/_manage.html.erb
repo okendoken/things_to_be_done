@@ -7,7 +7,7 @@
     <div class="arrow"></div>
     <div class="popover-inner">
       <div class="popover-content">
-        <%= link_to '', :remote => true, :title => t(:complete_explanation), :class => 'btn btn-mini btn-success', :confirm => t(:are_you_sure) do %>
+        <%= link_to complete_path(target), :method => :post, :remote => true, :title => t(:complete_explanation), :class => 'btn btn-mini btn-success', :confirm => t(:are_you_sure) do %>
             <i class="icon-ok icon-white"></i>
             <%= t(:done) %>
         <% end %>
