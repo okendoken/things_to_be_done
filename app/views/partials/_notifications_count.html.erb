@@ -1,0 +1,4 @@
+<% unread_count = current_user.related_events.where("read != 't'").count %>
+<% if (unread_count > 0) %>
+    <span class="notifications-unread-count"><%=unread_count%></span>
+<%end%>

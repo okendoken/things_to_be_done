@@ -7,6 +7,7 @@ GreatWork::Application.routes.draw do
 
   resources :notifications
 
+  match 'notifications/get_new_notifications' => 'notifications#get_new_notifications'
   match 'home' => 'user#show', :as => :user_home
 
 
