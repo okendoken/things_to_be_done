@@ -19,7 +19,7 @@
     <i class="<%= activity.status == ACTIVITY_STATUS[:in_progress] ? 'icon-star-empty' : 'icon-star' %> icon-gray"></i>
     <%= format_date activity.created_at %>
     <div class="news-single-actions">
-      <%= render :partial => 'partials/small_voter_new', :locals => {:target => activity} %>
+      <%= render :partial => 'partials/small_voter', :locals => {:target => activity} %>
     </div>
   </div>
   <hr/>

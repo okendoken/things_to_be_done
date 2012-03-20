@@ -590,6 +590,14 @@ div.new-notifications-count{
     display: inline-block;
     line-height: 18px;
     vertical-align: middle;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.support-link.disabled{
+    background: url("../images/glyphicons-gray.png") repeat-x;
+    cursor: default;
+    box-shadow: none;
 }
 
 .support-link:hover{
@@ -597,36 +605,17 @@ div.new-notifications-count{
     border-radius: 5px;
 }
 
-.support-link.disabled.yes{
-
-}
-
-.support-link.disabled.yes:hover{
-
+.support-link.disabled:hover{
+    background-color: transparent;
+    border: none;
 }
 
 .support-link.yes{
     background-position: -145px -1006px;
 }
 
-.support-link.yes:hover{
-
-}
-
 .support-link.no{
     background-position: -97px -1006px;
-}
-
-.support-link.no:hover{
-
-}
-
-.support-link.disabled.no{
-
-}
-
-.support-link.disabled.no:hover{
-
 }
 
 .small-project-link{

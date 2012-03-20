@@ -34,7 +34,7 @@ module Voter
       end
       respond_to do |format|
         format.js {render 'vote/support'}
-        format.json{render :json => {:target_id => @target.id, :vote_positive => @supports}}
+        format.json{render :json => {:target_id => "#{@target.class.name.downcase}-#{@target.id}", :vote_positive => @supports}}
       end
     else
       render 'js/sign_in'
