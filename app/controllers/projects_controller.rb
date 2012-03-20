@@ -12,5 +12,6 @@ class ProjectsController < ApplicationController
       @target.status = PROJECT_STATUS[:completed]
       @target.save
     end
+    redirect_to @target
   end
 end

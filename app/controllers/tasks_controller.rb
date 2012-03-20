@@ -30,5 +30,6 @@ class TasksController < ApplicationController
       @target.status = TASK_STATUS[:completed]
       @target.save
     end
+    redirect_to project_task_path(@target)
   end
 end

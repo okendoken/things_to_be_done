@@ -15,7 +15,12 @@
   <div class="span9 right-content">
     <div class="main-content">
       <div class="span7">
-        <div class="big-cool-text"><%= link_to @project.title, @project%></div>
+        <div class="big-cool-text">
+          <%= link_to @project.title, @project%>
+          <span class="inline-status <%= project_status @project %>"><i class="<%= project_status_icon @project %> icon-white"></i>
+            <%= t :"project.#{project_status @project}" %>
+          </span>
+        </div>
         <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %>
           <span class="by-author pull-right">
           <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>

@@ -80,3 +80,11 @@ en:
   delete_title: "Delete %{target} and all related activity"
   support_title: "Support %{target}"
   dont_support_title: "Don't support %{target}"
+  project:
+    completed: "Done"
+    in_progress: "In progress"
+    canceled: "Canceled"
+  task:
+    completed: "Done"
+    in_progress: "In progress"
+    canceled: "Canceled"

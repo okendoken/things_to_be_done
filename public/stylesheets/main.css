@@ -358,8 +358,7 @@ a:hover, a:active {
     float: left;
     margin-left: -7px;
     background: rgba(203, 108, 0, 0.8);
-    border-bottom: 1px solid #8F4F07;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 3px 4px;
     line-height: 1;
     font-size: 9px;
@@ -601,6 +600,7 @@ div.new-notifications-count{
 }
 
 .support-link:hover{
+    background: url("../images/glyphicons-gray.png") repeat-x;
     background-color: #e8e8e8;
     border-radius: 5px;
 }
@@ -674,6 +674,7 @@ div.new-notifications-count{
 
 .participators-count{
     padding: 2px;
+    margin-top: 4px;
     margin-bottom: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -1042,22 +1043,34 @@ a[class*='-login-button']{
     background-position: -385px -911px;
 }
 
-.project-done{
+.inline-status{
     margin-left: 10px;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
-    border: 1px solid #bdbdbd;
-    text-shadow: 0 1px 0 rgba(255,255,255,1);
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    color: #464646;
-    background-image: -o-linear-gradient(#fafafa, #EBEBEB);
+    position: relative;
+    bottom: 4px;
+    color: #ffffff;
+    box-shadow: 2px 2px 0 rgba(51,51,51,0.4);
+    z-index: 1000;
+    padding: 1px 4px;
+    font-size: 11.049999999999999px;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
-.project-done span{
-    position: relative;
-    top:3px;
+.inline-status.completed{
+    background-color: rgba(97, 194, 97, 0.8);
+}
+
+.inline-status.in_progress{
+    background-color: rgba(0, 136, 204, 0.7);
+}
+
+.inline-status.canceled{
+    background-color: rgba(201, 201, 201, 0.80);
+}
+
+.inline-status i{
+    margin-right: 2px;
 }

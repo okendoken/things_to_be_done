@@ -318,3 +318,11 @@ ru:
   delete_title: "Удалить %{target} и всю связанную с ним активность"
   dont_support_title: "Не поддерживать %{target}"
   support_title: "Поддержать %{target}"
+  project:
+      completed: "Завершен"
+      in_progress: "Выполняется"
+      canceled: "Отменен"
+  task:
+      completed: "Завершен"
+      in_progress: "Выполняется"
+      canceled: "Отменен"
