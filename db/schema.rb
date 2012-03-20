@@ -76,10 +76,11 @@ ActiveRecord::Schema.define(:version => 20120311204233) do
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "status",      :default => 1, :null => false
     t.integer  "problem_id"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "slug"
   end
 

@@ -47,8 +47,7 @@ a:hover {
 }
 
 a:focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: 0;
 }
 a:hover, a:active {
     outline: 0;
@@ -100,7 +99,7 @@ a:hover, a:active {
     margin-left: 10px;
 }
 
-.btn-success{
+.spike.btn-success{
     display: inline-block;
     padding: 4px 10px 4px;
     color: white;
@@ -117,14 +116,11 @@ a:hover, a:active {
     text-decoration: none;
 }
 
-.btn-success:hover {
+.spike.btn-success:hover {
     text-decoration: none;
     background-color: #51a351;
-    -webkit-transition: background-position 0.1s linear;
-    -moz-transition: background-position 0.1s linear;
-    -ms-transition: background-position 0.1s linear;
-    -o-transition: background-position 0.1s linear;
-    transition: background-position 0.1s linear;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #ffffff;
 }
 
 .btn-danger{
@@ -362,8 +358,7 @@ a:hover, a:active {
     float: left;
     margin-left: -7px;
     background: rgba(203, 108, 0, 0.8);
-    border-bottom: 1px solid #8F4F07;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 3px 4px;
     line-height: 1;
     font-size: 9px;
@@ -373,8 +368,7 @@ a:hover, a:active {
 }
 
 .notifications-icon {
-    background-image: url("../img/notify-icons.png");
-    background-position: -32px 0;
+
     width: 16px;
     height: 16px;
     display: inline-block;
@@ -439,6 +433,20 @@ div.new-notifications-count{
     width: 93px;
     text-align: right;
     color: white;
+
+    border-color: #51769e #51779f #7495b8;
+    text-align: right;
+    display: inline-block;
+    font-size: 13px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    *margin-left: .3em;
 }
 
 .nav > li > .fb-login-button:hover, .fb-login-button:hover{
@@ -464,6 +472,19 @@ div.new-notifications-count{
     width: 84px;
     text-align: right;
     color: #4D4D4D;
+
+    text-align: right;
+    display: inline-block;
+    font-size: 13px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    *margin-left: .3em;
 }
 
 .nav > li > .tw-login-button:hover, .tw-login-button:hover{
@@ -559,47 +580,42 @@ div.new-notifications-count{
     text-align: center;
 }
 
-.btn-support{
+.support-link{
     padding: 0;
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 30px;
+    border: none;
+    background: url("../images/glyphicons.png") repeat-x;
+    display: inline-block;
+    line-height: 18px;
+    vertical-align: middle;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.support-link.disabled{
+    background: url("../images/glyphicons-gray.png") repeat-x;
+    cursor: default;
+    box-shadow: none;
+}
+
+.support-link:hover{
+    background: url("../images/glyphicons-gray.png") repeat-x;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+}
+
+.support-link.disabled:hover{
+    background-color: transparent;
     border: none;
 }
 
-.btn-support.disabled.yes{
-    background: url("/images/up-down-30.png") no-repeat -69px 0;
+.support-link.yes{
+    background-position: -145px -1006px;
 }
 
-.btn-support.disabled.yes:hover{
-    background-position: -69px 0;
-}
-
-.btn-support.yes{
-    background: url("/images/up-down-30.png") no-repeat 4px 0;
-}
-
-.btn-support.yes:hover{
-    background-position: 4px -1px;
-}
-
-.btn-support.no{
-    background: url("/images/up-down-30.png") no-repeat -32px 0;
-}
-
-.btn-support.no:hover{
-    background-position: -32px 1px;
-}
-
-.btn-support:hover{
-    padding: 0;
-}
-
-.btn-support.disabled.no{
-    background: url("/images/up-down-30.png") no-repeat -105px 0;
-}
-
-.btn-support.disabled.no:hover{
-    background-position: -105px 0;
+.support-link.no{
+    background-position: -97px -1006px;
 }
 
 .small-project-link{
@@ -658,6 +674,7 @@ div.new-notifications-count{
 
 .participators-count{
     padding: 2px;
+    margin-top: 4px;
     margin-bottom: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -766,9 +783,9 @@ div.new-notifications-count{
     line-height: 18px;
     color: #ffffff;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -926,6 +943,10 @@ div.new-notifications-count{
     font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
+a[class*='-login-button']{
+    text-decoration: none;
+}
+
 .news-add-new textarea, .comments-add-new textarea{
     overflow: hidden;
 }
@@ -952,7 +973,6 @@ div.new-notifications-count{
     position: absolute;
     z-index: 1000;
     float: right;
-    width: 300px;
     height: 100px;
     top: 0;
     left: 0;
@@ -990,4 +1010,67 @@ div.new-notifications-count{
 
 [class*='icon'].disabled{
     background-image: url("../img/glyphicons-halflings-light-gray.png");
+}
+
+.form-new-news input[type='submit']{
+    margin-left: 10px;
+}
+
+.manage-dialog a{
+    margin-left: 10px;
+}
+
+.manage-dialog .popover-inner{
+    width: 100%;
+}
+
+[class*="gly-icon-"] {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 24px;
+    vertical-align: text-top;
+    background-image: url("../images/glyphicons.png");
+    background-repeat: no-repeat;
+    *margin-right: .3em;
+}
+
+[class*="gly-icon-"]:last-child {
+    *margin-left: 0;
+}
+
+.gly-icon-done {
+    background-position: -385px -911px;
+}
+
+.inline-status{
+    margin-left: 10px;
+    position: relative;
+    bottom: 4px;
+    color: #ffffff;
+    box-shadow: 2px 2px 0 rgba(51,51,51,0.4);
+    z-index: 1000;
+    padding: 1px 4px;
+    font-size: 11.049999999999999px;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.inline-status.completed{
+    background-color: rgba(97, 194, 97, 0.8);
+}
+
+.inline-status.in_progress{
+    background-color: rgba(0, 136, 204, 0.7);
+}
+
+.inline-status.canceled{
+    background-color: rgba(201, 201, 201, 0.80);
+}
+
+.inline-status i{
+    margin-right: 2px;
 }

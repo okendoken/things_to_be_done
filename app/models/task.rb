@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   extend FriendlyId
-  include VoteTarget
+  include Votable
+  include Commentable
   include EventEnvironment
   include Readable
   friendly_id :title, :use => :slugged
@@ -15,6 +16,8 @@ class Task < ActiveRecord::Base
 
   has_many :participants, :through => :participations, :source => :user,
            :conditions => {:'participations.status' => PARTICIPATION_STATUS[:in_progress]}
+
+  has_many :activities, :through => :participations
 
   has_many :related_events, :as => :reader
 
@@ -47,6 +50,14 @@ class Task < ActiveRecord::Base
 
   def users_count
     participants.count
+  end
+
+  #create new activity
+  def commit_this(text, user, status = ACTIVITY_STATUS[:in_progress])
+    participation = Participation.where(:user_id => user.id, :task_id => self.id)[0]
+    activity = participation.activities.create!(:user => user, :text => text, :status => status)
+    RelatedEvent.notify_all(activity, :added, user)
+    activity
   end
 
 end

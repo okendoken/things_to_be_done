@@ -23,4 +23,13 @@ class TasksController < ApplicationController
       render 'js/sign_in'
     end
   end
+
+  def complete
+    @target = Task.find params[:id]
+    if can? :manage, @target
+      @target.status = TASK_STATUS[:completed]
+      @target.save
+    end
+    redirect_to project_task_path(@target)
+  end
 end

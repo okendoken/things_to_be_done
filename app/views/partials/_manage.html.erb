@@ -7,13 +7,14 @@
     <div class="arrow"></div>
     <div class="popover-inner">
       <div class="popover-content">
-        <%= link_to '', :remote => true, :title => t(:complete_explanation), :class => 'btn' do %>
-            <i class="icon-ok"></i>
-            <%= t(:complete) %>
+        <%#todo how does it work?  %>
+        <%= link_to complete_path(target), :method => :post, :title => t(:complete_explanation), :class => 'btn btn-mini btn-success', :confirm => t(:are_you_sure) do %>
+            <i class="icon-ok icon-white"></i>
+            <%= t(:done) %>
         <% end %>
-        <%= link_to '', :remote => true, :title => t(:complete_explanation), :class => 'btn' do %>
+        <%= link_to '', :title => t(:delete_title, :target => target.title), :class => 'btn btn-mini', :confirm => t(:are_you_sure) do %>
             <i class="icon-remove"></i>
-            <%= t(:to_cancel) %>
+            <%= t(:delete) %>
         <% end %>
       </div>
     </div>

@@ -1,3 +1,20 @@
-<div class="activities">
-  <span>Stub. No activities yet</span>
+<% comments = target.comments %>
+<% activities = target.activities %>
+<div class="news">
+  <% if user_signed_in? %>
+      <div class="comments-add-new">
+        <% if not target.is_a? Project and target.participates_in_this?(current_user) %>
+            <%= render :partial => 'partials/add_activity', :locals => {:target => target, :state => 'activities'} %>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="news-content">
+    <% if activities.count > 0%>
+        <% activities.order('created_at desc').limit(20).each do |activity| %>
+            <%= render :partial => 'partials/activity_row', :locals => {:activity => activity, :state => 'activities'} %>
+        <% end %>
+    <% else %>
+        <%= t :no_activity_yet %>
+    <% end %>
+  </div>
 </div>

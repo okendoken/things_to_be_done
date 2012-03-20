@@ -1,5 +1,6 @@
 class Activity < ActiveRecord::Base
   include Readable
+  include Votable
   belongs_to :participation
   belongs_to :user
 

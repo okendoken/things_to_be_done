@@ -1,0 +1,9 @@
+<%= form_for(prepare_for_path(target) + [ target.comments.build], :remote => true, :html => {:class => 'form-new-news'}) do |f| %>
+    <div>
+      <%= f.text_area :text, :class => 'input-xlarge', :rows => '1', :placeholder => t(:add_comment, :target => target.title) %>
+    </div>
+    <div>
+      <%= f.submit t(:add), :class => 'btn btn-mini hide', :title => t(:add_comment_title, :target => target.title) %>
+    </div>
+    <%= hidden_field_tag :state, state %>
+<% end %>

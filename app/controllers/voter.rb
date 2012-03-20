@@ -11,7 +11,12 @@ module Voter
 
   def handle_request(positive)
     if user_signed_in?
-      if request.path.include? 'comments'
+      if request.path.include? 'activities'
+        activity = Activity.find(params[:id])
+        vote = activity.vote_for_this(current_user, positive)
+        @supports = vote.positive?
+        @target = activity
+      elsif request.path.include? 'comments'
         comment = Comment.find(params[:id])
         vote = comment.vote_for_this(current_user, positive)
         @supports = vote.positive?
@@ -29,7 +34,7 @@ module Voter
       end
       respond_to do |format|
         format.js {render 'vote/support'}
-        format.json{render :json => {:target_id => @target.id, :vote_positive => @supports}}
+        format.json{render :json => {:target_id => "#{@target.class.name.downcase}-#{@target.id}", :vote_positive => @supports}}
       end
     else
       render 'js/sign_in'

@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
   include Readable
-  include VoteTarget
+  include Votable
+  include Commentable
   extend FriendlyId
   friendly_id :title, :use => :slugged
 
@@ -30,6 +31,10 @@ class Project < ActiveRecord::Base
 
   def users_count
     tasks.joins(:participations).uniq.pluck(:'participations.user_id').count
+  end
+
+  def activities
+    Activity.joins(:participation => :task).where(:'tasks.project_id' => self.id)
   end
 
 end

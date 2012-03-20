@@ -8,7 +8,9 @@ module ApplicationHelper
     elsif target.is_a? Project
       support_route_path(target)
     elsif target.is_a? Comment
-      target.target.is_a?(Task) ? support_project_task_comment_path(target.target.project, target.target, target) : support_project_comment_path(target.target, target)
+      support_comment_path(target)
+    elsif target.is_a? Activity
+      support_activity_path(target)
     end
   end
 
@@ -18,7 +20,9 @@ module ApplicationHelper
     elsif target.is_a? Project
       not_support_route_path(target)
     elsif target.is_a? Comment
-      target.target.is_a?(Task) ? notsupport_project_task_comment_path(target.target.project, target.target, target) : notsupport_project_comment_path(target.target, target)
+      notsupport_comment_path(target)
+    elsif target.is_a? Activity
+      notsupport_activity_path(target)
     end
   end
 
@@ -47,11 +51,15 @@ module ApplicationHelper
   end
 
   def activities_path(object)
-    object.is_a?(Task) ? activities_project_task_path(object.project, object) : activities_project_path(object)
+    object.is_a?(Task) ? project_task_activities_path(object.project, object) : project_activities_path(object)
   end
 
   def all_news_path(object)
     object.is_a?(Task) ? news_project_task_path(object.project, object) : news_project_path(object)
+  end
+
+  def complete_path(object)
+    object.is_a?(Task) ? complete_project_task_path(object.project, object) : complete_project_path(object)
   end
 
   def prepare_for_path(object)

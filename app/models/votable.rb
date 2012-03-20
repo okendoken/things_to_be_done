@@ -1,4 +1,4 @@
-module VoteTarget
+module Votable
 
   def vote_for_this(user, positive = true)
     if vote = self.user_vote(user)
@@ -41,12 +41,6 @@ module VoteTarget
 
   def votes_count
     self.votes.count
-  end
-
-  def comment_this(text, user)
-    comment = self.comments.create!(:user => user, :text => text)
-    RelatedEvent.notify_all(comment, :added, user)
-    comment
   end
 
   private

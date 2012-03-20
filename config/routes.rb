@@ -16,6 +16,20 @@ GreatWork::Application.routes.draw do
     match 'users/auth/vkontakte/vkontakte_email' => 'users/omniauth_callbacks#vkontakte_email'
   end
 
+  resources :comments, :only => [:destroy] do
+    member do
+      post 'support'
+      post 'notsupport'
+    end
+  end
+
+  resources :activities, :only => [:destroy] do
+    member do
+      post 'support'
+      post 'notsupport'
+    end
+  end
+
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
   match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
 
@@ -26,27 +40,23 @@ GreatWork::Application.routes.draw do
   match ':project_id/:id/leave' => 'tasks#leave'
 
   resources :projects, :path => "", :except => [:index, :create ] do
-    resources :comments, :only => [:index, :create, :destroy] do
-      member do
-        post 'support'
-        post 'notsupport'
+    member do
+      get 'news'
+      scope 'manage' do
+        post 'complete'
       end
     end
-    member do
-      get 'activities'
-      get 'news'
-    end
+    resources :comments, :only => [:index, :create]
+    resources :activities, :only => [:index, :create]
     resources :tasks, :path => "", :except => [:index, :create ] do
-      resources :comments, :only => [:index, :create, :destroy] do
-        member do
-          post 'support'
-          post 'notsupport'
+      member do
+        get 'news'
+        scope 'manage' do
+          post 'complete'
         end
       end
-      member do
-        get 'activities'
-        get 'news'
-      end
+      resources :comments, :only => [:index, :create]
+      resources :activities, :only => [:index, :create]
     end
   end
 

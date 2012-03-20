@@ -23,10 +23,10 @@
   <%= t(:sign_in_with) %>
 </div>
 <div>
-  <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button btn-success",
+  <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button",
               :"data-width" => 600, :"data-height" => 400 %>
   <%= link_to 'facebook',
-              user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
+              user_omniauth_authorize_path(:facebook), :class => "fb-login-button",
               :"data-width" => 600, :"data-height" => 400 %>
   <%= link_to 'контакте',
               user_omniauth_authorize_path(:vkontakte), :class => "vk-login-button",
