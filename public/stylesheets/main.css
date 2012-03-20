@@ -312,7 +312,6 @@ a:hover, a:active {
     list-style-type: none;
     border-top: none;
     margin: 0;
-    height: 250px;
     overflow: hidden;
 }
 .btn-notifications{
