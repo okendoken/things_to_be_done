@@ -47,8 +47,7 @@ a:hover {
 }
 
 a:focus {
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
+    outline: 0;
 }
 a:hover, a:active {
     outline: 0;
@@ -582,47 +581,52 @@ div.new-notifications-count{
     text-align: center;
 }
 
-.btn-support{
+.support-link{
     padding: 0;
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 30px;
     border: none;
+    background: url("../images/glyphicons.png") repeat-x;
+    display: inline-block;
+    line-height: 18px;
+    vertical-align: middle;
 }
 
-.btn-support.disabled.yes{
-    background: url("/images/up-down-30.png") no-repeat -69px 0;
+.support-link:hover{
+    background-color: #e8e8e8;
+    border-radius: 5px;
 }
 
-.btn-support.disabled.yes:hover{
-    background-position: -69px 0;
+.support-link.disabled.yes{
+
 }
 
-.btn-support.yes{
-    background: url("/images/up-down-30.png") no-repeat 4px 0;
+.support-link.disabled.yes:hover{
+
 }
 
-.btn-support.yes:hover{
-    background-position: 4px -1px;
+.support-link.yes{
+    background-position: -145px -1006px;
 }
 
-.btn-support.no{
-    background: url("/images/up-down-30.png") no-repeat -32px 0;
+.support-link.yes:hover{
+
 }
 
-.btn-support.no:hover{
-    background-position: -32px 1px;
+.support-link.no{
+    background-position: -97px -1006px;
 }
 
-.btn-support:hover{
-    padding: 0;
+.support-link.no:hover{
+
 }
 
-.btn-support.disabled.no{
-    background: url("/images/up-down-30.png") no-repeat -105px 0;
+.support-link.disabled.no{
+
 }
 
-.btn-support.disabled.no:hover{
-    background-position: -105px 0;
+.support-link.disabled.no:hover{
+
 }
 
 .small-project-link{
@@ -1028,4 +1032,43 @@ a[class*='-login-button']{
 
 .manage-dialog .popover-inner{
     width: 100%;
+}
+
+[class*="gly-icon-"] {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 24px;
+    vertical-align: text-top;
+    background-image: url("../images/glyphicons.png");
+    background-repeat: no-repeat;
+    *margin-right: .3em;
+}
+
+[class*="gly-icon-"]:last-child {
+    *margin-left: 0;
+}
+
+.gly-icon-done {
+    background-position: -385px -911px;
+}
+
+.project-done{
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    border: 1px solid #bdbdbd;
+    text-shadow: 0 1px 0 rgba(255,255,255,1);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    color: #464646;
+    background-image: -o-linear-gradient(#fafafa, #EBEBEB);
+}
+
+.project-done span{
+    position: relative;
+    top:3px;
 }
