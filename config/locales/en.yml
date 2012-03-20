@@ -78,3 +78,5 @@ en:
   add_comment_title: "Write what you think about %{target}"
   delete: "Delete"
   delete_title: "Delete %{target} and all related activity"
+  support_title: "Support %{target}"
+  dont_support_title: "Don't support %{target}"

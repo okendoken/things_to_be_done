@@ -1,8 +1,8 @@
 <div id="voter" class="pull-right">
   <%= link_to "", not_support_path(target), :remote => true,
-              :class => 'support-link no', :id => 'dont-supp-link' %>
+              :class => 'support-link no', :id => 'dont-supp-link', :title => t(:dont_support_title, :target => target.title) %>
   <%= link_to "", support_path(target), :remote => true,
-              :class => 'support-link yes', :id => 'supp-link' %>
+              :class => 'support-link yes', :id => 'supp-link', :title => t(:support_title, :target => target.title) %>
   <% if vote = target.user_vote(current_user) %>
       <script type="text/javascript">
           changeLikerState(<%= vote.positive?%>)
