@@ -70,4 +70,8 @@ module ApplicationHelper
     clazz = event.readable.class.name.downcase.to_sym
     DB_EVENT_TYPES[clazz].index(event.e_type)
   end
+
+  def is?(target, status)
+    target.is_a?(Task) ? task_status(target) == status : project_status(target) == status
+  end
 end

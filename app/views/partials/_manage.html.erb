@@ -7,14 +7,24 @@
     <div class="arrow"></div>
     <div class="popover-inner">
       <div class="popover-content">
-        <%= form_tag do %>
-            <%= link_to manage_path(target), :method => :post, :title => t(:complete_explanation), :class => 'btn btn-mini btn-success', :confirm => t(:are_you_sure) do %>
-                <i class="icon-ok icon-white"></i>
-                <%= t(:done) %>
+        <%= form_tag manage_path(target) do %>
+            <% unless is? target, :completed %>
+                <%= button_tag '', :name => :complete, :title => t(:complete_explanation), :class => 'btn btn-mini btn-success', :confirm => t(:are_you_sure) do %>
+                    <i class="icon-ok icon-white"></i>
+                    <%= t(:done) %>
+                <% end %>
             <% end %>
-            <%= link_to '', :title => t(:delete_title, :target => target.title), :class => 'btn btn-mini', :confirm => t(:are_you_sure) do %>
-                <i class="icon-remove"></i>
-                <%= t(:delete) %>
+            <% unless is? target, :in_progress %>
+                <%= button_tag '', :name => :resume, :title => t(:resume_title, :target => target.title), :class => 'btn btn-mini btn-primary', :confirm => t(:are_you_sure) do %>
+                    <i class="icon-road icon-white"></i>
+                    <%= t(:resume) %>
+                <% end %>
+            <% end %>
+            <% unless is? target, :canceled %>
+                <%= button_tag '', :name => :cancel, :title => t(:delete_title, :target => target.title), :class => 'btn btn-mini', :confirm => t(:are_you_sure) do %>
+                    <i class="icon-remove"></i>
+                    <%= t(:delete) %>
+                <% end %>
             <% end %>
         <% end %>
       </div>

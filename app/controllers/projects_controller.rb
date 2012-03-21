@@ -9,7 +9,13 @@ class ProjectsController < ApplicationController
   def manage
     @target = Project.find params[:id]
     if can? :manage, @target
-      @target.status = PROJECT_STATUS[:completed]
+      if not params[:complete].nil?
+        @target.status = PROJECT_STATUS[:completed]
+      elsif not params[:cancel].nil?
+        @target.status = PROJECT_STATUS[:canceled]
+      elsif not params[:resume].nil?
+        @target.status = PROJECT_STATUS[:in_progress]
+      end
       @target.save
     end
     redirect_to @target

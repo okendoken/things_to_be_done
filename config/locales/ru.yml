@@ -326,3 +326,5 @@ ru:
       completed: "Завершен"
       in_progress: "Выполняется"
       canceled: "Отменен"
+  resume_title: "Возобновить %{target}"
+  resume: "Возобновить"
