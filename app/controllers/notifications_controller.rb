@@ -6,7 +6,7 @@ class NotificationsController < ApplicationController
       if (readed_ides != nil)
         readed_ides.each do |id|
           event = RelatedEvent.find id
-          if can? :update, event
+          if can? :manage, event
             event.read = true
             event.save
           end

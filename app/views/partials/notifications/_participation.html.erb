@@ -4,7 +4,7 @@
    task = event.readable.task
 %>
 
-  <% if can? :destroy, event %>
+  <% if can? :manage, event %>
       <%#TODO: css class for btn submit%>
       <%= button_to 'x', notification_path(event), :remote => true,
                   :method => :delete %>
