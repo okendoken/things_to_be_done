@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def complete
+  def manage
     @target = Project.find params[:id]
     if can? :manage, @target
       @target.status = PROJECT_STATUS[:completed]

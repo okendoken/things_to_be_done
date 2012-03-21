@@ -24,7 +24,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def complete
+  def manage
     @target = Task.find params[:id]
     if can? :manage, @target
       @target.status = TASK_STATUS[:completed]
