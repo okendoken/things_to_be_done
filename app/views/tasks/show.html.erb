@@ -55,7 +55,7 @@
         <% end %>
       </div>
       <div id="participate-button" class="pull-right">
-        <% unless participates_in_this %>
+        <% if not participates_in_this and task_status(@task) == :in_progress%>
             <%= render 'partials/participate_button'%>
         <% end %>
       </div>

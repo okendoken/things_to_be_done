@@ -88,3 +88,5 @@ en:
     completed: "Done"
     in_progress: "In progress"
     canceled: "Canceled"
+  resume_title: "Resume %{target}"
+  resume: "Resume"
