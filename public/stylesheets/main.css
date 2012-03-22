@@ -832,6 +832,12 @@ div.new-notifications-count{
     border-radius: 3px;
 }
 
+.base-block, .base-panel, .participators-count{
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
+}
+
 .user-face{
     float: left;
     height: 68px;
@@ -1072,4 +1078,8 @@ a[class*='-login-button']{
 
 .inline-status i{
     margin-right: 2px;
+}
+
+.users-panel{
+    margin-top: 10px;
 }
