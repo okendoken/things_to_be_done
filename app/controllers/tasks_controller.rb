@@ -28,13 +28,12 @@ class TasksController < ApplicationController
     @target = Task.find params[:id]
     if can? :manage, @target
       if not params[:complete].nil?
-        @target.status = TASK_STATUS[:completed]
+        @target.change_status :completed, current_user
       elsif not params[:cancel].nil?
-        @target.status = TASK_STATUS[:canceled]
+        @target.change_status :canceled, current_user
       elsif not params[:resume].nil?
-        @target.status = TASK_STATUS[:in_progress]
+        @target.change_status :in_progress, current_user
       end
-      @target.save
     end
     redirect_to project_task_path(@target)
   end

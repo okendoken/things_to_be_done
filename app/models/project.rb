@@ -37,4 +37,9 @@ class Project < ActiveRecord::Base
     Activity.joins(:participation => :task).where(:'tasks.project_id' => self.id)
   end
 
+  def change_status(status, user)
+    self.status = PROJECT_STATUS[status]
+    self.save
+  end
+
 end

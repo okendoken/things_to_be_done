@@ -60,4 +60,9 @@ class Task < ActiveRecord::Base
     activity
   end
 
+  def change_status(status, user)
+    self.status = TASK_STATUS[status]
+    self.save
+  end
+
 end
