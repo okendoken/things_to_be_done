@@ -40,6 +40,7 @@ class Project < ActiveRecord::Base
   def change_status(status, user)
     self.status = PROJECT_STATUS[status]
     self.save
+    RelatedEvent.notify_all self, status, user
   end
 
 end
