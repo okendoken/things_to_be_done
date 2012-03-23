@@ -12,7 +12,7 @@ module EventEnvironment
           #task has been completed. notify task, parent-project, task-author
           :completed => Proc.new{|task| [task, task.project] + task.participants},
           #etc
-          :canceled => Proc.new{|task| [task, task.project, task.participants]},
+          :canceled => Proc.new{|task| [task, task.project] + task.participants},
           :in_progress => Proc.new{|task| [task, task.project] + task.participants}
       },
       :participation => {
@@ -59,14 +59,14 @@ module EventEnvironment
 
   NEWS_TEMPLATES = {
       :project => {
-          :completed => 'partials/stub',
-          :canceled => 'partials/stub',
-          :in_progress => 'partials/stub'
+          :completed => 'partials/news/project',
+          :canceled => 'partials/news/project',
+          :in_progress => 'partials/news/project'
       },
       :task => {
-          :completed => 'partials/stub',
-          :canceled => 'partials/stub',
-          :in_progress => 'partials/stub'
+          :completed => 'partials/news/task',
+          :canceled => 'partials/news/task',
+          :in_progress => 'partials/news/task'
       },
       :participation => {
           :added => 'partials/news/participation',

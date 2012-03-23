@@ -90,3 +90,12 @@ en:
     canceled: "Canceled"
   resume_title: "Resume %{target}"
   resume: "Resume"
+  news:
+    project:
+      completed: "is done"
+      in_progress: "resumed"
+      canceled: "canceled"
+    task:
+      completed: "is done"
+      in_progress: "resumed"
+      canceled: "canceled"

@@ -1087,3 +1087,11 @@ a[class*='-login-button']{
 .users-panel{
     margin-top: 10px;
 }
+
+.users-panel .base-block{
+    padding-top: 10px;
+}
+
+.news-single-face img {
+    border-radius: 2px;
+}

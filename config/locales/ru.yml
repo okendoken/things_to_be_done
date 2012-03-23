@@ -328,3 +328,12 @@ ru:
       canceled: "Отменен"
   resume_title: "Возобновить %{target}"
   resume: "Возобновить"
+  news:
+    project:
+        completed: "Завершен"
+        in_progress: "Выполняется"
+        canceled: "Отменен"
+    task:
+        completed: "успешно завершен!"
+        in_progress: "возобновлен"
+        canceled: "отменен"
