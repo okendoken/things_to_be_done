@@ -9,7 +9,7 @@ module Votable
     else
       vote = Vote.create!(:positive => positive, :user => user, :target => self)
     end
-    RelatedEvent.notify_all(vote, positive, user)
+    on_vote_for_this vote, positive, user
     vote
   end
 
@@ -47,6 +47,10 @@ module Votable
 
   def nvl(a)
     a.nil? ? 0 : a
+  end
+
+  def on_vote_for_this(vote, positive, user)
+    RelatedEvent.notify_all(vote, positive, user)
   end
 
 end

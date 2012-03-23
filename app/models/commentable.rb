@@ -1,7 +1,13 @@
 module Commentable
   def comment_this(text, user)
     comment = self.comments.create!(:user => user, :text => text)
-    RelatedEvent.notify_all(comment, :added, user)
+    on_comment comment, user
     comment
+  end
+
+  private
+
+  def on_comment(comment, user)
+    RelatedEvent.notify_all(comment, :added, user)
   end
 end
