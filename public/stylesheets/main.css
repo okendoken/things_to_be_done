@@ -818,6 +818,7 @@ div.new-notifications-count{
     font-weight: 600;
     text-shadow: none;
     font-family: "Lato", "Helvetica", "Helvetica", "Arial", sans-serif;
+    text-align: center;
 }
 
 .block-header > a{
