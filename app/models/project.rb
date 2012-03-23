@@ -43,4 +43,8 @@ class Project < ActiveRecord::Base
     RelatedEvent.notify_all self, status, user
   end
 
+  def participants
+    User.joins(:participations => :task).where(:'tasks.project_id' => self.id).uniq
+  end
+
 end

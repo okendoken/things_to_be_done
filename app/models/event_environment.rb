@@ -3,11 +3,9 @@ module EventEnvironment
   # format: stuff_to_process/event_type
   EVENT_READERS = {
       :project => {
-          #task has been completed. notify task, parent-project, task-author
-          :completed => Proc.new{|project| [project]},
-          #etc
-          :canceled => Proc.new{|project| [project]},
-          :in_progress => Proc.new{|project| [project]}
+          :completed => Proc.new{|project| [project] + project.participants},
+          :canceled => Proc.new{|project| [project] + project.participants},
+          :in_progress => Proc.new{|project| [project] + project.participants}
       },
       #task-related events
       :task => {
