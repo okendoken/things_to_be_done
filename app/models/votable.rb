@@ -1,5 +1,7 @@
 module Votable
 
+  include RatingEnvironment
+
   def vote_for_this(user, positive = true)
     if vote = self.user_vote(user)
       if positive ^ vote.positive?
@@ -51,6 +53,7 @@ module Votable
 
   def on_vote_for_this(vote, positive, user)
     RelatedEvent.notify_all(vote, positive, user)
+    change_related_rating(vote, positive)
   end
 
 end
