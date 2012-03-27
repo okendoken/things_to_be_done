@@ -51,6 +51,7 @@ class Project < ActiveRecord::Base
 
   def on_status_change(status, user)
     RelatedEvent.notify_all self, status, user
+    change_related_rating self, status
   end
 
 end

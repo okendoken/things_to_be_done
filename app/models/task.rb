@@ -70,18 +70,22 @@ class Task < ActiveRecord::Base
 
   def on_participate(participation, user)
     RelatedEvent.notify_all(participation, :added, user)
+    change_related_rating participation, :added
   end
 
   def on_leave(part, user)
     RelatedEvent.notify_all(part, :canceled, user)
+    change_related_rating part, :canceled
   end
 
   def on_commit(activity, user)
     RelatedEvent.notify_all(activity, :added, user)
+    change_related_rating activity, :added
   end
 
   def on_status_change(status, user)
     RelatedEvent.notify_all self, status, user
+    change_related_rating self, status
   end
 
 end
