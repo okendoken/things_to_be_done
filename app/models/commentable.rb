@@ -9,6 +9,6 @@ module Commentable
 
   def on_comment(comment, user)
     RelatedEvent.notify_all(comment, :added, user)
-    change_related_rating comment, :added
+    #change_related_rating comment, :added
   end
 end
