@@ -21,7 +21,7 @@ gem 'omniauth-twitter'
 gem 'sinatra'
 gem 'omniauth-vkontakte'
 
-gem 'paperclip'
+gem "paperclip", "~> 3.0"
 
 gem 'rails3-jquery-autocomplete'
 
