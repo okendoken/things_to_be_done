@@ -2,39 +2,39 @@
 put all hand-made css stuff here
 */
 body{
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 header{
-    height: 70px;
-    background-color: #F8F8F8;
+    height: 40px;
     position: absolute;
-    background-color: #fafafa;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d9edf7), color-stop(60%, #ffffff), to(#ffffff));
-    background-image: -webkit-linear-gradient(#d9edf7, #ffffff 60%, #ffffff);
-    background-image: -moz-linear-gradient(top, #d9edf7, #ffffff 60%, #ffffff);
-    background-image: -ms-linear-gradient(#d9edf7, #ffffff 60%, #ffffff);
-    background-image: -o-linear-gradient(#d9edf7, #ffffff 60%, #ffffff);
-    background-image: linear-gradient(#d9edf7, #ffffff 60%, #ffffff);
-    background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9edf7', endColorstr='#ffffff', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#459ade), to(#2e6da3));
+    background-image: -webkit-linear-gradient(#459ade, #2e6da3);
+    background-image: -moz-linear-gradient(top, #459ade, #2e6da3);
+    background-image: -ms-linear-gradient(#459ade, #2e6da3);
+    background-image: -o-linear-gradient(#459ade, #2e6da3);
+    background-image: linear-gradient(#459ade, #2e6da3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#459ade', endColorstr='#2e6da3', GradientType=0);
+    border-bottom: 1px solid #999999;
     left: 0;
     right: 0;
     top: 0;
 }
 
 footer{
+    margin-top: 40px;
     height: 100px;
-    background-color: #F8F8F8;
-    background-color: #fafafa;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(70%, #ffffff), to(#d9edf7));
-    background-image: -webkit-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
-    background-image: -moz-linear-gradient(top, #ffffff, #ffffff 70%, #d9edf7);
-    background-image: -ms-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
-    background-image: -o-linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
-    background-image: linear-gradient(#ffffff, #ffffff 70%, #d9edf7);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2e6da3), to(#459ade));
+    background-image: -webkit-linear-gradient(#2e6da3, #459ade);
+    background-image: -moz-linear-gradient(top, #2e6da3, #459ade);
+    background-image: -ms-linear-gradient(#2e6da3, #459ade);
+    background-image: -o-linear-gradient(#2e6da3, #459ade);
+    background-image: linear-gradient(#2e6da3, #459ade);
     background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d9edf7', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e6da3', endColorstr='#459ade', GradientType=0);
+    -webkit-box-shadow: 0 -1px 2px #2e6da3;
+    -moz-box-shadow:0 -1px 2px #2e6da3;
+    box-shadow: 0 -1px 2px #2e6da3;
 }
 
 a {
@@ -58,19 +58,21 @@ a:hover, a:active {
     display: inline-block;
     color: #ffffff;
     text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);
+    padding: 0 5px;
 }
 
 .logo:hover{
     color: #ffffff;
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);
     text-decoration: none;
     background-color: rgba(21,77,255,0.07);
+    text-shadow: 0 1px 2px rgba(51, 51, 51, 1), 0 -1px 2px rgba(255,255,255,0.5);
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 0 5px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .header-container{
@@ -217,7 +219,8 @@ a:hover, a:active {
 }
 .footer-links{
     list-style: none;
-    font-size: 12px;
+    font-size: 14px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 .footer-links > li{
@@ -227,6 +230,7 @@ a:hover, a:active {
 
 .footer-links > li > a{
     text-decoration: none;
+    color: white;
 }
 
 .footer-links > li > a:hover{
@@ -236,6 +240,7 @@ a:hover, a:active {
 .footer-links > li:last-child{
     float: right;
     font-size: 10px;
+    text-shadow: none;
 }
 
 #login-dialog{
