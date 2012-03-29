@@ -1,7 +1,7 @@
 
 <li>
-<%= link_to notifications_path, :id => "notifications-link" do %>
-      <div class="btn-notifications">
+<%= link_to notifications_path, :id => "notifications-link", :class => 'btn-notifications' do %>
+      <div>
         <span class="notifications-icon"></span>
         <div class="notifications-count-container">
             <% unread_count = current_user.related_events.where("read != 't'").count %>

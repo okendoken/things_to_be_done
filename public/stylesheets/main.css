@@ -98,8 +98,10 @@ a:hover, a:active {
 }
 
 .btn-sign{
+    font-size: 11px;
+    line-height: 14px;
+    padding: 2px 6px;
     display: inline-block;
-    padding: 4px 10px 4px;
     color: #3072a6;
     text-align: center;
     text-shadow: 0 1px 1px white;
@@ -132,6 +134,20 @@ a:hover, a:active {
     text-decoration: none;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
     color: #3a89c9;
+}
+
+.btn-sign:focus{
+    padding: 3px 7px;
+}
+
+.btn-sign.in{
+    padding: 4px 10px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.btn-sign.in:focus{
+    padding: 5px 11px;
 }
 
 .btn-danger{
@@ -315,12 +331,11 @@ a:hover, a:active {
     overflow: hidden;
 }
 .btn-notifications{
-    padding-bottom: 0px;
+    padding: 0 6px;
     display: inline-block;
-    padding: 4px 10px 0px;
     margin-bottom: 0;
     font-size: 13px;
-    line-height: 18px;
+    line-height: 14px;
     color: #333333;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
