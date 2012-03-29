@@ -1,7 +1,7 @@
 <ul class="nav">
   <% if user_signed_in? %>
       <%= render :partial => 'partials/notifications_link' %>
-      <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-success spike" %></li>
+      <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-sign" %></li>
   <% else %>
       <% if display_vk_login? %>
           <li><%= link_to 'контакте',
@@ -15,7 +15,7 @@
                           user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
                           :"data-width" => 600, :"data-height" => 400 %></li>
       <% end %>
-      <li><%= link_to t(:sign_in), '', :class => "btn-success spike", :id => "sign-in-link" %></li>
+      <li><%= link_to t(:sign_in), '', :class => "btn-sign", :id => "sign-in-link" %></li>
   <% end %>
 </ul>
 
