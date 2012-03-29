@@ -19,8 +19,8 @@
   <% end %>
 </ul>
 
-<div id="login-dialog">
-  <div id="login-dialog-content">
+<div id="login-dialog" class="login-dialog">
+  <div id="login-dialog-content" class="login-dialog-content">
     <%= form_for("user", :url => user_session_path) do |f| %>
         <div class="row">
           <%= f.label "E-mail", :class => 'span1' %>
