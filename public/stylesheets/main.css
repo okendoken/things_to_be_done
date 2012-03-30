@@ -2,11 +2,11 @@
 put all hand-made css stuff here
 */
 body{
-    padding-top: 80px;
+    padding-top: 70px;
 }
 
 header{
-    height: 40px;
+    height: 30px;
     position: absolute;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#459ade), to(#2e6da3));
     background-image: -webkit-linear-gradient(#459ade, #2e6da3);
@@ -54,15 +54,20 @@ a:hover, a:active {
 }
 
 .logo{
+    position: relative;
+    top: -4px;
+}
+
+.logo > a{
     text-decoration: none;
     display: inline-block;
     color: #ffffff;
     text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);
     padding: 0 5px;
-    margin-top: 1px;
+    margin: 0;
 }
 
-.logo:hover{
+.logo > a:hover{
     color: #ffffff;
     text-decoration: none;
     background-color: rgba(21,77,255,0.07);
@@ -89,7 +94,7 @@ a:hover, a:active {
 .header-container .nav {
     float: right;
     position: relative;
-    margin-top: 6px;
+    margin-top: 1px;
 }
 
 .header-container .nav > li{
@@ -646,6 +651,8 @@ div.new-notifications-count{
 }
 
 .avatar{
+    width: 220px;
+    height: 300px;
     max-width: 220px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -800,9 +807,9 @@ div.new-notifications-count{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     *margin-left: .3em;
 }
@@ -1154,4 +1161,14 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-page-main{
     padding: 40px;
+}
+
+.task-row-image{
+    float: left;
+}
+
+.task-row-content{
+    float:left;
+    width: 200px;
+    margin-left: 5px;
 }
