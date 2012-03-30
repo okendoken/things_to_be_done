@@ -8,6 +8,15 @@ body{
 header{
     height: 30px;
     position: absolute;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    -moz-border-bottom-right-radius: 7px;
+    border-bottom-right-radius: 7px;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#459ade), to(#2e6da3));
     background-image: -webkit-linear-gradient(#459ade, #2e6da3);
     background-image: -moz-linear-gradient(top, #459ade, #2e6da3);
