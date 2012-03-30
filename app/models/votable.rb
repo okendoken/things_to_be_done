@@ -16,7 +16,7 @@ module Votable
   end
 
   def desc_short
-    self.description.length > 80 ? self.description.slice(0,80) + '...' : self.description
+    self.description.length > 50 ? self.description.slice(0, 50) + '...' : self.description
   end
 
   def desc_sliced_1000

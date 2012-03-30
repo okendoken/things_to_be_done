@@ -1,11 +1,11 @@
-<div class="small-voter">
-  <%= link_to not_support_path(target), :remote => true, :method => :post,
-              :'data-type' => 'json', :'data-toggle' => "small-dont-supp-link-#{target.class.name.downcase}-#{target.id.to_s}" do%>
-      <i class="icon-arrow-down icon-gray"></i>
-  <% end %>
+<div class="small-voter vertical">
   <%= link_to support_path(target), :remote => true, :method => :post,
               :'data-type' => 'json', :'data-toggle' => "small-supp-link-#{target.class.name.downcase}-#{target.id.to_s}" do%>
       <i class="icon-arrow-up icon-gray"></i>
+  <% end %>
+  <%= link_to not_support_path(target), :remote => true, :method => :post,
+              :'data-type' => 'json', :'data-toggle' => "small-dont-supp-link-#{target.class.name.downcase}-#{target.id.to_s}" do%>
+      <i class="icon-arrow-down icon-gray"></i>
   <% end %>
   <% if vote = target.user_vote(current_user) %>
       <script type="text/javascript">
