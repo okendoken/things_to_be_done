@@ -2,12 +2,18 @@ module EventEnvironment
   #what guys should be notified when something happened
   # format: stuff_to_process/event_type
   EVENT_READERS = {
+      :project => {
+          :completed => Proc.new{|project| [project] + project.participants},
+          :canceled => Proc.new{|project| [project] + project.participants},
+          :in_progress => Proc.new{|project| [project] + project.participants}
+      },
       #task-related events
       :task => {
           #task has been completed. notify task, parent-project, task-author
-          :completed => Proc.new{|task| [task, task.project, task.user]},
+          :completed => Proc.new{|task| [task, task.project] + task.participants},
           #etc
-          :canceled => Proc.new{|task| [task, task.project, task.user]}
+          :canceled => Proc.new{|task| [task, task.project] + task.participants},
+          :in_progress => Proc.new{|task| [task, task.project] + task.participants}
       },
       :participation => {
           #somebody participated. notify parent-task, task-author
@@ -29,8 +35,11 @@ module EventEnvironment
   }
 
   DB_EVENT_TYPES = {
+      :project => {
+          :completed => 0, :canceled => 1, :in_progress => 3
+      },
       :task => {
-          :completed => 0, :canceled => 1
+          :completed => 0, :canceled => 1, :in_progress => 3
       },
       :participation => {
           :added => 10, :completed => 11, :canceled => 12
@@ -49,6 +58,16 @@ module EventEnvironment
   }
 
   NEWS_TEMPLATES = {
+      :project => {
+          :completed => 'partials/news/project',
+          :canceled => 'partials/news/project',
+          :in_progress => 'partials/news/project'
+      },
+      :task => {
+          :completed => 'partials/news/task',
+          :canceled => 'partials/news/task',
+          :in_progress => 'partials/news/task'
+      },
       :participation => {
           :added => 'partials/news/participation',
           :canceled => 'partials/news/participation'
@@ -67,6 +86,16 @@ module EventEnvironment
   }
 
   NOTIFICATIONS_TEMPLATES = {
+      :project => {
+          :completed => 'partials/stub',
+          :canceled => 'partials/stub',
+          :in_progress => 'partials/stub'
+      },
+      :task => {
+          :completed => 'partials/stub',
+          :canceled => 'partials/stub',
+          :in_progress => 'partials/stub'
+      },
       :participation => {
           :added => 'partials/notifications/participation',
           :canceled => 'partials/news/participation'

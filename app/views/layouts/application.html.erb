@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title) : 'things to be done. what to fix' %></title>
+  <title><%= content_for?(:title) ? yield(:title) : 'Things to be done. What to fix' %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery-1.7.1.min', 'jquery-ui-1.8.17.custom.min', 'rails', 'autocomplete-rails', 'bootstrap', 'application.js' %>
   <%= yield :custom_js %>
@@ -12,11 +12,6 @@
   <%= render 'layouts/header' %>
 </header>
 <div class="container">
-  <% if flash[:access_denied_error] %>
-    <div id="flash_error">
-      <%= flash[:access_denied_error] %>
-    </div>
-  <% end %>
   <%= yield %>
 </div>
 

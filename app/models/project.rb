@@ -37,4 +37,37 @@ class Project < ActiveRecord::Base
     Activity.joins(:participation => :task).where(:'tasks.project_id' => self.id)
   end
 
+  def change_status(status, user)
+    self.status = PROJECT_STATUS[status]
+    self.save
+    on_status_change status, user
+  end
+
+  def participants
+    User.joins(:participations => :task).where(:'tasks.project_id' => self.id).uniq
+  end
+
+  def most_valuable_tasks
+    tasks.order(<<-SQL
+        ifnull((select vp - vn as rating from (
+                      select
+                              (select count(*) from votes where positive = 't'
+                                                and target_type = 'Task'
+                                                and target_id = tasks.id) as vp,
+                              (select count(*) from votes where positive = 'f'
+                                                and target_type = 'Task'
+                                                and target_id = tasks.id) as vn
+                    )
+            ), 0) desc
+    SQL
+    )
+  end
+
+  private
+
+  def on_status_change(status, user)
+    RelatedEvent.notify_all self, status, user
+    change_related_rating self, status
+  end
+
 end

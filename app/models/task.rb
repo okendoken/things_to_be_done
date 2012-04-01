@@ -28,7 +28,7 @@ class Task < ActiveRecord::Base
     participation = Participation.where(:user_id => user.id, :task_id => self.id)[0] || Participation.new(:user => user, :task => self)
     participation.status = PARTICIPATION_STATUS[:in_progress]
     participation.save
-    RelatedEvent.notify_all(participation, :added, user)
+    on_participate participation, user
   end
 
   def participates_in_this?(user)
@@ -40,7 +40,7 @@ class Task < ActiveRecord::Base
     if part = Participation.where(:user_id => user.id, :task_id => self.id)[0]
       part.status = PARTICIPATION_STATUS[:canceled]
       part.save
-      RelatedEvent.notify_all(part, :canceled, user)
+      on_leave part, user
     end
   end
 
@@ -56,8 +56,36 @@ class Task < ActiveRecord::Base
   def commit_this(text, user, status = ACTIVITY_STATUS[:in_progress])
     participation = Participation.where(:user_id => user.id, :task_id => self.id)[0]
     activity = participation.activities.create!(:user => user, :text => text, :status => status)
-    RelatedEvent.notify_all(activity, :added, user)
+    on_commit activity, user
     activity
+  end
+
+  def change_status(status, user)
+    self.status = TASK_STATUS[status]
+    self.save
+    on_status_change status, user
+  end
+
+  private
+
+  def on_participate(participation, user)
+    RelatedEvent.notify_all(participation, :added, user)
+    change_related_rating participation, :added
+  end
+
+  def on_leave(part, user)
+    RelatedEvent.notify_all(part, :canceled, user)
+    change_related_rating part, :canceled
+  end
+
+  def on_commit(activity, user)
+    RelatedEvent.notify_all(activity, :added, user)
+    change_related_rating activity, :added
+  end
+
+  def on_status_change(status, user)
+    RelatedEvent.notify_all self, status, user
+    change_related_rating self, status
   end
 
 end

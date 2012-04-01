@@ -1,0 +1,23 @@
+<% project = event.readable %>
+<% clazz = project.class.name.downcase %>
+<% event_type = symbol_event_type(event) %>
+<div class="news-single">
+  <div class="news-single-face">
+    <div>
+      <%= link_to project do %>
+          <%= image_tag "avatar.jpg", :style => 'max-height:30px; max-width:30px;' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="news-single-body">
+    <%= link_to project.title, project %>
+    <%= t :"news.#{clazz}.#{event_type}" %>
+  </div>
+  <div class="news-single-info simple-gray">
+    <i class="<%= {:in_progress => 'icon-repeat',:completed => 'icon-ok',:canceled => 'icon-remove-sign'}[symbol_event_type(event)]%> icon-gray"></i>
+    <%= format_date event.created_at %>
+    <div class="news-single-actions">
+    </div>
+  </div>
+  <hr/>
+</div>

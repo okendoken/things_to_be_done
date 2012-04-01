@@ -58,8 +58,8 @@ module ApplicationHelper
     object.is_a?(Task) ? news_project_task_path(object.project, object) : news_project_path(object)
   end
 
-  def complete_path(object)
-    object.is_a?(Task) ? complete_project_task_path(object.project, object) : complete_project_path(object)
+  def manage_path(object)
+    object.is_a?(Task) ? manage_project_task_path(object.project, object) : manage_project_path(object)
   end
 
   def prepare_for_path(object)
@@ -69,5 +69,9 @@ module ApplicationHelper
   def symbol_event_type(event)
     clazz = event.readable.class.name.downcase.to_sym
     DB_EVENT_TYPES[clazz].index(event.e_type)
+  end
+
+  def is?(target, status)
+    target.is_a?(Task) ? task_status(target) == status : project_status(target) == status
   end
 end

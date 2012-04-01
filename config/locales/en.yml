@@ -71,6 +71,7 @@ en:
       added: "has joined"
       canceled: "has left"
       completed: "has successfully completed"
+  participated_in: "participated in"
   add_and_complete: "Add & Complete"
   add_title: "Write about performing the task"
   add_and_complete_title: "Complete task and write about it"
@@ -88,4 +89,18 @@ en:
     completed: "Done"
     in_progress: "In progress"
     canceled: "Canceled"
-    participated_in: "participated in"
+  resume_title: "Resume %{target}"
+  resume: "Resume"
+  news:
+    project:
+      completed: "is done"
+      in_progress: "resumed"
+      canceled: "canceled"
+    task:
+      completed: "is done"
+      in_progress: "resumed"
+      canceled: "canceled"
+  show_all: "Show all..."
+  most_popular: "The most valuable tasks"
+  recently_completed: "Recently completed tasks"
+  its_empty_yet: "It's empty yet"

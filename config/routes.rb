@@ -42,8 +42,9 @@ GreatWork::Application.routes.draw do
   resources :projects, :path => "", :except => [:index, :create ] do
     member do
       get 'news'
-      scope 'manage' do
-        post 'complete'
+      get 'tasks'
+      scope 'admin' do
+        post 'manage'
       end
     end
     resources :comments, :only => [:index, :create]
@@ -51,8 +52,8 @@ GreatWork::Application.routes.draw do
     resources :tasks, :path => "", :except => [:index, :create ] do
       member do
         get 'news'
-        scope 'manage' do
-          post 'complete'
+        scope 'admin' do
+          post 'manage'
         end
       end
       resources :comments, :only => [:index, :create]

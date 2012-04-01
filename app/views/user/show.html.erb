@@ -1,48 +1,47 @@
-<% name = @user.nickname %>
-
-<% if is_current_user_content? @user %>
-    Hallo <%= name %>. This is <span style="color: #e66a28;">Your</span> page.
-<% else %>
-    This is <%= name %>'s page
-<% end %>
-
-<% unless @user_info.about_myself.nil? %>
-    <p>
-      <b>About <%= name %>:</b>
-      <%= @user_info.about_myself %>
-    </p>
-<% end %>
-
-<div class="related-content">
-  <div class="group-header">
-    Tasks you participate in
-  </div>
-  <div class="base-panel">
-    <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
+<div class="user-page">
+  <% content_for(:title) do%>
+      <%= @user.nickname%>
+  <% end %>
+  <div class="blue-gradient well user-page-main">
+    <h1 class="inset-text-shadow" title="<%= @user.nickname %>">
+      <%= @user.nickname %>
+    </h1>
+    <h1 class="inset-text-shadow" title="Rating - <%= @user.rating %>">
+      Rating - <%= @user.rating %>
+    </h1>
   </div>
 
-  <div class="group-header">
-    Projects you like
-  </div>
-  <div class="project-task">
-    <% @user.voted_projects.each do |project| %>
-        <div class="row">
-          <span class="span3"><%= link_to project.title, project %></span>
-          <span class="span3"><%= project.desc_short%></span>
-        </div>
-    <% end %>
-  </div>
+  <div class="related-content">
+    <div class="group-header">
+      Tasks you participate in
+    </div>
+    <div class="base-panel">
+      <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
+    </div>
 
-  <div class="group-header">
-    Tasks you like
-  </div>
-  <div class="project-task">
-    <% @user.voted_tasks.each do |task| %>
-        <div class="row">
-          <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
-          <span class="span3"><%= link_to task.project.title, task.project %></span>
-          <span class="span3"><%= task.desc_short%></span>
-        </div>
-    <% end %>
+    <div class="group-header">
+      Projects you like
+    </div>
+    <div class="project-task">
+      <% @user.voted_projects.each do |project| %>
+          <div class="row">
+            <span class="span3"><%= link_to project.title, project %></span>
+            <span class="span3"><%= project.desc_short%></span>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="group-header">
+      Tasks you like
+    </div>
+    <div class="project-task">
+      <% @user.voted_tasks.each do |task| %>
+          <div class="row">
+            <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
+            <span class="span3"><%= link_to task.project.title, task.project %></span>
+            <span class="span3"><%= task.desc_short%></span>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>

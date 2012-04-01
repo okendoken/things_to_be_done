@@ -1,5 +1,7 @@
 module Votable
 
+  include RatingEnvironment
+
   def vote_for_this(user, positive = true)
     if vote = self.user_vote(user)
       if positive ^ vote.positive?
@@ -9,12 +11,12 @@ module Votable
     else
       vote = Vote.create!(:positive => positive, :user => user, :target => self)
     end
-    RelatedEvent.notify_all(vote, positive, user)
+    on_vote_for_this vote, positive, user
     vote
   end
 
   def desc_short
-    self.description.length > 120 ? self.description.slice(0,120) + '...' : self.description
+    self.description.length > 65 ? self.description.slice(0, 65) + '...' : self.description
   end
 
   def desc_sliced_1000
@@ -47,6 +49,11 @@ module Votable
 
   def nvl(a)
     a.nil? ? 0 : a
+  end
+
+  def on_vote_for_this(vote, positive, user)
+    RelatedEvent.notify_all(vote, positive, user)
+    change_related_rating(vote, positive)
   end
 
 end

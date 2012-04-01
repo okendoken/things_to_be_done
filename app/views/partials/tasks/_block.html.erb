@@ -1,0 +1,22 @@
+<% limit ||= limit
+   tasks ||= project.tasks
+   link_parameters ||= link_parameters
+   count = tasks.count
+%>
+<div class="task-block">
+  <div class="group-header">
+    <%= title %>
+  </div>
+  <div class="base-panel clearfix">
+    <% if count > 0 %>
+        <%= render :partial => 'partials/task_row', :collection => tasks, :as => :task %>
+        <% if limit %>
+            <div class="task-block-links">
+              <%= link_to t(:show_all), tasks_project_path(project, link_parameters)%>
+            </div>
+        <% end %>
+    <% else %>
+        <%= t :its_empty_yet %>
+    <% end %>
+  </div>
+</div>
