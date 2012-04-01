@@ -309,6 +309,7 @@ ru:
     added: "присоединился к"
     canceled: "покинул"
     completed: "успешно завершил"
+  participated_in: "учавствует в"
   add_and_complete: "Добавить и Завершить"
   add_title: "Написать о ходе выполнения задания"
   add_and_complete_title: "Завершить задание и рассказать об этом"

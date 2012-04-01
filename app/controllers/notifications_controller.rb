@@ -15,7 +15,7 @@ class NotificationsController < ApplicationController
       # mark as read event, which user saw. receive ides from params
       @events = current_user.related_events
       respond_to do |format|
-        format.js {render 'common/notifications'}
+        format.js { render 'common/notifications' }
       end
     end
   end

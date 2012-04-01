@@ -1,15 +1,41 @@
 <div id="notifications-dialog">
   <div class="notifications-content">
     <ul class="notifications-list">
-        <%= render :partial => 'partials/all_notifications', :locals => {:events => current_user.related_events} %>
     </ul>
   </div>
 </div>
 <script>
     $(function () {
-        $("#notifications-link").click(function () {
-            $("#notifications-dialog").slideDown(230);
+        $("#notifications-link").click(updateNotifications);
+
+        function updateNotifications() {
+            var link = $("#view-more");
+            // Link exists
+            if(link.length != 0) {
+                $.post(link.attr("href"), function() {
+                    setNotificationCount();
+                    $("#notifications-dialog").slideDown(230);
+                });
+            } else {
+                $.post($("#notifications-link").attr("href"), function() {
+                    setNotificationCount();
+                    $("#view-more").live('click', updateNotifications);
+                    $("#notifications-dialog").slideDown(230);
+                });
+            }
             return false;
-        });
-    });
+        }
+
+        function setNotificationCount() {
+            var readedCount = $(".notification-member").length;
+            if(readedCount != 0) {
+                currentCount = $(".notifications-unread-count").html() - readedCount;
+                if(currentCount > 0) {
+                    $(".notifications-unread-count").html(currentCount);
+                } else {
+                    $(".notifications-count-container").hide();
+                }
+            }
+        }
+    })
 </script>

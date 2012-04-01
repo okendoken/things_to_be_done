@@ -283,9 +283,9 @@ a:hover, a:active {
     position: relative;
     z-index: 1000;
     float: right;
-    left:  200px;
+    left:  100px;
     top: 40px;
-    width: 300px;
+    width: 200px;
 
     background-color: white;
 
@@ -373,11 +373,10 @@ a:hover, a:active {
     display: inline-block;
 }
 .notifications-list li{
-    height: 70px;
     display: block;
     overflow: hidden;
     border-top: 1px solid #bbbbbb;
-    text-align: center
+    padding-left: 5px;
 }
 
 .notifications-list li.header{
@@ -389,9 +388,19 @@ a:hover, a:active {
 }
 
 p.notifications-dialog-title{
-    padding: 0 140px 0 5px;
+    padding-right: 5px;
     margin: 0;
 }
+
+.notifications-single {
+    padding: 5px;
+}
+
+.notifications-single-body {
+    margin-left: 0px;
+}
+
+
 
 p.view-more{
     font-size: 10px;
@@ -881,7 +890,7 @@ div.new-notifications-count{
     margin-top: 20px;
 }
 
-.news-single-face, .comment-face{
+.news-single-face, .comment-face, .notifications-single-face{
     float: left;
 }
 

@@ -1,10 +1,10 @@
-
 <li>
-<%= link_to notifications_path, :id => "notifications-link" do %>
+  <%= link_to url_for(:action => 'get_new_notifications', :controller => 'notifications'),
+              :remote => true, :method => :post, :id => "notifications-link" do %>
       <div class="btn-notifications">
         <span class="notifications-icon"></span>
         <div class="notifications-count-container">
-            <% unread_count = current_user.related_events.where("read != 't'").count %>
+            <% unread_count = current_user.related_events.where(:read => false).count %>
             <%= render :partial => 'partials/notifications_count'%>
         </div>
       </div>
