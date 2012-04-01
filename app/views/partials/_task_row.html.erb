@@ -1,5 +1,12 @@
 <div class="row">
-  <span class="task-row-image"><img style="max-height: 32px; max-width: 32px;" src="/images/rails.png" alt="Image"/></span>
+  <div class="task-row-image">
+    <div>
+      <img style="max-height: 36px; max-width: 36px;" src="/images/rails.png" alt="Image"/>
+    </div>
+    <div class="task-row-rating">
+      <%= task.rating %>
+    </div>
+  </div>
   <div class="task-row-content">
     <h4><%= link_to task.title, project_task_path(task.project, task) %></h4>
     <p>

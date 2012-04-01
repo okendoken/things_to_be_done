@@ -7,7 +7,9 @@
 
 <div class="row">
   <div class="span3">
-    <img src="/images/avatar.jpg" class="avatar" alt="image">
+    <a href="<%= project_task_path @task.project, @task %>">
+      <img src="/images/avatar.jpg" class="avatar" alt="image">
+    </a>
     <%= render :partial => 'partials/users_block',
                :locals => {:target => @task, :block_id => 'participants',
                            :users => @task.participants, :title => t(:participators)} %>

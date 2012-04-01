@@ -1,0 +1,31 @@
+<% content_for(:title) do%>
+    <%= @project.title%>
+<% end %>
+<div class="row">
+  <div class="span3">
+    <a href="<%= project_path @project %>">
+      <img src="/images/avatar.jpg" class="avatar" alt="image">
+    </a>
+  </div>
+  <div class="span9 right-content">
+    <div class="main-content clearfix">
+      <div class="span7">
+        <div class="big-cool-text">
+          <%= link_to @project.title, @project%>
+          <span class="inline-status <%= project_status @project %>"><i class="<%= project_status_icon @project %> icon-white"></i>
+            <%= t :"project.#{project_status @project}" %>
+          </span>
+        </div>
+        <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %>
+          <span class="by-author pull-right">
+          <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
+        </span>
+        </div>
+      </div>
+    </div>
+    <div class="related-tasks page">
+      <%= render :partial => 'partials/tasks/block', :locals => {:project => @project, :title => t(:tasks),
+                                                                 :tasks => @tasks} %>
+    </div>
+  </div>
+</div>

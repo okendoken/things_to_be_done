@@ -42,6 +42,7 @@ GreatWork::Application.routes.draw do
   resources :projects, :path => "", :except => [:index, :create ] do
     member do
       get 'news'
+      get 'tasks'
       scope 'admin' do
         post 'manage'
       end

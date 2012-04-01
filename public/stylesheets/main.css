@@ -2,7 +2,7 @@
 put all hand-made css stuff here
 */
 body{
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 header{
@@ -17,13 +17,13 @@ header{
     -webkit-border-bottom-right-radius: 7px;
     -moz-border-bottom-right-radius: 7px;
     border-bottom-right-radius: 7px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#459ade), to(#2e6da3));
-    background-image: -webkit-linear-gradient(#459ade, #2e6da3);
-    background-image: -moz-linear-gradient(top, #459ade, #2e6da3);
-    background-image: -ms-linear-gradient(#459ade, #2e6da3);
-    background-image: -o-linear-gradient(#459ade, #2e6da3);
-    background-image: linear-gradient(#459ade, #2e6da3);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#459ade', endColorstr='#2e6da3', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2e689e), to(#214b70));
+    background-image: -webkit-linear-gradient(#2e689e, #214b70);
+    background-image: -moz-linear-gradient(top, #2e689e, #214b70);
+    background-image: -ms-linear-gradient(#2e689e, #214b70);
+    background-image: -o-linear-gradient(#2e689e, #214b70);
+    background-image: linear-gradient(#2e689e, #214b70);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e689e', endColorstr='#214b70', GradientType=0);
     border-bottom: 1px solid #999999;
     left: 0;
     right: 0;
@@ -31,19 +31,28 @@ header{
 }
 
 footer{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
     height: 30px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2e6da3), to(#459ade));
-    background-image: -webkit-linear-gradient(#2e6da3, #459ade);
-    background-image: -moz-linear-gradient(top, #2e6da3, #459ade);
-    background-image: -ms-linear-gradient(#2e6da3, #459ade);
-    background-image: -o-linear-gradient(#2e6da3, #459ade);
-    background-image: linear-gradient(#2e6da3, #459ade);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#214b70), to(#2e689e));
+    background-image: -webkit-linear-gradient(#214b70, #2e689e);
+    background-image: -moz-linear-gradient(top, #214b70, #2e689e);
+    background-image: -ms-linear-gradient(#214b70, #2e689e);
+    background-image: -o-linear-gradient(#214b70, #2e689e);
+    background-image: linear-gradient(#214b70, #2e689e);
     background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e6da3', endColorstr='#459ade', GradientType=0);
-    -webkit-box-shadow: 0 -1px 2px #2e6da3;
-    -moz-box-shadow:0 -1px 2px #2e6da3;
-    box-shadow: 0 -1px 2px #2e6da3;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#214b70', endColorstr='#2e689e', GradientType=0);
+    -webkit-box-shadow: 0 -1px 2px #214b70;
+    -moz-box-shadow:0 -1px 2px #214b70;
+    box-shadow: 0 -1px 2px #214b70;
+    -webkit-border-top-left-radius: 7px;
+    -moz-border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    -moz-border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 a {
@@ -379,6 +388,10 @@ a:hover, a:active {
     *margin-left: .3em;
 }
 
+.btn-notifications:focus{
+    padding: 1px 7px;
+}
+
 .notifications-unread-count {
     position: absolute;
     top: -2px;
@@ -544,6 +557,7 @@ div.new-notifications-count{
     margin-top: 40px;
     margin-bottom: 7px;
     font-weight: 600;
+    text-align: center;
 }
 
 .right-a-bit-align{
@@ -1092,7 +1106,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     position: relative;
     bottom: 4px;
     color: #ffffff;
-    box-shadow: 2px 2px 0 rgba(51,51,51,0.4);
+    box-shadow: 1px 1px 1px rgba(51,51,51,0.4);
     z-index: 1000;
     padding: 1px 4px;
     font-size: 11.049999999999999px;
@@ -1184,10 +1198,60 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .task-row-content{
     float:left;
-    width: 200px;
+    width: 260px;
     margin-left: 5px;
 }
 
-.task-row-voter{
+.related-tasks.page{
+    margin-left: 20px;
+    margin-top: 20px;
+}
 
+.related-tasks{
+    margin-top: -10px;
+}
+
+.related-tasks > .task-block{
+    float: left;
+    margin-left: 10px;
+}
+
+.related-tasks > .task-block:first-child{
+    margin-left: 0;
+}
+
+.related-tasks:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.related-tasks.page > .task-block, .related-tasks.page .task-row-content{
+    width: auto;
+}
+
+.task-block{
+    width: 320px;
+}
+
+.task-row-rating{
+    color: #696969;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    line-height: 12px;
+    text-align: center;
+    margin-top: -4px;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.task-block > .base-panel{
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+}
+
+.task-block-links{
+    float: right;
+    line-height: 10px;
 }

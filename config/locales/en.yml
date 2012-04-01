@@ -99,3 +99,7 @@ en:
       completed: "is done"
       in_progress: "resumed"
       canceled: "canceled"
+  show_all: "Show all..."
+  most_popular: "The most valuable tasks"
+  recently_completed: "Recently completed tasks"
+  its_empty_yet: "It's empty yet"
