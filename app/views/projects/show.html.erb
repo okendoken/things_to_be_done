@@ -59,6 +59,7 @@
       <div class="related-tasks">
         <%= render :partial => 'partials/tasks/block',
                    :locals => {:project => @project, :title => t(:most_popular),
+                               :tasks => @project.most_valuable_tasks,
                                :limit => true, :link_parameters => {:order => :votes}} %>
         <%= render :partial => 'partials/tasks/block',
                    :locals => {:project => @project, :title => t(:recently_completed),

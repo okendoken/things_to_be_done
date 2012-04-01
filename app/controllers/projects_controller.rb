@@ -27,19 +27,7 @@ class ProjectsController < ApplicationController
       tasks = tasks.where(:status => TASK_STATUS[:completed])
     end
     if params[:order] == 'votes'
-      tasks = tasks.order(<<-SQL
-        ifnull((select vp - vn as rating from (
-                      select
-                              (select count(*) from votes where positive = 't'
-                                                and target_type = 'Task'
-                                                and target_id = tasks.id) as vp,
-                              (select count(*) from votes where positive = 'f'
-                                                and target_type = 'Task'
-                                                and target_id = tasks.id) as vn
-                    )
-            ), 0) desc
-      SQL
-      )
+      tasks = @project.most_valuable_tasks
     elsif params[:order] == 'updated'
       tasks = tasks.order("updated_at desc")
     end
