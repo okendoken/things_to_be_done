@@ -1,26 +1,40 @@
 <%#TODO when click of view_more pass to controller ides readed events%>
-<% events_for_read = events.where(:read => false).order('created_at desc').limit(3)
+<%
+   events_for_read = events.where(:read => false).order('created_at desc');
    readed_ides = []
+   view_more_display = false
    if events_for_read != nil
-     events_for_read.each do |e|
+     if  events_for_read.count > 3
+       view_more_display = true
+     end
+     events_for_read.limit(3).each do |e|
        readed_ides.push e.id
      end
    end
+
 %>
 <% if events.where(:read => false).count > 0 %>
     <li class="header">
-      <p class="notifications-dialog-title"><%= t :new_notifications %></p>
+      <p><%= t :new_notifications %></p>
+      <% if view_more_display %>
       <p class="view-more">
         <%=link_to t(:view_more), url_for(:action => 'get_new_notifications', :controller => 'notifications', :readed_ides => readed_ides),
-                                          :remote => true, :method => :post, :id => 'view-more' %>
-        <%# :'data-params' => "readed_ides=[#{readed_ides}]"%>
+                                         :remote => true, :method => :post, :id => 'view-more'%>        
       </p>
+      <% else %>
+          <p class="view-more" style="display: none">
+            <%=link_to t(:view_more), url_for(:action => 'get_new_notifications', :controller => 'notifications', :readed_ides => readed_ides),
+                       :remote => true, :method => :post, :id => 'view-more'%>
+          </p>
+      <%end %>
     </li>
-    <% events_for_read.each do |event| %>
+    <% events_for_read.limit(3).each do |event| %>
        <li class="notification-member">
           <%= render :partial => event.notifications_template, :locals => {:event => event} %>
         </li>
     <% end %>
 <% else %>
-    <li class="header"><%= t :no_new_notifications %></li>
+    <li class="header">
+      <p><%= t :no_new_notifications %></p>
+    </li>
 <% end %>

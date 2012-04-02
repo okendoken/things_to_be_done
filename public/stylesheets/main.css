@@ -329,7 +329,6 @@ a:hover, a:active {
     float: right;
     left:  100px;
     top: 40px;
-    width: 200px;
 
     background-color: white;
 
@@ -409,30 +408,32 @@ a:hover, a:active {
 }
 
 .notifications-icon {
-
     width: 16px;
     height: 16px;
     display: inline-block;
 }
+
 .notifications-list li{
     display: block;
     overflow: hidden;
     border-top: 1px solid #bbbbbb;
-    padding-left: 5px;
+    padding: 5px;
 }
 
 .notifications-list li.header{
-    height: 40px;
     font-weight: bolder;
     color: #666;
     border-top: none;
     font-size: 13px;
 }
-
-p.notifications-dialog-title{
-    padding-right: 5px;
-    margin: 0;
+.header p {
+    margin:0;
 }
+li.notification-member {
+    width: 200px;
+}
+
+
 
 .notifications-single {
     padding: 5px;
@@ -441,8 +442,6 @@ p.notifications-dialog-title{
 .notifications-single-body {
     margin-left: 0px;
 }
-
-
 
 p.view-more{
     font-size: 10px;
