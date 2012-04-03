@@ -888,7 +888,7 @@ div.new-notifications-count{
     box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
 }
 
-.user-face{
+.face {
     float: left;
     height: 68px;
     font-size: 11px;
@@ -1141,11 +1141,11 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-right: 2px;
 }
 
-.users-panel{
+.simple-panel {
     margin-top: 10px;
 }
 
-.users-panel .base-block{
+.simple-panel .base-block{
     padding-top: 10px;
 }
 
@@ -1164,12 +1164,11 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .inset-text-shadow {
-    line-height: 2em;
+    line-height: 1em;
     font-size: 7em;
     font-weight:bold;
     color:#000000;
     position:relative;
-
     text-shadow: -1.5px -1.5px 2px #3a3a3a;
 }
 
@@ -1192,10 +1191,6 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     font-size: 2em;
     line-height: 1em;
     text-shadow: -0.5px -0.5px 0.5px #3a3a3a;
-}
-
-.user-page-main{
-    padding: 40px;
 }
 
 .task-row-image{
@@ -1262,4 +1257,28 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 .task-block-links{
     float: right;
     line-height: 10px;
+}
+
+.user-page-main{
+    padding: 40px;
+}
+
+.user-page-main > div{
+    float:left;
+}
+
+.user-main-content{
+    margin-left: 10px;
+}
+
+.user-name, .user-rating{
+    color: #ffffff;
+    line-height: 1em;
+    font-size: 5em;
+    font-weight: bold;
+    text-shadow: 1.5px 1.5px 2px rgba(255, 255, 255, 0.5), -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.user-main-content .other-stuff{
+    margin-top: 10px;
 }

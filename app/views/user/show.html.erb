@@ -2,13 +2,25 @@
   <% content_for(:title) do%>
       <%= @user.nickname%>
   <% end %>
-  <div class="blue-gradient well user-page-main">
-    <h1 class="inset-text-shadow" title="<%= @user.nickname %>">
-      <%= @user.nickname %>
-    </h1>
-    <h1 class="inset-text-shadow" title="Rating - <%= @user.rating %>">
-      Rating - <%= @user.rating %>
-    </h1>
+  <div class="blue-gradient well user-page-main clearfix">
+    <div class="user-avatar">
+      <img src="/images/bruce.jpg" class="avatar" alt="image">
+    </div>
+    <div class="user-main-content">
+      <h1 class="user-name" title="<%= @user.nickname %>">
+        <%= @user.nickname %>
+      </h1>
+      <h1 class="user-rating" title="Rating - <%= @user.rating %>">
+        Rating - <%= @user.rating %>
+      </h1>
+      <div class="other-stuff">
+        <%= render :partial => 'partials/tasks/block',
+                   :locals => {:show_all_path => '', :title => t(:recently_completed),
+                               :tasks => @user.tasks.where(:status => TASK_STATUS[:completed])
+                               .order("updated_at desc").limit(3),
+                               :limit => true } %>
+      </div>
+    </div>
   </div>
 
   <div class="related-content">

@@ -1,5 +1,5 @@
-<div id="<%= block_id %>" class="simple-panel">
-  <% if users.count > 0 %>
+<div class="simple-panel">
+  <% if tasks.count > 0 %>
       <div class="block-header">
         <%= title %> - <%= link_to t(:people, :people_count => users.count),
                                    target_users_path(target, block_id)%>
