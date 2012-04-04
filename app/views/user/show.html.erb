@@ -15,9 +15,8 @@
       </h1>
       <div class="other-stuff">
         <%= render :partial => 'partials/tasks/simple_block',
-                   :locals => {:show_all_path => '', :title => t(:recently_completed),
-                               :tasks => @user.tasks.where(:status => TASK_STATUS[:completed])
-                               .order("updated_at desc").limit(6),
+                   :locals => {:show_all_path => '', :title => t(:participates_in),
+                               :tasks => @user.tasks,
                                :limit => true } %>
       </div>
     </div>
