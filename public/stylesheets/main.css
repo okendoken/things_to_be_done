@@ -17,13 +17,13 @@ header{
     -webkit-border-bottom-right-radius: 7px;
     -moz-border-bottom-right-radius: 7px;
     border-bottom-right-radius: 7px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2e689e), to(#214b70));
-    background-image: -webkit-linear-gradient(#2e689e, #214b70);
-    background-image: -moz-linear-gradient(top, #2e689e, #214b70);
-    background-image: -ms-linear-gradient(#2e689e, #214b70);
-    background-image: -o-linear-gradient(#2e689e, #214b70);
-    background-image: linear-gradient(#2e689e, #214b70);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e689e', endColorstr='#214b70', GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e5e5e5));
+    background-image: -webkit-linear-gradient(#ffffff, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #ffffff, #e5e5e5);
+    background-image: -ms-linear-gradient(#ffffff, #e5e5e5);
+    background-image: -o-linear-gradient(#ffffff, #e5e5e5);
+    background-image: linear-gradient(#ffffff, #e5e5e5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
     border-bottom: 1px solid #999999;
     left: 0;
     right: 0;
@@ -36,17 +36,17 @@ footer{
     margin-right: auto;
     margin-top: 40px;
     height: 30px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#214b70), to(#2e689e));
-    background-image: -webkit-linear-gradient(#214b70, #2e689e);
-    background-image: -moz-linear-gradient(top, #214b70, #2e689e);
-    background-image: -ms-linear-gradient(#214b70, #2e689e);
-    background-image: -o-linear-gradient(#214b70, #2e689e);
-    background-image: linear-gradient(#214b70, #2e689e);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e5e5), to(#ffffff));
+    background-image: -webkit-linear-gradient(#e5e5e5, #ffffff);
+    background-image: -moz-linear-gradient(top, #e5e5e5, #ffffff);
+    background-image: -ms-linear-gradient(#e5e5e5, #ffffff);
+    background-image: -o-linear-gradient(#e5e5e5, #ffffff);
+    background-image: linear-gradient(#e5e5e5, #ffffff);
     background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#214b70', endColorstr='#2e689e', GradientType=0);
-    -webkit-box-shadow: 0 -1px 2px #214b70;
-    -moz-box-shadow:0 -1px 2px #214b70;
-    box-shadow: 0 -1px 2px #214b70;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#ffffff', GradientType=0);
+    -webkit-box-shadow: 0 -1px 2px #808080;
+    -moz-box-shadow:0 -1px 2px #808080;
+    box-shadow: 0 -1px 2px #808080;
     -webkit-border-top-left-radius: 7px;
     -moz-border-top-left-radius: 7px;
     border-top-left-radius: 7px;
@@ -80,7 +80,7 @@ a:hover, a:active {
     text-decoration: none;
     display: inline-block;
     color: #ffffff;
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.4);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
     padding: 0 5px;
     margin: 0;
 }
@@ -88,15 +88,7 @@ a:hover, a:active {
 .logo > a:hover{
     color: #ffffff;
     text-decoration: none;
-    background-color: rgba(21,77,255,0.07);
     text-shadow: 0 1px 2px rgba(51, 51, 51, 1), 0 -1px 2px rgba(255,255,255,0.5);
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-    padding: 0 5px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .header-container{
@@ -268,7 +260,7 @@ a:hover, a:active {
 .footer-links{
     list-style: none;
     font-size: 14px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.8);
 }
 
 .footer-links > li{
@@ -278,7 +270,7 @@ a:hover, a:active {
 
 .footer-links > li > a{
     text-decoration: none;
-    color: white;
+    color: #3072A6;
 }
 
 .footer-links > li > a:hover{
@@ -1281,4 +1273,8 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-main-content .other-stuff{
     margin-top: 10px;
+}
+
+.header-container .signed{
+    margin-top: 5px;
 }

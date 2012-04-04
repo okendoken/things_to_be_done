@@ -1,4 +1,4 @@
-<ul class="nav">
+<ul class="nav <%= user_signed_in? ? 'signed' : '' %>">
   <% if user_signed_in? %>
       <%= render :partial => 'partials/notifications_link' %>
       <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-sign" %></li>
