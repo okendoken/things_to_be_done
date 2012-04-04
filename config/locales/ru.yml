@@ -344,3 +344,4 @@ ru:
   its_empty_yet: "Пока пусто"
   tasks_count: "%{count} заданий"
   recently_completed: "Недавно завершено"
+  participates_in: "Участие"

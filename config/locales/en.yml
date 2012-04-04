@@ -106,3 +106,4 @@ en:
   its_empty_yet: "It's empty yet"
   tasks_count: "%{count} tasks"
   recently_completed: "Recently completed"
+  participates_in: "Tasks"
