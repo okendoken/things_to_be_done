@@ -340,5 +340,7 @@ ru:
         canceled: "отменен"
   show_all: "Показать все..."
   most_popular: "Самые значимые задания"
-  recently_completed: "Недавно завершенные задания"
+  recently_completed_tasks: "Недавно завершенные задания"
   its_empty_yet: "Пока пусто"
+  tasks_count: "%{count} заданий"
+  recently_completed: "Недавно завершено"

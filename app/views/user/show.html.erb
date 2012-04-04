@@ -14,10 +14,10 @@
         Rating - <%= @user.rating %>
       </h1>
       <div class="other-stuff">
-        <%= render :partial => 'partials/tasks/block',
+        <%= render :partial => 'partials/tasks/simple_block',
                    :locals => {:show_all_path => '', :title => t(:recently_completed),
                                :tasks => @user.tasks.where(:status => TASK_STATUS[:completed])
-                               .order("updated_at desc").limit(3),
+                               .order("updated_at desc").limit(6),
                                :limit => true } %>
       </div>
     </div>
