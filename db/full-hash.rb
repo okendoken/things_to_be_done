@@ -1,4 +1,73 @@
 {
+    :"Afghanistan" => [
+        "Charikar","Ghazni","Herat","Jalalabad","Kabul","Kandahar","Kunduz","Mazari Sharif","Puli Khumri","Sar-e Pol","Sheberghan","Taloqan"
+    ],
+    :"Albania" => [
+        "Durres","Elbasan","Shkoder","Tirana"
+    ],
+    :"Algeria" => [
+        "Ain el Beida","Ain Oussera","Algiers","Annaba","Bab Ezzouar","Barika","Baraki","Batna City","Bechar","Bejaia","Biskra","Blida","Bordj Bou Arreridj","Bordj el Kiffan","Bou Saada","Chlef","Constantine","Djelfa","El Eulma","El Khroub","El Oued","Ghardaia","Guelma","Jijel","Khenchela","Laghouat","Medea","Messad","Mostaganem","M'Sila","Oran","Ouargla","Relizane","Saida","Setif","Sidi-bel-Abbes","Skikda","Souk Ahras","Tebessa","Tiaret","Tlemoen","Touggourt"
+    ],
+    :"Angola" => [
+        "Benguela","Huambo","Lobito","Luanda"
+    ],
+    :"Argentina" => [
+        "Avellaneda","Bahia Blanca","Buenos Aires","Comodoro Rivadavia","Concordia","Cordoba","Corrientes","Formosa","Godoy Cruz","La Plata","La Rioja","Lanus","Lomas de Zamora","Lujan de Cuyo","Mar del Plata","Mendoza","Neuquen","Parana","Posadas","Quilmes","Resistencia","Rio Cuarto","Rosario","Salta","San Fernando del Valle de Catamarca","San Juan","San Luis","San Miguel de Tucuman","San Nicolas","San Rafael","San Salvador de Jujuy","Santa Fe","Santiago del Estero","Tandil","Trelew","Vicente Lopez","Zarate"
+    ],
+    :"Armenia" => [
+        "Gyumri","Vanadzor","Yerevan"
+    ],
+    :"Australia" => [
+        "Adelaide","Albury-Wodonga","Brisbane","Cairns","Canberra","Darwin","Geelong","Gold Coast","Hobart","Launceston","Melbourne","Newcastle","Perth","Sunshine Coast","Sydney","Toowoomba","Townsville","Wollongong"
+    ],
+    :"Austria" => [
+        "Graz","Innsbruck","Linz","Salzburg","Vienna"
+    ],
+    :"Azerbaijan" => [
+        "Baku","Ganja","Sumqayit"
+    ],
+    :"Bahamas" => [
+        "Nassau"
+    ],
+    :"Bahrain" => [
+        "Manama"
+    ],
+    :"Bangladesh" => [
+        "Bagerhat","Barisal","Barguna","Bhola","Bogra","Brahmanbaria","Chandpur","Chittagong","Chuadanga","Comilla","Cox's Bazar","Dhaka","Dinajpur","Faridpur","Feni","Gaibandha","Gazipur","Gopalganj","Hobiganj","Hathazari","Ishwardi","Jamalpur","Jhalakathi","Jessore","Jhenaidah","Joypurhat","Kishorganj","Khulna","Kurigram","Kushtia","Laxmipur","Madaripur","Magura","Manikganj","Maulavibazar","Meherpur","Mongla Port","Mymensingh","Narail","Narayanganj","Narshinghdi","Natore","Naogoan","Nawabganj","Netrokona","Nilfamari","Noakhali","Pabna","Patuakhali","Pirojpur","Rajbari","Rajshahi","Rangpur","Saidpur","Satkhira","Savar","Shariatpur","Sherpur","Shirajganj","Sitakundu","Srimangal","Sunamganj","Sylhet","Tangail","Tongi"
+    ],
+    :"Belarus" => [
+        "Baranovichi","Babruysk","Barysaw","Brest","Gomel","Grodno","Lida","Minsk","Mogilev ( Mahilyow )","Mazyr","Navapolatsk","Orsha","Pinsk","Salihorsk","Vitebsk"
+    ],
+    :"Belgium" => [
+        "Antwerp","Bruges","Brussels","Charleroi","Ghent","Liege","Namur","Schaerbeek"
+    ],
+    :"Benin" => [
+        "Abomey","Bohicon","Cotonou","Djougou","Kandi","Lokossa","Natitingou","Parakou","Porto Novo"
+    ],
+    :"Bhutan" => [
+        "Thimphu"
+    ],
+    :"Bolivia" => [
+        "Cochabamba","El Alto","La Paz","Oruro","Potosi","Santa Cruz","Sucre","Tarija"
+    ],
+    :"Bosnia and Herzegovina" => [
+        "Banja Luka","Sarajevo","Zenica","Mostar","Tuzla","Bijeljina"
+    ],
+    :"Botswana" => [
+        "Gaborone"
+    ],
+    :"Brazil" => [
+        "Abaetetuba , Para","Alagoinhas , Bahia","Alvorada , Rio Grande do Sul","Americana , Sao Paulo","Ananindeua , Para","Anapolis , Goias","Aparecida de Goiania , Goias","Apucarana , Parana","Aracaju , Sergipe","Araguaina , Tocantins","Arapiraca , Alagoas","Araraquara , Sao Paulo","Araras , Sao Paulo","Aracatuba , Sao Paulo","Atibaia , Sao Paulo","Bage , Rio Grande do Sul","Barbacena , Minas Gerais","Barra Mansa , Rio de Janeiro","Barreiras , Bahia","Barretos , Sao Paulo","Barueri , Sao Paulo","Bauru , Sao Paulo","Belford Roxo , Rio de Janeiro","Belo Horizonte , Minas Gerais","Belem , Para","Betim , Minas Gerais","Blumenau , Santa Catarina","Boa Vista, Roraima","Botucatu , Sao Paulo","Braganca Paulista , Sao Paulo","Brasilia","Cabo Frio , Rio de Janeiro","Cabo de Santo Agostinho , Pernambuco","Cachoeirinha , Rio Grande do Sul","Cachoeiro de Itapemirim , Espirito Santo","Camacari , Bahia","Camaragibe , Pernambuco","Campina Grande , Paraiba","Campinas , Sao Paulo","Campo Grande , Mato Grosso do Sul","Campos dos Goytacazes , Rio de Janeiro","Canoas , Rio Grande do Sul","Carapicuiba , Sao Paulo","Cariacica , Espirito Santo","Caruaru , Pernambuco","Cascavel , Parana","Castanhal , Para","Catanduva , Sao Paulo","Caucaia , Ceara","Caxias do Sul , Rio Grande do Sul","Caxias, Maranhao","Chapeco , Santa Catarina","Colatina , Espirito Santo","Colombo , Parana","Contagem , Minas Gerais","Cotia , Sao Paulo","Crato, Ceara","Criciuma , Santa Catarina","Cubatao , Sao Paulo","Cuiaba , Mato Grosso","Curitiba , Parana","Diadema , Sao Paulo","Divinopolis , Minas Gerais","Dourados , Mato Grosso do Sul","Duque de Caxias , Rio de Janeiro","Embu , Sao Paulo","Feira de Santana , Bahia","Ferraz de Vasconcelos , Sao Paulo","Florianopolis , Santa Catarina","Fortaleza , Ceara","Foz do Iguacu , Parana","Franca , Sao Paulo","Francisco Morato , Parana","Franco da Rocha , Sao Paulo","Garanhuns , Pernambuco","Goiania , Goias","Governador Valadares , Minas Gerais","Gravatai , Rio Grande do Sul","Guarapuava , Sao Paulo","Guaratingueta , Sao Paulo","Guaruja , Sao Paulo","Guarulhos , Sao Paulo","Hortolandia , Sao Paulo","Ibirite , Minas Gerais","Ilheus , Bahia","Imperatriz , Maranhao","Indaiatuba , Sao Paulo","Ipatinga , Minas Gerais","Itaborai , Rio de Janeiro","Itabuna , Bahia","Itaituba , Para","Itajai , Santa Catarina","Itapecerica da Serra , Sao Paulo","Itapetininga , Sao Paulo","Itapevi , Sao Paulo","Itaquaquecetuba , Sao Paulo","Itu , Sao Paulo","Jaboatao dos Guararapes , Pernambuco","Jacarei , Sao Paulo","Jaragua do Sul , Santa Catarina","Jau , Sao Paulo","Jequie , Bahia","Joao Pessoa , Paraiba","Joinville , Santa Catarina","Juazeiro , Bahia","Juazeiro do Norte , Ceara","Juiz de Fora , Minas Gerais","Jundiai , Sao Paulo","Lages , Santa Catarina","Lauro de Freitas , Bahia","Limeira , Sao Paulo","Linhares , Espirito Santo","Londrina , Parana","Luziania , Goias","Macae , Rio de Janeiro","Macapa , Amapa","Maceio , Alagoas","Mage , Rio de Janeiro","Manaus , Amazonas","Maraba , Para","Maracanau , Ceara","Maringa , Parana","Marilia , Sao Paulo","Maua , Sao Paulo","Mogi das Cruzes , Sao Paulo","Mogi Guacu , Sao Paulo","Montes Claros , Minas Gerais","Mossoro , Rio Grande do Norte","Natal, Rio Grande do Norte","Nilopolis , Rio de Janeiro","Niteroi , Rio de Janeiro","Nossa Senhora do Socorro","Nova Friburgo , Rio de Janeiro","Nova Iguacu , Rio de Janeiro","Novo Hamburgo , Rio Grande do Sul","Olinda , Pernambuco","Osasco , Sao Paulo","Palmas, Tocantins","Paranagua , Parana","Parnaiba , Piaui","Passo Fundo , Rio Grande do Sul","Passos, Minas Gerais","Patos de Minas , Minas Gerais","Paulista , Pernambuco","Pelotas , Rio Grande do Sul","Petrolina , Pernambuco","Petropolis , Rio de Janeiro","Pindamonhangaba , Sao Paulo","Pinhais , Parana","Piracicaba , Sao Paulo","Ponta Grossa , Parana","Porto Alegre , Rio Grande do Sul","Porto Velho , Rondonia","Pouso Alegre , Minas Gerais","Pocos de Caldas , Minas Gerais","Praia Grande , Sao Paulo","Presidente Prudente , Sao Paulo","Queimados , Rio de Janeiro","Recife , Pernambuco","Resende , Rio de Janeiro","Ribeirao Pires , Sao Paulo","Ribeirao Preto , Sao Paulo","Ribeirao das Neves , Sao Paulo","Rio Branco , Acre","Rio Claro , Sao Paulo","Rio Grande, Minas Gerais","Rio Verde, Goias","Rio de Janeiro","Rondonopolis , Mato Grosso","Sabara , Minas Gerais","Salvador, Bahia","Santa Barbara d'Oeste , Sao Paulo","Santa Cruz do Sul","Santa Luzia, Minas Gerais","Santa Maria, Rio Grande do Sul","Santa Rita, Paraiba","Santarem , Para","Santo Andre , Sao Paulo","Santos , Sao Paulo","Sao Bernardo do Campo , Sao Paulo","Sao Caetano do Sul , Sao Paulo","Sao Carlos , Sao Paulo","Sao Goncalo , Rio de Janeiro","Sao Joao de Meriti , Rio de Janeiro","Sao Jose de Ribamar , Maranhao","Sao Jose do Rio Preto , Sao Paulo","Sao Jose dos Campos , Sao Paulo","Sao Jose dos Pinhais , Parana","Sao Jose , Santa Catarina","Sao Leopoldo , Rio Grande do Sul","Sao Luis , Maranhao","Sao Paulo","Sao Vicente , Sao Paulo","Sapucaia do Sul , Rio Grande do Sul","Serra, Espirito Santo","Sertaozinho , Sao Paulo","Sete Lagoas , Minas Gerais","Sobral, Ceara","Sorocaba , Sao Paulo","Sumare , Sao Paulo","Suzano , Sao Paulo","Taboao da Serra , Sao Paulo","Tatui , Sao Paulo","Taubate , Sao Paulo","Teixeira de Freitas","Teresina , Piaui","Teresopolis , Rio de Janeiro","Teofilo Otoni , Minas Gerais","Timon, Maranhao","Toledo , Parana","Tubarao , Santa Catarina","Uberaba , Minas Gerais","Uberlandia , Minas Gerais","Uruguaiana , Rio Grande do Sul","Varginha , Minas Gerais","Varzea Grande , Mato Grosso","Viamao , Rio Grande do Sul","Vila Velha , Espirito Santo","Vitoria da Conquista , Bahia","Vitoria de Santo Antao , Pernambuco","Vitoria , Espirito Santo","Volta Redonda , Rio de Janeiro"
+    ],
+    :"Bulgaria" => [
+        "Burgas","Plovdiv","Pleven","Ruse","Sofia","Stara Zagora","Varna"
+    ],
+    :"Burkina Faso" => [
+        "Bobo Dioulasso","Ouagadougou"
+    ],
+    :"Burundi" => [
+        "Bujumbura"
+    ],
     :"Cambodia" => [
         "Bat Dambang","Kampong Cham (city)","Phnom Penh","Seam Reab"
     ],

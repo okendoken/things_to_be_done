@@ -60,6 +60,9 @@ p.comment_this("Nice project. I always liked some kind of stuff you do guys. Wil
 #countries/cities
 #see full has in full-hash.rb
 cities = {
+    :"Belarus" => [
+        "Baranovichi","Babruysk","Barysaw","Brest","Gomel","Grodno","Lida","Minsk","Mogilev ( Mahilyow )","Mazyr","Navapolatsk","Orsha","Pinsk","Salihorsk","Vitebsk"
+    ],
     :"Ukraine" => [
         "Alchevsk","Bila Tserkva","Berdyansk","Cherkasy","Chernihiv","Chernivtsi","Dniprodzerzhynsk","Dnipropetrovsk","Donetsk","Yenakiieve","Yevpatoria","Horlivka","Ivano-Frankivsk","Kamianets-Podilskyi","Kerch","Kharkiv","Kherson","Khmelnytskyi","Kiev"
     ],
