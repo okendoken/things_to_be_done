@@ -1346,6 +1346,10 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     color: #808080;
 }
 
+.location:hover{
+    color:#08c;
+}
+
 .location .icon-location{
     display: inline-block;
     width: 13px;
@@ -1355,6 +1359,10 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     background: url("../images/location.png") no-repeat 0 0;
     margin-right: 2px;
     margin-top: -3px;
+}
+
+.location > a{
+    color: inherit;
 }
 
 .no-shadow{

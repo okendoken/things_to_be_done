@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(:version => 20120406131634) do
   create_table "cities", :force => true do |t|
     t.string  "name"
     t.integer "country_id"
+    t.string  "slug"
   end
 
   add_index "cities", ["country_id"], :name => "index_cities_on_country_id"
+  add_index "cities", ["slug"], :name => "index_cities_on_slug", :unique => true
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -62,7 +64,10 @@ ActiveRecord::Schema.define(:version => 20120406131634) do
   create_table "countries", :force => true do |t|
     t.string "name"
     t.string "code"
+    t.string "slug"
   end
+
+  add_index "countries", ["slug"], :name => "index_countries_on_slug", :unique => true
 
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
