@@ -84,5 +84,8 @@ cities.each_key do |country|
   end
 end
 
-t1.city = City.find_by_name 'Minsk'
+t1.city = city = City.find_by_name 'Minsk'
 t1.save
+
+p.city = city
+p.save

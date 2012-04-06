@@ -199,28 +199,28 @@ a:hover, a:active {
 }
 
 .big-cool-text{
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
     font-size: 24px;
     font-weight: 700;
     color: #333;
 }
 
 .big-cool-text-2{
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
     font-size: 20px;
     font-weight: normal;
     color: #333;
 }
 
 .big-cool-text-3{
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
     font-size: 18px;
     font-weight: normal;
     color: #333;
 }
 
 .big-cool-text-4{
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.6);
+    text-shadow: 0 0 1px rgba(51, 51, 51, 0.2);
     font-size: 14px;
     font-weight: normal;
     color: #333;
@@ -561,8 +561,8 @@ div.new-notifications-count{
 }
 
 .right-a-bit-align{
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 .base-panel{
@@ -1337,4 +1337,26 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-page-main .face{
     height: auto;
+}
+
+.location{
+    font-size: 13px;
+    text-shadow: none;
+    margin-top: 1px;
+    color: #808080;
+}
+
+.location .icon-location{
+    display: inline-block;
+    width: 13px;
+    height: 18px;
+    line-height: 18px;
+    vertical-align: middle;
+    background: url("../images/location.png") no-repeat 0 0;
+    margin-right: 2px;
+    margin-top: -3px;
+}
+
+.no-shadow{
+    text-shadow: none;
 }

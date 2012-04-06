@@ -26,10 +26,10 @@
             <%= t :"task.#{task_status @task}" %>
           </span>
         </div>
-        <div class="big-cool-text-4 right-a-bit-align"><%= link_to @task.project.title, @task.project%>
-          <span class="by-author pull-right">
-          <%= t(:by_author) %> <%= link_to @task.user.display_name, @task.user%>
-        </span>
+        <div class="big-cool-text-4 no-shadow right-a-bit-align">
+          <%= link_to @task.project.title, @task.project%>
+          <span class="by-author pull-right"><%= t(:by_author) %> <%= link_to @task.user.display_name, @task.user%></span>
+          <%= render :partial => 'partials/location', :locals => {:stuff => @task} %>
         </div>
       </div>
       <%= render :partial => 'partials/voter', :locals => {:target => @task} %>

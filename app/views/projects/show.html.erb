@@ -27,6 +27,7 @@
           <span class="by-author pull-right">
           <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
         </span>
+          <%= render :partial => 'partials/location', :locals => {:stuff => @project} %>
         </div>
       </div>
       <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
