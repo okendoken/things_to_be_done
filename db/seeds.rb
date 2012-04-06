@@ -83,3 +83,6 @@ cities.each_key do |country|
     City.create!(:name => city, :country => c)
   end
 end
+
+t1.city = City.find_by_name 'Minsk'
+t1.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404142549) do
+ActiveRecord::Schema.define(:version => 20120406131634) do
 
   create_table "activities", :force => true do |t|
     t.integer  "participation_id"
@@ -94,8 +94,10 @@ ActiveRecord::Schema.define(:version => 20120404142549) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "slug"
+    t.integer  "city_id"
   end
 
+  add_index "projects", ["city_id"], :name => "index_projects_on_city_id"
   add_index "projects", ["problem_id"], :name => "index_projects_on_problem_id"
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
@@ -127,8 +129,10 @@ ActiveRecord::Schema.define(:version => 20120404142549) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "slug"
+    t.integer  "city_id"
   end
 
+  add_index "tasks", ["city_id"], :name => "index_tasks_on_city_id"
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
   add_index "tasks", ["slug"], :name => "index_tasks_on_slug", :unique => true
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"
