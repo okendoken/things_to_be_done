@@ -1,5 +1,5 @@
 <li>
-  <%= link_to url_for(:action => 'get_new_notifications', :controller => 'notifications'),
+  <%= link_to get_new_notifications_notifications_path,
               :remote => true, :method => :post, :id => "notifications-link" do %>
       <div class="btn-notifications">
         <span class="notifications-icon"></span>

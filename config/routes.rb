@@ -5,9 +5,11 @@ GreatWork::Application.routes.draw do
 
   resources :user
 
-  resources :notifications
+  resources :notifications, :only => [:index] do
+    #it's better to use 'get' on collection
+    post 'get_new_notifications', :on => :collection
+  end
 
-  match 'notifications/get_new_notifications' => 'notifications#get_new_notifications'
   match 'home' => 'user#show', :as => :user_home
 
 
@@ -34,6 +36,7 @@ GreatWork::Application.routes.draw do
     end
   end
 
+  #legacy crappy code
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
   match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
 
@@ -42,6 +45,7 @@ GreatWork::Application.routes.draw do
 
   match ':project_id/:id/participate' => 'tasks#participate'
   match ':project_id/:id/leave' => 'tasks#leave'
+  #end legacy crappy code
 
   resources :projects, :path => "", :except => [:index, :create ] do
     member do
