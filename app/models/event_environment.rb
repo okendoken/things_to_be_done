@@ -98,12 +98,12 @@ module EventEnvironment
       },
       :participation => {
           :added => 'partials/notifications/participation',
-          :canceled => 'partials/news/participation'
+          :canceled => 'partials/notifications/participation'
       },
       :vote => {
           #notify only creator
-          true => 'partials/notifications/vote',
-          false => 'partials/notifications/vote'
+          true => 'partials/stub',
+          false => 'partials/stub'
       },
       :comment => {
           :added => 'partials/notifications/comment'

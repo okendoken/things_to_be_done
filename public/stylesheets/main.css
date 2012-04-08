@@ -433,14 +433,16 @@ li.notification-member {
     width: 200px;
 }
 
-
-
 .notifications-single {
     padding: 5px;
 }
 
+.notifications-single-face {
+    float:left;
+    width: 30px;
+}
 .notifications-single-body {
-    margin-left: 0px;
+    margin-left: 32px;
 }
 
 p.view-more{
@@ -937,7 +939,7 @@ div.new-notifications-count{
     margin-top: 20px;
 }
 
-.news-single-face, .comment-face, .notifications-single-face{
+.news-single-face, .comment-face{
     float: left;
 }
 
