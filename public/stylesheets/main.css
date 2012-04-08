@@ -113,7 +113,7 @@ a:hover, a:active {
 }
 
 .btn-sign{
-    font-size: 11px;
+    font-size: 12px;
     line-height: 12px;
     padding: 3px 6px;
     display: inline-block;
@@ -123,9 +123,6 @@ a:hover, a:active {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     *margin-left: .3em;
     text-decoration: none;
@@ -478,8 +475,7 @@ div.new-notifications-count{
     *margin-left: .3em;
 }
 
-.nav > li > .fb-login-button:hover, .fb-login-button:hover{
-    background: #29447E url("/images/fb-btn.png") 0 -162px no-repeat ;
+.fb-login-button:hover{
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #ffffff;
 }
@@ -498,7 +494,7 @@ div.new-notifications-count{
     padding: 0 4px 0 1px;
     text-decoration: none;
     outline: none;
-    width: 84px;
+    padding-left: 36px;
     text-align: right;
     color: #4D4D4D;
 
@@ -516,10 +512,79 @@ div.new-notifications-count{
     *margin-left: .3em;
 }
 
-.nav > li > .tw-login-button:hover, .tw-login-button:hover{
+.tw-login-button.small{
+    background: #deebf3 url("/images/bird_32_blue.png") no-repeat 1px -3px;
+    background-size: 23px 23px;
+    font-size: 12px;
+    line-height: 13px;
+    padding: 2px 6px 4px 26px;
+}
+
+.tw-login-button.small:hover{
+    background: #deebf3 url("/images/bird_32_blue.png") no-repeat 1px -3px;
+    background-size: 23px 23px;
+}
+
+.tw-login-button:hover{
     background: #ecf2f6 url("/images/bird_32_blue.png") 1px -4px no-repeat ;
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #4D4D4D;
+}
+
+.vk-login-button {
+    border-color: #51769e #51779f #7495b8;
+    background: #6688ad url("/images/vk_26.png") no-repeat;
+    text-align: right;
+    display: inline-block;
+    padding: 4px 10px 4px 28px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    *margin-left: .3em;
+}
+
+.vk-login-button.small{
+    font-size: 11px;
+    line-height: 14px;
+    padding: 3px 6px 3px 21px;
+    background-size: 20px 21px;
+}
+
+.vk-login-button.small:hover, .vk-login-button:hover{
+    border-color: #92ACC7 #7293B7 #7293B7;
+    background-color: #84A1BF;
+    color: #ffffff;
+}
+
+.fb-login-button, .tw-login-button, .vk-login-button{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.fb-login-button.small{
+    font-size: 12px;
+    line-height: 14px;
+    padding: 3px 6px 3px 25px;
+    background-position: -1px -211px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.fb-login-button.small:hover{
+    color: #ffffff;
+    background-color: #29447E;
+}
+
+a.fb-login-button, a.tw-login-button, a.vk-login-button{
+    text-decoration: none;
 }
 
 #index-content{
@@ -795,31 +860,6 @@ div.new-notifications-count{
     margin: 0;
 }
 
-.nav > li > .vk-login-button:hover, .vk-login-button:hover{
-    border-color: #92ACC7 #7293B7 #7293B7;
-    background-color: #84A1BF;
-    color: #ffffff;
-}
-.vk-login-button {
-    border-color: #51769e #51779f #7495b8;
-    background: #6688ad url("/images/vk_26.png") no-repeat;
-    text-align: right;
-    display: inline-block;
-    padding: 4px 10px 4px 28px;
-    font-size: 13px;
-    line-height: 18px;
-    color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    *margin-left: .3em;
-}
-
 .provider-links:empty{
     margin: 0;
     padding: 0;
@@ -971,28 +1011,6 @@ div.new-notifications-count{
 
 .news-add-new > form, .comments-add-new > form{
     margin: 0;
-}
-
-.fb-login-button, .tw-login-button, .vk-login-button{
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-}
-
-.vk-login-button.small{
-    font-size: 11px;
-    line-height: 14px;
-    padding: 3px 6px 3px 21px;
-    background-size: 20px 21px;
-}
-
-.fb-login-button.small{
-    font-size: 12px;
-    line-height: 15px;
-    padding: 3px 6px 4px 24px;
-    background-position: 0 -210px;
-}
-
-a.fb-login-button, a.tw-login-button, a.vk-login-button{
-    text-decoration: none;
 }
 
 .news-add-new textarea, .comments-add-new textarea{
