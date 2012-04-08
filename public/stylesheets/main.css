@@ -115,7 +115,7 @@ a:hover, a:active {
 .btn-sign{
     font-size: 11px;
     line-height: 14px;
-    padding: 2px 6px;
+    padding: 3px 6px;
     display: inline-block;
     color: #3072a6;
     text-align: center;
@@ -349,7 +349,7 @@ a:hover, a:active {
     display: inline-block;
     margin-bottom: 0;
     font-size: 13px;
-    line-height: 14px;
+    line-height: 17px;
     color: #333333;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
@@ -468,10 +468,9 @@ div.new-notifications-count{
     line-height: 26px;
     cursor: pointer;
     display: inline-block;
-    padding: 0 4px 0 1px;
+    padding: 0 4px 0 27px;
     text-decoration: none;
     outline: none;
-    width: 93px;
     text-align: right;
     color: white;
 
@@ -483,9 +482,9 @@ div.new-notifications-count{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     *margin-left: .3em;
 }
@@ -815,10 +814,9 @@ div.new-notifications-count{
 .vk-login-button {
     border-color: #51769e #51779f #7495b8;
     background: #6688ad url("/images/vk_26.png") no-repeat;
-    width: 80px;
     text-align: right;
     display: inline-block;
-    padding: 4px 10px 4px;
+    padding: 4px 10px 4px 28px;
     font-size: 13px;
     line-height: 18px;
     color: #ffffff;
@@ -988,6 +986,20 @@ div.new-notifications-count{
 
 .fb-login-button, .tw-login-button, .vk-login-button{
     font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.vk-login-button.small{
+    font-size: 11px;
+    line-height: 14px;
+    padding: 3px 6px 3px 21px;
+    background-size: 20px 21px;
+}
+
+.fb-login-button.small{
+    font-size: 12px;
+    line-height: 15px;
+    padding: 3px 6px 4px 24px;
+    background-position: 0 -210px;
 }
 
 a.fb-login-button, a.tw-login-button, a.vk-login-button{
@@ -1276,7 +1288,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .header-container .signed{
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .task-face-rating{

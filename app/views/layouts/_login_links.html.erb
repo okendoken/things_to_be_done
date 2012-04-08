@@ -1,21 +1,21 @@
-<ul class="nav <%= user_signed_in? ? 'signed' : '' %>">
+<ul class="nav signed">
   <% if user_signed_in? %>
       <%= render :partial => 'partials/notifications_link' %>
       <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-sign" %></li>
   <% else %>
       <% if display_vk_login? %>
           <li><%= link_to 'контакте',
-                          user_omniauth_authorize_path(:vkontakte), :class => "vk-login-button",
+                          user_omniauth_authorize_path(:vkontakte), :class => "vk-login-button small",
                           :"data-width" => 600, :"data-height" => 400 %></li>
       <% else %>
           <li><%= link_to 'twitter',
-                          user_omniauth_authorize_path(:twitter), :class => "tw-login-button btn-success",
+                          user_omniauth_authorize_path(:twitter), :class => "tw-login-button small",
                           :"data-width" => 600, :"data-height" => 400 %></li>
           <li><%= link_to 'facebook',
-                          user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
+                          user_omniauth_authorize_path(:facebook), :class => "fb-login-button small",
                           :"data-width" => 600, :"data-height" => 400 %></li>
       <% end %>
-      <li><%= link_to t(:sign_in), '', :class => "btn-sign in", :id => "sign-in-link" %></li>
+      <li><%= link_to t(:sign_in), '', :class => "btn-sign", :id => "sign-in-link" %></li>
   <% end %>
 </ul>
 
@@ -47,11 +47,11 @@
           <% if display_vk_login? %>
             <span>
             <%= link_to 'facebook',
-                        user_omniauth_authorize_path(:facebook), :class => "fb-login-button btn-success",
+                        user_omniauth_authorize_path(:facebook), :class => "fb-login-button",
                         :"data-width" => 600, :"data-height" => 400 %>
             </span>
             <span>
-            <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button btn-success",
+            <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button",
                         :"data-width" => 600, :"data-height" => 400 %>
             </span>
           <% end %>
