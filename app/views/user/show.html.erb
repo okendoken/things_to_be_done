@@ -2,7 +2,7 @@
   <% content_for(:title) do%>
       <%= @user.nickname%>
   <% end %>
-  <div class="blue-gradient well user-page-main clearfix">
+  <div class="user-page-main clearfix">
     <div class="user-avatar">
       <img src="/images/bruce.jpg" class="avatar" alt="image">
     </div>
@@ -14,15 +14,11 @@
         Rating - <%= @user.rating %>
       </h1>
       <div class="other-stuff">
-        <%= render :partial => 'partials/tasks/simple_block',
-                   :locals => {:show_all_path => '', :title => t(:participates_in),
-                               :tasks => @user.tasks,
-                               :limit => true } %>
       </div>
     </div>
   </div>
 
-  <div class="related-content">
+  <div >
     <div class="group-header">
       Tasks you participate in
     </div>

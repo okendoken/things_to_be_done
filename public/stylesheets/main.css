@@ -80,7 +80,7 @@ a:hover, a:active {
     text-decoration: none;
     display: inline-block;
     color: #ffffff;
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.9);
     padding: 0 5px;
     margin: 0;
 }
@@ -723,9 +723,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .avatar{
-    width: 220px;
-    height: 300px;
-    max-width: 220px;
+    max-width: 160px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -1271,7 +1269,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .user-page-main{
-    padding: 40px;
+
 }
 
 .user-page-main > div{
@@ -1283,11 +1281,9 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .user-name, .user-rating{
-    color: #ffffff;
     line-height: 1em;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
-    text-shadow: 1.5px 1.5px 2px rgba(255, 255, 255, 0.5), -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .user-main-content .other-stuff{
