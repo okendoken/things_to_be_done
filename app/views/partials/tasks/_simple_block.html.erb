@@ -1,0 +1,10 @@
+<div class="simple-panel">
+  <% if tasks.count > 0 %>
+      <div class="block-header">
+        <%= title %> - <%= link_to t(:tasks_count, :count => tasks.count), show_all_path%>
+      </div>
+      <div class="base-block">
+        <%= render :partial => 'partials/tasks/task_small_face', :collection => tasks, :as => :task %>
+      </div>
+  <% end %>
+</div>

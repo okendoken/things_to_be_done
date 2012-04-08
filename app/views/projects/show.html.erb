@@ -27,6 +27,7 @@
           <span class="by-author pull-right">
           <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
         </span>
+          <%= render :partial => 'partials/location', :locals => {:stuff => @project} %>
         </div>
       </div>
       <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
@@ -58,15 +59,14 @@
     <div class="related-content">
       <div class="related-tasks">
         <%= render :partial => 'partials/tasks/block',
-                   :locals => {:project => @project, :title => t(:most_popular),
+                   :locals => {:show_all_path => tasks_project_path(@project, {:order => :votes}), :title => t(:most_popular),
                                :tasks => @project.most_valuable_tasks,
-                               :limit => true, :link_parameters => {:order => :votes}} %>
+                               :limit => true } %>
         <%= render :partial => 'partials/tasks/block',
-                   :locals => {:project => @project, :title => t(:recently_completed),
+                   :locals => {:show_all_path => tasks_project_path(@project, {:order => :updated, :status => :completed}), :title => t(:recently_completed_tasks),
                                :tasks => @project.tasks.where(:status => TASK_STATUS[:completed])
                                .order("updated_at desc").limit(3),
-                               :limit => true,
-                               :link_parameters => {:order => :updated, :status => :completed}} %>
+                               :limit => true} %>
       </div>
       <%= render :partial => 'partials/activity', :locals => {:target => @project} %>
     </div>

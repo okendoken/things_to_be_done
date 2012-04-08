@@ -21,12 +21,12 @@
       <p><%= t :new_notifications %></p>
       <% if events_for_read_count > 3 %>
       <p class="view-more">
-        <%=link_to t(:view_more), url_for(:action => 'get_new_notifications', :controller => 'notifications'),
+        <%=link_to t(:view_more), get_new_notifications_notifications_path(:readed_ides => readed_ides),
                                          :remote => true, :method => :post, :id => 'view-more'%>        
       </p>
       <% else %>
           <p class="view-more" style="display: none">
-            <%=link_to t(:view_more), url_for(:action => 'get_new_notifications', :controller => 'notifications'),
+            <%=link_to t(:view_more), get_new_notifications_notifications_path(:readed_ides => readed_ides),
                        :remote => true, :method => :post, :id => 'view-more'%>
           </p>
       <% end %>

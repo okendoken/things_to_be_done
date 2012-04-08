@@ -1,0 +1,9 @@
+<div class="face">
+    <a href="<%= project_task_path task.project, task %>">
+      <img style="max-height: 36px; max-width: 36px;" src="/images/rails.png" alt="Image"/>
+    </a>
+  <div class="task-face-rating <%= task_status task %>" title="<%= t :rating %> <%= task.title %>"><%= task.rating %></div>
+  <div class="task-face-link">
+    <%= link_to task.title, project_task_path(task.project, task)  %>
+  </div>
+</div>

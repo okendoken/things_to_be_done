@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323144129) do
+ActiveRecord::Schema.define(:version => 20120406131634) do
 
   create_table "activities", :force => true do |t|
     t.integer  "participation_id"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(:version => 20120323144129) do
 
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
 
+  create_table "cities", :force => true do |t|
+    t.string  "name"
+    t.integer "country_id"
+    t.string  "slug"
+  end
+
+  add_index "cities", ["country_id"], :name => "index_cities_on_country_id"
+  add_index "cities", ["slug"], :name => "index_cities_on_slug", :unique => true
+
   create_table "comments", :force => true do |t|
     t.text     "text"
     t.integer  "target_id"
@@ -51,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20120323144129) do
   add_index "comments", ["target_id"], :name => "index_comments_on_target_id"
   add_index "comments", ["target_type"], :name => "index_comments_on_target_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "countries", :force => true do |t|
+    t.string "name"
+    t.string "code"
+    t.string "slug"
+  end
+
+  add_index "countries", ["slug"], :name => "index_countries_on_slug", :unique => true
 
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
@@ -82,8 +99,10 @@ ActiveRecord::Schema.define(:version => 20120323144129) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "slug"
+    t.integer  "city_id"
   end
 
+  add_index "projects", ["city_id"], :name => "index_projects_on_city_id"
   add_index "projects", ["problem_id"], :name => "index_projects_on_problem_id"
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
@@ -115,8 +134,10 @@ ActiveRecord::Schema.define(:version => 20120323144129) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "slug"
+    t.integer  "city_id"
   end
 
+  add_index "tasks", ["city_id"], :name => "index_tasks_on_city_id"
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
   add_index "tasks", ["slug"], :name => "index_tasks_on_slug", :unique => true
   add_index "tasks", ["user_id"], :name => "index_tasks_on_user_id"

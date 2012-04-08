@@ -1,0 +1,475 @@
+Afghanistan; Charikar
+Afghanistan; Ghazni
+Afghanistan; Herat
+Afghanistan; Jalalabad
+Afghanistan; Kabul
+Afghanistan; Kandahar
+Afghanistan; Kunduz
+Afghanistan; Mazari Sharif
+Afghanistan; Puli Khumri
+Afghanistan; Sar-e Pol
+Afghanistan; Sheberghan
+Afghanistan; Taloqan
+Albania; Durres
+Albania; Elbasan
+Albania; Shkoder
+Albania; Tirana
+Algeria; Ain el Beida
+Algeria; Ain Oussera
+Algeria; Algiers
+Algeria; Annaba
+Algeria; Bab Ezzouar
+Algeria; Barika
+Algeria; Baraki
+Algeria; Batna City
+Algeria; Bechar
+Algeria; Bejaia
+Algeria; Biskra
+Algeria; Blida
+Algeria; Bordj Bou Arreridj
+Algeria; Bordj el Kiffan
+Algeria; Bou Saada
+Algeria; Chlef
+Algeria; Constantine
+Algeria; Djelfa
+Algeria; El Eulma
+Algeria; El Khroub
+Algeria; El Oued
+Algeria; Ghardaia
+Algeria; Guelma
+Algeria; Jijel
+Algeria; Khenchela
+Algeria; Laghouat
+Algeria; Medea
+Algeria; Messad
+Algeria; Mostaganem
+Algeria; M'Sila
+Algeria; Oran
+Algeria; Ouargla
+Algeria; Relizane
+Algeria; Saida
+Algeria; Setif
+Algeria; Sidi-bel-Abbes
+Algeria; Skikda
+Algeria; Souk Ahras
+Algeria; Tebessa
+Algeria; Tiaret
+Algeria; Tlemoen
+Algeria; Touggourt
+Angola; Benguela
+Angola; Huambo
+Angola; Lobito
+Angola; Luanda
+Argentina; Avellaneda
+Argentina; Bahia Blanca
+Argentina; Buenos Aires
+Argentina; Comodoro Rivadavia
+Argentina; Concordia
+Argentina; Cordoba
+Argentina; Corrientes
+Argentina; Formosa
+Argentina; Godoy Cruz
+Argentina; La Plata
+Argentina; La Rioja
+Argentina; Lanus
+Argentina; Lomas de Zamora
+Argentina; Lujan de Cuyo
+Argentina; Mar del Plata
+Argentina; Mendoza
+Argentina; Neuquen
+Argentina; Parana
+Argentina; Posadas
+Argentina; Quilmes
+Argentina; Resistencia
+Argentina; Rio Cuarto
+Argentina; Rosario
+Argentina; Salta
+Argentina; San Fernando del Valle de Catamarca
+Argentina; San Juan
+Argentina; San Luis
+Argentina; San Miguel de Tucuman
+Argentina; San Nicolas
+Argentina; San Rafael
+Argentina; San Salvador de Jujuy
+Argentina; Santa Fe
+Argentina; Santiago del Estero
+Argentina; Tandil
+Argentina; Trelew
+Argentina; Vicente Lopez
+Argentina; Zarate
+Armenia; Gyumri
+Armenia; Vanadzor
+Armenia; Yerevan
+Australia; Adelaide
+Australia; Albury-Wodonga
+Australia; Brisbane
+Australia; Cairns
+Australia; Canberra
+Australia; Darwin
+Australia; Geelong
+Australia; Gold Coast
+Australia; Hobart
+Australia; Launceston
+Australia; Melbourne
+Australia; Newcastle
+Australia; Perth
+Australia; Sunshine Coast
+Australia; Sydney
+Australia; Toowoomba
+Australia; Townsville
+Australia; Wollongong
+Austria; Graz
+Austria; Innsbruck
+Austria; Linz
+Austria; Salzburg
+Austria; Vienna
+Azerbaijan; Baku
+Azerbaijan; Ganja
+Azerbaijan; Sumqayit
+Bahamas; Nassau
+Bahrain; Manama
+Bangladesh; Bagerhat
+Bangladesh; Barisal
+Bangladesh; Barguna
+Bangladesh; Bhola
+Bangladesh; Bogra
+Bangladesh; Brahmanbaria
+Bangladesh; Chandpur
+Bangladesh; Chittagong
+Bangladesh; Chuadanga
+Bangladesh; Comilla
+Bangladesh; Cox's Bazar
+Bangladesh; Dhaka
+Bangladesh; Dinajpur
+Bangladesh; Faridpur
+Bangladesh; Feni
+Bangladesh; Gaibandha
+Bangladesh; Gazipur
+Bangladesh; Gopalganj
+Bangladesh; Hobiganj
+Bangladesh; Hathazari
+Bangladesh; Ishwardi
+Bangladesh; Jamalpur
+Bangladesh; Jhalakathi
+Bangladesh; Jessore
+Bangladesh; Jhenaidah
+Bangladesh; Joypurhat
+Bangladesh; Kishorganj
+Bangladesh; Khulna
+Bangladesh; Kurigram
+Bangladesh; Kushtia
+Bangladesh; Laxmipur
+Bangladesh; Madaripur
+Bangladesh; Magura
+Bangladesh; Manikganj
+Bangladesh; Maulavibazar
+Bangladesh; Meherpur
+Bangladesh; Mongla Port
+Bangladesh; Mymensingh
+Bangladesh; Narail
+Bangladesh; Narayanganj
+Bangladesh; Narshinghdi
+Bangladesh; Natore
+Bangladesh; Naogoan
+Bangladesh; Nawabganj
+Bangladesh; Netrokona
+Bangladesh; Nilfamari
+Bangladesh; Noakhali
+Bangladesh; Pabna
+Bangladesh; Patuakhali
+Bangladesh; Pirojpur
+Bangladesh; Rajbari
+Bangladesh; Rajshahi
+Bangladesh; Rangpur
+Bangladesh; Saidpur
+Bangladesh; Satkhira
+Bangladesh; Savar
+Bangladesh; Shariatpur
+Bangladesh; Sherpur
+Bangladesh; Shirajganj
+Bangladesh; Sitakundu
+Bangladesh; Srimangal
+Bangladesh; Sunamganj
+Bangladesh; Sylhet
+Bangladesh; Tangail
+Bangladesh; Tongi
+Belarus; Baranovichi
+Belarus; Babruysk
+Belarus; Barysaw
+Belarus; Brest
+Belarus; Gomel
+Belarus; Grodno
+Belarus; Lida
+Belarus; Minsk
+Belarus; Mogilev ( Mahilyow )
+Belarus; Mazyr
+Belarus; Navapolatsk
+Belarus; Orsha
+Belarus; Pinsk
+Belarus; Salihorsk
+Belarus; Vitebsk
+Belgium; Antwerp
+Belgium; Bruges
+Belgium; Brussels
+Belgium; Charleroi
+Belgium; Ghent
+Belgium; Liege
+Belgium; Namur
+Belgium; Schaerbeek
+Benin; Abomey
+Benin; Bohicon
+Benin; Cotonou
+Benin; Djougou
+Benin; Kandi
+Benin; Lokossa
+Benin; Natitingou
+Benin; Parakou
+Benin; Porto Novo
+Bhutan; Thimphu
+Bolivia; Cochabamba
+Bolivia; El Alto
+Bolivia; La Paz
+Bolivia; Oruro
+Bolivia; Potosi
+Bolivia; Santa Cruz
+Bolivia; Sucre
+Bolivia; Tarija
+Bosnia and Herzegovina; Banja Luka
+Bosnia and Herzegovina; Sarajevo
+Bosnia and Herzegovina; Zenica
+Bosnia and Herzegovina; Mostar
+Bosnia and Herzegovina; Tuzla
+Bosnia and Herzegovina; Bijeljina
+Botswana; Gaborone
+Brazil; Abaetetuba , Para
+Brazil; Alagoinhas , Bahia
+Brazil; Alvorada , Rio Grande do Sul
+Brazil; Americana , Sao Paulo
+Brazil; Ananindeua , Para
+Brazil; Anapolis , Goias
+Brazil; Aparecida de Goiania , Goias
+Brazil; Apucarana , Parana
+Brazil; Aracaju , Sergipe
+Brazil; Araguaina , Tocantins
+Brazil; Arapiraca , Alagoas
+Brazil; Araraquara , Sao Paulo
+Brazil; Araras , Sao Paulo
+Brazil; Aracatuba , Sao Paulo
+Brazil; Atibaia , Sao Paulo
+Brazil; Bage , Rio Grande do Sul
+Brazil; Barbacena , Minas Gerais
+Brazil; Barra Mansa , Rio de Janeiro
+Brazil; Barreiras , Bahia
+Brazil; Barretos , Sao Paulo
+Brazil; Barueri , Sao Paulo
+Brazil; Bauru , Sao Paulo
+Brazil; Belford Roxo , Rio de Janeiro
+Brazil; Belo Horizonte , Minas Gerais
+Brazil; Belem , Para
+Brazil; Betim , Minas Gerais
+Brazil; Blumenau , Santa Catarina
+Brazil; Boa Vista, Roraima
+Brazil; Botucatu , Sao Paulo
+Brazil; Braganca Paulista , Sao Paulo
+Brazil; Brasilia
+Brazil; Cabo Frio , Rio de Janeiro
+Brazil; Cabo de Santo Agostinho , Pernambuco
+Brazil; Cachoeirinha , Rio Grande do Sul
+Brazil; Cachoeiro de Itapemirim , Espirito Santo
+Brazil; Camacari , Bahia
+Brazil; Camaragibe , Pernambuco
+Brazil; Campina Grande , Paraiba
+Brazil; Campinas , Sao Paulo
+Brazil; Campo Grande , Mato Grosso do Sul
+Brazil; Campos dos Goytacazes , Rio de Janeiro
+Brazil; Canoas , Rio Grande do Sul
+Brazil; Carapicuiba , Sao Paulo
+Brazil; Cariacica , Espirito Santo
+Brazil; Caruaru , Pernambuco
+Brazil; Cascavel , Parana
+Brazil; Castanhal , Para
+Brazil; Catanduva , Sao Paulo
+Brazil; Caucaia , Ceara
+Brazil; Caxias do Sul , Rio Grande do Sul
+Brazil; Caxias, Maranhao
+Brazil; Chapeco , Santa Catarina
+Brazil; Colatina , Espirito Santo
+Brazil; Colombo , Parana
+Brazil; Contagem , Minas Gerais
+Brazil; Cotia , Sao Paulo
+Brazil; Crato, Ceara
+Brazil; Criciuma , Santa Catarina
+Brazil; Cubatao , Sao Paulo
+Brazil; Cuiaba , Mato Grosso
+Brazil; Curitiba , Parana
+Brazil; Diadema , Sao Paulo
+Brazil; Divinopolis , Minas Gerais
+Brazil; Dourados , Mato Grosso do Sul
+Brazil; Duque de Caxias , Rio de Janeiro
+Brazil; Embu , Sao Paulo
+Brazil; Feira de Santana , Bahia
+Brazil; Ferraz de Vasconcelos , Sao Paulo
+Brazil; Florianopolis , Santa Catarina
+Brazil; Fortaleza , Ceara
+Brazil; Foz do Iguacu , Parana
+Brazil; Franca , Sao Paulo
+Brazil; Francisco Morato , Parana
+Brazil; Franco da Rocha , Sao Paulo
+Brazil; Garanhuns , Pernambuco
+Brazil; Goiania , Goias
+Brazil; Governador Valadares , Minas Gerais
+Brazil; Gravatai , Rio Grande do Sul
+Brazil; Guarapuava , Sao Paulo
+Brazil; Guaratingueta , Sao Paulo
+Brazil; Guaruja , Sao Paulo
+Brazil; Guarulhos , Sao Paulo
+Brazil; Hortolandia , Sao Paulo
+Brazil; Ibirite , Minas Gerais
+Brazil; Ilheus , Bahia
+Brazil; Imperatriz , Maranhao
+Brazil; Indaiatuba , Sao Paulo
+Brazil; Ipatinga , Minas Gerais
+Brazil; Itaborai , Rio de Janeiro
+Brazil; Itabuna , Bahia
+Brazil; Itaituba , Para
+Brazil; Itajai , Santa Catarina
+Brazil; Itapecerica da Serra , Sao Paulo
+Brazil; Itapetininga , Sao Paulo
+Brazil; Itapevi , Sao Paulo
+Brazil; Itaquaquecetuba , Sao Paulo
+Brazil; Itu , Sao Paulo
+Brazil; Jaboatao dos Guararapes , Pernambuco
+Brazil; Jacarei , Sao Paulo
+Brazil; Jaragua do Sul , Santa Catarina
+Brazil; Jau , Sao Paulo
+Brazil; Jequie , Bahia
+Brazil; Joao Pessoa , Paraiba
+Brazil; Joinville , Santa Catarina
+Brazil; Juazeiro , Bahia
+Brazil; Juazeiro do Norte , Ceara
+Brazil; Juiz de Fora , Minas Gerais
+Brazil; Jundiai , Sao Paulo
+Brazil; Lages , Santa Catarina
+Brazil; Lauro de Freitas , Bahia
+Brazil; Limeira , Sao Paulo
+Brazil; Linhares , Espirito Santo
+Brazil; Londrina , Parana
+Brazil; Luziania , Goias
+Brazil; Macae , Rio de Janeiro
+Brazil; Macapa , Amapa
+Brazil; Maceio , Alagoas
+Brazil; Mage , Rio de Janeiro
+Brazil; Manaus , Amazonas
+Brazil; Maraba , Para
+Brazil; Maracanau , Ceara
+Brazil; Maringa , Parana
+Brazil; Marilia , Sao Paulo
+Brazil; Maua , Sao Paulo
+Brazil; Mogi das Cruzes , Sao Paulo
+Brazil; Mogi Guacu , Sao Paulo
+Brazil; Montes Claros , Minas Gerais
+Brazil; Mossoro , Rio Grande do Norte
+Brazil; Natal, Rio Grande do Norte
+Brazil; Nilopolis , Rio de Janeiro
+Brazil; Niteroi , Rio de Janeiro
+Brazil; Nossa Senhora do Socorro
+Brazil; Nova Friburgo , Rio de Janeiro
+Brazil; Nova Iguacu , Rio de Janeiro
+Brazil; Novo Hamburgo , Rio Grande do Sul
+Brazil; Olinda , Pernambuco
+Brazil; Osasco , Sao Paulo
+Brazil; Palmas, Tocantins
+Brazil; Paranagua , Parana
+Brazil; Parnaiba , Piaui
+Brazil; Passo Fundo , Rio Grande do Sul
+Brazil; Passos, Minas Gerais
+Brazil; Patos de Minas , Minas Gerais
+Brazil; Paulista , Pernambuco
+Brazil; Pelotas , Rio Grande do Sul
+Brazil; Petrolina , Pernambuco
+Brazil; Petropolis , Rio de Janeiro
+Brazil; Pindamonhangaba , Sao Paulo
+Brazil; Pinhais , Parana
+Brazil; Piracicaba , Sao Paulo
+Brazil; Ponta Grossa , Parana
+Brazil; Porto Alegre , Rio Grande do Sul
+Brazil; Porto Velho , Rondonia
+Brazil; Pouso Alegre , Minas Gerais
+Brazil; Pocos de Caldas , Minas Gerais
+Brazil; Praia Grande , Sao Paulo
+Brazil; Presidente Prudente , Sao Paulo
+Brazil; Queimados , Rio de Janeiro
+Brazil; Recife , Pernambuco
+Brazil; Resende , Rio de Janeiro
+Brazil; Ribeirao Pires , Sao Paulo
+Brazil; Ribeirao Preto , Sao Paulo
+Brazil; Ribeirao das Neves , Sao Paulo
+Brazil; Rio Branco , Acre
+Brazil; Rio Claro , Sao Paulo
+Brazil; Rio Grande, Minas Gerais
+Brazil; Rio Verde, Goias
+Brazil; Rio de Janeiro
+Brazil; Rondonopolis , Mato Grosso
+Brazil; Sabara , Minas Gerais
+Brazil; Salvador, Bahia
+Brazil; Santa Barbara d'Oeste , Sao Paulo
+Brazil; Santa Cruz do Sul
+Brazil; Santa Luzia, Minas Gerais
+Brazil; Santa Maria, Rio Grande do Sul
+Brazil; Santa Rita, Paraiba
+Brazil; Santarem , Para
+Brazil; Santo Andre , Sao Paulo
+Brazil; Santos , Sao Paulo
+Brazil; Sao Bernardo do Campo , Sao Paulo
+Brazil; Sao Caetano do Sul , Sao Paulo
+Brazil; Sao Carlos , Sao Paulo
+Brazil; Sao Goncalo , Rio de Janeiro
+Brazil; Sao Joao de Meriti , Rio de Janeiro
+Brazil; Sao Jose de Ribamar , Maranhao
+Brazil; Sao Jose do Rio Preto , Sao Paulo
+Brazil; Sao Jose dos Campos , Sao Paulo
+Brazil; Sao Jose dos Pinhais , Parana
+Brazil; Sao Jose , Santa Catarina
+Brazil; Sao Leopoldo , Rio Grande do Sul
+Brazil; Sao Luis , Maranhao
+Brazil; Sao Paulo
+Brazil; Sao Vicente , Sao Paulo
+Brazil; Sapucaia do Sul , Rio Grande do Sul
+Brazil; Serra, Espirito Santo
+Brazil; Sertaozinho , Sao Paulo
+Brazil; Sete Lagoas , Minas Gerais
+Brazil; Sobral, Ceara
+Brazil; Sorocaba , Sao Paulo
+Brazil; Sumare , Sao Paulo
+Brazil; Suzano , Sao Paulo
+Brazil; Taboao da Serra , Sao Paulo
+Brazil; Tatui , Sao Paulo
+Brazil; Taubate , Sao Paulo
+Brazil; Teixeira de Freitas
+Brazil; Teresina , Piaui
+Brazil; Teresopolis , Rio de Janeiro
+Brazil; Teofilo Otoni , Minas Gerais
+Brazil; Timon, Maranhao
+Brazil; Toledo , Parana
+Brazil; Tubarao , Santa Catarina
+Brazil; Uberaba , Minas Gerais
+Brazil; Uberlandia , Minas Gerais
+Brazil; Uruguaiana , Rio Grande do Sul
+Brazil; Varginha , Minas Gerais
+Brazil; Varzea Grande , Mato Grosso
+Brazil; Viamao , Rio Grande do Sul
+Brazil; Vila Velha , Espirito Santo
+Brazil; Vitoria da Conquista , Bahia
+Brazil; Vitoria de Santo Antao , Pernambuco
+Brazil; Vitoria , Espirito Santo
+Brazil; Volta Redonda , Rio de Janeiro
+Bulgaria; Burgas
+Bulgaria; Plovdiv
+Bulgaria; Pleven
+Bulgaria; Ruse
+Bulgaria; Sofia
+Bulgaria; Stara Zagora
+Bulgaria; Varna
+Burkina Faso; Bobo Dioulasso
+Burkina Faso; Ouagadougou
+Burundi; Bujumbura

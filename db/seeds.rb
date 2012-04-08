@@ -54,3 +54,38 @@ t2.participate_in_this(u)
 t1.comment_this("Really cool project! Guys it's gonna be great!", u2)
 t1.comment_this("Thanks! we do it for you. We will drive it till the end. Till it becomes great. We should do it, right?", u)
 p.comment_this("Nice project. I always liked some kind of stuff you do guys. Will support you", u2)
+
+
+
+#countries/cities
+#see full has in full-hash.rb
+cities = {
+    :"Belarus" => [
+        "Baranovichi","Babruysk","Barysaw","Brest","Gomel","Grodno","Lida","Minsk","Mogilev ( Mahilyow )","Mazyr","Navapolatsk","Orsha","Pinsk","Salihorsk","Vitebsk"
+    ],
+    :"Ukraine" => [
+        "Alchevsk","Bila Tserkva","Berdyansk","Cherkasy","Chernihiv","Chernivtsi","Dniprodzerzhynsk","Dnipropetrovsk","Donetsk","Yenakiieve","Yevpatoria","Horlivka","Ivano-Frankivsk","Kamianets-Podilskyi","Kerch","Kharkiv","Kherson","Khmelnytskyi","Kiev"
+    ],
+    :"United Arab Emirates" => [
+        "Abu Dhabi","Al-Ain","Dubai","Sharjah"
+    ],
+    :"United Kingdom" => [
+        "Aberdeen","Belfast","Birmingham","Blackburn","Blackpool","Bolton","Bournemouth","Bradford","Brighton","Bristol","Cambridge","Cardiff","Colchester","Coventry","Crawley","Derby","Dudley","Dundee","Edinburgh","Exeter","Gateshead","Glasgow"
+    ],
+    :"United States" => [
+        "Abilene, Texas","Akron, Ohio","Albuquerque, New Mexico","Alexandria, Virginia","Allentown, Pennsylvania","Amarillo, Texas","Amherst, New York","Anaheim, California","Anchorage, Alaska","Ann Arbor, Michigan","Antioch, California"
+    ]
+}
+
+cities.each_key do |country|
+  c = Country.create!(:name => country)
+  cities[country].each do |city|
+    City.create!(:name => city, :country => c)
+  end
+end
+
+t1.city = city = City.find_by_name 'Minsk'
+t1.save
+
+p.city = city
+p.save

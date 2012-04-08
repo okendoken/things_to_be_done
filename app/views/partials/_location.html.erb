@@ -1,0 +1,6 @@
+<% unless stuff.city.nil? %>
+    <div class="location">
+      <i class="icon-location"></i>
+      <%= link_to "#{stuff.city.name}, #{stuff.city.country.name}", country_city_path(stuff.city.country, stuff.city)%>
+    </div>
+<% end %>

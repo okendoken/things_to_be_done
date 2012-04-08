@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :problem
+  belongs_to :city
 
   has_many :votes, :as => :target
   has_many :comments, :as => :target
