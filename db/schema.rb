@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406131634) do
+ActiveRecord::Schema.define(:version => 20120409122140) do
 
   create_table "activities", :force => true do |t|
     t.integer  "participation_id"
@@ -153,7 +153,11 @@ ActiveRecord::Schema.define(:version => 20120406131634) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "website"
+    t.integer  "city_id"
   end
+
+  add_index "user_infos", ["city_id"], :name => "index_user_infos_on_city_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
