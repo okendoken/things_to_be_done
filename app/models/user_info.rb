@@ -1,5 +1,6 @@
 class UserInfo < ActiveRecord::Base
   belongs_to :user
+  belongs_to :city
 
   has_attached_file :avatar,
                     :styles => { :medium => "300x300>",

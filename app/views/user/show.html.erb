@@ -7,13 +7,39 @@
       <img src="/images/bruce.jpg" class="avatar" alt="image">
     </div>
     <div class="user-main-content">
-      <h1 class="user-name" title="<%= @user.nickname %>">
-        <%= @user.nickname %>
-      </h1>
-      <h1 class="user-rating" title="Rating - <%= @user.rating %>">
-        Rating - <%= @user.rating %>
-      </h1>
+      <div class="pull-left">
+        <h1 class="user-name big-cool-text">
+          <%= link_to @user.nickname, @user %>
+        </h1>
+        <div class="user-rating">
+          <h1>
+            <%= @user.rating %>
+          </h1>
+          <div class="user-rating-title"><%= t :rating %></div>
+        </div>
+      </div>
+      <hr/>
       <div class="other-stuff">
+        <% unless @user.user_info.city.nil? %>
+            <div class="row">
+              <div class="span2">
+                <%= t :location %>:
+              </div>
+              <div class="span4">
+                <%= render :partial => 'partials/location', :locals => {:stuff => @user.user_info} %>
+              </div>
+            </div>
+        <% end %>
+        <% unless @user.user_info.website.nil? %>
+            <div class="row">
+              <div class="span2">
+                <%= t :website %>:
+              </div>
+              <div class="span4">
+                <%= link_to @user.user_info.website, prepare_url(@user.user_info.website) %>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>

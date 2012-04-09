@@ -89,3 +89,7 @@ t1.save
 
 p.city = city
 p.save
+
+u.user_info.city = city
+u.user_info.website = "example.com"
+u.user_info.save

@@ -723,7 +723,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .avatar{
-    max-width: 160px;
+    max-width: 220px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -1276,14 +1276,35 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     float:left;
 }
 
-.user-main-content{
-    margin-left: 10px;
+.user-main-content > *{
+    float: left;
 }
 
-.user-name, .user-rating{
+.user-main-content{
+    margin-left: 10px;
+    width: 710px;
+}
+
+.user-main-content > hr{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.user-rating{
+    text-align: center;
+}
+
+.user-name, .user-rating > h1{
+    color: #000000;
     line-height: 1em;
     font-size: 3em;
     font-weight: bold;
+}
+
+.user-rating-title{
+    margin-top: -7px;
+    color: #808080;
+    font-size: 0.8em;
 }
 
 .user-main-content .other-stuff{

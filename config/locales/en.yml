@@ -107,3 +107,5 @@ en:
   tasks_count: "%{count} tasks"
   recently_completed: "Recently completed"
   participates_in: "Tasks"
+  location: "Location"
+  website: "Website/Blog"

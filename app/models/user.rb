@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :create_related_user_info
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -76,5 +77,10 @@ class User < ActiveRecord::Base
 
   def display_name
     self.nickname
+  end
+
+  private
+  def create_related_user_info
+    self.user_info = UserInfo.create!
   end
 end

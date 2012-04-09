@@ -74,4 +74,12 @@ module ApplicationHelper
   def is?(target, status)
     target.is_a?(Task) ? task_status(target) == status : project_status(target) == status
   end
+
+  def prepare_url(string)
+    if string.start_with? "http://"
+      string
+    else
+      "http://" + string
+    end
+  end
 end
