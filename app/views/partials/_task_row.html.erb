@@ -1,14 +1,22 @@
 <div class="row">
   <div class="task-row-image">
-    <div>
+    <div title="<%= task.title %>">
       <img style="max-height: 36px; max-width: 36px;" src="/images/rails.png" alt="Image"/>
     </div>
-    <div class="task-row-rating">
+    <div class="task-row-rating" title="<%= t :rating %>">
       <%= task.rating %>
     </div>
   </div>
   <div class="task-row-content">
-    <h4><%= link_to task.title, project_task_path(task.project, task) %></h4>
+    <div class="clearfix">
+      <h4><%= link_to task.title, project_task_path(task.project, task) %></h4>
+      <div class="task-row-info">
+        <div class="task-row-participants">
+          <i class="icon-user icon-dark-gray"></i><%= task.participations.count %>
+        </div>
+      </div>
+      <hr/>
+    </div>
     <p>
       <span><%= task.desc_short %></span>
     </p>

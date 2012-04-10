@@ -64,8 +64,7 @@
                                :limit => true } %>
         <%= render :partial => 'partials/tasks/block',
                    :locals => {:show_all_path => tasks_project_path(@project, {:order => :updated, :status => :completed}), :title => t(:recently_completed_tasks),
-                               :tasks => @project.tasks.where(:status => TASK_STATUS[:completed])
-                               .order("updated_at desc").limit(3),
+                               :tasks => @project.tasks.where(:status => TASK_STATUS[:completed]).order("updated_at desc").limit(3),
                                :limit => true} %>
       </div>
       <%= render :partial => 'partials/activity', :locals => {:target => @project} %>
