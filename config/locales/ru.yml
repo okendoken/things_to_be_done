@@ -346,3 +346,6 @@ ru:
   tasks_count: "%{count} заданий"
   recently_completed: "Недавно завершено"
   participates_in: "Участие"
+  location: "Откуда"
+  website: "Вебсайт/Блог"
+  supports: "Поддерживает"

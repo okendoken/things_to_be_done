@@ -9,7 +9,6 @@ class UserController < ApplicationController
       else
         @user = is_current_user_id?(params[:id]) ? current_user : User.find(params[:id])
       end
-      @user.user_info ||= UserInfo.new
       @user_info = @user.user_info
     end
   end

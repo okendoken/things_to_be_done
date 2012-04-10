@@ -18,5 +18,6 @@ class Ability
       event.reader == user
     end
     can :manage, [Project, Task], :user_id => user.id
+    can :manage, User, :id => user.id
   end
 end

@@ -2,57 +2,66 @@
   <% content_for(:title) do%>
       <%= @user.nickname%>
   <% end %>
-  <div class="blue-gradient well user-page-main clearfix">
-    <div class="user-avatar">
-      <img src="/images/bruce.jpg" class="avatar" alt="image">
+  <div class="user-page-main clearfix">
+    <div class="user-left-panel">
+      <div class="user-avatar">
+        <img src="/images/bruce.jpg" class="avatar" alt="image">
+      </div>
+      <%= render :partial => 'partials/tasks/simple_block',
+                 :locals => {:show_all_path => '', :title => t(:supports),
+                             :tasks => @user.voted_tasks,
+                             :limit => true } %>
+      <%= render :partial => 'partials/tasks/simple_block',
+                 :locals => {:show_all_path => '', :title => t(:recently_completed),
+                             :tasks => @user.tasks.where(:status => TASK_STATUS[:completed]).order("updated_at desc").limit(3),
+                             :limit => true } %>
     </div>
     <div class="user-main-content">
-      <h1 class="user-name" title="<%= @user.nickname %>">
-        <%= @user.nickname %>
-      </h1>
-      <h1 class="user-rating" title="Rating - <%= @user.rating %>">
-        Rating - <%= @user.rating %>
-      </h1>
+      <div class="pull-left">
+        <h1 class="user-name big-cool-text">
+          <%= link_to @user.nickname, @user %>
+        </h1>
+        <div class="user-rating">
+          <h1>
+            <%= @user.rating %>
+          </h1>
+          <div class="user-rating-title"><%= t :rating %></div>
+        </div>
+      </div>
+      <hr/>
       <div class="other-stuff">
-        <%= render :partial => 'partials/tasks/simple_block',
-                   :locals => {:show_all_path => '', :title => t(:participates_in),
-                               :tasks => @user.tasks,
-                               :limit => true } %>
+        <div class="user-info">
+          <% unless @user.user_info.city.nil? %>
+              <div class="row">
+                <div class="span1n5">
+                  <%= t :location %>
+                </div>
+                <div class="span4">
+                  <%= render :partial => 'partials/location', :locals => {:stuff => @user.user_info} %>
+                </div>
+              </div>
+          <% end %>
+          <% unless @user.user_info.website.nil? %>
+              <div class="row">
+                <div class="span1n5">
+                  <%= t :website %>
+                </div>
+                <div class="span4">
+                  <%= link_to @user.user_info.website, prepare_url(@user.user_info.website) %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+        <% unless @user.user_info.city.nil? and @user.user_info.website.nil? %>
+            <hr/>
+        <% end %>
+        <div class="participates-in">
+          <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="related-content">
-    <div class="group-header">
-      Tasks you participate in
-    </div>
-    <div class="base-panel">
-      <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
-    </div>
-
-    <div class="group-header">
-      Projects you like
-    </div>
-    <div class="project-task">
-      <% @user.voted_projects.each do |project| %>
-          <div class="row">
-            <span class="span3"><%= link_to project.title, project %></span>
-            <span class="span3"><%= project.desc_short%></span>
-          </div>
-      <% end %>
-    </div>
-
-    <div class="group-header">
-      Tasks you like
-    </div>
-    <div class="project-task">
-      <% @user.voted_tasks.each do |task| %>
-          <div class="row">
-            <span class="span3"><%= link_to task.title, project_task_path(task.project, task) %></span>
-            <span class="span3"><%= link_to task.project.title, task.project %></span>
-            <span class="span3"><%= task.desc_short%></span>
-          </div>
-      <% end %>
-    </div>
+  <div >
   </div>
 </div>

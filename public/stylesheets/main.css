@@ -80,7 +80,7 @@ a:hover, a:active {
     text-decoration: none;
     display: inline-block;
     color: #ffffff;
-    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.5);
+    text-shadow: 0 1px 1px rgba(51, 51, 51, 0.9);
     padding: 0 5px;
     margin: 0;
 }
@@ -113,8 +113,8 @@ a:hover, a:active {
 }
 
 .btn-sign{
-    font-size: 11px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 12px;
     padding: 3px 6px;
     display: inline-block;
     color: #3072a6;
@@ -123,9 +123,6 @@ a:hover, a:active {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     *margin-left: .3em;
     text-decoration: none;
@@ -142,7 +139,6 @@ a:hover, a:active {
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
     border: 1px solid #ccc;
-    border-bottom-color: #bbb;
 }
 
 .btn-sign:hover {
@@ -152,17 +148,7 @@ a:hover, a:active {
 }
 
 .btn-sign:focus{
-    padding: 3px 7px;
-}
-
-.btn-sign.in{
-    padding: 4px 10px;
-    font-size: 14px;
-    line-height: 16px;
-}
-
-.btn-sign.in:focus{
-    padding: 5px 11px;
+    padding: 4px 7px;
 }
 
 .btn-danger{
@@ -484,15 +470,14 @@ div.new-notifications-count{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     *margin-left: .3em;
 }
 
-.nav > li > .fb-login-button:hover, .fb-login-button:hover{
-    background: #29447E url("/images/fb-btn.png") 0 -162px no-repeat ;
+.fb-login-button:hover{
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #ffffff;
 }
@@ -511,7 +496,7 @@ div.new-notifications-count{
     padding: 0 4px 0 1px;
     text-decoration: none;
     outline: none;
-    width: 84px;
+    padding-left: 36px;
     text-align: right;
     color: #4D4D4D;
 
@@ -529,10 +514,79 @@ div.new-notifications-count{
     *margin-left: .3em;
 }
 
-.nav > li > .tw-login-button:hover, .tw-login-button:hover{
+.tw-login-button.small{
+    background: #deebf3 url("/images/bird_32_blue.png") no-repeat 1px -3px;
+    background-size: 23px 23px;
+    font-size: 12px;
+    line-height: 13px;
+    padding: 2px 6px 4px 26px;
+}
+
+.tw-login-button.small:hover{
+    background: #deebf3 url("/images/bird_32_blue.png") no-repeat 1px -3px;
+    background-size: 23px 23px;
+}
+
+.tw-login-button:hover{
     background: #ecf2f6 url("/images/bird_32_blue.png") 1px -4px no-repeat ;
     text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.17);
     color: #4D4D4D;
+}
+
+.vk-login-button {
+    border-color: #51769e #51779f #7495b8;
+    background: #6688ad url("/images/vk_26.png") no-repeat;
+    text-align: right;
+    display: inline-block;
+    padding: 4px 10px 4px 28px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    *margin-left: .3em;
+}
+
+.vk-login-button.small{
+    font-size: 11px;
+    line-height: 14px;
+    padding: 3px 6px 3px 21px;
+    background-size: 20px 21px;
+}
+
+.vk-login-button.small:hover, .vk-login-button:hover{
+    border-color: #92ACC7 #7293B7 #7293B7;
+    background-color: #84A1BF;
+    color: #ffffff;
+}
+
+.fb-login-button, .tw-login-button, .vk-login-button{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.fb-login-button.small{
+    font-size: 12px;
+    line-height: 14px;
+    padding: 3px 6px 3px 25px;
+    background-position: -1px -211px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.fb-login-button.small:hover{
+    color: #ffffff;
+    background-color: #29447E;
+}
+
+a.fb-login-button, a.tw-login-button, a.vk-login-button{
+    text-decoration: none;
 }
 
 #index-content{
@@ -598,7 +652,7 @@ div.new-notifications-count{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.base-panel > .row {
+.participates-in > .row, .base-panel > .row {
     margin-top: 10px;
     margin-left: 0;
 }
@@ -671,8 +725,6 @@ div.new-notifications-count{
 }
 
 .avatar{
-    width: 220px;
-    height: 300px;
     max-width: 220px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -808,31 +860,6 @@ div.new-notifications-count{
     margin: 0;
 }
 
-.nav > li > .vk-login-button:hover, .vk-login-button:hover{
-    border-color: #92ACC7 #7293B7 #7293B7;
-    background-color: #84A1BF;
-    color: #ffffff;
-}
-.vk-login-button {
-    border-color: #51769e #51779f #7495b8;
-    background: #6688ad url("/images/vk_26.png") no-repeat;
-    text-align: right;
-    display: inline-block;
-    padding: 4px 10px 4px 28px;
-    font-size: 13px;
-    line-height: 18px;
-    color: #ffffff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    *margin-left: .3em;
-}
-
 .provider-links:empty{
     margin: 0;
     padding: 0;
@@ -875,9 +902,9 @@ div.new-notifications-count{
 }
 
 .base-block, .base-panel, .participators-count{
-    -webkit-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
-    box-shadow: rgba(0, 0, 0, 0.298) 0 1px 3px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
 }
 
 .face {
@@ -984,28 +1011,6 @@ div.new-notifications-count{
 
 .news-add-new > form, .comments-add-new > form{
     margin: 0;
-}
-
-.fb-login-button, .tw-login-button, .vk-login-button{
-    font-family: Verdana, Helvetica, Arial, sans-serif;
-}
-
-.vk-login-button.small{
-    font-size: 11px;
-    line-height: 14px;
-    padding: 3px 6px 3px 21px;
-    background-size: 20px 21px;
-}
-
-.fb-login-button.small{
-    font-size: 12px;
-    line-height: 15px;
-    padding: 3px 6px 4px 24px;
-    background-position: 0 -210px;
-}
-
-a.fb-login-button, a.tw-login-button, a.vk-login-button{
-    text-decoration: none;
 }
 
 .news-add-new textarea, .comments-add-new textarea{
@@ -1153,6 +1158,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .simple-panel .base-block{
     padding-top: 10px;
+    border: none;
 }
 
 .news-single-face img {
@@ -1207,8 +1213,31 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .task-row-content{
     float:left;
-    width: 260px;
+    width: 300px;
     margin-left: 5px;
+}
+
+.task-row-content h4{
+    float:left;
+}
+
+.task-row-info{
+    float: right;
+    margin-right: 20px;
+}
+
+.task-row-info > *{
+    float: left;
+}
+
+.task-row-content hr{
+    margin: 1px;
+    float: left;
+    width: 100%;
+}
+
+.task-row-participants i{
+    margin-right: 1px;
 }
 
 .related-tasks.page{
@@ -1243,10 +1272,16 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     width: 320px;
 }
 
+.task-block .task-row-content{
+    width: 220px
+}
+
+.task-block .task-row-content .task-row-info{
+    margin-right: 0;
+}
+
 .task-row-rating{
     color: #696969;
-    border: 1px solid #808080;
-    border-radius: 3px;
     line-height: 12px;
     text-align: center;
     margin-top: -4px;
@@ -1266,27 +1301,47 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .user-page-main{
-    padding: 40px;
+
 }
 
 .user-page-main > div{
     float:left;
 }
 
-.user-main-content{
-    margin-left: 10px;
+.user-main-content > *{
+    float: left;
 }
 
-.user-name, .user-rating{
-    color: #ffffff;
+.user-main-content{
+    margin-left: 10px;
+    width: 710px;
+}
+
+.user-main-content > hr{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.user-rating{
+    text-align: center;
+}
+
+.user-name, .user-rating > h1{
+    color: #000000;
     line-height: 1em;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
-    text-shadow: 1.5px 1.5px 2px rgba(255, 255, 255, 0.5), -1.5px -1.5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.user-rating-title{
+    margin-top: -7px;
+    color: #808080;
+    font-size: 0.8em;
 }
 
 .user-main-content .other-stuff{
     margin-top: 10px;
+    width: 100%;
 }
 
 .header-container .signed{
@@ -1294,9 +1349,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .task-face-rating{
-    color: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
+    color: #696969;
     line-height: 12px;
     text-align: center;
     margin-top: -4px;
@@ -1308,45 +1361,37 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-left: -25%;
 }
 
-.task-face-rating.completed{
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c5eec5), to(#e5e5e5));
-    background-image: -webkit-linear-gradient(#c5eec5, #e5e5e5);
-    background-image: -moz-linear-gradient(top, #c5eec5, #e5e5e5);
-    background-image: -ms-linear-gradient(#c5eec5, #e5e5e5);
-    background-image: -o-linear-gradient(#c5eec5, #00b500);
-    background-image: linear-gradient(#c5eec5, #e5e5e5);
-}
+/*.task-face-rating.completed{*/
+    /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c5eec5), to(#e5e5e5));*/
+    /*background-image: -webkit-linear-gradient(#c5eec5, #e5e5e5);*/
+    /*background-image: -moz-linear-gradient(top, #c5eec5, #e5e5e5);*/
+    /*background-image: -ms-linear-gradient(#c5eec5, #e5e5e5);*/
+    /*background-image: -o-linear-gradient(#c5eec5, #00b500);*/
+    /*background-image: linear-gradient(#c5eec5, #e5e5e5);*/
+/*}*/
 
-.task-face-rating.in_progress{
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d8eaf8), to(#4498dc));
-    background-image: -webkit-linear-gradient(#d8eaf8, #4498dc);
-    background-image: -moz-linear-gradient(top, #d8eaf8, #4498dc);
-    background-image: -ms-linear-gradient(#d8eaf8, #4498dc);
-    background-image: -o-linear-gradient(#d8eaf8, #4498dc);
-    background-image: linear-gradient(#d8eaf8, #4498dc);
-}
+/*.task-face-rating.in_progress{*/
+    /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d8eaf8), to(#4498dc));*/
+    /*background-image: -webkit-linear-gradient(#d8eaf8, #4498dc);*/
+    /*background-image: -moz-linear-gradient(top, #d8eaf8, #4498dc);*/
+    /*background-image: -ms-linear-gradient(#d8eaf8, #4498dc);*/
+    /*background-image: -o-linear-gradient(#d8eaf8, #4498dc);*/
+    /*background-image: linear-gradient(#d8eaf8, #4498dc);*/
+/*}*/
 
-.task-face-rating.canceled{
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#c5c5c5));
-    background-image: -webkit-linear-gradient(#f7f7f7, #c5c5c5);
-    background-image: -moz-linear-gradient(top, #f7f7f7, #c5c5c5);
-    background-image: -ms-linear-gradient(#f7f7f7, #c5c5c5);
-    background-image: -o-linear-gradient(#f7f7f7, #c5c5c5);
-    background-image: linear-gradient(#f7f7f7, #c5c5c5);
-}
-
-.task-face-link > a{
-    color: white;
-}
+/*.task-face-rating.canceled{*/
+    /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#c5c5c5));*/
+    /*background-image: -webkit-linear-gradient(#f7f7f7, #c5c5c5);*/
+    /*background-image: -moz-linear-gradient(top, #f7f7f7, #c5c5c5);*/
+    /*background-image: -ms-linear-gradient(#f7f7f7, #c5c5c5);*/
+    /*background-image: -o-linear-gradient(#f7f7f7, #c5c5c5);*/
+    /*background-image: linear-gradient(#f7f7f7, #c5c5c5);*/
+/*}*/
 
 .user-page-main .block-header{
-    color: #474747;
+    color: #696969;
 
     font-weight: 600;
-}
-
-.user-page-main .block-header > a{
-    color: white;
 }
 
 .user-page-main .face{
@@ -1358,6 +1403,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     text-shadow: none;
     margin-top: 1px;
     color: #808080;
+    margin-left: -17px;
 }
 
 .location:hover{
@@ -1371,7 +1417,6 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     line-height: 18px;
     vertical-align: middle;
     background: url("../images/location.png") no-repeat 0 0;
-    margin-right: 2px;
     margin-top: -3px;
 }
 
@@ -1381,4 +1426,8 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .no-shadow{
     text-shadow: none;
+}
+
+.span1n5{
+    width: 90px;
 }
