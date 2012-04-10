@@ -45,6 +45,8 @@ module EventEnvironment
           :added => 10, :completed => 11, :canceled => 12
       },
       :vote => {
+          #TODO: define where resolve readable type. here(vote_for_activity = partial_vote_for activity) or on the view
+          # like prepare_path approach)
           #notify only creator
           true => 20,
           false => 21
@@ -102,8 +104,8 @@ module EventEnvironment
       },
       :vote => {
           #notify only creator
-          true => 'partials/stub',
-          false => 'partials/stub'
+          true => 'partials/notifications/vote',
+          false => 'partials/notifications/vote'
       },
       :comment => {
           :added => 'partials/notifications/comment'

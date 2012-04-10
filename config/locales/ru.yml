@@ -328,6 +328,10 @@ ru:
       canceled: "Отменен"
   comment:
     added: "прокомментировал"
+  vote:
+    true: "проголосовал за"
+    false: "проголосовал против"
+
   resume_title: "Возобновить %{target}"
   resume: "Возобновить"
   news:

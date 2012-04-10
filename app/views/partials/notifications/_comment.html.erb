@@ -12,6 +12,6 @@
   </div>
   <div class="notifications-single-body">
     <%= link_to event.readable.user.display_name, event.readable.user %> -
-    <%= t :"#{clazz}.#{event_type}" %> <%= link_to event.readable.target.title, event.readable.target%>
+    <%= t :"#{clazz}.#{event_type}" %> <%= link_to event.readable.target.title, prepare_for_path(event.readable.target)%>
   </div>
 </div>

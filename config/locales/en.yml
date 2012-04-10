@@ -89,6 +89,11 @@ en:
     completed: "Done"
     in_progress: "In progress"
     canceled: "Canceled"
+  comment:
+      added: "commented"
+  vote:
+    true: "voted up"
+    false: "voted down"
   resume_title: "Resume %{target}"
   resume: "Resume"
   news:
