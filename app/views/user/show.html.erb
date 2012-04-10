@@ -33,8 +33,8 @@
         <div class="user-info">
           <% unless @user.user_info.city.nil? %>
               <div class="row">
-                <div class="span2">
-                  <%= t :location %>:
+                <div class="span1n5">
+                  <%= t :location %>
                 </div>
                 <div class="span4">
                   <%= render :partial => 'partials/location', :locals => {:stuff => @user.user_info} %>
@@ -43,8 +43,8 @@
           <% end %>
           <% unless @user.user_info.website.nil? %>
               <div class="row">
-                <div class="span2">
-                  <%= t :website %>:
+                <div class="span1n5">
+                  <%= t :website %>
                 </div>
                 <div class="span4">
                   <%= link_to @user.user_info.website, prepare_url(@user.user_info.website) %>

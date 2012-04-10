@@ -1425,3 +1425,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 .no-shadow{
     text-shadow: none;
 }
+
+.span1n5{
+    width: 90px;
+}
