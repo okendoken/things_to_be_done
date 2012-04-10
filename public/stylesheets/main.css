@@ -1270,6 +1270,14 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     width: 320px;
 }
 
+.task-block .task-row-content{
+    width: 220px
+}
+
+.task-block .task-row-content .task-row-info{
+    margin-right: 0;
+}
+
 .task-row-rating{
     color: #696969;
     line-height: 12px;

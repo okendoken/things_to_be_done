@@ -11,7 +11,7 @@
     <div class="clearfix">
       <h4><%= link_to task.title, project_task_path(task.project, task) %></h4>
       <div class="task-row-info">
-        <div class="task-row-participants">
+        <div class="task-row-participants" title="<%= t :participators %>">
           <i class="icon-user icon-dark-gray"></i><%= task.participations.count %>
         </div>
       </div>
