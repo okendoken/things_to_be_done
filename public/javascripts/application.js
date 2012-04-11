@@ -30,9 +30,13 @@ $(function(){
         return false;
     });
     $(document).on('ajax:success',"[data-toggle*='small-supp-link-'], [data-toggle*='small-dont-supp-link-']", function(evt, data, status, xhr){
-            var response = $.parseJSON(xhr.responseText);
+        var response = $.parseJSON(xhr.responseText);
+        if (response.login_required){
+            window.location = '/users/sign_in';
+        } else {
             changeSmallLikerState(response.vote_positive, response.target_id);
-        });
+        }
+    });
     $(document).click(function(e) {
         //maybe better solution exists?
         if ($(e.target).closest('#login-dialog').length === 0) {
