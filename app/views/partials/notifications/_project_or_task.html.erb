@@ -1,0 +1,7 @@
+<%
+   clazz = event.readable.class.name.downcase
+   event_type = symbol_event_type(event)
+%>
+<div class="notifications-single">
+    <%= t :"#{clazz}.#{event_type}" %> <%= link_to event.readable.title, prepare_for_path(event.readable)%>
+</div>

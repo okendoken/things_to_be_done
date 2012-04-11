@@ -341,7 +341,8 @@ ru:
     activity:
       positive: "проголосовал за активность в"
       negative: "проголосовал против активности в"
-
+  activity:
+    added: "проявил активность в"
   resume_title: "Возобновить %{target}"
   resume: "Возобновить"
   news:

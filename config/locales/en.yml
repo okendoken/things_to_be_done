@@ -104,6 +104,8 @@ en:
     activity:
       positive: "voted up activity on"
       negative: "voted down activity on"
+  activity:
+      added: "added activity in"
   resume_title: "Resume %{target}"
   resume: "Resume"
   news:
