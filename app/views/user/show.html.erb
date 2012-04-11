@@ -67,7 +67,12 @@
               <span class="label label-info"><%= t(:'news.news') %></span>
             </div>
             <div class="activity-content">
-              <%= render :partial => 'partials/all_news', :locals => {:target => @user.user_info, :no_new_comment_form => true} %>
+              <% if can? :manage, @user %>
+                  <%= render :partial => 'partials/all_news', :locals => {:target => @user.user_info, :no_new_comment_form => true} %>
+              <% else %>
+                  <%= render :partial => 'partials/all_news', :locals => {:no_new_comment_form => true,
+                                                                          :events => @user.created_related_events} %>
+              <% end %>
             </div>
           </div>
         </div>

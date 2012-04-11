@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   #events user need to handle
   has_many :related_events, :as => :reader
   #events user created
-  has_many :created_related_events, :class_name => 'RelatedEvent'
+  has_many :events
 
   #oauth stuff
 
@@ -77,6 +77,11 @@ class User < ActiveRecord::Base
 
   def display_name
     self.nickname
+  end
+
+  def created_related_events
+    #todo
+    []
   end
 
   private

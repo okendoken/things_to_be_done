@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409122140) do
+ActiveRecord::Schema.define(:version => 20120411144656) do
 
   create_table "activities", :force => true do |t|
     t.integer  "participation_id"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(:version => 20120409122140) do
 
   add_index "countries", ["slug"], :name => "index_countries_on_slug", :unique => true
 
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "e_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
+
   create_table "participations", :force => true do |t|
     t.integer  "task_id"
     t.integer  "user_id"
@@ -117,8 +126,10 @@ ActiveRecord::Schema.define(:version => 20120409122140) do
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "event_id"
   end
 
+  add_index "related_events", ["event_id"], :name => "index_related_events_on_event_id"
   add_index "related_events", ["readable_id"], :name => "index_related_events_on_readable_id"
   add_index "related_events", ["readable_type"], :name => "index_related_events_on_readable_type"
   add_index "related_events", ["reader_id"], :name => "index_related_events_on_reader_id"

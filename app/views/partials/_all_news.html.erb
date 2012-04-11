@@ -1,4 +1,4 @@
-<% events = target.related_events %>
+<% events ||= target.related_events %>
 <% no_new_comment_form ||= false %>
 <div class="news">
   <% if user_signed_in? and not no_new_comment_form%>
