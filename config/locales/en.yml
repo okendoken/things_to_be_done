@@ -30,6 +30,7 @@ en:
   people_who_participates_in: "People who participate"
   details: "Details..."
   rating: "Rating"
+  you_get_rating: "u get rating +%{value}"
   total_votes: "Total votes"
   participate: "Join project"
   more: "More"
