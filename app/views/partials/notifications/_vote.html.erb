@@ -1,5 +1,5 @@
 <%
-   clazz = event.readable.class.name.downcase
+   target_clazz = event.readable.target.class.name.downcase
    event_type = symbol_event_type(event)
 %>
 <div class="notifications-single">
@@ -12,6 +12,7 @@
   </div>
   <div class="notifications-single-body">
     <%= link_to event.readable.user.display_name, event.readable.user %> -
-    <%= t :"#{clazz}.#{event_type}" %> <%= link_to event.readable.target.title, prepare_for_path(event.readable.target)%>
+    <%= t :"vote.#{target_clazz}.#{event_type ? 'positive' : 'negative'}" %>
+    <%= link_to prepare_title(event.readable.target), prepare_for_path(event.readable.target)%>
   </div>
 </div>

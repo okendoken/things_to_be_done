@@ -92,11 +92,22 @@ en:
   comment:
       added: "commented"
   vote:
-    true: "voted up"
-    false: "voted down"
+    task:
+      positive: "voted up"
+      negative: "voted down"
+    project:
+      positive: "voted up"
+      negative: "voted down"
+    comment:
+      positive: "voted up comment on"
+      negative: "voted down comment on"
+    activity:
+      positive: "voted up activity on"
+      negative: "voted down activity on"
   resume_title: "Resume %{target}"
   resume: "Resume"
   news:
+    news: "News"
     project:
       completed: "is done"
       in_progress: "resumed"
@@ -115,3 +126,4 @@ en:
   location: "Location"
   website: "Website/Blog"
   supports: "Supports"
+  you_participate_in: "You participate in"

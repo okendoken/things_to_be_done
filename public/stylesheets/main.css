@@ -653,7 +653,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .participates-in > .row, .base-panel > .row {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 0;
 }
 
@@ -1313,11 +1313,11 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .user-main-content{
-    margin-left: 10px;
-    width: 710px;
+    margin-left: 20px;
+    width: 700px;
 }
 
-.user-main-content > hr{
+.user-main-content hr{
     width: 100%;
     margin: 5px 0;
 }
@@ -1430,4 +1430,21 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .span1n5{
     width: 90px;
+}
+
+.participates-in{
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+.user-news{
+    margin-top: 10px;
+}
+
+.user-news .base-block{
+    padding: 20px;
+}
+
+.user-news .base-block .title{
+
 }

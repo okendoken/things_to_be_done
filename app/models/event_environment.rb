@@ -3,23 +3,29 @@ module EventEnvironment
   # format: stuff_to_process/event_type
   EVENT_READERS = {
       :project => {
-          :completed => Proc.new{|project| [project] + project.participants},
-          :canceled => Proc.new{|project| [project] + project.participants},
-          :in_progress => Proc.new{|project| [project] + project.participants}
+          :completed => Proc.new{|project| [project] + project.participants + UserInfo.where(:id => project.participants.pluck(:'users.id'))},
+          :canceled => Proc.new{|project| [project] + project.participants + UserInfo.where(:id => project.participants.pluck(:'users.id'))},
+          :in_progress => Proc.new{|project| [project] + project.participants + UserInfo.where(:id => project.participants.pluck(:'users.id'))}
       },
       #task-related events
       :task => {
           #task has been completed. notify task, parent-project, task-author
-          :completed => Proc.new{|task| [task, task.project] + task.participants},
+          :completed => Proc.new{|task| [task, task.project] + task.participants + UserInfo.where(:id => task.participants.pluck(:'users.id'))},
           #etc
-          :canceled => Proc.new{|task| [task, task.project] + task.participants},
-          :in_progress => Proc.new{|task| [task, task.project] + task.participants}
+          :canceled => Proc.new{|task| [task, task.project] + task.participants + UserInfo.where(:id => task.participants.pluck(:'users.id'))},
+          :in_progress => Proc.new{|task| [task, task.project] + task.participants + UserInfo.where(:id => task.participants.pluck(:'users.id'))}
       },
       :participation => {
           #somebody participated. notify parent-task, task-author
-          :added => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]},
-          :completed => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]},
-          :canceled => Proc.new{|participation| [participation.task, participation.task.user, participation.task.project]}
+          :added => Proc.new do |participation|
+            [participation.task, participation.task.user, participation.task.user.user_info, participation.task.project] + UserInfo.where(:id => participation.task.participants.pluck(:'users.id'))
+          end,
+          :completed => Proc.new do |participation|
+            [participation.task, participation.task.user, participation.task.user.user_info, participation.task.project] + UserInfo.where(:id => participation.task.participants.pluck(:'users.id'))
+          end,
+          :canceled => Proc.new do |participation|
+            [participation.task, participation.task.user, participation.task.user.user_info, participation.task.project] + UserInfo.where(:id => participation.task.participants.pluck(:'users.id'))
+          end
       },
       :vote => {
           #notify only creator
@@ -27,10 +33,15 @@ module EventEnvironment
           false => Proc.new{|vote| [vote.target.user]}
       },
       :comment => {
-          :added => Proc.new{|comment| [comment.target, comment.target.user]}
+          :added => Proc.new do |comment|
+            #for now target can be only task or project. when activity will be made commentable it will be needed to introduce class check
+            [comment.target, comment.target.user] +  UserInfo.where(:id => comment.target.participants.pluck(:'users.id'))
+          end
       },
       :activity => {
-          :added => Proc.new{|activity| [activity.participation.task, activity.participation.task.project, activity.participation.task.user]}
+          :added => Proc.new do |activity|
+            [activity.participation.task, activity.participation.task.project, activity.participation.task.user] + UserInfo.where(:id => activity.participation.task.project.participants.pluck(:'users.id'))
+          end
       }
   }
 

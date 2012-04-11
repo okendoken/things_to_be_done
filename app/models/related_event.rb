@@ -11,9 +11,11 @@ class RelatedEvent < ActiveRecord::Base
 
   def self.notify_all(readable, type, user)
     clazz = readable.class.name.downcase  .to_sym
-    EVENT_READERS[clazz][type].call(readable).each do |reader|
-      RelatedEvent.create!(:e_type => DB_EVENT_TYPES[clazz][type], :read => false,
-                           :readable => readable, :reader => reader, :user => user)
+    RelatedEvent.transaction do
+      EVENT_READERS[clazz][type].call(readable).each do |reader|
+        RelatedEvent.create!(:e_type => DB_EVENT_TYPES[clazz][type], :read => false,
+                             :readable => readable, :reader => reader, :user => user)
+      end
     end
   end
 

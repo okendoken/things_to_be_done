@@ -329,20 +329,31 @@ ru:
   comment:
     added: "прокомментировал"
   vote:
-    true: "проголосовал за"
-    false: "проголосовал против"
+    task:
+      positive: "проголосовал за"
+      negative: "проголосовал против"
+    project:
+      positive: "проголосовал за"
+      negative: "проголосовал против"
+    comment:
+      positive: "проголосовал за комментарий в"
+      negative: "проголосовал против комментария в"
+    activity:
+      positive: "проголосовал за активность в"
+      negative: "проголосовал против активности в"
 
   resume_title: "Возобновить %{target}"
   resume: "Возобновить"
   news:
     project:
-        completed: "Завершен"
-        in_progress: "Выполняется"
-        canceled: "Отменен"
+        completed: "завершен"
+        in_progress: "выполняется"
+        canceled: "отменен"
     task:
         completed: "успешно завершен!"
         in_progress: "возобновлен"
         canceled: "отменен"
+    news: "Новости"
   show_all: "Показать все..."
   most_popular: "Самые значимые задания"
   recently_completed_tasks: "Недавно завершенные задания"
@@ -353,3 +364,4 @@ ru:
   location: "Откуда"
   website: "Вебсайт/Блог"
   supports: "Поддерживает"
+  you_participate_in: "Вы участвуете в"

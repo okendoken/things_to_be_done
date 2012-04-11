@@ -16,7 +16,7 @@ class Task < ActiveRecord::Base
   has_many :users, :through => :votes, :conditions => {:'votes.positive' => true}
 
   has_many :participants, :through => :participations, :source => :user,
-           :conditions => {:'participations.status' => PARTICIPATION_STATUS[:in_progress]}
+           :conditions => "participations.status != #{PARTICIPATION_STATUS[:canceled]}"
 
   has_many :activities, :through => :participations
 

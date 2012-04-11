@@ -9,7 +9,7 @@
       </div>
       <%= render :partial => 'partials/tasks/simple_block',
                  :locals => {:show_all_path => '', :title => t(:supports),
-                             :tasks => @user.voted_tasks,
+                             :tasks => @user.voted_tasks.limit(3),
                              :limit => true } %>
       <%= render :partial => 'partials/tasks/simple_block',
                  :locals => {:show_all_path => '', :title => t(:recently_completed),
@@ -55,13 +55,23 @@
         <% unless @user.user_info.city.nil? and @user.user_info.website.nil? %>
             <hr/>
         <% end %>
-        <div class="participates-in">
-          <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
+        <% if @user.tasks.count > 0 %>
+            <div class="participates-in gray-background base-block">
+              <h5><%= t :you_participate_in %></h5>
+              <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
+            </div>
+        <% end %>
+        <div class="user-news">
+          <div class="base-block">
+            <div class="title">
+              <span class="label label-info"><%= t(:'news.news') %></span>
+            </div>
+            <div class="activity-content">
+              <%= render :partial => 'partials/all_news', :locals => {:target => @user.user_info, :no_new_comment_form => true} %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div >
   </div>
 </div>

@@ -63,7 +63,27 @@ module ApplicationHelper
   end
 
   def prepare_for_path(object)
-    object.is_a?(Task) ? [object.project, object] : [object]
+    if object.is_a?(Task)
+      [object.project, object]
+    elsif object.is_a?(Project)
+      [object]
+    elsif object.is_a?(Activity)
+      prepare_for_path object.participation.task
+    elsif object.is_a?(Comment)
+      prepare_for_path object.target
+    end
+  end
+
+  def prepare_title(object)
+    if object.is_a?(Task)
+      object.title
+    elsif object.is_a?(Project)
+      object.title
+    elsif object.is_a?(Activity)
+      object.participation.task.title
+    elsif object.is_a?(Comment)
+      prepare_title(object.target)
+    end
   end
 
   def symbol_event_type(event)
