@@ -47,7 +47,10 @@ GreatWork::Application.routes.draw do
   match ':project_id/:id/leave' => 'tasks#leave'
   #end legacy crappy code
 
-  resources :projects, :path => "", :except => [:index, :create ] do
+  resources :projects, :only => [:new, :create]
+  resources :tasks, :only => [:new, :create]
+
+  resources :projects, :path => "", :except => [:index, :create, :new ] do
     member do
       get 'news'
       get 'tasks'
@@ -57,7 +60,7 @@ GreatWork::Application.routes.draw do
     end
     resources :comments, :only => [:index, :create]
     resources :activities, :only => [:index, :create]
-    resources :tasks, :path => "", :except => [:index, :create ] do
+    resources :tasks, :path => "", :except => [:index, :create, :new ] do
       member do
         get 'news'
         scope 'admin' do

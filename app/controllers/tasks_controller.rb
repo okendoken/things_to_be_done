@@ -37,4 +37,12 @@ class TasksController < ApplicationController
     end
     redirect_to project_task_path(@target)
   end
+
+  def new
+    @task = Task.new
+  end
+
+  def create
+
+  end
 end

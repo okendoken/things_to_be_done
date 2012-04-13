@@ -367,3 +367,7 @@ ru:
   website: "Вебсайт/Блог"
   supports: "Поддерживает"
   you_participate_in: "Вы участвуете в"
+  new_task: "Создать Новое Задание"
+  task_name: "Название Задания"
+  description: "Описание"
+  create_task: "Создать Задание"

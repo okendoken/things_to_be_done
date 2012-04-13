@@ -1466,3 +1466,23 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 .user-news-single hr{
     display: none;
 }
+
+.new-task label, .new-task input, .new-task textarea{
+    font-size: 14px;
+}
+
+.new-task .control-label{
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.new-task .form-horizontal .controls{
+    margin-left: 200px;
+}
+
+.new-task .form-horizontal .control-label{
+    width: 180px;
+}
+
+.new-task .form-horizontal input[type="submit"]{
+    margin-right: 180px;
+}

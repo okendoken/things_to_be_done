@@ -130,3 +130,7 @@ en:
   website: "Website/Blog"
   supports: "Supports"
   you_participate_in: "You participate in"
+  new_task: "Create a New Task"
+  task_name: "Task Name"
+  description: "Description"
+  create_task: "Create Task"
