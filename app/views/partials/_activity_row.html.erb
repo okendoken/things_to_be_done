@@ -12,6 +12,9 @@
     </div>
   </div>
   <div class="news-single-body">
+    <% if full_view %>
+        <%= link_to activity.participation.task.title, prepare_for_path(activity.participation.task) %> /
+    <% end %>
     <%= link_to activity.user.display_name, activity.user %> -
     <%= activity.text %>
   </div>

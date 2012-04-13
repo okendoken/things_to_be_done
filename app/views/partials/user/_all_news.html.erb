@@ -1,0 +1,24 @@
+<% events ||= target.related_events %>
+<% no_new_comment_form ||= false %>
+<div class="news">
+  <% if user_signed_in? and not no_new_comment_form%>
+      <div class="comments-add-new">
+        <% if not target.is_a? Project and target.participates_in_this?(current_user) %>
+            <%= render :partial => 'partials/add_activity', :locals => {:target => target, :state => 'news'} %>
+        <% else %>
+            <%= render :partial => 'partials/add_comment', :locals => {:target => target, :state => 'news'} %>
+        <% end %>
+      </div>
+  <% end %>
+  <div class="news-content">
+    <% if events.count > 0%>
+        <% events.order('created_at desc').limit(20).each do |event| %>
+            <div class="user-news-single">
+              <%= render :partial => event.news_template, :locals => {:event => event, :full_view => true} %>
+            </div>
+        <% end %>
+    <% else %>
+        <%= t :no_activity_yet %>
+    <% end %>
+  </div>
+</div>

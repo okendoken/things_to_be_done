@@ -1,1 +1,2 @@
-<%= render :partial => 'partials/activity_row', :locals => {:activity => event.readable, :state => 'news'} %>
+<% full_view ||= false %>
+<%= render :partial => 'partials/activity_row', :locals => {:activity => event.readable, :state => 'news', :full_view => full_view} %>

@@ -12,6 +12,9 @@
     </div>
   </div>
   <div class="comment-body">
+    <% if full_view %>
+        <%= link_to comment.target.title, prepare_for_path(comment.target) %> /
+    <% end %>
     <%= link_to comment.user.display_name, comment.user %> -
     <%= comment.text %>
   </div>

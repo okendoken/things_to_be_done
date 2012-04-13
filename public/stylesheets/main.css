@@ -1439,12 +1439,26 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-news{
     margin-top: 10px;
-}
-
-.user-news .base-block{
     padding: 20px;
 }
 
-.user-news .base-block .title{
+.user-news .news{
+    margin-top: 5px;
+}
 
+.user-news-single{
+    float: left;
+    padding: 5px 5px 0;
+    margin-top: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(219, 219, 219, 0.7);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
+}
+
+.user-news-single:first-child{
+    margin-top: 0;
 }
