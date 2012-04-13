@@ -80,8 +80,12 @@ class User < ActiveRecord::Base
   end
 
   def created_related_events
-    #todo
-    []
+    events = RelatedEvent.where(:user_id => self.id).group(:event_id)
+    this = self
+    events.define_singleton_method(:count) do
+      this.events.count
+    end
+    events
   end
 
   private
