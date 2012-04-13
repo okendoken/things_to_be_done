@@ -14,7 +14,7 @@
     <%= link_to prepare_title(event.readable.target), prepare_for_path(event.readable.target)%>
   </div>
   <div class="news-single-info simple-gray">
-    <i class="icon-adjust icon-gray"></i>
+    <i class="<%= event.readable.positive? ? 'icon-plus-sign' : 'icon-minus-sign' %> icon-gray"></i>
     <%= format_date event.created_at %>
     <div class="news-single-actions">
     </div>

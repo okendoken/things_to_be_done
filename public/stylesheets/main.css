@@ -1448,7 +1448,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-news-single{
     float: left;
-    padding: 5px 5px 0;
+    padding: 10px 15px 10px;
     margin-top: 10px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -1461,4 +1461,8 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .user-news-single:first-child{
     margin-top: 0;
+}
+
+.user-news-single hr{
+    display: none;
 }
