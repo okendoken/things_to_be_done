@@ -1,6 +1,9 @@
 <% content_for(:title) do%>
     <%= t :new_task %>
 <% end %>
+<% content_for(:custom_js) do %>
+    <%= javascript_include_tag 'jquery-ui-1.8.18.custom.min', 'autocomplete-rails' %>
+<% end %>
 <div class="new-task">
   <%= form_for(@task, :html => {:class => 'form-horizontal'}) do |f| %>
         <fieldset>
@@ -15,6 +18,12 @@
             <label class="control-label"><%= t :description %></label>
             <div class="controls">
               <%= f.text_area :description, :class => 'input-xxlarge', :rows => 3 %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label"><%= t :city %></label>
+            <div class="controls">
+              <%= f.autocomplete_field :city, autocomplete_city_name_tasks_path, :class => 'input-xxlarge', :rows => 3 %>
             </div>
           </div>
           <div class="control-group">

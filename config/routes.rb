@@ -48,7 +48,9 @@ GreatWork::Application.routes.draw do
   #end legacy crappy code
 
   resources :projects, :only => [:new, :create]
-  resources :tasks, :only => [:new, :create]
+  resources :tasks, :only => [:new, :create] do
+    get :autocomplete_city_name, :on => :collection
+  end
 
   resources :projects, :path => "", :except => [:index, :create, :new ] do
     member do

@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  autocomplete :city, :name
 
   include ProjectTaskCommon
 
@@ -43,6 +44,9 @@ class TasksController < ApplicationController
   end
 
   def create
-
+    if user_signed_in?
+      task = Task.new params[:task]
+      task.user = current_user
+    end
   end
 end
