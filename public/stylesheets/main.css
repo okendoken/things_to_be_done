@@ -95,6 +95,7 @@ a:hover, a:active {
     width: 940px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .header-container > h2{
@@ -271,13 +272,10 @@ a:hover, a:active {
 
 .login-dialog{
     display: none;
-    position: relative;
+    position: absolute;
     z-index: 1000;
-    float: right;
-    left:  175px;
-    top: 41px;
-    width: 300px;
-
+    padding: 10px;
+    right: 0;
     background-color: white;
 
     -moz-border-radius: 0 0 6px 6px;
@@ -287,7 +285,7 @@ a:hover, a:active {
     -khtml-border-radius: 0 0 6px 6px;
     border-radius: 0 0 6px 6px;
 
-    border: 1px solid #666;
+    border: 1px solid rgba(153, 153, 153, 0.8);
     border-top: none;
 
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -296,17 +294,22 @@ a:hover, a:active {
 }
 
 .login-dialog-content{
-    margin: 20px auto;
-    width: 260px;
+    width: 250px;
+}
+
+.login-dialog-content form{
+    margin: 0;
+}
+
+.login-dialog-content hr{
+    margin: 2px 0 0;
 }
 
 .notifications-dialog{
     display: none;
-    position: relative;
+    position: absolute;
     z-index: 1000;
-    float: right;
-    left:  100px;
-    top: 40px;
+    right: 0;
 
     background-color: white;
 
@@ -435,7 +438,7 @@ div.new-notifications-count{
 }
 
 .immediate-login-controls{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .immediate-login-controls > #cancel-btn{
@@ -1485,4 +1488,25 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 
 .new-task .form-horizontal input[type="submit"]{
     margin-right: 180px;
+}
+
+.add-new-task{
+    display: inline-block;
+    position: relative;
+    top: -7px;
+    margin-left: 200px;
+}
+
+.new-task-btn-header{
+    padding: 2px 6px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.nav > li > .new-task-btn-header:hover{
+    background-color: #51a351;
+}
+
+.new-task-btn-header i {
+    margin-right: 3px;
 }

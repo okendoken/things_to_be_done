@@ -1,4 +1,13 @@
 <ul class="nav signed">
+  <% if content_for?(:extra_links) %>
+      <%= yield(:extra_links) %>
+  <% else %>
+      <li>
+        <%= link_to new_task_path, :class => "btn btn-success new-task-btn-header" do%>
+            <i class="icon-plus icon-white"></i><%= t(:create_new_task) %>
+        <% end %>
+      </li>
+  <% end %>
   <% if user_signed_in? %>
       <%= render :partial => 'partials/notifications_link' %>
       <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete, :class => "btn-sign" %></li>
@@ -37,14 +46,15 @@
         <div class="row">
           <%= link_to t(:sign_up), new_user_registration_path, :class => 'span3' %>
         </div>
+        <hr/>
         <div class="row immediate-login-controls">
           <span class="span1">
           <button class="btn" type="button" id="cancel-btn"><%= t(:cancel) %></button>
           </span>
-          <%= f.submit t(:sign_in), :class => 'btn-success spike', :id => 'submit-btn' %>
+          <%= f.submit t(:sign_in), :class => 'btn-success btn', :id => 'submit-btn' %>
         </div>
-        <div class="row provider-links">
-          <% if display_vk_login? %>
+        <% if display_vk_login? %>
+            <div class="row provider-links">
             <span>
             <%= link_to 'facebook',
                         user_omniauth_authorize_path(:facebook), :class => "fb-login-button",
@@ -54,8 +64,8 @@
             <%= link_to 'twitter', user_omniauth_authorize_path(:twitter), :class => "tw-login-button",
                         :"data-width" => 600, :"data-height" => 400 %>
             </span>
-          <% end %>
-        </div>
+            </div>
+        <% end %>
     <% end %>
   </div>
 </div>

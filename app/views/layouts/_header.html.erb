@@ -3,7 +3,4 @@
     <a href="/">Things to be done</a>
   </h2>
     <%= content_for?(:login_links) ? yield(:login_links) : render('layouts/login_links')%>
-    <% if user_signed_in? %>
-        <%= content_for :notifications_dialog %>
-    <% end %>
 </div>
