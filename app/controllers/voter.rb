@@ -38,7 +38,7 @@ module Voter
       end
     else
       respond_to do |format|
-        format.js {render 'js/sign_in'}
+        format.js {render 'js/sign_up'}
         format.json {render :json => {:login_required => true}}
       end
     end

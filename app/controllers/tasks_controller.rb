@@ -12,7 +12,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       @task.participate_in_this(current_user)
     else
-      render 'js/sign_in'
+      render 'js/sign_up'
     end
   end
 
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       @task.leave_this(current_user)
     else
-      render 'js/sign_in'
+      render 'js/sign_up'
     end
   end
 

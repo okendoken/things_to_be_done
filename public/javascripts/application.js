@@ -28,7 +28,7 @@ $(function(){
     $(document).ajaxSuccess(function(e, xhr) {
             var response = $.parseJSON(xhr.responseText);
             if (response.login_required){
-                window.location = '/users/sign_in';
+                window.location = '/users/sign_up';
             }
         });
     //if disabled class present then we don't need to let this btn or link being executed
