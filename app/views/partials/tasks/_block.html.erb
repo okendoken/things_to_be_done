@@ -1,20 +1,22 @@
 <% limit ||= limit
    count = tasks.count
 %>
-<div class="task-block">
-  <div class="group-header">
-    <%= title %>
-  </div>
-  <div class="base-panel clearfix">
-    <% if count > 0 %>
-        <%= render :partial => 'partials/task_row', :collection => tasks, :as => :task %>
-        <% if limit %>
-            <div class="task-block-links">
-              <%= link_to t(:show_all), show_all_path%>
-            </div>
+<% if count > 0%>
+    <div class="task-block">
+      <div class="group-header">
+        <%= title %>
+      </div>
+      <div class="base-panel clearfix">
+        <% if count > 0 %>
+            <%= render :partial => 'partials/task_row', :collection => tasks, :as => :task %>
+            <% if limit %>
+                <div class="task-block-links">
+                  <%= link_to t(:show_all), show_all_path%>
+                </div>
+            <% end %>
+        <% else %>
+            <%= t :its_empty_yet %>
         <% end %>
-    <% else %>
-        <%= t :its_empty_yet %>
-    <% end %>
-  </div>
-</div>
+      </div>
+    </div>
+<% end %>

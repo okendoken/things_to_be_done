@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  autocomplete :city, :name
+  autocomplete :city, :name, :extra_data => [:country_id], :display_value => :display_name
 
   include ProjectTaskCommon
 
@@ -45,8 +45,17 @@ class TasksController < ApplicationController
 
   def create
     if user_signed_in?
-      task = Task.new params[:task]
-      task.user = current_user
+      @task = Task.new params[:task]
+      @task.user = current_user
+      @task.project = Project.find(1)
+      @task.city = City.where(:id => params[:'city-id']).limit(1)[0]
+      if @task.save
+        redirect_to project_task_path(@task.project, @task)
+      else
+        render :action => "new"
+      end
+    else
+
     end
   end
 end

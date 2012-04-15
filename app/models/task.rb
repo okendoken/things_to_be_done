@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
+  validates :title, :presence => true
+  validates :description, :presence => true
+  validates :status, :presence => true
   extend FriendlyId
   include Votable
   include Commentable

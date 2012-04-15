@@ -10,4 +10,8 @@ class City < ActiveRecord::Base
   def should_generate_new_friendly_id?
     new_record?
   end
+
+  def display_name
+    "#{self.name}, #{self.country.name}"
+  end
 end

@@ -25,17 +25,19 @@ function changeSmallLikerState(supports, dataId){
 }
 
 $(function(){
+    $(document).ajaxSuccess(function(e, xhr) {
+            var response = $.parseJSON(xhr.responseText);
+            if (response.login_required){
+                window.location = '/users/sign_in';
+            }
+        });
     //if disabled class present then we don't need to let this btn or link being executed
     $("body").delegate("[class*='disabled']", "click", function(event){
         return false;
     });
     $(document).on('ajax:success',"[data-toggle*='small-supp-link-'], [data-toggle*='small-dont-supp-link-']", function(evt, data, status, xhr){
         var response = $.parseJSON(xhr.responseText);
-        if (response.login_required){
-            window.location = '/users/sign_in';
-        } else {
-            changeSmallLikerState(response.vote_positive, response.target_id);
-        }
+        changeSmallLikerState(response.vote_positive, response.target_id);
     });
     $(document).click(function(e) {
         //maybe better solution exists?

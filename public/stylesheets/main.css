@@ -1510,3 +1510,11 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 .new-task-btn-header i {
     margin-right: 3px;
 }
+
+.help{
+    color: #808080;
+    font-size: 10px;
+    text-shadow: none;
+    position: relative;
+    top: -7px;
+}

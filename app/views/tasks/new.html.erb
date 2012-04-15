@@ -6,38 +6,40 @@
 <% end %>
 <div class="new-task">
   <%= form_for(@task, :html => {:class => 'form-horizontal'}) do |f| %>
-        <fieldset>
-          <legend><%= t :new_task %></legend>
-          <div class="control-group">
-            <label class="control-label"><%= t :task_name %></label>
-            <div class="controls">
-              <%= f.text_field :title, :class => 'input-xxlarge' %>
-            </div>
+      <fieldset>
+        <legend><%= t :new_task %></legend>
+        <% title_error = !@task.errors[:title].empty? %>
+        <div class="control-group <%= title_error ? 'error' : '' %>">
+          <label class="control-label"><%= t :task_name %></label>
+          <div class="controls">
+            <%= f.text_field :title, :class => 'input-xxlarge' %>
+            <% if title_error %>
+                <span class="help-inline"><%= @task.errors[:title][0] %></span>
+            <% end %>
           </div>
-          <div class="control-group">
-            <label class="control-label"><%= t :description %></label>
-            <div class="controls">
-              <%= f.text_area :description, :class => 'input-xxlarge', :rows => 3 %>
-            </div>
+        </div>
+        <% description_error = !@task.errors[:description].empty? %>
+        <div class="control-group <%= description_error ? 'error' : '' %>">
+          <label class="control-label"><%= t :description %></label>
+          <div class="controls">
+            <%= f.text_area :description, :class => 'input-xxlarge', :rows => 3 %>
+            <% if description_error %>
+                <span class="help-inline"><%= @task.errors[:title][0] %></span>
+            <% end %>
           </div>
-          <div class="control-group">
-            <label class="control-label"><%= t :city %></label>
-            <div class="controls">
-              <%= f.autocomplete_field :city, autocomplete_city_name_tasks_path, :class => 'input-xxlarge', :rows => 3 %>
-            </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label"><%= t :city %><br/><span class="help">(<%= t :optional %>)</span></label>
+          <div class="controls">
+            <%= autocomplete_field_tag :city, '', autocomplete_city_name_tasks_path,
+                                     :class => 'input-xxlarge',
+                                     :id_element => "#city-id"%>
           </div>
-          <div class="control-group">
-            <label class="control-label">Disabled checkbox</label>
-            <div class="controls">
-              <label class="checkbox">
-                <input type="checkbox"/>
-                This is a disabled checkbox
-              </label>
-            </div>
-          </div>
-          <div class="form-actions base-panel clearfix">
-            <%= f.submit :class => "btn btn-large btn-success pull-right" %>
-          </div>
-        </fieldset>
+        </div>
+        <div class="form-actions base-panel clearfix">
+          <%= f.submit :class => "btn btn-large btn-success pull-right", :value => t(:create_task)  %>
+        </div>
+        <%= hidden_field_tag :'city-id' %>
+      </fieldset>
   <% end %>
 </div>

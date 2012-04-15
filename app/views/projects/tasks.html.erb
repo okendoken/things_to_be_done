@@ -16,7 +16,8 @@
             <%= t :"project.#{project_status @project}" %>
           </span>
         </div>
-        <div class="big-cool-text-4 right-a-bit-align"><%= "#{t(:because)} - #{@project.problem.title}" %>
+        <div class="big-cool-text-4 right-a-bit-align">
+          <%= "#{t(:because)} - #{@project.problem.title}" unless @project.problem.nil?%>
           <span class="by-author pull-right">
           <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
         </span>

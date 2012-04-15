@@ -18,7 +18,7 @@ GreatWork::Application.routes.draw do
     match 'users/auth/vkontakte/vkontakte_email' => 'users/omniauth_callbacks#vkontakte_email'
   end
 
-  resources :countries, :path => "loc", :only => [:show] do
+  resources :countries, :path => "location", :only => [:show] do
     resources :cities, :path => "", :only => [:show]
   end
 
