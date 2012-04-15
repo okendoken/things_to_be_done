@@ -1366,6 +1366,10 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-left: -25%;
 }
 
+.task-face-link{
+    word-wrap: break-word;
+}
+
 /*.task-face-rating.completed{*/
     /*background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c5eec5), to(#e5e5e5));*/
     /*background-image: -webkit-linear-gradient(#c5eec5, #e5e5e5);*/
