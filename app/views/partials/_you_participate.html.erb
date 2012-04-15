@@ -10,6 +10,8 @@
     <% end %>
   </div>
   <div class="pull-right">
-    <%= link_to t(:leave_participation), {:action => 'leave'}, :remote => true, :confirm => t(:are_you_sure) %>
+    <%= link_to({:action => 'leave'},{:remote => true, :method => :post, :confirm => t(:are_you_sure)}) do %>
+        <%= t(:leave_participation) %><i class="icon-share-alt icon-white"></i>
+    <% end %>
   </div>
 </div>

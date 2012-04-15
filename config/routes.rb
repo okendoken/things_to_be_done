@@ -42,9 +42,6 @@ GreatWork::Application.routes.draw do
 
   match ':project_id(/:task_id)/participators' => 'user#participators', :as => :participators
   match ':project_id(/:task_id)/supporters' => 'user#supporters', :as => :supporters
-
-  match ':project_id/:id/participate' => 'tasks#participate'
-  match ':project_id/:id/leave' => 'tasks#leave'
   #end legacy crappy code
 
   resources :projects, :only => [:new, :create]
@@ -65,6 +62,8 @@ GreatWork::Application.routes.draw do
     resources :tasks, :path => "", :except => [:index, :create, :new ] do
       member do
         get 'news'
+        post 'participate'
+        post 'leave'
         scope 'admin' do
           post 'manage'
         end

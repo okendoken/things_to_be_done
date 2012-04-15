@@ -786,6 +786,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .participators-count.you-participate{
+    position: absolute;
     background-color: #b8f0a3;
     transition: height 1s;
     -moz-transition: height .5s; /* Firefox 4 */
