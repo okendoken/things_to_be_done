@@ -23,7 +23,7 @@
             <% unless is? target, :canceled %>
                 <%= button_tag '', :name => :cancel, :title => t(:delete_title, :target => target.title), :class => 'btn btn-mini', :confirm => t(:are_you_sure) do %>
                     <i class="icon-remove"></i>
-                    <%= t(:delete) %>
+                    <%= t(:to_cancel) %>
                 <% end %>
             <% end %>
         <% end %>

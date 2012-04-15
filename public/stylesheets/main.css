@@ -1052,6 +1052,10 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     left: 0;
 }
 
+.manage-dialog form{
+    margin: 0;
+}
+
 .manage-dialog .popover{
     position: static;
     display: block;
