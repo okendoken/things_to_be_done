@@ -3,4 +3,5 @@ $("#task-status").html("<%= escape_javascript(render :partial => 'partials/parti
 $(".messages").html("");
 $("#participants").replaceWith("<%= escape_javascript(render :partial => 'partials/users_block',
                                     :locals => {:target => @task, :block_id => 'participants',
-                                    :users => @task.participants, :title => t(:participators)})%>")
+                                    :users => @task.participants, :title => t(:participators)})%>");
+$("#activity").html("<%= escape_javascript(render :partial => 'partials/activity', :locals => {:target => @task})%>")

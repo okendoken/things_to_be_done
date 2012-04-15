@@ -374,3 +374,4 @@ ru:
   create_new_task: "Создать Новое Задание"
   city: "Город"
   optional: "Необязательно"
+  activity_of: "Активность %{user}"

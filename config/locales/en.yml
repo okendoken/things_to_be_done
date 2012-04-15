@@ -137,3 +137,4 @@ en:
   create_new_task: "Create New Task"
   city: "City"
   optional: "Optional"
+  activity_of: "%{user}'s activity"
