@@ -5,11 +5,11 @@ $(function(){
         $(".desc-extension-link").toggleClass("hide");
         return false;
     });
-    $("[data-activity-nav]").click(function(){
+    $("body").on("click", "[data-activity-nav]", function(){
         $('[data-activity-nav] > span').addClass('label-info');
         $(this).children('span').removeClass('label-info');
     });
-    $("body").delegate(".form-new-news textarea", "click", function(){
+    $("body").on("click", ".form-new-news textarea",  function(){
         $(".form-new-news input[type='submit']").removeClass("hide");
         $(this).attr("rows", 2);
     });

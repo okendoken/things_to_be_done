@@ -55,7 +55,7 @@ class TasksController < ApplicationController
         render :action => "new"
       end
     else
-
+      redirect_to new_user_registration_path
     end
   end
 end

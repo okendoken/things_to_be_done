@@ -16,7 +16,7 @@
         </div>
 
         <% nickname_error = !resource.errors[:nickname].empty? %>
-        <div class="control-group <%= nickname_error ? 'warning' : ''%>">
+        <div class="control-group <%= nickname_error ? 'error' : ''%>">
           <%= f.label :nickname, :class => 'control-label' %>
           <div class="controls">
             <%= f.text_field :nickname %>
