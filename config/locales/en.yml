@@ -119,6 +119,7 @@ en:
       completed: "is done"
       in_progress: "resumed"
       canceled: "canceled"
+      user_created: "created"
   show_all: "Show all..."
   most_popular: "The most valuable tasks"
   recently_completed_tasks: "Recently completed tasks"

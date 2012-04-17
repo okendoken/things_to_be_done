@@ -9,6 +9,7 @@ module EventEnvironment
       },
       #task-related events
       :task => {
+          :created => Proc.new{|task| [task.project, task.project.user] + UserInfo.where(:id => task.project.participants.pluck(:'users.id'))},
           #task has been completed. notify task, parent-project, task-author
           :completed => Proc.new{|task| [task, task.project] + task.participants + UserInfo.where(:id => task.participants.pluck(:'users.id'))},
           #etc
@@ -47,10 +48,10 @@ module EventEnvironment
 
   DB_EVENT_TYPES = {
       :project => {
-          :completed => 0, :canceled => 1, :in_progress => 3
+          :completed => 0, :canceled => 1, :in_progress => 2
       },
       :task => {
-          :completed => 0, :canceled => 1, :in_progress => 3
+          :completed => 50, :canceled => 51, :in_progress => 52, :created => 53
       },
       :participation => {
           :added => 10, :completed => 11, :canceled => 12
@@ -77,7 +78,8 @@ module EventEnvironment
       :task => {
           :completed => 'partials/news/task',
           :canceled => 'partials/news/task',
-          :in_progress => 'partials/news/task'
+          :in_progress => 'partials/news/task',
+          :created => 'partials/news/task_created'
       },
       :participation => {
           :added => 'partials/news/participation',
@@ -105,7 +107,8 @@ module EventEnvironment
       :task => {
           :completed => 'partials/notifications/project_or_task',
           :canceled => 'partials/notifications/project_or_task',
-          :in_progress => 'partials/notifications/project_or_task'
+          :in_progress => 'partials/notifications/project_or_task',
+          :created => 'partials/stub'
       },
       :participation => {
           :added => 'partials/notifications/participation',

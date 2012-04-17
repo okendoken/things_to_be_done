@@ -1,0 +1,22 @@
+<% task = event.readable %>
+<% clazz = task.class.name.downcase %>
+<% event_type = symbol_event_type(event) %>
+<div class="news-single">
+  <div class="news-single-face">
+    <div>
+      <%= link_to task.user do %>
+          <%= image_tag "avatar.jpg", :style => 'max-height:30px; max-width:30px;' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="news-single-body">
+    <%= link_to task.user.display_name, task.user %>
+    <%= t :"news.task.user_created" %>
+    <%= link_to task.title, project_task_path(task.project, task) %>
+  </div>
+  <div class="news-single-info simple-gray">
+    <i class="icon-plus icon-gray"></i>
+    <%= format_date event.created_at %>
+  </div>
+  <hr/>
+</div>

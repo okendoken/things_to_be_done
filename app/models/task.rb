@@ -27,6 +27,7 @@ class Task < ActiveRecord::Base
   has_many :related_events, :as => :reader
 
   before_destroy :destroy_events
+  after_create :on_after_create
 
   def participate_in_this(user)
     raise 'Not logged in' if user.nil?
@@ -72,6 +73,10 @@ class Task < ActiveRecord::Base
   end
 
   private
+  def on_after_create
+    RelatedEvent.notify_all self, :created, user
+    change_related_rating self, :created
+  end
 
   def on_participate(participation, user)
     RelatedEvent.notify_all(participation, :added, user)
