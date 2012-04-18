@@ -33,4 +33,9 @@ class ProjectsController < ApplicationController
     end
     @tasks = tasks
   end
+
+  def supporters
+    @people = User.joins(:voted_projects).where(:'projects.slug' => params[:id])
+    render 'user/people'
+  end
 end

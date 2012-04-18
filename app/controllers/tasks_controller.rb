@@ -7,6 +7,16 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def participants
+    @people = User.joins(:tasks).where(:'tasks.slug' => params[:id])
+    render 'user/people'
+  end
+
+  def supporters
+    @people = User.joins(:voted_tasks).where(:'tasks.slug' => params[:id])
+    render 'user/people'
+  end
+
   def participate
     if user_signed_in?
       @task = Task.find(params[:id])

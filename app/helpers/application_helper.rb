@@ -32,9 +32,9 @@ module ApplicationHelper
 
   def target_users_path(target, block_id)
     if target.is_a?(Task)
-      block_id == 'supporters' ? supporters_path([target.project, target]) : participators_path([target.project, target])
+      block_id == 'supporters' ? supporters_project_task_path(target.project, target) :  participants_project_task_path(target.project, target)
     else
-      block_id == 'supporters' ? supporters_path(target) : participators_path(target)
+      block_id == 'supporters' ? supporters_project_path(target) : participants_project_task_path(target)
     end
   end
 

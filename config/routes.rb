@@ -39,9 +39,6 @@ GreatWork::Application.routes.draw do
   #legacy crappy code
   match ':project_id(/:task_id)/support' => 'vote#support', :as => :support_route
   match ':project_id(/:task_id)/notsupport' => 'vote#not_support', :as => :not_support_route
-
-  match ':project_id(/:task_id)/participators' => 'user#participators', :as => :participators
-  match ':project_id(/:task_id)/supporters' => 'user#supporters', :as => :supporters
   #end legacy crappy code
 
   resources :projects, :only => [:new, :create]
@@ -53,6 +50,7 @@ GreatWork::Application.routes.draw do
     member do
       get 'news'
       get 'tasks'
+      get 'supporters'
       scope 'admin' do
         post 'manage'
       end
@@ -61,6 +59,8 @@ GreatWork::Application.routes.draw do
     resources :activities, :only => [:index, :create]
     resources :tasks, :path => "", :except => [:index, :create, :new ] do
       member do
+        get 'participants'
+        get 'supporters'
         get 'news'
         post 'participate'
         post 'leave'
