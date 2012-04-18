@@ -19,21 +19,5 @@ $(function(){
             $(".form-new-news input[type='submit']").addClass("hide");
             $(".form-new-news textarea").attr("rows", 1);
         }
-        if ($(e.target).closest('.manage-dialog .popover.bottom').length === 0 ) {
-            $(".manage-dialog").addClass("hide");
-        }
-    });
-    $('[data-display="manage"]').click(function(){
-        var $this = $(this),
-            position = $this.position(),
-            $dialog = $(".manage-dialog"),
-            dialogPosition = {
-                left: position.left - ($dialog.width() - $this.width() - 17),
-                top: position.top + $this.height() + 10
-            };
-        $dialog.css(dialogPosition);
-        $dialog.removeClass("hide");
-
-        return false;
     });
 });

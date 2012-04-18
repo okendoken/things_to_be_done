@@ -1,7 +1,7 @@
 <div id="<%= block_id %>" class="simple-panel">
   <% if users.count > 0 %>
       <div class="block-header">
-        <%= title %> - <%= link_to t(:people, :people_count => users.count),
+        <%= title %> - <%= link_to pluralize(users.count, t(:person)),
                                    target_users_path(target, block_id)%>
       </div>
       <div class="base-block">

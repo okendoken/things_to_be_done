@@ -17,7 +17,7 @@
         <%= link_to activity.participation.task.title, prepare_for_path(activity.participation.task) %> /
     <% end %>
     <%= link_to activity.user.display_name, activity.user %> -
-    <%= activity.text %>
+    <%= simple_format activity.text %>
   </div>
   <div class="news-single-info simple-gray">
     <i class="<%= activity.status == ACTIVITY_STATUS[:in_progress] ? 'icon-star-empty' : 'icon-star' %> icon-gray"></i>

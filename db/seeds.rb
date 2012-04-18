@@ -52,7 +52,7 @@ t1.participate_in_this(u)
 t2.participate_in_this(u)
 
 t1.comment_this("Really cool project! Guys it's gonna be great!", u2)
-t1.comment_this("Thanks! we do it for you. We will drive it till the end. Till it becomes great. We should do it, right?", u)
+t1.comment_this("Thanks! we do it for you. We will lead it till the end. Till it becomes great. We should do it, right?", u)
 p.comment_this("Nice project. I always liked some kind of stuff you do guys. Will support you", u2)
 
 

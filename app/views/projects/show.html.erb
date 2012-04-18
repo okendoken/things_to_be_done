@@ -16,46 +16,39 @@
   </div>
   <div class="span9 right-content">
     <div class="main-content">
-      <div class="span7">
-        <div class="big-cool-text">
-          <%= link_to @project.title, @project%>
-          <span class="inline-status <%= project_status @project %>"><i class="<%= project_status_icon @project %> icon-white"></i>
-            <%= t :"project.#{project_status @project}" %>
+      <div class="clearfix">
+        <div class="span7">
+          <div class="big-cool-text">
+            <%= link_to @project.title, @project%>
+            <span class="inline-status <%= project_status @project %>"><i class="<%= project_status_icon @project %> icon-white"></i>
+              <%= t :"project.#{project_status @project}" %>
           </span>
-        </div>
-        <div class="big-cool-text-4 right-a-bit-align">
-          <%= "#{t(:because)} - #{@project.problem.title}" unless @project.problem.nil?%>
-          <% unless @project.id == 1 %>
+          </div>
+          <div class="big-cool-text-4 right-a-bit-align">
+            <%= "#{t(:because)} - #{@project.problem.title}" unless @project.problem.nil?%>
+            <% unless @project.id == 1 %>
             <span class="by-author pull-right">
               <%= t(:by_author) %> <%= link_to @project.user.display_name, @project.user%>
             </span>
-          <% end %>
-          <%= render :partial => 'partials/location', :locals => {:stuff => @project} %>
+            <% end %>
+            <%= render :partial => 'partials/location', :locals => {:stuff => @project} %>
+          </div>
         </div>
+        <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
+        <% participates_in_this = @project.participates_in_this?(current_user) %>
       </div>
-      <%= render :partial => 'partials/voter', :locals => {:target => @project} %>
-      <% participates_in_this = @project.participates_in_this?(current_user) %>
       <div id="project-status" class="status">
         <% if participates_in_this %>
             <%= render :partial => 'partials/you_participate_in_project', :locals => {:project => @project}%>
         <% else %>
             <%= render :partial => 'partials/project_participators_count', :locals => {:project => @project}%>
         <% end %>
-      </div>
-      <% if can? :manage, @project %>
-          <%= render :partial => 'partials/manage', :locals => {:target => @project} %>
-      <% end %>
-      <div class="base-panel gray-background span description">
-        <% if @project.desc_more_than_1000? %>
-            <div class="desc-sliced">
-              <%= @project.desc_sliced_1000 %>
-              <span class="desc-extension hide"><%= @project.desc_from_1000 %></span>
-              <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
-              <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
-            </div>
-        <% else %>
-            <%= @project.description %>
+        <% if can? :manage, @project %>
+            <%= render :partial => 'partials/manage', :locals => {:target => @project} %>
         <% end %>
+      </div>
+      <div class="base-panel gray-background span description">
+        <%= simple_format @project.description %>
       </div>
       <div class="messages"></div>
     </div>

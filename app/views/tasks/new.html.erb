@@ -22,7 +22,7 @@
         <div class="control-group <%= description_error ? 'error' : '' %>">
           <label class="control-label"><%= t :description %></label>
           <div class="controls">
-            <%= f.text_area :description, :class => 'input-xxlarge', :rows => 3 %>
+            <%= f.text_area :description, :class => 'input-xxlarge', :rows => 5 %>
             <% if description_error %>
                 <span class="help-inline"><%= @task.errors[:title][0] %></span>
             <% end %>

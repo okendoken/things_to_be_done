@@ -50,7 +50,7 @@ en:
   you_participate_project: "You participate in one of %{tasks_count} tasks"
   you_and_many_participate_project: "You and %{people_count} people participate in one of %{tasks_count} tasks"
   participates_project: "%{people_count} people participate in one of %{tasks_count} tasks"
-  people: "%{people_count} people"
+  person: "person"
   people_page_title: "People"
   no_comments_yet: "Nobody commented yet. But it's going to be many comments soon"
   no_new_notifications: "No new notifications yet."

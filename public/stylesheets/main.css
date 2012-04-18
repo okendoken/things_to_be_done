@@ -825,22 +825,6 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-left: 10px;
 }
 
-.desc-extension-link{
-    margin-left: 20px;
-}
-
-.desc-sliced{
-    -moz-transition: height .5s; /* Firefox 4 */
-    -webkit-transition: height .5s; /* Safari and Chrome */
-    -o-transition: height .5s; /* Opera */
-    height: 180px;
-    overflow: hidden;
-}
-
-.desc-sliced.extended{
-    height: 100%;
-}
-
 .by-author{
     font-size: 12px;
     color: #808080;
@@ -974,6 +958,10 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     width: 370px;
     margin-left: 40px;
 }
+
+.news-single-body p, .comment-body p{
+    display: inline;
+}
 .news-single-info, .comment-info{
     width: 370px;
     margin-left: 40px;
@@ -1027,10 +1015,9 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-left: 10px;
 }
 
-.status:before{
-    display: block;
-    content: "";
-    clear: both;
+.status{
+    min-height: 35px;
+    position: relative;
 }
 
 .description, .base-panel.description{
@@ -1040,17 +1027,38 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     box-shadow: rgba(0, 0, 0, 0.298) 0 1px 1px;
 }
 
+.description p{
+    margin-bottom: 5px;
+}
+
+.description p:last-child{
+    margin-bottom: 0;
+}
+
 .btn-manage{
     margin-bottom: 5px;
 }
 
+.btn-manage:active + .manage-dialog, .btn-manage:focus + .manage-dialog{
+    display: block;
+    opacity: 1;
+}
+
 .manage-dialog{
+    display: none;
     position: absolute;
     z-index: 1000;
     float: right;
+    opacity: 0;
     height: 100px;
-    top: 0;
-    left: 0;
+    top: 26px;
+    right: 0;
+
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
 }
 
 .manage-dialog form{
@@ -1065,10 +1073,6 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 .manage-dialog .popover.bottom .arrow{
     left: 90%;
     margin-top: 5px;
-}
-
-.light-green{
-
 }
 
 .icon-gray{

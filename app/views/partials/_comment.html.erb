@@ -17,7 +17,7 @@
         <%= link_to comment.target.title, prepare_for_path(comment.target) %> /
     <% end %>
     <%= link_to comment.user.display_name, comment.user %> -
-    <%= comment.text %>
+    <%= simple_format comment.text %>
   </div>
   <div class="comment-info simple-gray">
     <i class="icon-comment icon-gray"></i>

@@ -285,7 +285,7 @@ ru:
   participates_project: "%{people_count} человек участвует в одном из %{tasks_count} заданий"
   sign_up: "Создать аккаунт"
   participators: "Участники"
-  people: "%{people_count} человека"
+  person: "человек"
   people_page_title: "Люди"
   supporters: "Сторонники"
   registration: "Присоединяйтесь!"

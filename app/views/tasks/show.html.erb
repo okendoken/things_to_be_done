@@ -19,42 +19,35 @@
   </div>
   <div class="span9 right-content">
     <div class="main-content">
-      <div class="span7">
-        <div class="big-cool-text">
-          <%= link_to @task.title, project_task_path(@task.project, @task)%>
-          <span class="inline-status <%= task_status @task %>"><i class="<%= task_status_icon @task %> icon-white"></i>
-            <%= t :"task.#{task_status @task}" %>
+      <div class="clearfix">
+        <div class="span7">
+          <div class="big-cool-text">
+            <%= link_to @task.title, project_task_path(@task.project, @task)%>
+            <span class="inline-status <%= task_status @task %>"><i class="<%= task_status_icon @task %> icon-white"></i>
+              <%= t :"task.#{task_status @task}" %>
           </span>
+          </div>
+          <div class="big-cool-text-4 no-shadow right-a-bit-align">
+            <%= link_to @task.project.title, @task.project%>
+            <span class="by-author pull-right"><%= t(:by_author) %> <%= link_to @task.user.display_name, @task.user%></span>
+            <%= render :partial => 'partials/location', :locals => {:stuff => @task} %>
+          </div>
         </div>
-        <div class="big-cool-text-4 no-shadow right-a-bit-align">
-          <%= link_to @task.project.title, @task.project%>
-          <span class="by-author pull-right"><%= t(:by_author) %> <%= link_to @task.user.display_name, @task.user%></span>
-          <%= render :partial => 'partials/location', :locals => {:stuff => @task} %>
-        </div>
+        <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
+        <% participates_in_this = @task.participates_in_this?(current_user) %>
       </div>
-      <%= render :partial => 'partials/voter', :locals => {:target => @task} %>
-      <% participates_in_this = @task.participates_in_this?(current_user) %>
       <div id="task-status" class="status">
         <% if participates_in_this %>
             <%= render :partial => 'partials/you_participate', :locals => {:task => @task}%>
         <% else %>
             <%= render :partial => 'partials/participators_count', :locals => {:task => @task}%>
         <% end %>
-      </div>
-      <% if can? :manage, @task %>
-          <%= render :partial => 'partials/manage', :locals => {:target => @task} %>
-      <% end %>
-      <div class="base-panel gray-background span description">
-        <% if @task.desc_more_than_1000? %>
-            <div class="desc-sliced">
-              <%= @task.desc_sliced_1000 %>
-              <span class="desc-extension hide"><%= @task.desc_from_1000 %></span>
-              <a class="desc-extension-link more" href="#"><%= t :more%>...</a>
-              <a class="desc-extension-link hide-desc hide" href="#"><%= t :close%></a>
-            </div>
-        <% else %>
-            <%= @task.description %>
+        <% if can? :manage, @task %>
+            <%= render :partial => 'partials/manage', :locals => {:target => @task} %>
         <% end %>
+      </div>
+      <div class="base-panel gray-background span description">
+        <%= simple_format @task.description %>
       </div>
       <div id="participate-button" class="pull-right">
         <% if not participates_in_this and task_status(@task) == :in_progress%>
