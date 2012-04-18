@@ -1039,7 +1039,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     margin-bottom: 5px;
 }
 
-.btn-manage:active + .manage-dialog, .btn-manage:focus + .manage-dialog{
+.manage-dialog.show{
     display: block;
     opacity: 1;
 }

@@ -19,5 +19,13 @@ $(function(){
             $(".form-new-news input[type='submit']").addClass("hide");
             $(".form-new-news textarea").attr("rows", 1);
         }
+        if ($(e.target).closest('.manage-dialog .popover.bottom').length === 0 ) {
+            $(".manage-dialog").removeClass("show");
+        }
+    });
+    $('[data-display="manage"]').click(function(){
+        var $dialog = $(".manage-dialog");
+        $dialog.addClass("show");
+        return false;
     });
 });

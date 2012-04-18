@@ -61,13 +61,13 @@
                 <% if @user.active_tasks.count > 0 %>
                     <div>
                       <h5><%= t :active_tasks %></h5>
-                      <%= render :partial => 'partials/task_row', :collection => @user.active_tasks, :as => :task %>
+                      <%= render :partial => 'partials/task_row', :collection => @user.active_tasks.limit(3), :as => :task %>
                     </div>
                 <% end %>
                 <% if @user.completed_tasks.count > 0 %>
                     <div>
                       <h5><%= t :completed_tasks %></h5>
-                      <%= render :partial => 'partials/task_row', :collection => @user.completed_tasks, :as => :task %>
+                      <%= render :partial => 'partials/task_row', :collection => @user.completed_tasks.limit(3), :as => :task %>
                     </div>
                 <% end %>
               </div>
