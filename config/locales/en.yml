@@ -141,3 +141,4 @@ en:
   activity_of: "%{user}'s activity"
   active_tasks: "Active Tasks"
   completed_tasks: "Completed Tasks"
+  people: "people"

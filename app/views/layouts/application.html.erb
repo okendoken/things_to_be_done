@@ -3,7 +3,7 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : 'Things to be done. What to fix' %></title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery-1.7.1.min', 'rails', 'bootstrap', 'application.js' %>
+  <%= javascript_include_tag 'jquery', 'rails', 'bootstrap', 'application.js' %>
   <%= yield :custom_js %>
   <%= csrf_meta_tag %>
 </head>

@@ -378,3 +378,4 @@ ru:
   activity_of: "Активность %{user}"
   active_tasks: "Активные задания"
   completed_tasks: "Выполненные задания"
+  people: "человек"
