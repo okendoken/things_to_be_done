@@ -55,16 +55,28 @@
         <% unless @user.user_info.city.nil? and @user.user_info.website.nil? %>
             <hr/>
         <% end %>
-        <% if @user.tasks.count > 0 %>
-            <div class="participates-in gray-background base-block">
-              <h5><%= t :you_participate_in %></h5>
-              <%= render :partial => 'partials/task_row', :collection => @user.tasks, :as => :task %>
-            </div>
-        <% end %>
+        <div>
+          <% if @user.active_tasks.count > 0 or @user.completed_tasks.count > 0%>
+              <div class="participates-in gray-background base-block">
+                <% if @user.active_tasks.count > 0 %>
+                    <div>
+                      <h5><%= t :active_tasks %></h5>
+                      <%= render :partial => 'partials/task_row', :collection => @user.active_tasks, :as => :task %>
+                    </div>
+                <% end %>
+                <% if @user.completed_tasks.count > 0 %>
+                    <div>
+                      <h5><%= t :completed_tasks %></h5>
+                      <%= render :partial => 'partials/task_row', :collection => @user.completed_tasks, :as => :task %>
+                    </div>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
         <div class="user-news">
           <div class="">
             <div class="title">
-              <span class="label label-warning">
+              <span class="label label-success">
                 <% if can? :manage, @user %>
                     <%= t(:'news.news') %>
                 <% else %>

@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
   has_many :participations
   #user active tasks
   has_many :tasks, :class_name => 'Task', :through => :participations
+  has_many :active_tasks, :through => :participations, :source => :task,
+           :conditions => {:'tasks.status' => TASK_STATUS[:in_progress]}
+  has_many :completed_tasks, :through => :participations, :source => :task,
+           :conditions => {:'tasks.status' => TASK_STATUS[:completed]}
 
   #many-to-many indirect polymorphic associations
   #projects, user has voted for

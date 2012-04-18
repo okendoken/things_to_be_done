@@ -19,6 +19,7 @@
     </div>
     <p>
       <span><%= task.desc_short %></span>
+      <%= link_to t(:details), project_task_path(task.project, task), :class => 'details-link' %>
     </p>
   </div>
 </div>
