@@ -408,6 +408,7 @@ a:hover, a:active {
     color: #666;
     border-top: none;
     font-size: 13px;
+    text-align: center;
 }
 .header p {
     margin:0;
@@ -415,6 +416,10 @@ a:hover, a:active {
 li.notification-member {
     width: 300px;
     line-height: 16px;
+}
+
+.notification-member:hover {
+    background-color: #FAFAFA;
 }
 
 .notifications-single {
@@ -432,10 +437,9 @@ li.notification-member {
     font-size: 14px;
 }
 
-p.view-more{
+.view-more{
     font-size: 10px;
     font-weight: normal;
-    padding-bottom: 5px
 }
 
 div.new-notifications-count{

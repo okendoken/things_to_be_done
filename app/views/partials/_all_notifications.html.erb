@@ -4,7 +4,7 @@
         $("#notifications-dialog").slideDown(230);
 
         function setNotificationCount() {
-            var readedCount = $(".notification-member").length;
+            var readedCount = $(".notification-member.unread").length;
             if(readedCount != 0) {
                 currentCount = $(".notifications-unread-count").html() - readedCount;
                 if(currentCount > 0) {
@@ -18,23 +18,34 @@
 </script>
 <% if events_for_read_count > 0 %>
     <li class="header">
-      <p><%= t :new_notifications %></p>
-      <% if events_for_read_count > 3 %>
-      <p class="view-more">
-        <%=link_to t(:view_more), get_new_notifications_notifications_path(),
-                                         :remote => true, :method => :post, :id => 'view-more'%>        
-      </p>
-      <% else %>
-          <p class="view-more" style="display: none">
-            <%=link_to t(:view_more), get_new_notifications_notifications_path(),
-                       :remote => true, :method => :post, :id => 'view-more'%>
-          </p>
-      <% end %>
+      <% if unread_exists %>
+          <% if events_for_read_count > 3 %>
+              <p><%=  t :new_notifications %>
+                  <span class="view-more">
+                    <%=link_to "("+t(:view_more)+")", get_new_notifications_notifications_path(),
+                               :remote => true, :method => :post, :id => 'view-more'%>
+                  </span>
+              </p>
+          <% else %>
+              <p><%=  t :new_notifications %></p>
+          <% end %>
+
+      <%else%>
+          <p><%= t :notifications %></p>
+      <%end%>
     </li>
-    <% events_for_read.each do |event| %>
-       <li class="notification-member">
-          <%= render :partial => event.notifications_template, :locals => {:event => event} %>
-        </li>
+    <% if unread_exists %>
+        <% events_for_read.each do |event| %>
+           <li class="notification-member unread">
+              <%= render :partial => event.notifications_template, :locals => {:event => event} %>
+            </li>
+        <% end %>
+    <% else %>
+        <% events_for_read.each do |event| %>
+            <li class="notification-member">
+              <%= render :partial => event.notifications_template, :locals => {:event => event} %>
+            </li>
+        <% end %>
     <% end %>
 <% else %>
     <li class="header">
