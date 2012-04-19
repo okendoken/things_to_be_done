@@ -2,7 +2,7 @@
   <%= link_to get_new_notifications_notifications_path,
               :remote => true, :method => :post, :id => "notifications-link" do %>
       <div class="btn-notifications">
-        <span class="notifications-icon"></span>
+        <i class="icon-envelope icon-gray"></i>
         <div class="notifications-count-container">
             <% unread_count = current_user.related_events.where(:read => false).count %>
             <%= render :partial => 'partials/notifications_count'%>

@@ -213,6 +213,10 @@ a:hover, a:active {
     color: #333;
 }
 
+.bold-big-font {
+    font-weight: bold;
+    font-size: 14px;
+}
 #join-us{
     float: right;
     margin-right: 250px;
@@ -339,14 +343,7 @@ a:hover, a:active {
 }
 .btn-notifications{
     padding: 0 6px;
-    display: inline-block;
-    margin-bottom: 0;
-    font-size: 13px;
-    line-height: 17px;
     color: #333333;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    vertical-align: middle;
     background-color: #f5f5f5;
     background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
     background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
@@ -374,6 +371,10 @@ a:hover, a:active {
 
 .btn-notifications:focus{
     padding: 1px 7px;
+}
+
+.btn-notifications i {
+    margin-top: 1px;
 }
 
 .notifications-unread-count {
@@ -426,6 +427,9 @@ li.notification-member {
 }
 .notifications-single-body {
     margin-left: 32px;
+}
+.notifications-single .rating-font-size {
+    font-size: 14px;
 }
 
 p.view-more{

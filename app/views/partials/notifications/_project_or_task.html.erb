@@ -5,7 +5,9 @@
 <div class="notifications-single">
     <%= t :"#{clazz}.#{event_type}" %> <%= link_to event.readable.title, prepare_for_path(event.readable)%>
   <% if event_type == :completed %>
-      <br>
-      <%= t :you_get_rating, :value => 3%>
+      <span class="simple-gray rating-font">
+      <i class="icon-plus icon-gray"></i>3
+      </span>
+      <%#  t :you_get_rating, :value => 3%>
   <% end %>
 </div>
