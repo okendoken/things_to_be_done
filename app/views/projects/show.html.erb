@@ -3,13 +3,23 @@
 <% end %>
 <% content_for(:custom_js) do %>
     <%= javascript_include_tag 'task-project' %>
+    <% if can? :manage, @project %>
+        <%= javascript_include_tag 'jquery.fileupload', 'jquery.iframe-transport' %>
+    <% end %>
 <% end %>
 
 <div class="row">
   <div class="span3">
-    <a href="<%= project_path @project %>">
-      <img src="/images/avatar.jpg" class="avatar" alt="image">
-    </a>
+    <div class="avatar-box">
+      <a href="<%= project_path @project %>">
+        <img src="/images/avatar.jpg" class="avatar" alt="image">
+      </a>
+      <% if can? :manage, @project %>
+          <div class="avatar-upload-dialog">
+               adsvadv
+          </div>
+      <% end %>
+    </div>
     <%= render :partial => 'partials/users_block',
                :locals => {:target => @project, :block_id => 'supporters',
                            :users => @project.users, :title => t(:supporters)} %>
