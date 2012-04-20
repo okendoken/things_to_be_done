@@ -40,7 +40,8 @@ class ProjectsController < ApplicationController
   end
 
   def upload
-    puts params.inspect
-    render :text => "wow cool"
+    puts current_user
+    current_user.user_info.avatar = params[:picture]
+    current_user.user_info.save
   end
 end

@@ -17,10 +17,12 @@
       </a>
       <% if can? :manage, @project %>
           <div class="avatar-upload-dialog">
+            <%= form_tag upload_project_path(@project), :multipart => true do %>
             <span class="fileinput-button">
-                <span><%= t(:edit_picture) %></span>
-                <input id="avatar-upload" type="file" name="picture" data-url="<%= upload_project_path(@project) %>" multiple="multiple"/>
+              <span><%= t(:edit_picture) %></span>
+              <%= file_field_tag 'avatar-upload', :name => 'picture' %>
             </span>
+            <% end %>
           </div>
       <% end %>
     </div>
