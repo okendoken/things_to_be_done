@@ -51,6 +51,7 @@ GreatWork::Application.routes.draw do
       get 'news'
       get 'tasks'
       get 'supporters'
+      post 'upload'
       scope 'admin' do
         post 'manage'
       end
@@ -64,6 +65,7 @@ GreatWork::Application.routes.draw do
         get 'news'
         post 'participate'
         post 'leave'
+        post 'upload'
         scope 'admin' do
           post 'manage'
         end

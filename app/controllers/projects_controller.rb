@@ -38,4 +38,9 @@ class ProjectsController < ApplicationController
     @people = User.joins(:voted_projects).where(:'projects.slug' => params[:id])
     render 'user/people'
   end
+
+  def upload
+    puts params.inspect
+    render :text => "wow cool"
+  end
 end

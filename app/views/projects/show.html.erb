@@ -4,7 +4,8 @@
 <% content_for(:custom_js) do %>
     <%= javascript_include_tag 'task-project' %>
     <% if can? :manage, @project %>
-        <%= javascript_include_tag 'jquery.fileupload', 'jquery.iframe-transport' %>
+        <%= javascript_include_tag 'jquery-ui-1.8.18.custom.min', 'jquery.iframe-transport', 'jquery.fileupload' %>
+        <%= javascript_include_tag 'upload-picture' %>
     <% end %>
 <% end %>
 
@@ -16,7 +17,8 @@
       </a>
       <% if can? :manage, @project %>
           <div class="avatar-upload-dialog">
-               <%= link_to t(:edit_picture), '#' %>
+            <input id="avatar-upload" type="file" name="picture" data-url="<%= upload_project_path(@project) %>" multiple="multiple">
+            <span class="click"><%= t(:edit_picture) %></span>
           </div>
       <% end %>
     </div>

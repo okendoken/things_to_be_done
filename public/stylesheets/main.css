@@ -768,7 +768,9 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     right: 0;
     color: #000000;
     z-index: 2;
+    min-height: 16px;
     padding: 2px 5px;
+    background-color: #e5e5e5;
     background-image: -webkit-linear-gradient(#f7f7f7, #e5e5e5);
     background-image: -moz-linear-gradient(top, #f7f7f7, #e5e5e5);
     background-image: -ms-linear-gradient(#f7f7f7, #e5e5e5);
@@ -781,6 +783,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     font-weight: 700;
     text-shadow: 0 1px 0 white;
     text-align: center;
+    cursor: pointer;
 }
 
 .avatar-box:hover:after{
@@ -793,8 +796,24 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     z-index: 1;
 }
 
-.avatar-upload-dialog a{
-    color: inherit;
+.avatar-upload-dialog input{
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.avatar-upload-dialog .click{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.avatar-upload-dialog:hover .click{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .btn-support-small{
