@@ -13,7 +13,11 @@
       </a>
       <% if can? :manage, @task %>
           <div class="avatar-upload-dialog">
-            <%= link_to t(:edit_picture), '#' %>
+            <span class="fileinput-button">
+                <span><%= t(:edit_picture) %></span>
+                <input id="avatar-upload" type="file" name="picture"
+                       data-url="<%= upload_project_task_path(@task.project, @task) %>" multiple="multiple"/>
+            </span>
           </div>
       <% end %>
     </div>

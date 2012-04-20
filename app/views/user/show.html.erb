@@ -10,7 +10,11 @@
         </a>
         <% if can? :manage, @user %>
             <div class="avatar-upload-dialog">
-              <%= link_to t(:edit_picture), '#' %>
+            <span class="fileinput-button">
+                <span><%= t(:edit_picture) %></span>
+                <input id="avatar-upload" type="file" name="picture"
+                       data-url="<%= user_path @user %>" multiple="multiple"/>
+            </span>
             </div>
         <% end %>
       </div>

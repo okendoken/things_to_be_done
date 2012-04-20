@@ -3,7 +3,9 @@ GreatWork::Application.routes.draw do
 
   resources :user_info
 
-  resources :user
+  resources :user do
+    post 'upload'
+  end
 
   resources :notifications, :only => [:index] do
     #it's better to use 'get' on collection

@@ -13,4 +13,8 @@ class UserController < ApplicationController
     end
   end
 
+  def upload
+
+  end
+
 end

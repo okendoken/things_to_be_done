@@ -17,8 +17,10 @@
       </a>
       <% if can? :manage, @project %>
           <div class="avatar-upload-dialog">
-            <input id="avatar-upload" type="file" name="picture" data-url="<%= upload_project_path(@project) %>" multiple="multiple">
-            <span class="click"><%= t(:edit_picture) %></span>
+            <span class="fileinput-button">
+                <span><%= t(:edit_picture) %></span>
+                <input id="avatar-upload" type="file" name="picture" data-url="<%= upload_project_path(@project) %>" multiple="multiple"/>
+            </span>
           </div>
       <% end %>
     </div>
