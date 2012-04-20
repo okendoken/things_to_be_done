@@ -747,19 +747,50 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     position: relative;
 }
 
+.avatar-box:hover .avatar-upload-dialog{
+    transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    display: block;
+    opacity: 1;
+}
+
 .avatar-upload-dialog{
+    display: none;
     position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
     color: #000000;
-    padding: 2px 3px;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e5e5), to(#bababa));
-    background-image: -webkit-linear-gradient(#e5e5e5, #bababa);
-    background-image: -moz-linear-gradient(top, #e5e5e5, #bababa);
-    background-image: -ms-linear-gradient(#e5e5e5, #bababa);
-    background-image: -o-linear-gradient(#e5e5e5, #bababa);
-    background-image: linear-gradient(#e5e5e5, #bababa);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    z-index: 2;
+    padding: 2px 5px;
+    background-image: -webkit-linear-gradient(#f7f7f7, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #f7f7f7, #e5e5e5);
+    background-image: -ms-linear-gradient(#f7f7f7, #e5e5e5);
+    background-image: -o-linear-gradient(#f7f7f7, #e5e5e5);
+    background-image: linear-gradient(#f7f7f7, #e5e5e5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    font-weight: 700;
+    text-shadow: 0 1px 0 white;
+    text-align: center;
+}
+
+.avatar-box:hover:after{
+    position: absolute;
+    left: -10px;
+    right: -10px;;
+    content: "";
+    height: 40px;
+    display: block;
+    z-index: 1;
+}
+
+.avatar-upload-dialog a{
+    color: inherit;
 }
 
 .btn-support-small{

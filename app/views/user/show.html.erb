@@ -4,8 +4,15 @@
   <% end %>
   <div class="user-page-main clearfix">
     <div class="user-left-panel">
-      <div class="user-avatar">
-        <img src="/images/bruce.jpg" class="avatar" alt="image">
+      <div class="user-avatar avatar-box">
+        <a href="<%= user_path @user %>">
+          <img src="/images/bruce.jpg" class="avatar" alt="image">
+        </a>
+        <% if can? :manage, @user %>
+            <div class="avatar-upload-dialog">
+              <%= link_to t(:edit_picture), '#' %>
+            </div>
+        <% end %>
       </div>
       <%= render :partial => 'partials/tasks/simple_block',
                  :locals => {:show_all_path => '', :title => t(:supports),
