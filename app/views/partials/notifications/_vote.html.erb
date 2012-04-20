@@ -14,5 +14,11 @@
     <%= link_to event.readable.user.display_name, event.readable.user %> -
     <%= t :"vote.#{target_clazz}.#{event_type ? 'positive' : 'negative'}" %>
     <%= link_to prepare_title(event.readable.target), prepare_for_path(event.readable.target)%>
+    <% if event_type %>
+        <span class="simple-gray rating-font">
+            <i class="icon-plus icon-gray"></i><%= 1 %>
+
+        </span>
+    <% end %>
   </div>
 </div>
