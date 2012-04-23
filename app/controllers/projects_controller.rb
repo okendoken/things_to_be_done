@@ -40,8 +40,7 @@ class ProjectsController < ApplicationController
   end
 
   def upload
-    puts current_user
-    current_user.user_info.avatar = params[:picture]
-    current_user.user_info.save
+    #current_user.user_info.avatar = params[:picture]
+    #current_user.user_info.save
   end
 end
