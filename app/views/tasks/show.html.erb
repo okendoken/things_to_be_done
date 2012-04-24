@@ -3,24 +3,17 @@
 <% end %>
 <% content_for(:custom_js) do %>
     <%= javascript_include_tag 'task-project' %>
+    <% if can? :manage, @task %>
+        <%= javascript_include_tag 'jquery-ui-1.8.18.custom.min', 'jquery.iframe-transport', 'jquery.fileupload' %>
+        <%= javascript_include_tag 'upload-picture' %>
+    <% end %>
 <% end %>
 
 <div class="row">
   <div class="span3">
-    <div class="avatar-box">
-      <a href="<%= project_task_path @task.project, @task %>">
-        <img src="/images/avatar.jpg" class="avatar" alt="image">
-      </a>
-      <% if can? :manage, @task %>
-          <div class="avatar-upload-dialog">
-            <span class="fileinput-button">
-                <span><%= t(:edit_picture) %></span>
-                <input id="avatar-upload" type="file" name="picture"
-                       data-url="<%= upload_project_task_path(@task.project, @task) %>" multiple="multiple"/>
-            </span>
-          </div>
-      <% end %>
-    </div>
+    <%= render :partial => "partials/common/avatar",
+               :locals => { :guy => @task, :upload_path => upload_project_task_path(@task.project, @task),
+                            :link_path => project_task_path(@task.project, @task)} %>
     <%= render :partial => 'partials/users_block',
                :locals => {:target => @task, :block_id => 'participants',
                            :users => @task.participants, :title => t(:participators)} %>

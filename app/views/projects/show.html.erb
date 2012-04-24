@@ -11,21 +11,9 @@
 
 <div class="row">
   <div class="span3">
-    <div class="avatar-box">
-      <a href="<%= project_path @project %>">
-        <img src="/images/avatar.jpg" class="avatar" alt="image">
-      </a>
-      <% if can? :manage, @project %>
-          <div class="avatar-upload-dialog">
-            <%= form_tag upload_project_path(@project), :multipart => true do %>
-            <span class="fileinput-button">
-              <span><%= t(:edit_picture) %></span>
-              <%= file_field_tag 'avatar-upload', :name => 'picture' %>
-            </span>
-            <% end %>
-          </div>
-      <% end %>
-    </div>
+    <%= render :partial => "partials/common/avatar",
+               :locals => { :guy => @project, :upload_path => upload_project_path(@project),
+                            :link_path => project_path(@project)} %>
     <%= render :partial => 'partials/users_block',
                :locals => {:target => @project, :block_id => 'supporters',
                            :users => @project.users, :title => t(:supporters)} %>

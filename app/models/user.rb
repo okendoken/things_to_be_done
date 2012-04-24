@@ -92,6 +92,10 @@ class User < ActiveRecord::Base
     events
   end
 
+  def avatar
+    self.user_info.avatar
+  end
+
   private
   def create_related_user_info
     self.user_info = UserInfo.create!

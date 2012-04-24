@@ -68,4 +68,19 @@ class TasksController < ApplicationController
       redirect_to new_user_registration_path
     end
   end
+
+  def upload
+    @task = Task.find params[:id]
+    if can? :manage, @task
+      @task.avatar = params[:picture]
+      if @task.save
+        unless env["HTTP_ACCEPT"] and env["HTTP_ACCEPT"].include?('application/json')
+          response.headers['Content-Type'] = 'text/plain'
+        end
+        render :template => 'tasks/upload', :formats => [:js]
+      end
+    else
+      render :text => "you can't do that =("
+    end
+  end
 end

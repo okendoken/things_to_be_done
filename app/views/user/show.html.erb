@@ -10,7 +10,9 @@
   <% end %>
   <div class="user-page-main clearfix">
     <div class="user-left-panel">
-      <%= render :partial => "partials/user/avatar", :locals => {:user => @user} %>
+      <%= render :partial => "partials/common/avatar",
+                 :locals => { :guy => @user, :upload_path => user_upload_path(@user),
+                              :link_path => user_path(@user)} %>
       <%= render :partial => 'partials/tasks/simple_block',
                  :locals => {:show_all_path => '', :title => t(:supports),
                              :tasks => @user.voted_tasks.limit(3),

@@ -16,13 +16,14 @@ class UserController < ApplicationController
   def upload
     if user_signed_in?
       current_user.user_info.avatar = params[:picture]
-      current_user.user_info.save
-      unless env["HTTP_ACCEPT"] and env["HTTP_ACCEPT"].include?('application/json')
-        response.headers['Content-Type'] = 'text/plain'
+      if current_user.user_info.save
+        unless env["HTTP_ACCEPT"] and env["HTTP_ACCEPT"].include?('application/json')
+          response.headers['Content-Type'] = 'text/plain'
+        end
+        @user = current_user
+        #in future it's easier to just rerender src attr of <img/> tag
+        render :template => 'user/upload', :formats => [:js]
       end
-      @user = current_user
-      #in future it's easier to just rerender src attr of <img/> tag
-      render :template => 'user/upload', :formats => [:js]
     else
       respond_to do |format|
         format.js {render 'js/sign_up'}

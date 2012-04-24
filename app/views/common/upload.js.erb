@@ -1,5 +1,0 @@
-//todo in future it's easier to just rerender src attr of <img/> tag
-$("#user-picture").replaceWith("<%= escape_javascript(render :partial => "partials/user/avatar", :locals => {:user => @user}) %>");
-$('#avatar-upload').fileupload({
-    dataType: 'script'
-});

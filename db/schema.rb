@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411144656) do
+ActiveRecord::Schema.define(:version => 20120424083000) do
 
   create_table "activities", :force => true do |t|
     t.integer  "participation_id"
@@ -102,13 +102,17 @@ ActiveRecord::Schema.define(:version => 20120411144656) do
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "status",      :default => 1, :null => false
+    t.integer  "status",              :default => 1, :null => false
     t.integer  "problem_id"
     t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "slug"
     t.integer  "city_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "projects", ["city_id"], :name => "index_projects_on_city_id"
@@ -139,13 +143,17 @@ ActiveRecord::Schema.define(:version => 20120411144656) do
   create_table "tasks", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "status",      :default => 1, :null => false
+    t.integer  "status",              :default => 1, :null => false
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "slug"
     t.integer  "city_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "tasks", ["city_id"], :name => "index_tasks_on_city_id"

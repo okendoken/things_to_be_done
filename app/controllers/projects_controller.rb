@@ -40,7 +40,17 @@ class ProjectsController < ApplicationController
   end
 
   def upload
-    #current_user.user_info.avatar = params[:picture]
-    #current_user.user_info.save
+    @project = Project.find params[:id]
+    if can? :manage, @project
+      @project.avatar = params[:picture]
+      if @project.save
+        unless env["HTTP_ACCEPT"] and env["HTTP_ACCEPT"].include?('application/json')
+          response.headers['Content-Type'] = 'text/plain'
+        end
+        render :template => 'projects/upload', :formats => [:js]
+      end
+    else
+      render :text => "you can't do that =("
+    end
   end
 end
