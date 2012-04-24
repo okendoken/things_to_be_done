@@ -20,8 +20,9 @@ class UserController < ApplicationController
       unless env["HTTP_ACCEPT"] and env["HTTP_ACCEPT"].include?('application/json')
         response.headers['Content-Type'] = 'text/plain'
       end
-      puts response.headers
-      render :json => {:file_name => params[:picture].original_filename}
+      @user = current_user
+      #in future it's easier to just rerender src attr of <img/> tag
+      render :template => 'user/upload', :formats => [:js]
     else
       respond_to do |format|
         format.js {render 'js/sign_up'}

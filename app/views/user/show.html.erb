@@ -6,25 +6,11 @@
 <% end %>
 <div class="user-page">
   <% content_for(:title) do%>
-      <%= @user.nickname%>
+      <%= @user.nickname %>
   <% end %>
   <div class="user-page-main clearfix">
     <div class="user-left-panel">
-      <div class="user-avatar avatar-box">
-        <a href="<%= user_path @user %>">
-          <img src="/images/bruce.jpg" class="avatar" alt="image">
-        </a>
-        <% if can? :manage, @user %>
-            <div class="avatar-upload-dialog">
-              <%= form_tag user_upload_path(@user), :multipart => true do %>
-                <span class="fileinput-button">
-                  <span><%= t(:edit_picture) %></span>
-                  <%= file_field_tag 'avatar-upload', :name => 'picture' %>
-                </span>
-              <% end %>
-            </div>
-        <% end %>
-      </div>
+      <%= render :partial => "partials/user/avatar", :locals => {:user => @user} %>
       <%= render :partial => 'partials/tasks/simple_block',
                  :locals => {:show_all_path => '', :title => t(:supports),
                              :tasks => @user.voted_tasks.limit(3),

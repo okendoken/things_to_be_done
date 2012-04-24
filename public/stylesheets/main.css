@@ -738,6 +738,7 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
 }
 
 .avatar{
+    min-height: 100px;
     max-width: 220px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

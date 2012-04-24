@@ -4,9 +4,7 @@ class UserInfo < ActiveRecord::Base
 
   has_many :related_events, :as => :reader
 
-  has_attached_file :avatar,
-                    :styles => { :medium => "300x300>",
-                                 :thumb => "100x100>" }
+  has_attached_file :avatar, :default_url => "/images/bruce.jpg"
 
   attr_accessible :avatar, :first_name, :last_name, :about_myself
 end

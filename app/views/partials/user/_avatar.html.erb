@@ -1,0 +1,15 @@
+<div id="user-picture" class="user-avatar avatar-box">
+  <a href="<%= user_path user %>">
+    <%= image_tag user.user_info.avatar.url, :class => 'avatar' %>
+  </a>
+  <% if can? :manage, user %>
+      <div class="avatar-upload-dialog">
+        <%= form_tag user_upload_path(user), :multipart => true do %>
+                <span class="fileinput-button">
+                  <span><%= t(:edit_picture) %></span>
+                  <%= file_field_tag 'avatar-upload', :name => 'picture' %>
+                </span>
+        <% end %>
+      </div>
+  <% end %>
+</div>
