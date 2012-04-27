@@ -16,9 +16,9 @@ class Project < ActiveRecord::Base
 
   has_many :related_events, :as => :reader
 
-  has_attached_file :avatar, :default_url => "/images/bruce.jpg"
+  has_attached_file :avatar, :default_url => "/images/bruce.jpg", :styles => { :medium => "220", :thumbnail => "75x75" }
 
-  validates_attachment :avatar, :content_type => { :content_type => "image/*" },
+  validates_attachment :avatar, :content_type => { :content_type => /image/ },
                        :size => { :in => 0..5.megabytes}
 
   before_destroy :destroy_events

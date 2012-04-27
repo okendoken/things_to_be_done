@@ -28,7 +28,7 @@ class Task < ActiveRecord::Base
 
   has_attached_file :avatar, :default_url => "/images/bruce.jpg"
 
-  validates_attachment :avatar, :content_type => { :content_type => "image/*" },
+  validates_attachment :avatar, :content_type => { :content_type => /image/ },
                        :size => { :in => 0..5.megabytes}
 
   before_destroy :destroy_events
