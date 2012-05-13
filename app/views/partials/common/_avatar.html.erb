@@ -1,6 +1,6 @@
 <div id="avatar" class="avatar-box">
   <a href="<%= link_path %>">
-    <%= image_tag guy.avatar.url, :class => 'avatar' %>
+    <%= image_tag guy.avatar.url(:medium), :class => 'avatar' %>
   </a>
   <% if can? :manage, guy %>
       <div class="avatar-upload-dialog">
