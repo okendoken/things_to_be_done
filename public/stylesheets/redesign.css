@@ -64,12 +64,54 @@ h1{
 }
 
 .image{
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 
 .project-descr{
     margin-top: 10px;
     font-size: 16px;
+}
+
+.project-descr br:after{
+    display: block;
+    content: "";
+    margin-top: 10px;
+}
+
+.project-descr-short{
+    margin-top: 5px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.project-stats{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-stats > div {
+    float: left;
+    width: 80px;
+}
+
+.project-stats > div:first-child{
+    margin-left: 60px;
+}
+
+.project-stats > div:last-child{
+    margin-right: 60px;
+}
+
+.project-stats > .separator{
+    margin-top: 2px;
+    font-size: 46px;
+    font-weight: bold;
+    width: 20px;
+}
+
+.project-stats .count{
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .location{
@@ -78,7 +120,6 @@ h1{
     text-align: center;
     margin-top: 5px;
     font-weight: bold;
-    text-shadow: 0 1px 1px rgba(51,51,51,0.2);
 }
 
 .location:hover{
@@ -93,6 +134,8 @@ h1{
     vertical-align: middle;
     background: url("../images/location-big.png") no-repeat 0 0;
     margin-top: -5px;
+    margin-right: -3px;
+    -o-transform: scale(.75,.75);
 }
 
 .location > a{
