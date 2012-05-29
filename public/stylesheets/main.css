@@ -1,13 +1,12 @@
 /*
 put all hand-made css stuff here
 */
-body{
-    padding-top: 50px;
+html, body{
+    height: 100%;
 }
 
 header{
     height: 30px;
-    position: absolute;
     width: 980px;
     margin-left: auto;
     margin-right: auto;
@@ -25,17 +24,23 @@ header{
     background-image: linear-gradient(#ffffff, #e5e5e5);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
     border-bottom: 1px solid #999999;
+    top: 0;
+    position: absolute;
     left: 0;
     right: 0;
-    top: 0;
 }
 
 footer{
     width: 980px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+
     height: 30px;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: -30px;
+
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e5e5), to(#ffffff));
     background-image: -webkit-linear-gradient(#e5e5e5, #ffffff);
     background-image: -moz-linear-gradient(top, #e5e5e5, #ffffff);
@@ -53,6 +58,17 @@ footer{
     -webkit-border-top-right-radius: 7px;
     -moz-border-top-right-radius: 7px;
     border-top-right-radius: 7px;
+}
+
+.container{
+    width: 860px;
+    height: auto;
+    min-height: 100%;
+}
+
+.content{
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 a {
@@ -676,10 +692,6 @@ a.fb-login-button, a.tw-login-button, a.vk-login-button{
     -moz-border-radius: 4px;
     border-radius: 4px;
     margin-left: 0;
-}
-
-.container{
-    min-height: 800px;
 }
 
 .align-center{
