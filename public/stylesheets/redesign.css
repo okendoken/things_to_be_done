@@ -85,6 +85,21 @@ h1{
     font-size: 14px;
 }
 
+.project-liker{
+    float: right;
+    margin: 10px 20px 0 0;
+}
+
+.project-liker:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.project-liker .btn{
+    padding: 2px 5px;
+}
+
 .project-stats{
     margin-top: 5px;
     text-align: center;
@@ -95,6 +110,11 @@ h1{
 .project-stats .count{
     font-size: 36px;
     font-weight: bold;
+}
+
+.project-actions{
+    text-align: center;
+    margin-top: 15px;
 }
 
 .location{
@@ -118,9 +138,34 @@ h1{
     background: url("../images/location-big.png") no-repeat 0 0;
     margin-top: -3px;
     margin-right: -3px;
-    -o-transform: scale(.75,.75);
+    -o-transform: scale(.6,.6);
 }
 
 .location > a{
     color: inherit;
+}
+
+.vote{
+    height: 32px;
+    width: 32px;
+    background: url("../images/glyphicons.png") no-repeat;
+    display: block;
+}
+
+.vote.up{
+    background-position: -143px -1629px;
+}
+
+.vote.down{
+    background-position: -191px -1629px;
+}
+
+.btn.join{
+    background-image: -o-linear-gradient(top, #ffffff, #dedede);
+}
+
+.btn-join-text{
+    font-size: 20px;
+    line-height: 24px;
+    margin: 5px 14px;
 }
