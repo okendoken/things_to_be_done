@@ -1,31 +1,31 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>= 3.2.1'
+gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :assets do
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3', :require => 'uglifier'
+  gem 'sass-rails', '3.2.3'
+  gem 'coffee-rails', '3.2.1'
+  gem 'uglifier', '1.0.3', :require => 'uglifier'
 end
 
-gem 'jquery-rails'
-gem 'sqlite3'
-gem 'devise', '>= 2.0'
+gem 'jquery-rails', '2.0.1'
+gem 'sqlite3', '1.3.6'
+gem 'devise', '2.0'
 
-gem 'cancan'
+gem 'cancan', '1.6.8'
 
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'sinatra'
-gem 'omniauth-vkontakte'
+gem 'omniauth-facebook', '1.2.0'
+gem 'omniauth-twitter', '0.0.10'
+gem 'sinatra', '1.3.2'
+gem 'omniauth-vkontakte', '1.1.0'
 
-gem "paperclip", "~> 3.0"
+gem "paperclip", '3.0.2'
 
-gem 'rails3-jquery-autocomplete'
+gem 'rails3-jquery-autocomplete', '1.0.8'
 
-gem "friendly_id", "~> 4.0.0"
+gem "friendly_id", "4.0.4"
 
 # Use unicorn as the web server
 # gem 'unicorn'
